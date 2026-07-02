@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read full tech guides, electronic reviews, and accessory tips on the Elevora Tech Blog.">
+  <title>Blog Post View | Elevora Editorial</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .article-wrap {
+      max-width: 800px;
+      margin: 40px auto 80px;
+    }
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .article-title {
+      font-family: 'Outfit';
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .article-hero-image {
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      height: 450px;
+      background-color: var(--bg-secondary);
+    }
+    .article-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-content {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    .article-content h2 {
+      font-family: 'Outfit';
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    .article-blockquote {
+      border-left: 4px solid var(--accent-dark);
+      padding-left: 24px;
+      margin: 30px 0;
+      font-family: 'Outfit';
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article View container -->
+  <main class="container">
+    <article class="article-wrap" id="article-details-wrapper">
+      <!-- Populated dynamically based on URL search query parameter -->
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h4 class="cart-drawer-title">Your Cart</h4>
+        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-drawer-items" id="cart-drawer-items"></div>
+    </div>
+  </div>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+
+  <!-- Article content loader -->
+  <script>
+    const mockBlogPosts = {
+      magsafe: {
+        title: "The Evolution of MagSafe: Snapping Into the Wireless Future",
+        date: "June 28, 2026",
+        readTime: "5 Min Read",
+        image: "https://images.unsplash.com/photo-1609592424085-f55a64388432?w=1000",
+        content: `
+          <p>Inductive wireless charging has existed for years, but standard alignment issues plagued early attempts. Apple's introduction of MagSafe in the iPhone 12 solved the alignment issue by positioning N52 Neodymium magnet loops around central copper charging coils.</p>
+          <h2>The Physics of Induced Coils</h2>
+          <p>When an electromagnetic current flows through a primary transmitter coil, it creates an alternating magnetic field. Placing a receiver coil within this field induces an electrical current in the secondary coil, charging the lithium pack. However, even a minor offset of 2-3 millimeters causes high thermal dissipation and drops efficiency by up to 50%.</p>
+          <div class="article-blockquote">
+            "MagSafe's design genius lies in magnets matching the coordinates exactly, ensuring the transmitter and receiver lock at peak efficiency."
+          </div>
+          <h2>Snapping in the Retractable Stands</h2>
+          <p>For dropshipping sites and device developers, MagSafe accessories present high conversion potentials. Magnetic wallets, ring holders, and thin folding powerbanks satisfy both the utility and minimalism metrics that premium consumers actively look for online.</p>
+        `
+      },
+      gan: {
+        title: "Gallium Nitride (GaN): Why it's replacing silicon charger bricks",
+        date: "June 24, 2026",
+        readTime: "4 Min Read",
+        image: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=1000",
+        content: `
+          <p>For decades, silicon has been the bedrock of power transistors. However, as power requirements for laptops, tablets, and smartphones surged, silicon reached its physical thermal caps. Enter Gallium Nitride (GaN)—a crystal semiconductor capable of conducting much higher voltages with lower resistance.</p>
+          <h2>Understanding Bandgap Physics</h2>
+          <p>GaN possesses a "wide bandgap" of 3.4 eV compared to silicon's 1.1 eV. This wide bandgap allows electrical currents to pass through components faster, with less energy lost to heat. Consequently, transistors can be placed closer together, reducing charger volume by up to 40%.</p>
+          <div class="article-blockquote">
+            "By utilizing GaN, chargers can supply 100W of power from a adapter block smaller than a deck of playing cards."
+          </div>
+          <h2>Cooler Transistors and Multiport Chargers</h2>
+          <p>With less heat loss, chargers don't require heavy heatsinks. This enables developers to pack multiple USB-C Power Delivery ports into a travel-friendly charger blocks, protecting gadgets from electrical spikes and heat thresholds.</p>
+        `
+      },
+      anc: {
+        title: "Hybrid Active Noise Cancellation: Sound waves in modern workspaces",
+        date: "June 18, 2026",
+        readTime: "6 Min Read",
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1000",
+        content: `
+          <p>Active Noise Cancellation (ANC) has evolved from simple isolation cushions to active DSP algorithms. Modern premium headphones utilize hybrid ANC networks to erase distraction noise across workspaces.</p>
+          <h2>Feedforward vs Feedback Microphones</h2>
+          <p>Hybrid ANC combines feedforward microphones (facing outwards to detect ambient noise) and feedback microphones (facing inwards near the ear canal to monitor audio leakage). The digital sound processor (DSP) analyzes these waveforms and projects an inverted soundwave (180 degrees out of phase) to cancel the noise.</p>
+          <div class="article-blockquote">
+            "Hybrid ANC operates like acoustic addition, summing the ambient wave with its inverse mirror image to result in pure silence."
+          </div>
+          <h2>Transparency Mode Integration</h2>
+          <p>By reversing the microphone feeds, hybrid headsets can inject ambient sounds back into the ear cushions. This transparency mode allows consumers to conduct chats or hear announcements without needing to pull the headphones off their ears.</p>
+        `
+      }
+    };
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const postHandle = params.get("post") || "magsafe";
+      const post = mockBlogPosts[postHandle] || mockBlogPosts.magsafe;
+
+      document.title = `${post.title} | Elevora Blog`;
+
+      document.getElementById("article-details-wrapper").innerHTML = `
+        <div class="article-meta">
+          <span><i class="fa-regular fa-calendar"></i> ${post.date}</span>
+          <span>&bull;</span>
+          <span><i class="fa-regular fa-clock"></i> ${post.readTime}</span>
+        </div>
+        <h1 class="article-title">${post.title}</h1>
+        <div class="article-hero-image">
+          <img src="${post.image}" alt="${post.title}">
+        </div>
+        <div class="article-content">
+          ${post.content}
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

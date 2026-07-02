@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View items in your Elevora wishlist. Save your premium smartwatches, headphones, and earbuds for future purchases.">
+  <title>Your Wishlist | Elevora Premium Accessories</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-item"><i class="fa-solid fa-truck-fast"></i> Free Worldwide Delivery on orders above $100</div>
+      <div class="announcement-item" style="display: none;"><i class="fa-solid fa-bolt"></i> Flash Sale: Use code <span>ELEVORA20</span> for 20% off</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+          <input type="text" class="header-search-input" placeholder="Search gadgets...">
+        </div>
+
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-solid fa-heart" style="color: var(--danger);"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero Title -->
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Wishlist</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">My Saved Items</h1>
+    </div>
+  </section>
+
+  <!-- Wishlist Main section -->
+  <main class="container" style="margin-bottom: 80px;">
+    <!-- Wishlist Grid wrapper (populated dynamically via wishlist.js) -->
+    <div class="products-grid" id="wishlist-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
+      <!-- JavaScript inserts cards matching user local storage wishlist -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?category=Headphones">Headphones</a></li>
+          <li><a href="shop.html?category=Smart%20Watches">Smart Watches</a></li>
+          <li><a href="shop.html?category=Earbuds">Earbuds</a></li>
+          <li><a href="shop.html?category=Power%20Banks">Power Banks</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ Desk</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="track-order.html">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Brand</a></li>
+          <li><a href="blog.html">Tech Blog</a></li>
+          <li><a href="privacy-policy.html">Privacy Guidelines</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column footer-newsletter">
+        <h4>Subscribe</h4>
+        <p>Get early product launches and exclusive VIP coupon discount offers directly in your inbox.</p>
+        <form class="newsletter-section-form">
+          <input type="email" placeholder="Email address" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+      <div class="payment-methods">
+        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mini Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h4 class="cart-drawer-title"><i class="fa-solid fa-shopping-bag" style="color: var(--accent-dark);"></i> Your Cart</h4>
+        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-drawer-items" id="cart-drawer-items">
+        <!-- Loaded dynamically -->
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal</span>
+          <span style="font-weight: 600;" id="cart-drawer-subtotal">$0.00</span>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Shipping & promo coupons calculated at checkout page.</div>
+        <div class="cart-drawer-actions">
+          <a href="cart.html" class="btn btn-secondary" style="width: 100%;" onclick="closeMiniCartDrawer()">View Full Cart</a>
+          <a href="checkout.html" class="btn btn-primary" style="width: 100%;" id="mini-cart-checkout-btn">Checkout Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Javascript dependencies -->
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

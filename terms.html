@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View the Terms and Conditions of using the Elevora online electronics store.">
+  <title>Terms & Conditions | Elevora Store</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .policy-container {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 48px;
+      background-color: var(--bg-primary);
+    }
+    .policy-container h2 {
+      font-family: 'Outfit';
+      font-size: 1.5rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .policy-container p,
+    .policy-container li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Title hero -->
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Terms</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Terms & Conditions</h1>
+    </div>
+  </section>
+
+  <!-- Main Terms Content -->
+  <main class="container">
+    <article class="policy-container reveal-element revealed">
+      <p style="font-size: 0.8rem; color: var(--text-muted);">Last Updated: June 28, 2026</p>
+      
+      <h2>1. Conditions of Website Use</h2>
+      <p>By accessing Elevora's catalog and purchasing accessories, you agree to comply with our purchasing guidelines, return rules, and applicable international commerce regulations.</p>
+
+      <h2>2. Pricing and Payments</h2>
+      <p>Elevora reserves the right to adjust prices of smart gadgets without notification to accommodate international logistics, material hikes, and dropshipping courier adjustments. If a price adjustment occurs after payment, your order will be filled at the original check-out cost.</p>
+
+      <h2>3. Intellectual Property Rights</h2>
+      <p>All brand icons, photography layouts, CSS variables, and HTML templates are the proprietary property of Elevora and its developers. Unauthorized copying or redistribution is prohibited.</p>
+
+      <h2>4. Limitation of Liability</h2>
+      <p>Elevora is not liable for device failures or accessory degradation resulting from improper installations or chargers not complying with official Power Delivery safety standards. Always refer to specifications booklets.</p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-bottom" style="border-top: 1px solid var(--border-color); padding-top: 30px;">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
