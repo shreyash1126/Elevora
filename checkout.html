@@ -335,6 +335,16 @@
           <!-- Loaded dynamically -->
         </div>
 
+        <!-- Promo Coupon input wrap -->
+        <div class="promo-coupon-wrap" style="margin: 20px 0; border-top: 1.5px solid var(--border-color); border-bottom: 1.5px solid var(--border-color); padding: 16px 0;">
+          <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 8px;">Have a Promo Code?</label>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="checkout-coupon-input" placeholder="e.g. ELEVORA20" style="padding: 10px 12px; border: 1.5px solid var(--border-color); border-radius: 8px; flex-grow: 1; text-transform: uppercase; font-size: 0.9rem; font-weight: 600; background: var(--bg-primary); color: var(--text-primary);">
+            <button type="button" class="btn btn-primary" onclick="applyCheckoutCoupon()" style="padding: 0 16px; border-radius: 8px; font-size: 0.85rem; height: 42px;">Apply</button>
+          </div>
+          <div id="checkout-coupon-msg" style="font-size: 0.8rem; margin-top: 6px; display: none; font-weight: 600;"></div>
+        </div>
+
         <!-- Checkout Pricing math -->
         <div class="summary-totals-box">
           <div class="total-row-summary">
@@ -496,8 +506,11 @@
       });
 
       listContainer.innerHTML = html;
+      checkExistingCoupon();
       calculateCheckoutTotals();
     }
+
+    let chkShippingType = "standard"; // standard or express
 
     // 2. Shipping Radio selects
     function selectShippingMethod(type, element) {
@@ -507,15 +520,54 @@
       const radioFree = document.getElementById("ship-free");
       const radioExpress = document.getElementById("ship-express");
 
+      chkShippingType = (type === "free" ? "standard" : "express");
+
       if (type === "free") {
         if (radioFree) radioFree.checked = true;
-        chkShippingCost = 0;
       } else {
         if (radioExpress) radioExpress.checked = true;
-        chkShippingCost = 9.99;
       }
 
       calculateCheckoutTotals();
+    }
+
+    // Apply Coupon Code
+    function applyCheckoutCoupon() {
+      const input = document.getElementById("checkout-coupon-input");
+      const msg = document.getElementById("checkout-coupon-msg");
+      if (!input || !msg) return;
+
+      const code = input.value.trim().toUpperCase();
+      if (code === "ELEVORA20") {
+        localStorage.setItem("elevora_applied_coupon", "ELEVORA20");
+        msg.textContent = "Coupon ELEVORA20 applied: 20% discount!";
+        msg.style.color = "var(--success)";
+        msg.style.display = "block";
+        if (typeof showToast === "function") showToast("Promo code applied!", "success");
+      } else if (code === "") {
+        localStorage.removeItem("elevora_applied_coupon");
+        msg.style.display = "none";
+      } else {
+        localStorage.removeItem("elevora_applied_coupon");
+        msg.textContent = "Invalid coupon code.";
+        msg.style.color = "var(--danger)";
+        msg.style.display = "block";
+        if (typeof showToast === "function") showToast("Invalid coupon code", "error");
+      }
+      calculateCheckoutTotals();
+    }
+
+    // Pre-populate applied coupon on load if any
+    function checkExistingCoupon() {
+      const coupon = localStorage.getItem("elevora_applied_coupon");
+      const input = document.getElementById("checkout-coupon-input");
+      const msg = document.getElementById("checkout-coupon-msg");
+      if (coupon && input && msg) {
+        input.value = coupon;
+        msg.textContent = `Coupon ${coupon} applied: 20% discount!`;
+        msg.style.color = "var(--success)";
+        msg.style.display = "block";
+      }
     }
 
     // 3. Mathematical Totals compiler
@@ -543,7 +595,24 @@
         if (discountRow) discountRow.style.display = "none";
       }
 
-      // Shipping text
+      // Calculate dynamic standard shipping cost
+      const standardShippingCost = chkSubtotal >= 100 ? 0 : 9.99;
+
+      // Update Standard Shipping card label in the Step 2 section
+      const standardLabel = document.querySelector(".shipping-method-option:first-child span");
+      if (standardLabel) {
+        standardLabel.textContent = standardShippingCost === 0 ? "FREE" : `$${standardShippingCost.toFixed(2)}`;
+        standardLabel.style.color = standardShippingCost === 0 ? "var(--success)" : "var(--text-primary)";
+      }
+
+      // Update active shipping cost value
+      if (chkShippingType === "standard") {
+        chkShippingCost = standardShippingCost;
+      } else {
+        chkShippingCost = 9.99; // Express is flat $9.99
+      }
+
+      // Shipping text in summary totals box
       if (shippingEl) {
         shippingEl.textContent = chkShippingCost === 0 ? "FREE" : `$${chkShippingCost.toFixed(2)}`;
       }

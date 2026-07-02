@@ -122,6 +122,9 @@ function renderWishlistPage() {
               <button class="card-action-btn wishlist-toggle-btn active" data-id="${p.id}" onclick="toggleWishlist(${p.id})">
                 <i class="fa-solid fa-heart"></i>
               </button>
+              <button class="card-action-btn compare-toggle-btn" data-id="${p.id}" onclick="toggleCompare(${p.id}, event)" title="Compare Product">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </button>
               <button class="card-action-btn" onclick="openQuickView(${p.id})">
                 <i class="fa-regular fa-eye"></i>
               </button>
@@ -130,6 +133,11 @@ function renderWishlistPage() {
           <div class="card-info">
             <span class="card-category">${p.category}</span>
             <a href="product.html?id=${p.id}" class="card-title">${p.name}</a>
+            <div class="card-swatches">
+              ${p.colors.map((color, idx) => `
+                <span class="swatch-dot ${idx === 0 ? 'active' : ''}" style="background-color: ${getColorHex(color)};" title="${color}"></span>
+              `).join('')}
+            </div>
             <div class="card-rating">
               <div class="stars">
                 ${generateStars(p.rating)}
@@ -154,6 +162,9 @@ function renderWishlistPage() {
   });
 
   grid.innerHTML = html;
+  if (typeof syncCompareButtons === "function") {
+    syncCompareButtons();
+  }
 }
 
 // Helper: rating stars

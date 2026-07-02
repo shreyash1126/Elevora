@@ -77,7 +77,10 @@ function removeFromCart(productId, color) {
 function updateQuantity(productId, color, newQty) {
   productId = parseInt(productId);
   newQty = parseInt(newQty);
-  if (newQty < 1) return;
+  if (newQty < 1) {
+    removeFromCart(productId, color);
+    return;
+  }
 
   let cart = getCart();
   const index = cart.findIndex(item => item.productId === productId && item.color === color);

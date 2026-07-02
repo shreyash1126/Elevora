@@ -44,6 +44,11 @@
           <input type="text" class="header-search-input" placeholder="Search gadgets...">
         </div>
 
+        <!-- Mobile Search Trigger -->
+        <button class="action-btn mobile-search-trigger" style="display: none;" onclick="toggleMobileSearch()" aria-label="Open Search Overlay">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
         <a href="wishlist.html" class="action-btn">
           <i class="fa-solid fa-heart" style="color: var(--danger);"></i>
           <span class="badge-count wishlist-count">0</span>
@@ -69,6 +74,17 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Search Slide-down Overlay -->
+  <div class="mobile-search-overlay" id="mobile-search-overlay">
+    <div class="mobile-search-inner">
+      <button class="mobile-search-close-btn" onclick="toggleMobileSearch()" aria-label="Close search"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="header-search-wrap" style="display: block; flex-grow: 1; width: auto; position: relative;">
+        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+        <input type="text" class="header-search-input" placeholder="Search gadgets...">
+      </div>
+    </div>
+  </div>
 
   <!-- Page Hero Title -->
   <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
@@ -183,5 +199,6 @@
   <script src="js/cart.js"></script>
   <script src="js/wishlist.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/compare.js"></script>
 </body>
 </html>
