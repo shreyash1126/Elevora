@@ -299,31 +299,3 @@ const ElevoraProducts = [
 function getProductById(id) {
   return ElevoraProducts.find(p => p.id === parseInt(id));
 }
-
-// Helper to get color hex code
-function getColorHex(name) {
-  const colors = {
-    "matte black": "#111111",
-    "titanium black": "#222222",
-    "space black": "#1e1e1e",
-    "classic black": "#0a0a0a",
-    "carbon fiber": "#2c2c2c",
-    "space gray": "#5a5d64",
-    "slate grey": "#708090",
-    "mist gray": "#a9a9a9",
-    "stone gray": "#888888",
-    "midnight grey": "#2f4f4f",
-    "arctic silver": "#dcdcdc",
-    "pure white": "#ffffff",
-    "classic white": "#fafafa",
-    "chalk white": "#f5f5f5",
-    "polar white": "#fbfbfb",
-    "arctic white": "#f0f8ff",
-    "phantom blue": "#1c3b57",
-    "navy indigo": "#1a2c42",
-    "midnight navy": "#191970",
-    "sunset gold": "#ffd700",
-    "teal green": "#008080"
-  };
-  return colors[name.toLowerCase()] || "#cccccc";
-}

@@ -340,11 +340,6 @@
           <input type="text" class="header-search-input" placeholder="Search gadgets...">
         </div>
 
-        <!-- Mobile Search Trigger -->
-        <button class="action-btn mobile-search-trigger" style="display: none;" onclick="toggleMobileSearch()" aria-label="Open Search Overlay">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
         <a href="wishlist.html" class="action-btn">
           <i class="fa-regular fa-heart"></i>
           <span class="badge-count wishlist-count">0</span>
@@ -370,17 +365,6 @@
       </div>
     </div>
   </header>
-
-  <!-- Mobile Search Slide-down Overlay -->
-  <div class="mobile-search-overlay" id="mobile-search-overlay">
-    <div class="mobile-search-inner">
-      <button class="mobile-search-close-btn" onclick="toggleMobileSearch()" aria-label="Close search"><i class="fa-solid fa-arrow-left"></i></button>
-      <div class="header-search-wrap" style="display: block; flex-grow: 1; width: auto; position: relative;">
-        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-        <input type="text" class="header-search-input" placeholder="Search gadgets...">
-      </div>
-    </div>
-  </div>
 
   <!-- Category sub-navigation bar -->
   <nav class="category-nav-bar">
@@ -772,87 +756,12 @@
   <script src="js/cart.js"></script>
   <script src="js/wishlist.js"></script>
   <script src="js/search.js"></script>
-  <script src="js/compare.js"></script>
 
   <!-- Page dynamic rendering scripts -->
   <script>
     let activeProduct = null;
     let selectedQuantity = 1;
     let selectedColor = "";
-
-    // Track viewed products in localStorage for AI recommendations
-    function trackViewedProduct(id) {
-      try {
-        let viewed = JSON.parse(localStorage.getItem("elevora_viewed_products") || "[]");
-        viewed = viewed.filter(item => item !== id);
-        viewed.unshift(id);
-        viewed = viewed.slice(0, 8);
-        localStorage.setItem("elevora_viewed_products", JSON.stringify(viewed));
-      } catch (e) {
-        console.error("Error writing viewed product cache:", e);
-      }
-    }
-
-    // Dynamic SEO and JSON-LD product Schema markup generator
-    function injectSEOAndSchema(product) {
-      if (!product) return;
-
-      // Update Page Title
-      document.title = `${product.name} | Elevora Premium Shop`;
-
-      // Update Open Graph Tags
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      const ogImage = document.querySelector('meta[property="og:image"]');
-      const ogUrl = document.querySelector('meta[property="og:url"]');
-
-      if (ogTitle) ogTitle.setAttribute("content", `${product.name} | Elevora`);
-      if (ogDesc) ogDesc.setAttribute("content", product.shortDesc || product.description);
-      if (ogImage) ogImage.setAttribute("content", product.images[0]);
-      if (ogUrl) ogUrl.setAttribute("content", window.location.href);
-
-      // Inject JSON-LD Product Schema
-      let schemaScript = document.getElementById("json-ld-product-schema");
-      if (!schemaScript) {
-        schemaScript = document.createElement("script");
-        schemaScript.id = "json-ld-product-schema";
-        schemaScript.type = "application/ld+json";
-        document.head.appendChild(schemaScript);
-      }
-
-      const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": product.name,
-        "image": product.images,
-        "description": product.shortDesc || product.description,
-        "sku": `ELEV-${product.id}`,
-        "brand": {
-          "@type": "Brand",
-          "name": "Elevora"
-        },
-        "offers": {
-          "@type": "Offer",
-          "url": window.location.href,
-          "priceCurrency": "USD",
-          "price": product.price.toFixed(2),
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "Elevora"
-          }
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": product.rating.toString(),
-          "reviewCount": product.reviewsCount.toString()
-        }
-      };
-
-      schemaScript.textContent = JSON.stringify(schemaData);
-    }
 
     // 1. URL ID Parser
     function parseProductId() {
@@ -866,8 +775,6 @@
       }
 
       selectedColor = activeProduct.colors[0]; // Set default color variant
-      trackViewedProduct(activeProduct.id);
-      injectSEOAndSchema(activeProduct);
     }
 
     // 2. Dynamic Details Renderer
@@ -1124,9 +1031,6 @@
                 <button class="card-action-btn wishlist-toggle-btn" data-id="${p.id}" onclick="toggleWishlist(${p.id})">
                   <i class="fa-regular fa-heart"></i>
                 </button>
-                <button class="card-action-btn compare-toggle-btn" data-id="${p.id}" onclick="toggleCompare(${p.id}, event)" title="Compare Product">
-                  <i class="fa-solid fa-scale-balanced"></i>
-                </button>
                 <button class="card-action-btn" onclick="openQuickView(${p.id})">
                   <i class="fa-regular fa-eye"></i>
                 </button>
@@ -1135,11 +1039,6 @@
             <div class="card-info">
               <span class="card-category">${p.category}</span>
               <a href="product.html?id=${p.id}" class="card-title">${p.name}</a>
-              <div class="card-swatches">
-                ${p.colors.map((color, idx) => `
-                  <span class="swatch-dot ${idx === 0 ? 'active' : ''}" style="background-color: ${getColorHex(color)};" title="${color}"></span>
-                `).join('')}
-              </div>
               <div class="card-rating">
                 <div class="stars">
                   ${generateStars(p.rating)}
@@ -1164,7 +1063,6 @@
 
       grid.innerHTML = html;
       if (typeof syncWishlistStates === "function") syncWishlistStates();
-      if (typeof syncCompareButtons === "function") syncCompareButtons();
     }
 
     // 7. Populating dynamic descriptive tables tabs

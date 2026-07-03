@@ -2,37 +2,6 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <!-- LCP Image Preload -->
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&auto=format&fit=crop&q=80">
-  
-  <!-- Schema.org JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Elevora",
-    "url": "https://elevora.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://elevora.com/shop.html?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Elevora",
-    "url": "https://elevora.com",
-    "logo": "https://elevora.com/images/logo.png",
-    "sameAs": [
-      "https://facebook.com/elevora",
-      "https://instagram.com/elevora",
-      "https://twitter.com/elevora"
-    ]
-  }
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Elevora - Premium Dropshipping Electronics Store. Buy smart watches, earbuds, powerbanks, and wireless accessories with international shipping.">
   <meta name="keywords" content="Online Electronics Store, Tech Accessories, Smart Gadgets, Chargers, Earbuds, Power Banks, Elevora Shop">
@@ -1047,11 +1016,6 @@
           <input type="text" class="header-search-input" placeholder="Search gadgets...">
         </div>
 
-        <!-- Mobile Search Trigger -->
-        <button class="action-btn mobile-search-trigger" style="display: none;" onclick="toggleMobileSearch()" aria-label="Open Search Overlay">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
         <!-- Wishlist -->
         <a href="wishlist.html" class="action-btn" aria-label="View Saved Items">
           <i class="fa-regular fa-heart"></i>
@@ -1083,17 +1047,6 @@
     </div>
   </header>
 
-  <!-- Mobile Search Slide-down Overlay -->
-  <div class="mobile-search-overlay" id="mobile-search-overlay">
-    <div class="mobile-search-inner">
-      <button class="mobile-search-close-btn" onclick="toggleMobileSearch()" aria-label="Close search"><i class="fa-solid fa-arrow-left"></i></button>
-      <div class="header-search-wrap" style="display: block; flex-grow: 1; width: auto; position: relative;">
-        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-        <input type="text" class="header-search-input" placeholder="Search gadgets...">
-      </div>
-    </div>
-  </div>
-
   <!-- Category sub-navigation bar -->
   <nav class="category-nav-bar">
     <div class="container category-nav-container">
@@ -1105,75 +1058,50 @@
         <!-- Mobile Accessories -->
         <div class="category-nav-item">
           Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
-          <div class="mega-dropdown">
-            <div>
-              <h4 class="mega-menu-col-title">Audio & Sound</h4>
-              <div class="mega-menu-links">
-                <a href="shop.html?category=Earbuds" class="dropdown-link">Wireless Earbuds</a>
-                <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-                <a href="shop.html?category=Headphones" class="dropdown-link">ANC Headphones</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="mega-menu-col-title">Power & Cables</h4>
-              <div class="mega-menu-links">
-                <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-                <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-                <a href="shop.html?category=Charging%20Cables" class="dropdown-link">USB-C Cables</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="mega-menu-col-title">Smart Utilities</h4>
-              <div class="mega-menu-links">
-                <a href="shop.html?category=Smart%20Home" class="dropdown-link">Smart Home Devices</a>
-                <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-                <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Smart Clocks</a>
-              </div>
-            </div>
-            <div class="mega-menu-banner" style="background-image: url('https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80');">
-              <div class="mega-menu-banner-content">
-                <h4>Acoustics Launch</h4>
-                <p>Get up to 20% off wireless sound gear.</p>
-                <a href="shop.html?category=Bluetooth%20Speakers">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
           </div>
         </div>
         
         <!-- Tech Gadgets -->
         <div class="category-nav-item">
           Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
-          <div class="mega-dropdown">
-            <div>
-              <h4 class="mega-menu-col-title">Wearables</h4>
-              <div class="mega-menu-links">
-                <a href="shop.html?category=Smart%20Watches" class="dropdown-link">Smart Watches</a>
-                <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health Monitors</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="mega-menu-col-title">Lighting & Decor</h4>
-              <div class="mega-menu-links">
-                <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-                <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB Accent Bars</a>
-                <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
-              </div>
-            </div>
-            <div>
-              <h4 class="mega-menu-col-title">Accessories</h4>
-              <div class="mega-menu-links">
-                <a href="shop.html?category=Gaming%20Accessories" class="dropdown-link">Mechanical Keyboards</a>
-                <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
-                <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-              </div>
-            </div>
-            <div class="mega-menu-banner" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80');">
-              <div class="mega-menu-banner-content">
-                <h4>Apex Watches</h4>
-                <p>Titanium grade metric fitness trackers.</p>
-                <a href="shop.html?category=Smart%20Watches">View Chronos <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
           </div>
         </div>
         
@@ -1300,7 +1228,7 @@
             <span class="hero-tag">Acoustics Launch</span>
             <h1>AeroPulse ANC Headphones</h1>
             <p>Immerse yourself in pure studio sound. Block out the chaos with active noise cancellation and ultra memory-foam cushions.</p>
-            <div class="hero-buttons" style="display: flex; gap: 12px;">
+            <div style="display: flex; gap: 12px;">
               <a href="product.html?id=1" class="btn btn-accent">Explore Gadget</a>
               <a href="shop.html?category=Headphones" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">View Collection</a>
             </div>
@@ -1315,7 +1243,7 @@
             <span class="hero-tag">Fitness Upgrade</span>
             <h1>Apex Chrono Smartwatch</h1>
             <p>Titanium grade metrics on your wrist. Track sleep, heart rate, blood oxygen levels, and 120+ workouts seamlessly.</p>
-            <div class="hero-buttons" style="display: flex; gap: 12px;">
+            <div style="display: flex; gap: 12px;">
               <a href="product.html?id=2" class="btn btn-accent">Shop Now</a>
               <a href="shop.html?category=Smart%20Watches" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">See Details</a>
             </div>
@@ -1502,23 +1430,6 @@
     <!-- Products Grid -->
     <div class="products-grid" id="homepage-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
       <!-- Loaded dynamically via products-data.js inside window onload -->
-    </div>
-  </section>
-
-  <!-- AI Product Recommendations Section -->
-  <section class="section-spacing container reveal-element ai-rec-section" style="border-top: 1px solid var(--border-color); padding-top: 60px; margin-top: 20px;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 20px; flex-wrap: wrap;">
-      <div>
-        <span class="ai-badge"><i class="fa-solid fa-robot"></i> AI-Powered</span>
-        <h2 class="section-title" style="margin-top: 8px;">Recommended for You</h2>
-        <p class="section-subtitle" style="margin: 6px 0 0;">Personalized recommendations computed in real-time based on your interests.</p>
-      </div>
-      <button class="ai-regenerate-btn" onclick="regenerateAIRecommendations()"><i class="fa-solid fa-rotate"></i> Recalculate</button>
-    </div>
-
-    <!-- AI Products Grid -->
-    <div class="products-grid" id="ai-recommendations-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; min-height: 380px; position: relative;">
-      <!-- Loaded dynamically -->
     </div>
   </section>
 
@@ -1859,7 +1770,6 @@
   <script src="js/cart.js"></script>
   <script src="js/wishlist.js"></script>
   <script src="js/search.js"></script>
-  <script src="js/compare.js"></script>
   <script src="js/slider.js"></script>
 
   <!-- Page Loader Logic -->
@@ -1905,9 +1815,6 @@
                 <button class="card-action-btn wishlist-toggle-btn" data-id="${p.id}" onclick="toggleWishlist(${p.id})">
                   <i class="fa-regular fa-heart"></i>
                 </button>
-                <button class="card-action-btn compare-toggle-btn" data-id="${p.id}" onclick="toggleCompare(${p.id}, event)" title="Compare Product">
-                  <i class="fa-solid fa-scale-balanced"></i>
-                </button>
                 <button class="card-action-btn" onclick="openQuickView(${p.id})">
                   <i class="fa-regular fa-eye"></i>
                 </button>
@@ -1916,11 +1823,6 @@
             <div class="card-info">
               <span class="card-category">${p.category}</span>
               <a href="product.html?id=${p.id}" class="card-title">${p.name}</a>
-              <div class="card-swatches">
-                ${p.colors.map((color, idx) => `
-                  <span class="swatch-dot ${idx === 0 ? 'active' : ''}" style="background-color: ${getColorHex(color)};" title="${color}"></span>
-                `).join('')}
-              </div>
               <div class="card-rating">
                 <div class="stars">
                   ${generateStars(p.rating)}
@@ -1945,7 +1847,6 @@
 
       grid.innerHTML = html;
       if (typeof syncWishlistStates === "function") syncWishlistStates();
-      if (typeof syncCompareButtons === "function") syncCompareButtons();
     }
 
     // Interactive Accordion Questions
@@ -1960,153 +1861,8 @@
       });
     });
 
-    // AI Recommendations System
-    const AIStatusTexts = [
-      "Analyzing recently viewed gadgets...",
-      "Mapping product category weights...",
-      "Synthesizing collaborative similarity scores...",
-      "Generating personalized electronics list..."
-    ];
-
-    function renderAIRecommendations(shuffled = false) {
-      const grid = document.getElementById("ai-recommendations-grid");
-      if (!grid) return;
-
-      // Get viewed products from localstorage
-      let viewed = [];
-      try {
-        const stored = localStorage.getItem("elevora_viewed_products");
-        viewed = stored ? JSON.parse(stored) : [];
-      } catch (e) {
-        console.error(e);
-      }
-
-      let recs = [];
-      if (viewed.length > 0) {
-        // Find categories of viewed items
-        const viewedItems = viewed.map(id => ElevoraProducts.find(p => p.id === id)).filter(Boolean);
-        const categories = [...new Set(viewedItems.map(item => item.category))];
-        
-        // Find products in same categories that are not viewed, or viewed ones if not enough
-        recs = ElevoraProducts.filter(p => categories.includes(p.category));
-        
-        // If not enough products, pad with other popular items
-        if (recs.length < 4) {
-          const others = ElevoraProducts.filter(p => !recs.map(r => r.id).includes(p.id));
-          recs = [...recs, ...others];
-        }
-      } else {
-        // Fallback: recommend highest rated items
-        recs = [...ElevoraProducts].sort((a, b) => b.rating - a.rating);
-      }
-
-      // Shuffle or slice 4 items
-      if (shuffled) {
-        recs = recs.sort(() => Math.random() - 0.5);
-      }
-      
-      const selectedRecs = recs.slice(0, 4);
-
-      let html = "";
-      selectedRecs.forEach(p => {
-        const discountPercentage = Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100);
-        html += `
-          <div class="product-card reveal-element revealed" data-id="${p.id}">
-            <div class="card-media">
-              <div class="card-badges">
-                ${p.badge ? `<span class="badge badge-${p.badgeType}">${p.badge}</span>` : ""}
-              </div>
-              <a href="product.html?id=${p.id}">
-                <img src="${p.images[0]}" alt="${p.name}">
-                ${p.images[1] ? `<img src="${p.images[1]}" class="card-img-hover" alt="${p.name}">` : ""}
-              </a>
-              <div class="card-actions">
-                <button class="card-action-btn wishlist-toggle-btn" data-id="${p.id}" onclick="toggleWishlist(${p.id})">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-                <button class="card-action-btn compare-toggle-btn" data-id="${p.id}" onclick="toggleCompare(${p.id}, event)" title="Compare Product">
-                  <i class="fa-solid fa-scale-balanced"></i>
-                </button>
-                <button class="card-action-btn" onclick="openQuickView(${p.id})">
-                  <i class="fa-regular fa-eye"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-info">
-              <span class="card-category">${p.category}</span>
-              <a href="product.html?id=${p.id}" class="card-title">${p.name}</a>
-              <div class="card-swatches">
-                ${p.colors.map((color, idx) => `
-                  <span class="swatch-dot ${idx === 0 ? 'active' : ''}" style="background-color: ${getColorHex(color)};" title="${color}"></span>
-                `).join('')}
-              </div>
-              <div class="card-rating">
-                <div class="stars">
-                  ${generateStars(p.rating)}
-                </div>
-                <span class="rating-value">${p.rating}</span>
-                <span class="reviews-count">(${p.reviewsCount})</span>
-              </div>
-              <div class="card-price-row">
-                <div class="price-wrap">
-                  <span class="price">$${p.price.toFixed(2)}</span>
-                  ${p.oldPrice ? `<span class="old-price">$${p.oldPrice.toFixed(2)}</span>` : ""}
-                  ${p.oldPrice ? `<span class="discount">${discountPercentage}% OFF</span>` : ""}
-                </div>
-                <button class="btn btn-primary card-add-btn" onclick="addToCart(${p.id}, 1, '${p.colors[0]}')">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
-      });
-
-      grid.innerHTML = html;
-      if (typeof syncWishlistStates === "function") syncWishlistStates();
-      if (typeof syncCompareButtons === "function") syncCompareButtons();
-    }
-
-    function regenerateAIRecommendations() {
-      const grid = document.getElementById("ai-recommendations-grid");
-      const btn = document.querySelector(".ai-regenerate-btn");
-      if (!grid || !btn) return;
-
-      btn.classList.add("loading");
-      btn.disabled = true;
-
-      // Clear grid content and show animated loader
-      grid.innerHTML = `
-        <div class="ai-loader-container">
-          <div class="ai-spinner"></div>
-          <div class="ai-loader-status" id="ai-loader-status">Initializing recommendation engines...</div>
-        </div>
-      `;
-
-      let statusIndex = 0;
-      
-      const statusInterval = setInterval(() => {
-        const statusEl = document.getElementById("ai-loader-status");
-        if (statusEl && statusIndex < AIStatusTexts.length) {
-          statusEl.textContent = AIStatusTexts[statusIndex];
-          statusIndex++;
-        }
-      }, 600);
-
-      setTimeout(() => {
-        clearInterval(statusInterval);
-        btn.classList.remove("loading");
-        btn.disabled = false;
-        renderAIRecommendations(true);
-        if (typeof showToast === "function") {
-          showToast("AI Recommendations recalculated!", "success");
-        }
-      }, 2600);
-    }
-
     window.addEventListener("load", () => {
       loadTabProducts('all');
-      renderAIRecommendations();
 
       // Initialize Category Carousel scroll controls
       const catCarousel = document.getElementById("category-carousel-inner");
