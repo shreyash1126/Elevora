@@ -55,7 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Filter by Category
     if (activeFilters.category !== "all") {
-      filtered = filtered.filter(p => p.category.toLowerCase() === activeFilters.category.toLowerCase());
+      filtered = filtered.filter(p => 
+        p.category.toLowerCase() === activeFilters.category.toLowerCase() ||
+        p.category.toLowerCase().includes(activeFilters.category.toLowerCase()) ||
+        activeFilters.category.toLowerCase().includes(p.category.toLowerCase())
+      );
     }
 
     // Filter by Brand checkboxes

@@ -292,6 +292,44 @@ const ElevoraProducts = [
       "Folding wall prongs prevent scratching items when stored in travel bags",
       "Built-in protection shields against overcurrent, overcharge, and overheating"
     ]
+  },
+  {
+    id: 9,
+    name: "FlexiPlug: 2Pcs - 3-in-1 Foldable Multiplug Adapter with 180Â° Rotation",
+    category: "Home > Best Sellers",
+    brand: "VoltMax",
+    price: 14.99,
+    oldPrice: 24.99,
+    rating: 4.6,
+    reviewsCount: 22,
+    badge: "Best Seller",
+    badgeType: "best",
+    description: "Charge smarter with less clutter and more flexibility. FlexiPlug is designed to solve one of the most common everyday problemsâ€”limited charging points. This compact foldable plug adapter turns a single wall socket into a 3-in-1 power solution, letting you charge multiple devices at once without messy extensions.",
+    images: [
+      "https://www.geeklane.in/cdn/shop/files/51an0YcDFzL._SL1280.jpg",
+      "https://www.geeklane.in/cdn/shop/files/51an0YcDFzL._SL1280.jpg",
+      "https://www.geeklane.in/cdn/shop/files/51an0YcDFzL._SL1280.jpg"
+    ],
+    colors: ["Classic White", "Midnight Black", "Sky Blue"],
+    variants: [
+      { color: "Classic White", stock: 25 },
+      { color: "Midnight Black", stock: 25 },
+      { color: "Sky Blue", stock: 25 }
+    ],
+    specs: {
+      "Power Expansion": "3-in-1 Output",
+      "Rotation": "180Â° Rotating Head",
+      "Design": "Slim, Foldable Plug",
+      "Material": "Durable & Fire-Resistant",
+      "Portability": "Travel-Friendly Lightweight"
+    },
+    features: [
+      "3-in-1 Power Expansion - Converts one socket into three to charge multiple devices",
+      "180Â° Rotating Head - Adjusts easily to fit tight spaces and behind furniture",
+      "Foldable Plug Design - Compact, easy to carry while traveling",
+      "Clutter-Free Charging - Eliminates the need for bulky extension boards",
+      "Durable & Fire-Resistant Build - Made with high-quality materials for safety"
+    ]
   }
 ];
 
