@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -318,174 +318,169 @@
     </div>
   </div>
 
-  <!-- Header -->
+      <!-- Header -->
   <header>
     <div class="container header-container">
-      <a href="index.html" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
-
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="header-search-wrap">
-          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-          <input type="text" class="header-search-input" placeholder="Search gadgets...">
+      <!-- Top Row -->
+      <div class="header-top-row">
+        <!-- Search icon/button -->
+        <div class="header-search-wrap-toggle">
+          <button class="search-trigger-btn" onclick="toggleSearchOverlay()" aria-label="Search gadgets">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
 
-        <a href="wishlist.html" class="action-btn">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count">0</span>
+        <!-- Centered Logo -->
+        <a href="index.html" class="logo" aria-label="Elevora home">
+          <span>ELEVORA</span><span class="logo-dot"></span>
         </a>
 
-        <button class="action-btn" onclick="openMiniCartDrawer()">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count">0</span>
-        </button>
+        <!-- Actions -->
+        <div class="header-actions">
+          <!-- Dark/Light Theme Switching -->
+          <button class="action-btn theme-toggle-btn" aria-label="Toggle Theme Mode">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+          </button>
 
-        <button class="action-btn theme-toggle-btn">
-          <i class="fa-regular fa-moon"></i>
-          <i class="fa-regular fa-sun"></i>
-        </button>
+          <!-- Wishlist -->
+          <a href="wishlist.html" class="action-btn" aria-label="View Saved Items">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count">0</span>
+          </a>
 
-        <a href="my-account.html" class="action-btn">
-          <i class="fa-regular fa-user"></i>
-        </a>
+          <!-- Shopping Cart Drawer button -->
+          <button class="action-btn" onclick="openMiniCartDrawer()" aria-label="Open Cart Drawer">
+            <i class="fa-solid fa-shopping-bag"></i>
+            <span class="badge-count cart-count">0</span>
+          </button>
 
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+          <!-- Account -->
+          <a href="my-account.html" class="action-btn" aria-label="Login/Account Portal">
+            <i class="fa-regular fa-user"></i>
+          </a>
+
+          <!-- Mobile hamburger Menu toggle -->
+          <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
 
-  <!-- Category sub-navigation bar -->
-  <nav class="category-nav-bar">
-    <div class="container category-nav-container">
-      <div class="category-nav-list">
-        
+      <!-- Bottom Row (Navigation Items) -->
+      <nav class="header-bottom-row category-nav-list nav-menu" id="nav-menu">
         <!-- New Arrivals -->
-        <a href="shop.html" class="category-nav-item">New Arrivals</a>
-        
-        <!-- Mobile & Tech Accessories -->
+        <a href="shop.html" class="category-nav-item nav-link">New Arrivals</a>
+
+        <!-- Mobile Accessories -->
         <div class="category-nav-item">
-          Mobile & Tech <i class="fa-solid fa-chevron-down"></i>
+          Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
             <a href="shop.html?category=Mobile%20Accessories" class="dropdown-link">Mobile Accessories</a>
             <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?category=Adapters" class="dropdown-link">Adapters</a>
             <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?category=Fast%20Charging%20Cables" class="dropdown-link">Fast Charging Cables</a>
-            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?category=Extension%20Boards%20%26%20Multi-Plugs" class="dropdown-link">Extension Boards & Multi-Plugs</a>
-            <a href="shop.html?category=Projector" class="dropdown-link">Projectors</a>
-            <a href="shop.html?category=Spy%20WiFi%20Cameras" class="dropdown-link">Spy WiFi Cameras</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Phone%20Holders" class="dropdown-link">Phone Holders</a>
           </div>
         </div>
-        
-        <!-- Home & Lifestyle -->
+
+        <!-- Tech Gadgets -->
         <div class="category-nav-item">
-          Home & Lifestyle <i class="fa-solid fa-chevron-down"></i>
+          Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html?category=Cute%20Quirky%20Lamps" class="dropdown-link">Cute Quirky Lamps</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
             <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?category=RGB%20Mood%20Lighting" class="dropdown-link">RGB Mood Lighting</a>
-            <a href="shop.html?category=Alarm%20Clocks%20%26%20Timers" class="dropdown-link">Alarm Clocks & Timers</a>
-            <a href="shop.html?category=Kitchen%20Tools%20and%20Gadgets" class="dropdown-link">Kitchen Tools & Gadgets</a>
-            <a href="shop.html?category=Home%20Utility%20Products" class="dropdown-link">Home Utility Products</a>
-            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?category=DIY%20Store" class="dropdown-link">DIY Store</a>
-            <a href="shop.html?category=Pet%20Gadgets" class="dropdown-link">Pet Gadgets</a>
-            <a href="shop.html?category=Self%20Care%20%26%20Wellness%20Gadgets" class="dropdown-link">Wellness Gadgets</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Tech%20Gadgets" class="dropdown-link">Tech Accessories</a>
           </div>
         </div>
-        
+
+        <!-- Tools & Utility -->
+        <div class="category-nav-item">
+          Tools & Utility <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=DIY%20Tools" class="dropdown-link">DIY Tools</a>
+            <a href="shop.html?category=Multi%20Tools" class="dropdown-link">Multi Tools</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+          </div>
+        </div>
+
         <!-- Car & Travel -->
         <div class="category-nav-item">
           Car & Travel <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html?category=Car%20Dashboard%20Accessories" class="dropdown-link">Dashboard Accessories</a>
-            <a href="shop.html?category=Car%20Mobile%20Holders" class="dropdown-link">Mobile Holders</a>
-            <a href="shop.html?category=Car%20Mobile%20Charger" class="dropdown-link">Mobile Chargers</a>
-            <a href="shop.html?category=Car%20Air%20Fresheners" class="dropdown-link">Air Fresheners</a>
-            <a href="shop.html?category=Car%20Utility%20and%20Tools" class="dropdown-link">Utility & Tools</a>
+            <a href="shop.html?category=Dashboard%20Accessories" class="dropdown-link">Dashboard Accessories</a>
+            <a href="shop.html?category=Mobile%20Chargers" class="dropdown-link">Mobile Chargers</a>
             <a href="shop.html?category=Tyre%20Inflators" class="dropdown-link">Tyre Inflators</a>
-            <a href="shop.html?category=Vacuum%20Cleaner%20for%20Car" class="dropdown-link">Vacuum Cleaners</a>
-            <a href="shop.html?category=Bike%20Accessories" class="dropdown-link">Bike Accessories</a>
-            <a href="shop.html?category=Travel%20Gadgets%20and%20Accessories" class="dropdown-link">Travel Gadgets</a>
-          </div>
-        </div>
-        
-        <!-- Gifts & Occasions -->
-        <div class="category-nav-item">
-          Gifts & Occasions <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?category=Gifts%20for%20Him" class="dropdown-link">Gifts for Him</a>
-            <a href="shop.html?category=Gifts%20for%20Her" class="dropdown-link">Gifts for Her</a>
-            <a href="shop.html?category=Gifts%20for%20Dad" class="dropdown-link">Gifts for Dad</a>
-            <a href="shop.html?category=Gifts%20for%20Mom" class="dropdown-link">Gifts for Mom</a>
-            <a href="shop.html?category=Gifts%20for%20Brother" class="dropdown-link">Gifts for Brother</a>
-            <a href="shop.html?category=Gifts%20for%20Sister" class="dropdown-link">Gifts for Sister</a>
-            <a href="shop.html?category=Gifts%20for%20Kids" class="dropdown-link">Gifts for Kids</a>
-            <a href="shop.html?category=Gifts%20for%20Friends" class="dropdown-link">Gifts for Friends</a>
-            <a href="shop.html?category=Gifts%20for%20Colleagues" class="dropdown-link">Gifts for Colleagues</a>
-            <a href="shop.html?category=Gifts%20for%20Gamers%20%26%20Streamers" class="dropdown-link">For Gamers & Streamers</a>
-            <a href="shop.html?category=Gifts%20for%20the%20Adventurer" class="dropdown-link">For the Adventurer</a>
-            <a href="shop.html?category=Gifts%20for%20Content%20Creators" class="dropdown-link">For Content Creators</a>
-            <a href="shop.html?category=Gifts%20for%20Fitness%20Buffs" class="dropdown-link">For Fitness Buffs</a>
-            <a href="shop.html?category=Gifts%20for%20Minimalists" class="dropdown-link">For Minimalists</a>
-            <a href="shop.html?category=Gifts%20for%20Music%20Lovers" class="dropdown-link">For Music Lovers</a>
-            <a href="shop.html?category=Gifts%20for%20Students" class="dropdown-link">For Students</a>
-            <a href="shop.html?category=Gifts%20for%20Car%20Enthusiasts" class="dropdown-link">For Car Enthusiasts</a>
-            <a href="shop.html?category=Birthday%20Gifts" class="dropdown-link">Birthday Gifts</a>
-            <a href="shop.html?category=Anniversary%20Gifts" class="dropdown-link">Anniversary Gifts</a>
-            <a href="shop.html?category=Wedding%20Gifts" class="dropdown-link">Wedding Gifts</a>
-            <a href="shop.html?category=Housewarming%20Gifts" class="dropdown-link">Housewarming Gifts</a>
-            <a href="shop.html?category=Farewell%20Gifts" class="dropdown-link">Farewell Gifts</a>
-            <a href="shop.html?category=Promotion%20Gifts" class="dropdown-link">Promotion Gifts</a>
-            <a href="shop.html?category=Creative%20Stationery" class="dropdown-link">Creative Stationery</a>
-            <a href="shop.html?category=Cute%20Keychains" class="dropdown-link">Cute Keychains</a>
+            <a href="shop.html?category=Vacuum%20Cleaners" class="dropdown-link">Vacuum Cleaners</a>
+            <a href="shop.html?category=Car%20Utility" class="dropdown-link">Car Utility</a>
+            <a href="shop.html?category=Travel%20Accessories" class="dropdown-link">Travel Accessories</a>
           </div>
         </div>
 
-        <!-- Deals & Sales -->
+        <!-- Offers & Combos -->
         <div class="category-nav-item">
-          Deals & Sales <i class="fa-solid fa-chevron-down"></i>
+          Offers & Combos <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html?category=Flash%20Sale" class="dropdown-link">Flash Sale</a>
-            <a href="shop.html?category=Clearance%20Sale" class="dropdown-link">Clearance Sale</a>
-            <a href="shop.html?category=Best%20Sellers" class="dropdown-link">Best Sellers</a>
-            <a href="shop.html?category=New%20Additions" class="dropdown-link">New Additions</a>
-            <a href="shop.html?category=Gadgets%20under%20500" class="dropdown-link">Gadgets Under ₹500</a>
-            <a href="shop.html?category=Gadgets%20under%201000" class="dropdown-link">Gadgets Under ₹1000</a>
-            <a href="shop.html?category=Gadgets%20under%201500" class="dropdown-link">Gadgets Under ₹1500</a>
-            <a href="shop.html?category=Gadgets%20under%202000" class="dropdown-link">Gadgets Under ₹2000</a>
+            <a href="shop.html?badge=sale" class="dropdown-link">Special Offers</a>
+            <a href="shop.html?tag=combo" class="dropdown-link">Combo Deals</a>
+            <a href="shop.html?tag=clearance" class="dropdown-link">Clearance Sale</a>
           </div>
         </div>
-        
+
+        <!-- Shop By Price -->
+        <div class="category-nav-item">
+          Shop By Price <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?maxPrice=10" class="dropdown-link">Under $10</a>
+            <a href="shop.html?maxPrice=20" class="dropdown-link">Under $20</a>
+            <a href="shop.html?maxPrice=30" class="dropdown-link">Under $30</a>
+            <a href="shop.html?maxPrice=50" class="dropdown-link">Under $50</a>
+          </div>
+        </div>
+
+        <!-- Gifting -->
+        <div class="category-nav-item">
+          Gifting <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?tag=birthday" class="dropdown-link">Birthday Gifts</a>
+            <a href="shop.html?tag=tech-gifts" class="dropdown-link">Tech Gifts</a>
+            <a href="shop.html?tag=quirky" class="dropdown-link">Quirky Gifts</a>
+          </div>
+        </div>
+
         <!-- Support -->
         <div class="category-nav-item">
           Support <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
             <a href="track-order.html" class="dropdown-link">Track Order</a>
+            <a href="shipping-policy.html" class="dropdown-link">Shipping Policy</a>
+            <a href="return-policy.html" class="dropdown-link">Return Policy</a>
+            <a href="faq.html" class="dropdown-link">FAQ</a>
             <a href="contact.html" class="dropdown-link">Contact Us</a>
-            <a href="faq.html" class="dropdown-link">FAQ Desk</a>
-            <a href="my-account.html" class="dropdown-link">Returns & Refunds</a>
           </div>
         </div>
-
-      </div>
+      </nav>
     </div>
-  </nav>
+  </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-container">
+      <input type="text" class="header-search-input search-overlay-input" placeholder="Type to search premium gadgets...">
+      <button class="search-overlay-close" onclick="closeSearchOverlay()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-container">
+      <input type="text" class="header-search-input search-overlay-input" placeholder="Type to search premium gadgets...">
+      <button class="search-overlay-close" onclick="closeSearchOverlay()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
 
   <!-- Navigation Breadcrumb -->
   <section style="padding: 24px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">

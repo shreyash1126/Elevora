@@ -34,11 +34,48 @@
   <!-- Header -->
   <header>
     <div class="container header-container">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
+      <!-- Top Row -->
+      <div class="header-top-row">
+        <!-- Search icon/button -->
+        <div class="header-search-wrap-toggle">
+          <button class="search-trigger-btn" onclick="toggleSearchOverlay()" aria-label="Search gadgets">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
 
-      <nav class="nav-menu" id="nav-menu">
+        <!-- Centered Logo -->
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <button class="action-btn theme-toggle-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <i class="fa-regular fa-moon"></i>
+          </button>
+
+          <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'wishlist' ) ) ? get_permalink( get_page_by_path( 'wishlist' ) ) : home_url( '/wishlist/' ) ); ?>" class="action-btn" id="wishlist-btn" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count" id="wishlist-badge">0</span>
+          </a>
+
+          <button class="action-btn" id="cart-btn" onclick="openMiniCartDrawer()" title="Shopping Cart">
+            <i class="fa-solid fa-shopping-bag"></i>
+            <span class="badge-count cart-count" id="cart-badge">0</span>
+          </button>
+
+          <a href="<?php echo esc_url( home_url( '/my-account/' ) ); ?>" class="action-btn" title="Account Portal">
+            <i class="fa-regular fa-user"></i>
+          </a>
+
+          <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" title="Toggle Mobile Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Row (Navigation Items) -->
+      <nav class="header-bottom-row category-nav-list nav-menu" id="nav-menu">
         <?php
         if ( has_nav_menu( 'primary' ) ) {
             wp_nav_menu( array(
@@ -52,31 +89,13 @@
         }
         ?>
       </nav>
-
-      <div class="header-actions">
-        <div class="header-search-wrap">
-          <input type="text" placeholder="Search premium tech..." id="header-search-input" class="header-search-input">
-          <button id="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <div class="search-dropdown" id="search-dropdown"></div>
-        </div>
-
-        <button class="action-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
-          <i class="fa-regular fa-moon"></i>
-        </button>
-
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'wishlist' ) ) ? get_permalink( get_page_by_path( 'wishlist' ) ) : home_url( '/wishlist/' ) ); ?>" class="action-btn" id="wishlist-btn" title="Wishlist">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count" id="wishlist-badge">0</span>
-        </a>
-
-        <button class="action-btn" id="cart-btn" onclick="openMiniCartDrawer()" title="Shopping Cart">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count" id="cart-badge">0</span>
-        </button>
-
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" title="Toggle Mobile Navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
     </div>
   </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-container">
+      <input type="text" class="header-search-input search-overlay-input" placeholder="Type to search premium gadgets...">
+      <button class="search-overlay-close" onclick="closeSearchOverlay()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>

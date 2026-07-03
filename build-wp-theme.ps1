@@ -154,18 +154,101 @@ add_action( 'wp_enqueue_scripts', 'elevora_scripts' );
  * Fallback menu rendering when no WP menu is configured
  */
 function elevora_fallback_menu() {
-    $menu_items = array(
-        'Home'    => home_url( '/' ),
-        'Shop'    => class_exists('WooCommerce') ? get_permalink(wc_get_page_id('shop')) : home_url( '/shop/' ),
-        'About'   => home_url( '/about/' ),
-        'Blog'    => home_url( '/blog/' ),
-        'Contact' => home_url( '/contact/' ),
-        'FAQ'     => home_url( '/faq/' ),
-    );
-    foreach ( $menu_items as $name => $url ) {
-        $active_class = ( $_SERVER['REQUEST_URI'] == parse_url($url, PHP_URL_PATH) || (is_front_page() && $name == 'Home') ) ? 'active' : '';
-        echo '<a href="' . esc_url( $url ) . '" class="nav-link ' . $active_class . '">' . esc_html( $name ) . '</a>';
-    }
+    ?>
+    <!-- New Arrivals -->
+    <a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="category-nav-item nav-link">New Arrivals</a>
+
+    <!-- Mobile Accessories -->
+    <div class="category-nav-item">
+      Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Mobile%20Accessories' ) ); ?>" class="dropdown-link">Mobile Accessories</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Power%20Banks' ) ); ?>" class="dropdown-link">Power Banks</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Charging%20Cables' ) ); ?>" class="dropdown-link">Charging Cables</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Wireless%20Chargers' ) ); ?>" class="dropdown-link">Wireless Chargers</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Phone%20Holders' ) ); ?>" class="dropdown-link">Phone Holders</a>
+      </div>
+    </div>
+
+    <!-- Tech Gadgets -->
+    <div class="category-nav-item">
+      Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Bluetooth%20Speakers' ) ); ?>" class="dropdown-link">Bluetooth Speakers</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Floating%20Lamps' ) ); ?>" class="dropdown-link">Floating Lamps</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Clocks%20%26%20Timers' ) ); ?>" class="dropdown-link">Clocks & Timers</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=RGB%20%26%20Mood%20Lighting' ) ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Tech%20Gadgets' ) ); ?>" class="dropdown-link">Tech Accessories</a>
+      </div>
+    </div>
+
+    <!-- Tools & Utility -->
+    <div class="category-nav-item">
+      Tools & Utility <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?category=DIY%20Tools' ) ); ?>" class="dropdown-link">DIY Tools</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Multi%20Tools' ) ); ?>" class="dropdown-link">Multi Tools</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Humidifiers' ) ); ?>" class="dropdown-link">Humidifiers</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Home%20Utility' ) ); ?>" class="dropdown-link">Home Utility</a>
+      </div>
+    </div>
+
+    <!-- Car & Travel -->
+    <div class="category-nav-item">
+      Car & Travel <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Dashboard%20Accessories' ) ); ?>" class="dropdown-link">Dashboard Accessories</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Mobile%20Chargers' ) ); ?>" class="dropdown-link">Mobile Chargers</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Tyre%20Inflators' ) ); ?>" class="dropdown-link">Tyre Inflators</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Vacuum%20Cleaners' ) ); ?>" class="dropdown-link">Vacuum Cleaners</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Car%20Utility' ) ); ?>" class="dropdown-link">Car Utility</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?category=Travel%20Accessories' ) ); ?>" class="dropdown-link">Travel Accessories</a>
+      </div>
+    </div>
+
+    <!-- Offers & Combos -->
+    <div class="category-nav-item">
+      Offers & Combos <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?badge=sale' ) ); ?>" class="dropdown-link">Special Offers</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?tag=combo' ) ); ?>" class="dropdown-link">Combo Deals</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?tag=clearance' ) ); ?>" class="dropdown-link">Clearance Sale</a>
+      </div>
+    </div>
+
+    <!-- Shop By Price -->
+    <div class="category-nav-item">
+      Shop By Price <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?maxPrice=10' ) ); ?>" class="dropdown-link">Under $10</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?maxPrice=20' ) ); ?>" class="dropdown-link">Under $20</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?maxPrice=30' ) ); ?>" class="dropdown-link">Under $30</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?maxPrice=50' ) ); ?>" class="dropdown-link">Under $50</a>
+      </div>
+    </div>
+
+    <!-- Gifting -->
+    <div class="category-nav-item">
+      Gifting <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/shop/?tag=birthday' ) ); ?>" class="dropdown-link">Birthday Gifts</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?tag=tech-gifts' ) ); ?>" class="dropdown-link">Tech Gifts</a>
+        <a href="<?php echo esc_url( home_url( '/shop/?tag=quirky' ) ); ?>" class="dropdown-link">Quirky Gifts</a>
+      </div>
+    </div>
+
+    <!-- Support -->
+    <div class="category-nav-item">
+      Support <i class="fa-solid fa-chevron-down"></i>
+      <div class="category-dropdown">
+        <a href="<?php echo esc_url( home_url( '/track-order/' ) ); ?>" class="dropdown-link">Track Order</a>
+        <a href="<?php echo esc_url( home_url( '/shipping-policy/' ) ); ?>" class="dropdown-link">Shipping Policy</a>
+        <a href="<?php echo esc_url( home_url( '/refund-policy/' ) ); ?>" class="dropdown-link">Return Policy</a>
+        <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="dropdown-link">FAQ</a>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="dropdown-link">Contact Us</a>
+      </div>
+    </div>
+    <?php
 }
 
 /**
@@ -220,11 +303,48 @@ $headerPhp = @'
   <!-- Header -->
   <header>
     <div class="container header-container">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
+      <!-- Top Row -->
+      <div class="header-top-row">
+        <!-- Search icon/button -->
+        <div class="header-search-wrap-toggle">
+          <button class="search-trigger-btn" onclick="toggleSearchOverlay()" aria-label="Search gadgets">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
 
-      <nav class="nav-menu" id="nav-menu">
+        <!-- Centered Logo -->
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <button class="action-btn theme-toggle-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <i class="fa-regular fa-moon"></i>
+          </button>
+
+          <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'wishlist' ) ) ? get_permalink( get_page_by_path( 'wishlist' ) ) : home_url( '/wishlist/' ) ); ?>" class="action-btn" id="wishlist-btn" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count" id="wishlist-badge">0</span>
+          </a>
+
+          <button class="action-btn" id="cart-btn" onclick="openMiniCartDrawer()" title="Shopping Cart">
+            <i class="fa-solid fa-shopping-bag"></i>
+            <span class="badge-count cart-count" id="cart-badge">0</span>
+          </button>
+
+          <a href="<?php echo esc_url( home_url( '/my-account/' ) ); ?>" class="action-btn" title="Account Portal">
+            <i class="fa-regular fa-user"></i>
+          </a>
+
+          <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" title="Toggle Mobile Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Row (Navigation Items) -->
+      <nav class="header-bottom-row category-nav-list nav-menu" id="nav-menu">
         <?php
         if ( has_nav_menu( 'primary' ) ) {
             wp_nav_menu( array(
@@ -238,34 +358,16 @@ $headerPhp = @'
         }
         ?>
       </nav>
-
-      <div class="header-actions">
-        <div class="header-search-wrap">
-          <input type="text" placeholder="Search premium tech..." id="header-search-input" class="header-search-input">
-          <button id="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <div class="search-dropdown" id="search-dropdown"></div>
-        </div>
-
-        <button class="action-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
-          <i class="fa-regular fa-moon"></i>
-        </button>
-
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'wishlist' ) ) ? get_permalink( get_page_by_path( 'wishlist' ) ) : home_url( '/wishlist/' ) ); ?>" class="action-btn" id="wishlist-btn" title="Wishlist">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count" id="wishlist-badge">0</span>
-        </a>
-
-        <button class="action-btn" id="cart-btn" onclick="openMiniCartDrawer()" title="Shopping Cart">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count" id="cart-badge">0</span>
-        </button>
-
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" title="Toggle Mobile Navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
     </div>
   </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-container">
+      <input type="text" class="header-search-input search-overlay-input" placeholder="Type to search premium gadgets...">
+      <button class="search-overlay-close" onclick="closeSearchOverlay()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
 '@
 Write-ThemeFile "header.php" $headerPhp
 

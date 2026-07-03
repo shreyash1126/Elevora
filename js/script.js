@@ -535,3 +535,48 @@ function addQuickViewToCart(id) {
     closeQuickView();
   }
 }
+
+// Search Overlay Global Helpers
+window.toggleSearchOverlay = function() {
+  const overlay = document.getElementById("search-overlay");
+  if (overlay) {
+    overlay.classList.toggle("open");
+    if (overlay.classList.contains("open")) {
+      const input = overlay.querySelector(".search-overlay-input");
+      if (input) input.focus();
+    }
+  }
+};
+
+window.closeSearchOverlay = function() {
+  const overlay = document.getElementById("search-overlay");
+  if (overlay) {
+    overlay.classList.remove("open");
+  }
+};
+
+// Add listeners for mobile dropdowns
+document.addEventListener("DOMContentLoaded", () => {
+  const navItems = document.querySelectorAll(".category-nav-item");
+  navItems.forEach(item => {
+    const dropdown = item.querySelector(".category-dropdown");
+    if (dropdown) {
+      item.addEventListener("click", (e) => {
+        if (window.innerWidth <= 992) {
+          const isIcon = e.target.classList.contains("fa-chevron-down") || e.target.tagName === "I";
+          // Check if user clicked the parent nav link itself rather than child links
+          const isItemSelf = e.target === item || e.target.firstChild === e.target;
+          if (isIcon || isItemSelf) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle("mobile-open");
+            const chevron = item.querySelector(".fa-chevron-down");
+            if (chevron) {
+              chevron.style.transform = dropdown.classList.contains("mobile-open") ? "rotate(180deg)" : "none";
+            }
+          }
+        }
+      });
+    }
+  });
+});

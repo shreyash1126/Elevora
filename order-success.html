@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -59,48 +59,161 @@
 </head>
 <body>
 
-  <!-- Header -->
+    <!-- Header -->
   <header>
     <div class="container header-container">
-      <a href="index.html" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
+      <!-- Top Row -->
+      <div class="header-top-row">
+        <!-- Search icon/button -->
+        <div class="header-search-wrap-toggle">
+          <button class="search-trigger-btn" onclick="toggleSearchOverlay()" aria-label="Search gadgets">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="wishlist.html" class="action-btn">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count">0</span>
+        <!-- Centered Logo -->
+        <a href="index.html" class="logo" aria-label="Elevora home">
+          <span>ELEVORA</span><span class="logo-dot"></span>
         </a>
 
-        <button class="action-btn" onclick="openMiniCartDrawer()">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count">0</span>
-        </button>
+        <!-- Actions -->
+        <div class="header-actions">
+          <!-- Dark/Light Theme Switching -->
+          <button class="action-btn theme-toggle-btn" aria-label="Toggle Theme Mode">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+          </button>
 
-        <button class="action-btn theme-toggle-btn">
-          <i class="fa-regular fa-moon"></i>
-          <i class="fa-regular fa-sun"></i>
-        </button>
+          <!-- Wishlist -->
+          <a href="wishlist.html" class="action-btn" aria-label="View Saved Items">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count">0</span>
+          </a>
 
-        <a href="my-account.html" class="action-btn">
-          <i class="fa-regular fa-user"></i>
-        </a>
+          <!-- Shopping Cart Drawer button -->
+          <button class="action-btn" onclick="openMiniCartDrawer()" aria-label="Open Cart Drawer">
+            <i class="fa-solid fa-shopping-bag"></i>
+            <span class="badge-count cart-count">0</span>
+          </button>
 
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+          <!-- Account -->
+          <a href="my-account.html" class="action-btn" aria-label="Login/Account Portal">
+            <i class="fa-regular fa-user"></i>
+          </a>
+
+          <!-- Mobile hamburger Menu toggle -->
+          <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
+
+      <!-- Bottom Row (Navigation Items) -->
+      <nav class="header-bottom-row category-nav-list nav-menu" id="nav-menu">
+        <!-- New Arrivals -->
+        <a href="shop.html" class="category-nav-item nav-link">New Arrivals</a>
+
+        <!-- Mobile Accessories -->
+        <div class="category-nav-item">
+          Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Mobile%20Accessories" class="dropdown-link">Mobile Accessories</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Phone%20Holders" class="dropdown-link">Phone Holders</a>
+          </div>
+        </div>
+
+        <!-- Tech Gadgets -->
+        <div class="category-nav-item">
+          Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Tech%20Gadgets" class="dropdown-link">Tech Accessories</a>
+          </div>
+        </div>
+
+        <!-- Tools & Utility -->
+        <div class="category-nav-item">
+          Tools & Utility <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=DIY%20Tools" class="dropdown-link">DIY Tools</a>
+            <a href="shop.html?category=Multi%20Tools" class="dropdown-link">Multi Tools</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+          </div>
+        </div>
+
+        <!-- Car & Travel -->
+        <div class="category-nav-item">
+          Car & Travel <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Dashboard%20Accessories" class="dropdown-link">Dashboard Accessories</a>
+            <a href="shop.html?category=Mobile%20Chargers" class="dropdown-link">Mobile Chargers</a>
+            <a href="shop.html?category=Tyre%20Inflators" class="dropdown-link">Tyre Inflators</a>
+            <a href="shop.html?category=Vacuum%20Cleaners" class="dropdown-link">Vacuum Cleaners</a>
+            <a href="shop.html?category=Car%20Utility" class="dropdown-link">Car Utility</a>
+            <a href="shop.html?category=Travel%20Accessories" class="dropdown-link">Travel Accessories</a>
+          </div>
+        </div>
+
+        <!-- Offers & Combos -->
+        <div class="category-nav-item">
+          Offers & Combos <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?badge=sale" class="dropdown-link">Special Offers</a>
+            <a href="shop.html?tag=combo" class="dropdown-link">Combo Deals</a>
+            <a href="shop.html?tag=clearance" class="dropdown-link">Clearance Sale</a>
+          </div>
+        </div>
+
+        <!-- Shop By Price -->
+        <div class="category-nav-item">
+          Shop By Price <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?maxPrice=10" class="dropdown-link">Under $10</a>
+            <a href="shop.html?maxPrice=20" class="dropdown-link">Under $20</a>
+            <a href="shop.html?maxPrice=30" class="dropdown-link">Under $30</a>
+            <a href="shop.html?maxPrice=50" class="dropdown-link">Under $50</a>
+          </div>
+        </div>
+
+        <!-- Gifting -->
+        <div class="category-nav-item">
+          Gifting <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?tag=birthday" class="dropdown-link">Birthday Gifts</a>
+            <a href="shop.html?tag=tech-gifts" class="dropdown-link">Tech Gifts</a>
+            <a href="shop.html?tag=quirky" class="dropdown-link">Quirky Gifts</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="category-nav-item">
+          Support <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="track-order.html" class="dropdown-link">Track Order</a>
+            <a href="shipping-policy.html" class="dropdown-link">Shipping Policy</a>
+            <a href="return-policy.html" class="dropdown-link">Return Policy</a>
+            <a href="faq.html" class="dropdown-link">FAQ</a>
+            <a href="contact.html" class="dropdown-link">Contact Us</a>
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-container">
+      <input type="text" class="header-search-input search-overlay-input" placeholder="Type to search premium gadgets...">
+      <button class="search-overlay-close" onclick="closeSearchOverlay()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
 
   <!-- Success confirmation card -->
   <main class="container">
