@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Elevora Cart (Static Fallback)
  */

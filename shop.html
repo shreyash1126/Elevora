@@ -66,6 +66,23 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      max-height: 250px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .filter-category-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .filter-category-list::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-sm);
+    }
+    .filter-category-list::-webkit-scrollbar-thumb {
+      background: var(--accent-light);
+      border-radius: var(--border-radius-sm);
+    }
+    .filter-category-list::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-color);
     }
     .filter-category-btn {
       width: 100%;
@@ -249,78 +266,38 @@
         <!-- New Arrivals -->
         <a href="shop.html" class="category-nav-item">New Arrivals</a>
         
-        <!-- Mobile Accessories -->
+        <!-- Mobile & Tech Accessories -->
         <div class="category-nav-item">
-          Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
+          Mobile & Tech <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Mobile%20Accessories" class="dropdown-link">Mobile Accessories</a>
             <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
             <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Adapters" class="dropdown-link">Adapters</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Fast%20Charging%20Cables" class="dropdown-link">Fast Charging Cables</a>
             <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Extension%20Boards%20%26%20Multi-Plugs" class="dropdown-link">Extension Boards & Multi-Plugs</a>
+            <a href="shop.html?category=Projector" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Spy%20WiFi%20Cameras" class="dropdown-link">Spy WiFi Cameras</a>
           </div>
         </div>
         
-        <!-- Tech Gadgets -->
+        <!-- Home & Lifestyle -->
         <div class="category-nav-item">
-          Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
+          Home & Lifestyle <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Cute%20Quirky%20Lamps" class="dropdown-link">Cute Quirky Lamps</a>
             <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=RGB%20Mood%20Lighting" class="dropdown-link">RGB Mood Lighting</a>
+            <a href="shop.html?category=Alarm%20Clocks%20%26%20Timers" class="dropdown-link">Alarm Clocks & Timers</a>
+            <a href="shop.html?category=Kitchen%20Tools%20and%20Gadgets" class="dropdown-link">Kitchen Tools & Gadgets</a>
+            <a href="shop.html?category=Home%20Utility%20Products" class="dropdown-link">Home Utility Products</a>
             <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Tools & Utility -->
-        <div class="category-nav-item">
-          Tools & Utility <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+            <a href="shop.html?category=DIY%20Store" class="dropdown-link">DIY Store</a>
+            <a href="shop.html?category=Pet%20Gadgets" class="dropdown-link">Pet Gadgets</a>
+            <a href="shop.html?category=Self%20Care%20%26%20Wellness%20Gadgets" class="dropdown-link">Wellness Gadgets</a>
           </div>
         </div>
         
@@ -328,71 +305,62 @@
         <div class="category-nav-item">
           Car & Travel <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+            <a href="shop.html?category=Car%20Dashboard%20Accessories" class="dropdown-link">Dashboard Accessories</a>
+            <a href="shop.html?category=Car%20Mobile%20Holders" class="dropdown-link">Mobile Holders</a>
+            <a href="shop.html?category=Car%20Mobile%20Charger" class="dropdown-link">Mobile Chargers</a>
+            <a href="shop.html?category=Car%20Air%20Fresheners" class="dropdown-link">Air Fresheners</a>
+            <a href="shop.html?category=Car%20Utility%20and%20Tools" class="dropdown-link">Utility & Tools</a>
+            <a href="shop.html?category=Tyre%20Inflators" class="dropdown-link">Tyre Inflators</a>
+            <a href="shop.html?category=Vacuum%20Cleaner%20for%20Car" class="dropdown-link">Vacuum Cleaners</a>
+            <a href="shop.html?category=Bike%20Accessories" class="dropdown-link">Bike Accessories</a>
+            <a href="shop.html?category=Travel%20Gadgets%20and%20Accessories" class="dropdown-link">Travel Gadgets</a>
           </div>
         </div>
         
-        <!-- Offers & Combos -->
+        <!-- Gifts & Occasions -->
         <div class="category-nav-item">
-          Offers & Combos <i class="fa-solid fa-chevron-down"></i>
+          Gifts & Occasions <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Buy 1 Get 1 Free</a>
-            <a href="shop.html" class="dropdown-link">Under ₹999 Deals</a>
-            <a href="shop.html" class="dropdown-link">Combo Packs</a>
-            <a href="shop.html" class="dropdown-link">Clearance Sale</a>
+            <a href="shop.html?category=Gifts%20for%20Him" class="dropdown-link">Gifts for Him</a>
+            <a href="shop.html?category=Gifts%20for%20Her" class="dropdown-link">Gifts for Her</a>
+            <a href="shop.html?category=Gifts%20for%20Dad" class="dropdown-link">Gifts for Dad</a>
+            <a href="shop.html?category=Gifts%20for%20Mom" class="dropdown-link">Gifts for Mom</a>
+            <a href="shop.html?category=Gifts%20for%20Brother" class="dropdown-link">Gifts for Brother</a>
+            <a href="shop.html?category=Gifts%20for%20Sister" class="dropdown-link">Gifts for Sister</a>
+            <a href="shop.html?category=Gifts%20for%20Kids" class="dropdown-link">Gifts for Kids</a>
+            <a href="shop.html?category=Gifts%20for%20Friends" class="dropdown-link">Gifts for Friends</a>
+            <a href="shop.html?category=Gifts%20for%20Colleagues" class="dropdown-link">Gifts for Colleagues</a>
+            <a href="shop.html?category=Gifts%20for%20Gamers%20%26%20Streamers" class="dropdown-link">For Gamers & Streamers</a>
+            <a href="shop.html?category=Gifts%20for%20the%20Adventurer" class="dropdown-link">For the Adventurer</a>
+            <a href="shop.html?category=Gifts%20for%20Content%20Creators" class="dropdown-link">For Content Creators</a>
+            <a href="shop.html?category=Gifts%20for%20Fitness%20Buffs" class="dropdown-link">For Fitness Buffs</a>
+            <a href="shop.html?category=Gifts%20for%20Minimalists" class="dropdown-link">For Minimalists</a>
+            <a href="shop.html?category=Gifts%20for%20Music%20Lovers" class="dropdown-link">For Music Lovers</a>
+            <a href="shop.html?category=Gifts%20for%20Students" class="dropdown-link">For Students</a>
+            <a href="shop.html?category=Gifts%20for%20Car%20Enthusiasts" class="dropdown-link">For Car Enthusiasts</a>
+            <a href="shop.html?category=Birthday%20Gifts" class="dropdown-link">Birthday Gifts</a>
+            <a href="shop.html?category=Anniversary%20Gifts" class="dropdown-link">Anniversary Gifts</a>
+            <a href="shop.html?category=Wedding%20Gifts" class="dropdown-link">Wedding Gifts</a>
+            <a href="shop.html?category=Housewarming%20Gifts" class="dropdown-link">Housewarming Gifts</a>
+            <a href="shop.html?category=Farewell%20Gifts" class="dropdown-link">Farewell Gifts</a>
+            <a href="shop.html?category=Promotion%20Gifts" class="dropdown-link">Promotion Gifts</a>
+            <a href="shop.html?category=Creative%20Stationery" class="dropdown-link">Creative Stationery</a>
+            <a href="shop.html?category=Cute%20Keychains" class="dropdown-link">Cute Keychains</a>
           </div>
         </div>
-        
-        <!-- Shop By Price -->
+
+        <!-- Deals & Sales -->
         <div class="category-nav-item">
-          Shop By Price <i class="fa-solid fa-chevron-down"></i>
+          Deals & Sales <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Under ₹499</a>
-            <a href="shop.html" class="dropdown-link">Under ₹999</a>
-            <a href="shop.html" class="dropdown-link">Under ₹1999</a>
-            <a href="shop.html" class="dropdown-link">Premium Selection</a>
-          </div>
-        </div>
-        
-        <!-- Gifting -->
-        <div class="category-nav-item">
-          Gifting <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+            <a href="shop.html?category=Flash%20Sale" class="dropdown-link">Flash Sale</a>
+            <a href="shop.html?category=Clearance%20Sale" class="dropdown-link">Clearance Sale</a>
+            <a href="shop.html?category=Best%20Sellers" class="dropdown-link">Best Sellers</a>
+            <a href="shop.html?category=New%20Additions" class="dropdown-link">New Additions</a>
+            <a href="shop.html?category=Gadgets%20under%20500" class="dropdown-link">Gadgets Under ₹500</a>
+            <a href="shop.html?category=Gadgets%20under%201000" class="dropdown-link">Gadgets Under ₹1000</a>
+            <a href="shop.html?category=Gadgets%20under%201500" class="dropdown-link">Gadgets Under ₹1500</a>
+            <a href="shop.html?category=Gadgets%20under%202000" class="dropdown-link">Gadgets Under ₹2000</a>
           </div>
         </div>
         
@@ -457,14 +425,65 @@
           <h4 class="filter-section-title">Categories</h4>
           <div class="filter-category-list">
             <button class="filter-category-btn active" data-category="all">All Categories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Headphones">Headphones <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Smart Watches">Smart Watches <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Earbuds">Earbuds <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Mobile Accessories">Mobile Accessories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
             <button class="filter-category-btn" data-category="Power Banks">Power Banks <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Bluetooth Speakers">Speakers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Gaming Accessories">Keyboards <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Smart Home">Smart Home <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Chargers">Chargers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Wireless Chargers">Wireless Chargers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Adapters">Adapters <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Charging Cables">Charging Cables <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Fast Charging Cables">Fast Charging Cables <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Computer Accessories">Computer Accessories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Bluetooth Speakers">Bluetooth Speakers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Extension Boards & Multi-Plugs">Extension Boards & Multi-Plugs <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Projector">Projectors <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Spy WiFi Cameras">Spy WiFi Cameras <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Cute Quirky Lamps">Cute Quirky Lamps <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Floating Lamps">Floating Lamps <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="RGB Mood Lighting">RGB Mood Lighting <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Alarm Clocks & Timers">Alarm Clocks & Timers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Kitchen Tools and Gadgets">Kitchen Tools & Gadgets <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Home Utility Products">Home Utility Products <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Humidifiers">Humidifiers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="DIY Store">DIY Store <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Pet Gadgets">Pet Gadgets <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Self Care & Wellness Gadgets">Wellness Gadgets <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Car Dashboard Accessories">Dashboard Accessories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Car Mobile Holders">Car Mobile Holders <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Car Mobile Charger">Car Mobile Chargers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Car Air Fresheners">Car Air Fresheners <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Car Utility and Tools">Car Utility & Tools <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Tyre Inflators">Tyre Inflators <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Vacuum Cleaner for Car">Vacuum Cleaners <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Bike Accessories">Bike Accessories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Travel Gadgets and Accessories">Travel Gadgets <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Him">Gifts for Him <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Her">Gifts for Her <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Dad">Gifts for Dad <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Mom">Gifts for Mom <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Brother">Gifts for Brother <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Sister">Gifts for Sister <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Kids">Gifts for Kids <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Friends">Gifts for Friends <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Colleagues">Gifts for Colleagues <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Gamers & Streamers">For Gamers & Streamers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for the Adventurer">For the Adventurer <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Content Creators">For Content Creators <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Fitness Buffs">For Fitness Buffs <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Minimalists">For Minimalists <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Music Lovers">For Music Lovers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Students">For Students <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gifts for Car Enthusiasts">For Car Enthusiasts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Birthday Gifts">Birthday Gifts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Anniversary Gifts">Anniversary Gifts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Wedding Gifts">Wedding Gifts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Housewarming Gifts">Housewarming Gifts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Farewell Gifts">Farewell Gifts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Promotion Gifts">Promotion Gifts <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Creative Stationery">Creative Stationery <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Cute Keychains">Cute Keychains <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Flash Sale">Flash Sale <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Clearance Sale">Clearance Sale <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Best Sellers">Best Sellers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="New Additions">New Additions <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
           </div>
         </div>
 

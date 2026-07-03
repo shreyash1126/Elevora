@@ -1,4 +1,4 @@
-// Elevora - Cart Controller (LocalStorage sync)
+﻿// Elevora - Cart Controller (LocalStorage sync)
 
 const CartKey = "elevora_cart";
 const CouponKey = "elevora_applied_coupon";

@@ -1,4 +1,4 @@
-// Elevora - Homepage Hero Banner Slider Controller
+﻿// Elevora - Homepage Hero Banner Slider Controller
 
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".hero-slide");

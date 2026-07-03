@@ -1,4 +1,4 @@
-// Elevora - Wishlist Controller (LocalStorage sync)
+﻿// Elevora - Wishlist Controller (LocalStorage sync)
 
 const WishlistKey = "elevora_wishlist";
 

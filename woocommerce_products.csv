@@ -1,4 +1,4 @@
-"SKU","Type","Name","Published","Is featured?","Visibility in catalog","Short description","Description","In stock?","Stock","Regular price","Sale price","Categories","Tags","Images","Attribute 1 name","Attribute 1 value(s)","Attribute 1 visible","Attribute 1 global","Attribute 2 name","Attribute 2 value(s)","Attribute 2 visible","Attribute 2 global"
+﻿"SKU","Type","Name","Published","Is featured?","Visibility in catalog","Short description","Description","In stock?","Stock","Regular price","Sale price","Categories","Tags","Images","Attribute 1 name","Attribute 1 value(s)","Attribute 1 visible","Attribute 1 global","Attribute 2 name","Attribute 2 value(s)","Attribute 2 visible","Attribute 2 global"
 "EV-AER-201","simple","AeroPulse ANC Wireless Headphones","1","0","visible","Experience silence perfected. The AeroPulse ANC headphones deliver high-fidelity acoustic performance, class-leading hybrid Active Noise Cancellation, and up to 45 hours of immersive playtime.","<p>Experience silence perfected. The AeroPulse ANC headphones deliver high-fidelity acoustic performance, class-leading hybrid Active Noise Cancellation, and up to 45 hours of immersive playtime.</p>
 <h3>Key Features</h3>
 <ul>
@@ -31,7 +31,7 @@
       <td style='padding: 8px;'>USB-C Fast Charging (10-min charge = 5 hours play)</td>
     </tr>
   </tbody>
-</table>","1","35","299.99","199.99","Headphones","Sale","https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&auto=format&fit=crop&q=80","Brand","AeroPulse","1","0","Colors","Matte Black, Space Gray, Arctic Silver","1","0"
+</table>","1","35","299.99","199.99","Bluetooth Speakers","Sale","https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&auto=format&fit=crop&q=80","Brand","AeroPulse","1","0","Colors","Matte Black, Space Gray, Arctic Silver","1","0"
 "EV-APE-202","simple","Apex Chrono OLED Smart Watch","1","0","visible","Elevate your health, fitness, and connectivity. Encased in aerospace-grade titanium with an ultra-bright Always-On AMOLED screen, the Apex Chrono monitors biometrics, sleep cycles, and daily performance metrics.","<p>Elevate your health, fitness, and connectivity. Encased in aerospace-grade titanium with an ultra-bright Always-On AMOLED screen, the Apex Chrono monitors biometrics, sleep cycles, and daily performance metrics.</p>
 <h3>Key Features</h3>
 <ul>
@@ -64,7 +64,7 @@
       <td style='padding: 8px;'>Dual-Band Multi-system GPS built-in</td>
     </tr>
   </tbody>
-</table>","1","39","329.99","249.99","Smart Watches","New","https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1517502884422-41eaaced0168?w=600&auto=format&fit=crop&q=80","Brand","ApexTrack","1","0","Colors","Titanium Black, Mist Gray, Sunset Gold","1","0"
+</table>","1","39","329.99","249.99","Mobile Accessories","New","https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1517502884422-41eaaced0168?w=600&auto=format&fit=crop&q=80","Brand","ApexTrack","1","0","Colors","Titanium Black, Mist Gray, Sunset Gold","1","0"
 "EV-VOL-203","simple","VoltMag 15W MagSafe Power Bank","1","0","visible","Snap and go. The VoltMag provides a secure magnetic connection for 15W wireless charging, paired with a sleek folding kickstand and a premium rubberized anti-scratch shell.","<p>Snap and go. The VoltMag provides a secure magnetic connection for 15W wireless charging, paired with a sleek folding kickstand and a premium rubberized anti-scratch shell.</p>
 <h3>Key Features</h3>
 <ul>
@@ -163,7 +163,7 @@
       <td style='padding: 8px;'>In-ear detection, Touch controls</td>
     </tr>
   </tbody>
-</table>","1","70","189.99","129.99","Earbuds","20% OFF","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1599669454699-248893623440?w=600&auto=format&fit=crop&q=80","Brand","AeroPulse","1","0","Colors","Chalk White, Slate Grey, Midnight Navy","1","0"
+</table>","1","70","189.99","129.99","Mobile Accessories","20% OFF","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1599669454699-248893623440?w=600&auto=format&fit=crop&q=80","Brand","AeroPulse","1","0","Colors","Chalk White, Slate Grey, Midnight Navy","1","0"
 "EV-KEY-206","simple","KeyPro mechanical gaming keyboard","1","0","visible","Compact form factor, maximum impact. Built with lubed linear red switches, hot-swappable sockets, and double-shot PBT keycaps, the KeyPro delivers lightning-fast inputs and satisfying typing acoustics.","<p>Compact form factor, maximum impact. Built with lubed linear red switches, hot-swappable sockets, and double-shot PBT keycaps, the KeyPro delivers lightning-fast inputs and satisfying typing acoustics.</p>
 <h3>Key Features</h3>
 <ul>
@@ -196,7 +196,7 @@
       <td style='padding: 8px;'>4000mAh rechargeable lithium</td>
     </tr>
   </tbody>
-</table>","1","28","199.99","139.99","Gaming Accessories","New","https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&auto=format&fit=crop&q=80","Brand","KeyPro","1","0","Colors","Classic White, Midnight Grey","1","0"
+</table>","1","28","199.99","139.99","Computer Accessories","New","https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&auto=format&fit=crop&q=80","Brand","KeyPro","1","0","Colors","Classic White, Midnight Grey","1","0"
 "EV-LUM-207","simple","LuminoSmart Aura Accent Bar","1","0","visible","Transform your living space. Syncing seamlessly with games, movies, and music, the LuminoSmart Aura bathes your desk or media center in stunning, smart multi-color reactive lighting.","<p>Transform your living space. Syncing seamlessly with games, movies, and music, the LuminoSmart Aura bathes your desk or media center in stunning, smart multi-color reactive lighting.</p>
 <h3>Key Features</h3>
 <ul>
@@ -229,7 +229,7 @@
       <td style='padding: 8px;'>45cm per Lightbar</td>
     </tr>
   </tbody>
-</table>","1","40","99.99","69.99","Smart Home","Sale","https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80","Brand","Lumino","1","0","Colors","Classic Black, Arctic White","1","0"
+</table>","1","40","99.99","69.99","RGB Mood Lighting","Sale","https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80","Brand","Lumino","1","0","Colors","Classic Black, Arctic White","1","0"
 "EV-VOL-208","simple","GaNCharge 100W multi-port block","1","0","visible","One charger to power them all. The GaNCharge 100W replaces bulky bricks, utilizing cutting-edge Gallium Nitride tech to fast charge up to four devices simultaneously including laptops, tablets, and phones.","<p>One charger to power them all. The GaNCharge 100W replaces bulky bricks, utilizing cutting-edge Gallium Nitride tech to fast charge up to four devices simultaneously including laptops, tablets, and phones.</p>
 <h3>Key Features</h3>
 <ul>
@@ -262,4 +262,4 @@
       <td style='padding: 8px;'>65 x 65 x 32 mm</td>
     </tr>
   </tbody>
-</table>","1","75","89.99","59.99","Chargers","15% OFF","https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1622445262465-2481c4574875?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80","Brand","VoltMax","1","0","Colors","Space Black, Polar White","1","0"
+</table>","1","75","89.99","59.99","Wireless Chargers","15% OFF","https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1622445262465-2481c4574875?w=600&auto=format&fit=crop&q=80, https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80","Brand","VoltMax","1","0","Colors","Space Black, Polar White","1","0"

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Elevora Theme Functions and Definitions
  */

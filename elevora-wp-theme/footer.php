@@ -1,4 +1,4 @@
-  <!-- Footer -->
+﻿  <!-- Footer -->
   <footer>
     <div class="container footer-top">
       <div class="footer-column footer-about">

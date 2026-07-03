@@ -1,4 +1,4 @@
-// Elevora - Advanced Catalog Filtering & Sorting engine
+﻿// Elevora - Advanced Catalog Filtering & Sorting engine
 
 document.addEventListener("DOMContentLoaded", () => {
   const shopGrid = document.getElementById("shop-products-grid");

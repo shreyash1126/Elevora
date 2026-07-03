@@ -1,4 +1,26 @@
-// Elevora E-commerce Store - Central Script Coordinator
+﻿// Elevora E-commerce Store - Central Script Coordinator
+
+// 0. Premium Preloader Overlay
+(function createPreloader() {
+  const preloader = document.createElement("div");
+  preloader.id = "global-preloader";
+  preloader.innerHTML = `
+    <div class="preloader-content">
+      <div class="preloader-logo">ELEVORA</div>
+      <div class="preloader-spinner"></div>
+    </div>
+  `;
+  document.documentElement.appendChild(preloader);
+  
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      preloader.classList.add("fade-out");
+      setTimeout(() => {
+        preloader.remove();
+      }, 600);
+    }, 400); // Minimum view time for effect
+  });
+})();
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Mobile Menu Drawer Toggle
@@ -26,8 +48,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4500);
   }
 
-  // 3. Scroll Reveal Transition Observer
-  const revealElements = document.querySelectorAll(".reveal-element");
+  // 3. Scroll Reveal Transition Observer & Grid Staggering
+  // Automatically discover grids across pages to apply reveals and staggered load
+  document.querySelectorAll(".product-grid, .category-grid, .features-grid, .bento-grid, #wishlist-grid, .blog-grid").forEach(grid => {
+    grid.classList.add("reveal-element");
+    Array.from(grid.children).forEach((child, index) => {
+      child.classList.add("staggered-item");
+    });
+  });
+
+  const revealElements = document.querySelectorAll(".reveal-element, .fade-up, .fade-in, .slide-in-left, .slide-in-right");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -36,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     revealElements.forEach(el => observer.observe(el));
   } else {
@@ -120,6 +150,167 @@ document.addEventListener("DOMContentLoaded", () => {
       closeQuickView();
     }
   });
+
+  // 9. Premium Top Loading Progress Bar Setup
+  const topProgressBar = document.createElement("div");
+  topProgressBar.className = "top-progress-bar";
+  document.body.appendChild(topProgressBar);
+
+  // Instant finish on page load complete
+  requestAnimationFrame(() => {
+    topProgressBar.style.width = "40%";
+    setTimeout(() => {
+      topProgressBar.style.width = "100%";
+      setTimeout(() => {
+        topProgressBar.style.opacity = "0";
+        setTimeout(() => {
+          topProgressBar.remove();
+        }, 300);
+      }, 150);
+    }, 100);
+  });
+
+  // Transition interceptor for clean page routing animations
+  document.addEventListener("click", (e) => {
+    const anchor = e.target.closest("a");
+    if (!anchor) return;
+    const href = anchor.getAttribute("href");
+    if (!href) return;
+    
+    if (
+      href.startsWith("#") || 
+      href.startsWith("mailto:") || 
+      href.startsWith("tel:") || 
+      anchor.getAttribute("target") === "_blank" ||
+      href.includes("javascript:") ||
+      (!href.endsWith(".html") && !href.includes("/") && !href.startsWith("./") && !href.startsWith("../"))
+    ) {
+      return;
+    }
+
+    e.preventDefault();
+    const loadingBar = document.createElement("div");
+    loadingBar.className = "top-progress-bar";
+    document.body.appendChild(loadingBar);
+    
+    requestAnimationFrame(() => {
+      loadingBar.style.width = "80%";
+    });
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 200);
+  });
+
+  // 10. Click Ripples & Sparkle Particle Generators
+  document.addEventListener("click", (e) => {
+    // A. Button Ripples
+    const rippleBtn = e.target.closest(".btn, .card-action-btn, .slider-arrow, .qty-btn, .category-card, .card-add-btn");
+    if (rippleBtn) {
+      if (getComputedStyle(rippleBtn).position === "static") {
+        rippleBtn.style.position = "relative";
+      }
+      rippleBtn.classList.add("ripple-element");
+      
+      const ripple = document.createElement("span");
+      ripple.className = "ripple-span";
+      
+      const rect = rippleBtn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = `${size}px`;
+      
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      rippleBtn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 500);
+    }
+
+    // B. Wishlist toggling sparks
+    const wishlistBtn = e.target.closest(".wishlist-toggle-btn, [onclick*='toggleWishlist']");
+    if (wishlistBtn) {
+      createSparkleBurst(e.clientX, e.clientY, "var(--danger)");
+      
+      setTimeout(() => {
+        const badges = document.querySelectorAll(".wishlist-count");
+        badges.forEach(badge => {
+          badge.classList.remove("badge-pop");
+          void badge.offsetWidth;
+          badge.classList.add("badge-pop");
+        });
+      }, 50);
+    }
+
+    // C. Add to Cart Fly Tracking
+    const addCartBtn = e.target.closest(".card-add-btn, .btn-primary, [onclick*='addToCart']");
+    if (addCartBtn) {
+      let productId = null;
+      const onclickAttr = addCartBtn.getAttribute("onclick") || "";
+      const match = onclickAttr.match(/addToCart\s*\(\s*(\d+)/);
+      if (match) {
+        productId = parseInt(match[1]);
+      } else {
+        const card = addCartBtn.closest("[data-id]");
+        if (card) {
+          productId = parseInt(card.getAttribute("data-id"));
+        } else {
+          // Check query parameters for single product page
+          const urlParams = new URLSearchParams(window.location.search);
+          const idParam = urlParams.get('id');
+          if (idParam) productId = parseInt(idParam);
+        }
+      }
+      if (productId) {
+        animateFlyToCart(productId, e.clientX, e.clientY);
+      }
+    }
+  });
+  // 11. Premium 3D Tilt Effect on Cards
+  const tiltCards = document.querySelectorAll(".product-card, .premium-cat-card, .most-used-card, .category-card");
+  tiltCards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // x position within the element.
+      const y = e.clientY - rect.top;  // y position within the element.
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const tiltX = ((y - centerY) / centerY) * -5; // max tilt 5 deg
+      const tiltY = ((x - centerX) / centerX) * 5;
+      
+      card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+      
+      // Optional glare effect
+      let glare = card.querySelector(".glare-effect");
+      if (!glare) {
+        glare = document.createElement("div");
+        glare.className = "glare-effect";
+        glare.style.position = "absolute";
+        glare.style.top = "0";
+        glare.style.left = "0";
+        glare.style.width = "100%";
+        glare.style.height = "100%";
+        glare.style.pointerEvents = "none";
+        glare.style.background = "radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 60%)";
+        glare.style.transition = "opacity 0.2s ease";
+        card.appendChild(glare);
+      }
+      glare.style.opacity = "1";
+      glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15) 0%, transparent 50%)`;
+    });
+    
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+      const glare = card.querySelector(".glare-effect");
+      if (glare) {
+        glare.style.opacity = "0";
+      }
+    });
+  });
+  
 });
 
 // Toast notification trigger
@@ -128,7 +319,7 @@ function showToast(message, type = "success") {
   if (!container) return;
 
   const toast = document.createElement("div");
-  toast.className = `toast ${type}`;
+  toast.className = `toast ${type} toast-with-progress`;
   
   let iconClass = "fa-solid fa-circle-check";
   if (type === "error") iconClass = "fa-solid fa-circle-xmark";
@@ -138,6 +329,7 @@ function showToast(message, type = "success") {
   toast.innerHTML = `
     <i class="${iconClass} toast-icon ${type}"></i>
     <span class="toast-message" style="font-size: 0.85rem; font-weight: 500;">${message}</span>
+    <div class="toast-progress-bar"></div>
   `;
 
   container.appendChild(toast);
@@ -152,6 +344,86 @@ function showToast(message, type = "success") {
       toast.remove();
     }, 300);
   }, 3500);
+}
+
+// 11. Flying particles animation helper
+function animateFlyToCart(productId, startX, startY) {
+  // Try to find product details
+  const p = typeof ElevoraProducts !== "undefined" ? ElevoraProducts.find(item => item.id === productId) : null;
+  const imageUrl = p ? p.images[0] : "";
+  
+  // Find cart header targets (or desktop/mobile badges)
+  const cartIcon = document.querySelector(".header-action-btn[href*='cart'] i, .cart-count, i.fa-shopping-bag, i.fa-shopping-cart");
+  if (!cartIcon) return;
+  
+  const rect = cartIcon.getBoundingClientRect();
+  const endX = rect.left + rect.width / 2;
+  const endY = rect.top + rect.height / 2;
+
+  // Create flying container
+  const particle = document.createElement("div");
+  particle.className = "cart-fly-particle";
+  if (imageUrl) {
+    particle.style.backgroundImage = `url('${imageUrl}')`;
+  }
+  
+  // Set starting positions
+  particle.style.left = `${startX - 16}px`;
+  particle.style.top = `${startY - 16}px`;
+  particle.style.transform = "scale(0.8)";
+  particle.style.opacity = "1";
+  document.body.appendChild(particle);
+
+  // Smooth visual arc pathway animation
+  requestAnimationFrame(() => {
+    particle.style.left = `${endX - 16}px`;
+    particle.style.top = `${endY - 16}px`;
+    particle.style.transform = "scale(0.2) rotate(360deg)";
+    particle.style.opacity = "0.7";
+  });
+
+  // Self-destruction on contact and pop triggering
+  setTimeout(() => {
+    particle.remove();
+    
+    // Add pop feedback class to cart count badge
+    const badges = document.querySelectorAll(".cart-count");
+    badges.forEach(badge => {
+      badge.classList.remove("badge-pop");
+      void badge.offsetWidth; // Reflow reset
+      badge.classList.add("badge-pop");
+    });
+    
+    // Tiny magical celebration sparkles
+    createSparkleBurst(endX, endY, "var(--accent)");
+  }, 750);
+}
+
+// 12. Celestial burst sparkle generator
+function createSparkleBurst(x, y, color = "var(--accent)") {
+  const numSparkles = 8;
+  for (let i = 0; i < numSparkles; i++) {
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle-particle";
+    sparkle.style.backgroundColor = color;
+    sparkle.style.left = `${x}px`;
+    sparkle.style.top = `${y}px`;
+    
+    const angle = (i / numSparkles) * 2 * Math.PI + (Math.random() - 0.5) * 0.4;
+    const distance = 20 + Math.random() * 20;
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+    
+    sparkle.style.setProperty("--tx", `${tx}px`);
+    sparkle.style.setProperty("--ty", `${ty}px`);
+    
+    document.body.appendChild(sparkle);
+    
+    // Remove element
+    setTimeout(() => {
+      sparkle.remove();
+    }, 600);
+  }
 }
 
 // Open dynamic quick view details modal

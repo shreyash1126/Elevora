@@ -3,7 +3,7 @@ const ElevoraProducts = [
   {
     id: 1,
     name: "AeroPulse ANC Wireless Headphones",
-    category: "Headphones",
+    category: "Bluetooth Speakers",
     brand: "AeroPulse",
     price: 199.99,
     oldPrice: 299.99,
@@ -40,7 +40,7 @@ const ElevoraProducts = [
   {
     id: 2,
     name: "Apex Chrono OLED Smart Watch",
-    category: "Smart Watches",
+    category: "Mobile Accessories",
     brand: "ApexTrack",
     price: 249.99,
     oldPrice: 329.99,
@@ -151,7 +151,7 @@ const ElevoraProducts = [
   {
     id: 5,
     name: "SoundPod Studio Pro Earbuds",
-    category: "Earbuds",
+    category: "Mobile Accessories",
     brand: "AeroPulse",
     price: 129.99,
     oldPrice: 189.99,
@@ -188,7 +188,7 @@ const ElevoraProducts = [
   {
     id: 6,
     name: "KeyPro mechanical gaming keyboard",
-    category: "Gaming Accessories",
+    category: "Computer Accessories",
     brand: "KeyPro",
     price: 139.99,
     oldPrice: 199.99,
@@ -224,7 +224,7 @@ const ElevoraProducts = [
   {
     id: 7,
     name: "LuminoSmart Aura Accent Bar",
-    category: "Smart Home",
+    category: "RGB Mood Lighting",
     brand: "Lumino",
     price: 69.99,
     oldPrice: 99.99,
@@ -260,7 +260,7 @@ const ElevoraProducts = [
   {
     id: 8,
     name: "GaNCharge 100W multi-port block",
-    category: "Chargers",
+    category: "Wireless Chargers",
     brand: "VoltMax",
     price: 59.99,
     oldPrice: 89.99,
