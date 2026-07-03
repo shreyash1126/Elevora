@@ -1,4 +1,4 @@
-﻿// Elevora - Live Search Autocomplete Engine
+// Elevora - Live Search Autocomplete Engine
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInputs = document.querySelectorAll(".header-search-input, .shop-search-input");

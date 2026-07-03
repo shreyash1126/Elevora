@@ -1,4 +1,4 @@
-﻿// Elevora E-commerce Store - Central Script Coordinator
+// Elevora E-commerce Store - Central Script Coordinator
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Mobile Menu Drawer Toggle

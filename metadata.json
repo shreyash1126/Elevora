@@ -1,0 +1,8 @@
+{
+  "name": "Elevora E-Commerce Store",
+  "description": "Premium online tech gadgets, headphones, smart watches, earbuds, and charging accessories with a modern minimalist aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

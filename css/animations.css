@@ -227,3 +227,343 @@
   right: -2px;
   animation: pulse-light 1.8s infinite;
 }
+
+/* Global Preloader */
+#global-preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary, #ffffff);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.6s;
+}
+
+[data-theme="dark"] #global-preloader {
+  background-color: #0b0b0d;
+}
+
+#global-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.preloader-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: -0.05em;
+  color: var(--text-primary);
+  animation: logo-pulse 1.5s ease-in-out infinite alternate;
+}
+
+.preloader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(17, 17, 17, 0.1);
+  border-top-color: var(--accent, #ffd60a);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+[data-theme="dark"] .preloader-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent, #ffd60a);
+}
+
+@keyframes logo-pulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Enhanced Button Shine Effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.75s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  left: 200%;
+}
+
+[data-theme="light"] .btn-primary::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+[data-theme="light"] .btn-secondary::after {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Page Transition / Preloader Enhancements */
+@keyframes badge-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.45); }
+  70% { transform: scale(0.85); }
+  100% { transform: scale(1); }
+}
+.badge-pop {
+  animation: badge-pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+}
+
+/* Elegant Micro-Progress Bar for Page Transitions */
+.top-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 50%, #ff5e36 100%);
+  box-shadow: 0 1px 10px rgba(255, 214, 10, 0.8);
+  z-index: 99999;
+  width: 0;
+  opacity: 1;
+  transition: width 0.4s cubic-bezier(0.1, 0.8, 0.2, 1), opacity 0.3s ease-in-out;
+}
+
+/* Flying Product Particle to Cart */
+.cart-fly-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 0 0 10px var(--accent);
+  border: 2px solid var(--accent);
+  transition: top 0.75s cubic-bezier(0.075, 0.82, 0.165, 1), 
+              left 0.75s linear, 
+              transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.75s ease-out;
+}
+
+/* Ripple Click Visual Feedback */
+.ripple-element {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-span {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-animation 0.5s ease-out;
+  z-index: 10;
+}
+[data-theme="light"] .btn-secondary .ripple-span {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+@keyframes ripple-animation {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Premium Card & Element Hover micro-interactions */
+.product-card {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+.product-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-dark);
+}
+
+.card-media {
+  overflow: hidden;
+}
+.card-media img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.product-card:hover .card-media img {
+  transform: scale(1.06);
+}
+
+/* Category Quick Card Icon Hover Animation */
+@keyframes icon-pulse-rotate {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.18) rotate(8deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+.category-card:hover .category-card-icon {
+  animation: icon-pulse-rotate 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Floating interactive sparkles/burst particles */
+.sparkle-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10001;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: sparkle-fade-move 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+@keyframes sparkle-fade-move {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Toast with progress tracker line */
+.toast-with-progress {
+  position: relative;
+  overflow: hidden;
+  animation: toast-spring-in 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+}
+@keyframes toast-spring-in {
+  0% {
+    transform: translateX(100%) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--accent);
+  width: 100%;
+  transform-origin: left;
+  animation: toast-progress-shrink 3.5s linear forwards;
+}
+.toast.success .toast-progress-bar {
+  background-color: var(--success);
+}
+.toast.error .toast-progress-bar {
+  background-color: var(--danger);
+}
+.toast.info .toast-progress-bar {
+  background-color: var(--accent-dark);
+}
+@keyframes toast-progress-shrink {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+/* Magnetic Slider Arrow Hover movement */
+.slider-arrow {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease, border-color 0.2s ease;
+}
+.slider-arrow-prev:hover {
+  transform: scale(1.08) translateX(-4px);
+}
+.slider-arrow-next:hover {
+  transform: scale(1.08) translateX(4px);
+}
+
+/* Sequential Staggered Scroll Reveals */
+.reveal-group {
+  display: flex;
+}
+.staggered-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-element.revealed .staggered-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-element.revealed .staggered-item:nth-child(1) { transition-delay: 50ms; }
+.reveal-element.revealed .staggered-item:nth-child(2) { transition-delay: 120ms; }
+.reveal-element.revealed .staggered-item:nth-child(3) { transition-delay: 190ms; }
+.reveal-element.revealed .staggered-item:nth-child(4) { transition-delay: 260ms; }
+.reveal-element.revealed .staggered-item:nth-child(5) { transition-delay: 330ms; }
+.reveal-element.revealed .staggered-item:nth-child(6) { transition-delay: 400ms; }
+.reveal-element.revealed .staggered-item:nth-child(7) { transition-delay: 470ms; }
+.reveal-element.revealed .staggered-item:nth-child(8) { transition-delay: 540ms; }
+
+/* Generic Scroll Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.fade-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.fade-in.revealed {
+  opacity: 1;
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.slide-in-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.slide-in-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}

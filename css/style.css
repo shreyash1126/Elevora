@@ -213,7 +213,17 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: transform 0.3s ease, background-color var(--transition-normal);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  background-color: var(--bg-primary);
+  height: calc(var(--header-height) - 10px);
+}
+
+[data-theme="dark"] header.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 header.hide-nav {
@@ -274,16 +284,17 @@ header.hide-nav {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
   background-color: var(--accent);
-  transition: width var(--transition-fast);
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+  left: 0;
 }
 
 /* Header Search & Actions */
