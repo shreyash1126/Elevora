@@ -1,4 +1,4 @@
-﻿// Elevora E-commerce Store - Central Script Coordinator
+// Elevora E-commerce Store - Central Script Coordinator
 
 // 0. Premium Preloader Overlay
 (function createPreloader() {

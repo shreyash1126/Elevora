@@ -4,6 +4,7 @@
 $workspaceRoot = $PSScriptRoot
 $themeDir = Join-Path $workspaceRoot "elevora-wp-theme"
 $zipPath = Join-Path $workspaceRoot "elevora-wp-theme.zip"
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
 Write-Host "Creating WordPress theme in: $themeDir"
 
@@ -54,7 +55,7 @@ foreach ($file in $jsFiles) {
     $content = $content -replace 'index\.html', '${getThemeUrl("index")}'
 
     # Output back to file
-    [System.IO.File]::WriteAllText($file.FullName, $content, [System.Text.Encoding]::UTF8)
+    [System.IO.File]::WriteAllText($file.FullName, $content, $utf8NoBom)
 }
 
 # ==============================================================================
@@ -62,7 +63,7 @@ foreach ($file in $jsFiles) {
 # ==============================================================================
 function Write-ThemeFile($fileName, $fileContent) {
     $path = Join-Path $themeDir $fileName
-    [System.IO.File]::WriteAllText($path, $fileContent, [System.Text.Encoding]::UTF8)
+    [System.IO.File]::WriteAllText($path, $fileContent, $utf8NoBom)
     Write-Host "  Written: $fileName"
 }
 

@@ -1,4 +1,4 @@
-﻿// Elevora - Theme Toggle Controller (Dark/Light mode)
+// Elevora - Theme Toggle Controller (Dark/Light mode)
 
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggleButtons = document.querySelectorAll(".theme-toggle-btn");
