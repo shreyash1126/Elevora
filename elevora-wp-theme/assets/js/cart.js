@@ -49,6 +49,15 @@ function addToCart(productId, quantity = 1, color = "", silent = false) {
 
   saveCart(cart);
 
+  // Trigger fly-to-cart particle animation
+  const btn = document.querySelector(`.card-add-btn[onclick*="addToCart(${productId}"]`) || 
+              document.querySelector(`.btn-primary[onclick*="addToCart(${productId}"]`) ||
+              document.querySelector(`.btn-primary[onclick*="addToCart"]`) ||
+              document.getElementById("quickview-add-to-cart-btn");
+  if (btn && product.images && product.images.length > 0 && typeof animateFlyToCart === "function") {
+    animateFlyToCart(btn, product.images[0]);
+  }
+
   if (typeof showToast === "function") {
     showToast(`Added ${product.name} (${color}) to cart`, "success");
   }

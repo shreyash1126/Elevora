@@ -21,7 +21,8 @@ $folders = @(
     "assets",
     "assets/css",
     "assets/js",
-    "assets/images"
+    "assets/images",
+    "woocommerce"
 )
 foreach ($f in $folders) {
     $path = Join-Path $themeDir $f
@@ -142,6 +143,7 @@ function elevora_scripts() {
     wp_enqueue_script( 'elevora-wishlist', get_template_directory_uri() . '/assets/js/wishlist.js', array('elevora-products-data'), '1.0.0', true );
     wp_enqueue_script( 'elevora-search', get_template_directory_uri() . '/assets/js/search.js', array('elevora-products-data'), '1.0.0', true );
     wp_enqueue_script( 'elevora-filters', get_template_directory_uri() . '/assets/js/filters.js', array('elevora-products-data'), '1.0.0', true );
+    wp_enqueue_script( 'elevora-compare', get_template_directory_uri() . '/assets/js/compare.js', array('elevora-products-data'), '1.0.0', true );
 
     // Pass configuration variables to javascript files
     wp_localize_script( 'elevora-script', 'ElevoraThemeSettings', array(
@@ -1882,6 +1884,621 @@ get_header(); ?>
 <?php get_footer(); ?>
 '@
 Write-ThemeFile "template-order-success.php" $templateOrderSuccessPhp
+
+# Write Product Compare page template
+$templateComparePhp = @'
+<?php
+/**
+ * Template Name: Elevora Product Compare (Static Fallback)
+ */
+get_header(); ?>
+
+  <!-- Page Title hero -->
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Compare Gadgets</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Compare Smart Gadgets</h1>
+    </div>
+  </section>
+
+  <!-- Compare Container -->
+  <main class="container" style="margin-bottom: 80px;">
+    <div id="compare-page-container">
+      <!-- Loaded dynamically via compare.js -->
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof renderComparePage === "function") {
+        renderComparePage();
+      }
+    });
+  </script>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-compare.php" $templateComparePhp
+
+
+# Write Login page template
+$templateLoginPhp = @'
+<?php
+/**
+ * Template Name: Elevora Login Page
+ */
+get_header(); ?>
+
+  <main class="container auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">Welcome Back</h2>
+      <p class="auth-subtitle">Log in to Elevora to manage orders and track shipments.</p>
+      
+      <form class="auth-form" method="post" action="<?php echo esc_url( wp_login_url() ); ?>">
+        <div class="auth-input-group">
+          <label for="user_login">Username or Email</label>
+          <input type="text" name="log" id="user_login" class="auth-input" required autocomplete="username">
+        </div>
+        
+        <div class="auth-input-group">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="user_pass">Password</label>
+            <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" style="font-size: 0.8rem; color: var(--text-muted);">Forgot?</a>
+          </div>
+          <input type="password" name="pwd" id="user_pass" class="auth-input" required autocomplete="current-password">
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+          <input type="checkbox" name="rememberme" id="rememberme" value="forever">
+          <label for="rememberme">Keep me logged in</label>
+        </div>
+
+        <button type="submit" class="auth-btn">Log In</button>
+        
+        <input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url( '/my-account/' ) ); ?>">
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="<?php echo esc_url( home_url( '/register/' ) ); ?>">Sign Up Now</a>
+      </div>
+    </div>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-login.php" $templateLoginPhp
+
+
+# Write Register page template
+$templateRegisterPhp = @'
+<?php
+/**
+ * Template Name: Elevora Registration Page
+ */
+get_header(); ?>
+
+  <main class="container auth-container">
+    <div class="auth-card">
+      <h2 class="auth-title">Create Account</h2>
+      <p class="auth-subtitle">Join Elevora today and elevate your tech lifestyle.</p>
+      
+      <form class="auth-form" method="post" action="<?php echo esc_url( wp_registration_url() ); ?>">
+        <div class="auth-input-group">
+          <label for="reg_username">Username</label>
+          <input type="text" name="user_login" id="reg_username" class="auth-input" required autocomplete="username">
+        </div>
+
+        <div class="auth-input-group">
+          <label for="reg_email">Email Address</label>
+          <input type="email" name="user_email" id="reg_email" class="auth-input" required autocomplete="email">
+        </div>
+        
+        <div class="auth-input-group">
+          <label for="reg_pass">Password</label>
+          <input type="password" name="user_password" id="reg_pass" class="auth-input" required autocomplete="new-password">
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+          <input type="checkbox" id="terms_agree" required style="margin-top: 3px;">
+          <label for="terms_agree">I agree to Elevora's <a href="<?php echo esc_url( home_url( '/terms-conditions/' ) ); ?>" target="_blank">Terms of Service</a> and <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" target="_blank">Privacy Guidelines</a>.</label>
+        </div>
+
+        <button type="submit" class="auth-btn">Register</button>
+        
+        <input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url( '/my-account/' ) ); ?>">
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="<?php echo esc_url( home_url( '/login/' ) ); ?>">Log In</a>
+      </div>
+    </div>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-register.php" $templateRegisterPhp
+
+
+# Write Privacy Policy page template
+$templatePrivacyPolicyPhp = @'
+<?php
+/**
+ * Template Name: Elevora Privacy Policy
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Privacy Guidelines</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Privacy Guidelines</h1>
+    </div>
+  </section>
+
+  <main class="container" style="max-width: 800px; margin-bottom: 80px;">
+    <article class="entry-content" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php if ( get_the_content() ) : ?>
+          <?php the_content(); ?>
+        <?php else : ?>
+          <h2>1. Information We Collect</h2>
+          <p>We collect information you provide directly to us, such as when you create an account, make a purchase, or contact support.</p>
+          <h2>2. How We Use Information</h2>
+          <p>We use the information we collect to fulfill your orders, communicate with you, and improve our smart gadget offerings.</p>
+          <h2>3. Data Protection</h2>
+          <p>We implement strict security measures to protect your personal details. Payments are processed securely via SSL-encrypted gateways.</p>
+        <?php endif; ?>
+      <?php endwhile; endif; ?>
+    </article>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-privacy-policy.php" $templatePrivacyPolicyPhp
+
+
+# Write Terms page template
+$templateTermsPhp = @'
+<?php
+/**
+ * Template Name: Elevora Terms of Service
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Terms of Service</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Terms of Service</h1>
+    </div>
+  </section>
+
+  <main class="container" style="max-width: 800px; margin-bottom: 80px;">
+    <article class="entry-content" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php if ( get_the_content() ) : ?>
+          <?php the_content(); ?>
+        <?php else : ?>
+          <h2>1. User Agreement</h2>
+          <p>By using the Elevora website, you agree to comply with all guidelines, privacy rules, and shipping guidelines outlined on this portal.</p>
+          <h2>2. Product Ordering & Availability</h2>
+          <p>We reserve the right to refuse or cancel orders due to stock availability variations, pricing updates, or other technical limitations.</p>
+        <?php endif; ?>
+      <?php endwhile; endif; ?>
+    </article>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-terms.php" $templateTermsPhp
+
+
+# Write Shipping Policy page template
+$templateShippingPolicyPhp = @'
+<?php
+/**
+ * Template Name: Elevora Shipping Policy
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Shipping Policy</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Shipping Policy</h1>
+    </div>
+  </section>
+
+  <main class="container" style="max-width: 800px; margin-bottom: 80px;">
+    <article class="entry-content" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php if ( get_the_content() ) : ?>
+          <?php the_content(); ?>
+        <?php else : ?>
+          <h2>1. Delivery Timeframes</h2>
+          <p>Orders are processed in 1-2 business days. Shipping usually takes 5-10 business days for standard international courier routes.</p>
+          <h2>2. Trackable Courier Routes</h2>
+          <p>We provide trackable shipment numbers for every order. You can monitor courier delivery loops directly inside our tracking portal.</p>
+        <?php endif; ?>
+      <?php endwhile; endif; ?>
+    </article>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-shipping-policy.php" $templateShippingPolicyPhp
+
+
+# Write Refund Policy page template
+$templateRefundPolicyPhp = @'
+<?php
+/**
+ * Template Name: Elevora Refund Policy
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Refund Policy</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Refund Policy</h1>
+    </div>
+  </section>
+
+  <main class="container" style="max-width: 800px; margin-bottom: 80px;">
+    <article class="entry-content" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php if ( get_the_content() ) : ?>
+          <?php the_content(); ?>
+        <?php else : ?>
+          <h2>1. Return & Refund Conditions</h2>
+          <p>If you're not satisfied, we offer refunds on products returned in original packaging within 30 days of shipment receipt.</p>
+          <h2>2. Processing Audits</h2>
+          <p>Once we receive your returned item, we process audits within 3-5 business days and credit back your original payment processor.</p>
+        <?php endif; ?>
+      <?php endwhile; endif; ?>
+    </article>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "template-refund-policy.php" $templateRefundPolicyPhp
+
+
+# Write archive.php
+$archivePhp = @'
+<?php
+/**
+ * The template for displaying archive pages
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Archive Listing</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">
+        <?php
+        if ( is_category() ) {
+            single_cat_title();
+        } elseif ( is_tag() ) {
+            single_tag_title();
+        } elseif ( is_author() ) {
+            the_post();
+            echo 'Author: ' . get_the_author();
+            rewind_posts();
+        } elseif ( is_day() ) {
+            echo 'Daily Archive: ' . get_the_date();
+        } elseif ( is_month() ) {
+            echo 'Monthly Archive: ' . get_the_date( 'F Y' );
+        } elseif ( is_year() ) {
+            echo 'Yearly Archive: ' . get_the_date( 'Y' );
+        } else {
+            echo 'Archives';
+        }
+        ?>
+      </h1>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px;">
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <article class="blog-card reveal-element revealed" id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); overflow: hidden; background-color: var(--bg-primary); display: flex; flex-direction: column;">
+          <div class="blog-media" style="height: 220px; overflow: hidden; background-color: var(--bg-secondary);">
+            <?php if ( has_post_thumbnail() ) : ?>
+              <?php the_post_thumbnail('medium_large', array('style' => 'width: 100%; height: 100%; object-fit: cover;')); ?>
+            <?php else : ?>
+              <img src="https://images.unsplash.com/photo-1609592424085-f55a64388432?w=600" alt="Placeholder" style="width: 100%; height: 100%; object-fit: cover;">
+            <?php endif; ?>
+          </div>
+          <div class="blog-info" style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+            <div class="blog-meta-row" style="display: flex; gap: 16px; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">
+              <span><i class="fa-regular fa-calendar"></i> <?php echo get_the_date(); ?></span>
+              <span>&bull;</span>
+              <span><i class="fa-regular fa-user"></i> <?php the_author(); ?></span>
+            </div>
+            <h3 class="blog-card-title" style="font-family: 'Outfit'; font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <p class="blog-card-summary" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;"><?php echo wp_trim_words( get_the_excerpt(), 15, '...' ); ?></p>
+            <a href="<?php the_permalink(); ?>" class="blog-read-btn" style="font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 8px; color: var(--text-primary); border-bottom: 2px solid var(--accent); width: fit-content; padding-bottom: 2px;">Read Article <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </article>
+      <?php endwhile; else : ?>
+        <p><?php esc_html_e( 'No posts found in this archive.', 'elevora' ); ?></p>
+      <?php endif; ?>
+    </div>
+
+    <div class="pagination" style="display: flex; justify-content: center; gap: 8px; margin-bottom: 80px;">
+      <?php
+      echo paginate_links( array(
+          'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
+          'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
+      ) );
+      ?>
+    </div>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "archive.php" $archivePhp
+
+
+# Write search.php
+$searchPhp = @'
+<?php
+/**
+ * The template for displaying search results pages
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Search Results</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">
+        <?php printf( esc_html__( 'Search Results for: %s', 'elevora' ), '<span style="color: var(--accent-dark);">' . get_search_query() . '</span>' ); ?>
+      </h1>
+    </div>
+  </section>
+
+  <main class="container" style="margin-bottom: 80px;">
+    <?php if ( have_posts() ) : ?>
+      <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px;">
+        <?php while ( have_posts() ) : the_post(); ?>
+          <article class="blog-card reveal-element revealed" id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); overflow: hidden; background-color: var(--bg-primary); display: flex; flex-direction: column;">
+            <div class="blog-info" style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+              <span class="card-category" style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-dark); font-weight: 700; margin-bottom: 6px; display: block;"><?php echo get_post_type(); ?></span>
+              <h3 class="blog-card-title" style="font-family: 'Outfit'; font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+              <p class="blog-card-summary" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; flex-grow: 1;"><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
+              <a href="<?php the_permalink(); ?>" style="font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 8px; color: var(--text-primary); border-bottom: 2px solid var(--accent); width: fit-content; padding-bottom: 2px;">View Page <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </article>
+        <?php endwhile; ?>
+      </div>
+      
+      <div class="pagination" style="display: flex; justify-content: center; gap: 8px;">
+        <?php
+        echo paginate_links( array(
+            'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
+            'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
+        ) );
+        ?>
+      </div>
+    <?php else : ?>
+      <div class="empty-state-wrap" style="text-align: center; padding: 60px 0;">
+        <i class="fa-solid fa-magnifying-glass-minus" style="font-size: 3.5rem; color: var(--text-muted); margin-bottom: 20px; opacity: 0.4;"></i>
+        <h3 style="font-family: Outfit; font-size: 1.5rem; font-weight: 700; margin-bottom: 12px;">No results match your query</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto;">Please verify spelling or search for alternative technical terms like "MagSafe", "ANC Wireless", or "Power Bank".</p>
+        <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" style="display: flex; max-width: 480px; margin: 0 auto; border: 1.5px solid var(--border-color); border-radius: var(--border-radius-md); overflow: hidden; background-color: var(--bg-primary);">
+          <input type="search" class="search-field" placeholder="Search gadgets..." value="<?php echo get_search_query(); ?>" name="s" style="flex-grow: 1; padding: 12px; border: none; outline: none; background: none; color: var(--text-primary);">
+          <button type="submit" class="btn btn-secondary" style="border-radius: 0; padding: 0 20px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    <?php endif; ?>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "search.php" $searchPhp
+
+
+# Write searchform.php
+$searchformPhp = @'
+<?php
+/**
+ * The template for displaying search forms
+ */
+?>
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" style="display: flex; border: 1.5px solid var(--border-color); border-radius: var(--border-radius-md); overflow: hidden; background-color: var(--bg-primary);">
+  <input type="search" class="search-field" placeholder="Search premium electronics..." value="<?php echo get_search_query(); ?>" name="s" style="flex-grow: 1; padding: 12px; border: none; outline: none; background: none; color: var(--text-primary);">
+  <button type="submit" class="btn btn-secondary" style="border-radius: 0; padding: 0 20px;" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+'@
+Write-ThemeFile "searchform.php" $searchformPhp
+
+
+# Write comments.php
+$commentsPhp = @'
+<?php
+/**
+ * The template for displaying comments
+ */
+if ( post_password_required() ) {
+    return;
+}
+?>
+
+<div id="comments" class="comments-area" style="margin-top: 60px; border-top: 1px solid var(--border-color); padding-top: 40px;">
+  <?php if ( have_comments() ) : ?>
+    <h3 class="comments-title" style="font-family: Outfit; font-weight: 700; font-size: 1.5rem; margin-bottom: 30px;">
+      <?php
+      $comments_number = get_comments_number();
+      if ( '1' === $comments_number ) {
+          printf( _x( 'One thought on &ldquo;%2$s&rdquo;', 'comments title', 'elevora' ), number_format_i18n( $comments_number ), get_the_title() );
+      } else {
+          printf( _cx( '%1$s thoughts on &ldquo;%2$s&rdquo;', 'comments title', 'elevora' ), number_format_i18n( $comments_number ), get_the_title() );
+      }
+      ?>
+    </h3>
+
+    <ul class="comment-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+      <?php
+      wp_list_comments( array(
+          'style'       => 'ul',
+          'short_ping'  => true,
+          'avatar_size' => 50,
+      ) );
+      ?>
+    </ul>
+
+    <?php if ( ! comments_open() && get_comments_number() ) : ?>
+      <p class="no-comments" style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;"><?php esc_html_e( 'Comments are closed for this post.', 'elevora' ); ?></p>
+    <?php endif; ?>
+  <?php endif; ?>
+
+  <?php
+  comment_form( array(
+      'class_form'         => 'comment-form auth-form',
+      'title_reply'        => 'Submit a Review / Reply',
+      'title_reply_to'     => 'Reply to %s',
+      'class_submit'       => 'auth-btn btn btn-primary',
+      'submit_button'      => '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
+      'comment_field'      => '<div class="auth-input-group"><label for="comment">Your message</label><textarea id="comment" name="comment" cols="45" rows="8" class="auth-input" style="resize: vertical; height: 120px;" required></textarea></div>',
+      'fields'             => array(
+          'author' => '<div class="auth-input-group"><label for="author">Name</label><input id="author" name="author" type="text" class="auth-input" required autocomplete="name"></div>',
+          'email'  => '<div class="auth-input-group"><label for="email">Email</label><input id="email" name="email" type="email" class="auth-input" required autocomplete="email"></div>',
+      ),
+  ) );
+  ?>
+</div>
+'@
+Write-ThemeFile "comments.php" $commentsPhp
+
+
+# Write sidebar.php
+$sidebarPhp = @'
+<?php
+/**
+ * The sidebar containing the main widget area
+ */
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+    return;
+}
+?>
+<aside id="secondary" class="widget-area" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 30px;">
+  <?php dynamic_sidebar( 'sidebar-1' ); ?>
+</aside>
+'@
+Write-ThemeFile "sidebar.php" $sidebarPhp
+
+
+# Write home.php
+$homePhp = @'
+<?php
+/**
+ * The template for displaying the blog page (posts index)
+ */
+include get_template_directory() . '/index.php';
+'@
+Write-ThemeFile "home.php" $homePhp
+
+
+# Write woocommerce/archive-product.php
+$archiveProductPhp = @'
+<?php
+/**
+ * WooCommerce Product Catalog Overrides
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">WooCommerce Catalog</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;"><?php woocommerce_page_title(); ?></h1>
+    </div>
+  </section>
+
+  <main class="container" style="margin-bottom: 80px;">
+    <?php if ( woocommerce_product_loop() ) : ?>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <?php do_action( 'woocommerce_before_shop_loop' ); ?>
+      </div>
+      
+      <?php woocommerce_product_loop_start(); ?>
+      <?php while ( have_posts() ) : the_post(); ?>
+        <?php wc_get_template_part( 'content', 'product' ); ?>
+      <?php endwhile; ?>
+      <?php woocommerce_product_loop_end(); ?>
+
+      <div style="margin-top: 40px; display: flex; justify-content: center;">
+        <?php do_action( 'woocommerce_after_shop_loop' ); ?>
+      </div>
+    <?php else : ?>
+      <?php do_action( 'woocommerce_no_products_found' ); ?>
+    <?php endif; ?>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "woocommerce/archive-product.php" $archiveProductPhp
+
+
+# Write woocommerce/single-product.php
+$singleProductPhp = @'
+<?php
+/**
+ * WooCommerce Single Product Override
+ */
+get_header(); ?>
+
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
+    <div class="container">
+      <div class="breadcrumb" style="display: flex; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <span>/</span>
+        <a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>">Shop</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);"><?php the_title(); ?></span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;"><?php the_title(); ?></h1>
+    </div>
+  </section>
+
+  <main class="container" style="margin-bottom: 80px;">
+    <?php while ( have_posts() ) : the_post(); ?>
+      <?php wc_get_template_part( 'content', 'single-product' ); ?>
+    <?php endwhile; ?>
+  </main>
+
+<?php get_footer(); ?>
+'@
+Write-ThemeFile "woocommerce/single-product.php" $singleProductPhp
 
 # Zip the compiled theme directory using .NET ZipArchive to guarantee forward slashes
 Write-Host "Compressing theme to ZIP archive with Linux-compatible forward slashes..."

@@ -579,4 +579,167 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // Check for prefers-reduced-motion setting
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. Sticky Header scale and shadow on scroll
+  const headerEl = document.querySelector("header");
+  if (headerEl) {
+    const handleHeaderScroll = () => {
+      if (window.scrollY > 80) {
+        headerEl.classList.add("scrolled");
+      } else {
+        headerEl.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", handleHeaderScroll, { passive: true });
+    handleHeaderScroll(); // Run initially
+  }
+
+  // 2. Mouse Tracking Spotlight & 3D Tilt (Desktop only, if motion is allowed)
+  if (window.innerWidth > 992 && !prefersReducedMotion) {
+    const setupCardInteractions = (card) => {
+      card.classList.add("spotlight-card");
+      card.classList.add("tilt-card");
+
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Set spotlight coordinates
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+
+        // Calculate 3D tilt angles
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((centerY - y) / centerY) * 6; // Max 6 deg
+        const rotateY = ((x - centerX) / centerX) * 6; // Max 6 deg
+
+        card.style.setProperty("--rotate-x", `${rotateX}deg`);
+        card.style.setProperty("--rotate-y", `${rotateY}deg`);
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.setProperty("--rotate-x", `0deg`);
+        card.style.setProperty("--rotate-y", `0deg`);
+      });
+    };
+
+    // Apply interaction to existing product cards
+    document.querySelectorAll(".product-card").forEach(setupCardInteractions);
+
+    // Watch for dynamic product additions (like filters) to apply setup
+    const gridObserver = new MutationObserver((mutations) => {
+      mutations.forEach(mut => {
+        mut.addedNodes.forEach(node => {
+          if (node.classList && node.classList.contains("product-card")) {
+            setupCardInteractions(node);
+          } else if (node.querySelectorAll) {
+            node.querySelectorAll(".product-card").forEach(setupCardInteractions);
+          }
+        });
+      });
+    });
+
+    const productsContainer = document.querySelector("#shop-products-grid, #homepage-products-grid, #wishlist-grid");
+    if (productsContainer) {
+      gridObserver.observe(productsContainer, { childList: true, subtree: true });
+    }
+  }
+
+  // 3. Magnetic Hover Effect (Desktop only, if motion allowed)
+  if (window.innerWidth > 992 && !prefersReducedMotion) {
+    document.querySelectorAll(".slider-arrow, .btn-primary, .btn-secondary").forEach(btn => {
+      btn.addEventListener("mousemove", (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px) scale(1.03)`;
+      });
+      btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "";
+      });
+    });
+  }
+
+  // 4. AJAX Fly-to-Cart Particle Effect
+  window.animateFlyToCart = function(buttonElement, imgUrl) {
+    if (prefersReducedMotion || !buttonElement || !imgUrl) return;
+
+    // Create moving particle element
+    const particle = document.createElement("div");
+    particle.className = "cart-fly-particle";
+    particle.style.backgroundImage = `url('${imgUrl}')`;
+
+    // Position particle starting at button position
+    const btnRect = buttonElement.getBoundingClientRect();
+    particle.style.left = `${btnRect.left + btnRect.width / 2 - 16}px`;
+    particle.style.top = `${btnRect.top + btnRect.height / 2 - 16}px`;
+    document.body.appendChild(particle);
+
+    // Target cart icon coordinates
+    const cartIcon = document.getElementById("cart-btn");
+    if (!cartIcon) {
+      setTimeout(() => particle.remove(), 100);
+      return;
+    }
+    const cartRect = cartIcon.getBoundingClientRect();
+
+    // Trigger frame updates
+    requestAnimationFrame(() => {
+      particle.style.left = `${cartRect.left + cartRect.width / 2 - 16}px`;
+      particle.style.top = `${cartRect.top + cartRect.height / 2 - 16}px`;
+      particle.style.transform = "scale(0.2) rotate(360deg)";
+      particle.style.opacity = "0.2";
+    });
+
+    // Remove particle and trigger morph animation on badge
+    setTimeout(() => {
+      particle.remove();
+      const badge = document.getElementById("cart-badge");
+      if (badge) {
+        badge.classList.add("badge-pop");
+        setTimeout(() => badge.classList.remove("badge-pop"), 450);
+      }
+    }, 750);
+  };
+
+  // 5. Intercept Click Events for Page Transition exits
+  if (!prefersReducedMotion) {
+    const exitOverlay = document.createElement("div");
+    exitOverlay.className = "page-exit-overlay";
+    document.body.appendChild(exitOverlay);
+
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link && link.href && link.target !== "_blank") {
+        // Only trigger on actual internal link clicks (not Javascript void, hash, or external sites)
+        const isInternal = link.hostname === window.location.hostname;
+        const hrefAttr = link.getAttribute("href") || "";
+        const isHash = hrefAttr.startsWith("#") || hrefAttr.startsWith("javascript:");
+        
+        if (isInternal && !isHash && link.href !== window.location.href) {
+          e.preventDefault();
+          exitOverlay.classList.add("active");
+          
+          // Animate a top progress bar
+          const progBar = document.createElement("div");
+          progBar.className = "top-progress-bar";
+          document.body.appendChild(progBar);
+          
+          setTimeout(() => {
+            progBar.style.width = "75%";
+          }, 50);
+
+          setTimeout(() => {
+            window.location.href = link.href;
+          }, 400);
+        }
+      }
+    });
+  }
 });
+

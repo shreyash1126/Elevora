@@ -55,6 +55,7 @@ function elevora_scripts() {
     wp_enqueue_script( 'elevora-wishlist', get_template_directory_uri() . '/assets/js/wishlist.js', array('elevora-products-data'), '1.0.0', true );
     wp_enqueue_script( 'elevora-search', get_template_directory_uri() . '/assets/js/search.js', array('elevora-products-data'), '1.0.0', true );
     wp_enqueue_script( 'elevora-filters', get_template_directory_uri() . '/assets/js/filters.js', array('elevora-products-data'), '1.0.0', true );
+    wp_enqueue_script( 'elevora-compare', get_template_directory_uri() . '/assets/js/compare.js', array('elevora-products-data'), '1.0.0', true );
 
     // Pass configuration variables to javascript files
     wp_localize_script( 'elevora-script', 'ElevoraThemeSettings', array(

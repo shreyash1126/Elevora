@@ -82,7 +82,10 @@ $pages = @(
     @{ id = 109; title = "Checkout"; slug = "checkout"; template = "template-checkout.php" },
     @{ id = 110; title = "My Account"; slug = "my-account"; template = "template-my-account.php" },
     @{ id = 111; title = "Order Success"; slug = "order-success"; template = "template-order-success.php" },
-    @{ id = 112; title = "Blog"; slug = "blog"; template = "default" }
+    @{ id = 112; title = "Blog"; slug = "blog"; template = "default" },
+    @{ id = 117; title = "Compare"; slug = "compare"; template = "template-compare.php" },
+    @{ id = 118; title = "Login"; slug = "login"; template = "template-login.php" },
+    @{ id = 119; title = "Register"; slug = "register"; template = "template-register.php" }
 )
 
 $blogPosts = @(

@@ -567,3 +567,119 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Premium Custom Animations & Visual Modifiers */
+
+/* Text Shimmer Effect */
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(120deg, var(--text-primary) 30%, var(--accent) 50%, var(--text-primary) 70%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer 3s linear infinite;
+}
+
+[data-theme="dark"] .shimmer-text {
+  background: linear-gradient(120deg, var(--text-primary) 35%, #ffffff 50%, var(--text-primary) 65%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Spotlight Hover Effect */
+.spotlight-card {
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(var(--accent-rgb), 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+  border-radius: inherit;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* 3D Perspective Card Tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale3d(1, 1, 1);
+  transition: transform 0.1s ease-out;
+}
+
+/* Sticky Header Scroll Transformation */
+header {
+  transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              border-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+header.scrolled {
+  height: 80px;
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-bottom: 1.5px solid var(--glass-border);
+  box-shadow: var(--shadow-md);
+}
+
+header.scrolled .header-container {
+  height: 100%;
+}
+
+header.scrolled .logo {
+  font-size: 1.6rem;
+}
+
+/* Magnetic Button Visual Wrap */
+.magnetic-wrap {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Page exit fade overlay for transitions */
+.page-exit-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  z-index: 999998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.page-exit-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom Accordion Animation Heights */
+.accordion-content-anim {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.accordion-item.active .accordion-content-anim {
+  max-height: 1000px;
+}
+
