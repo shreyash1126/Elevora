@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Electronics | Elevora Premium Tech Catalog</title>
+  <meta name="description" content="Browse Elevora next-gen tech products: active noise cancelling audio, wearables, mechanical keyboards, and dynamic MagSafe accessories.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shop Electronics | Elevora Premium Tech Catalog">
+  <meta property="og:description" content="Browse Elevora next-gen tech products: active noise cancelling audio, wearables, mechanical keyboards, and dynamic MagSafe accessories.">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+            glassBg: 'rgba(255, 255, 255, 0.7)',
+            glassBorder: 'rgba(255, 255, 255, 0.15)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200">
+
+  <!-- TOP mini-bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-6 flex justify-between items-center z-50">
+    <div class="flex space-x-4">
+      <a href="/my-account" class="hover:text-cyan-400 transition"><i class="fas fa-store mr-1"></i> Become a Seller</a>
+      <a href="/track-order" class="hover:text-cyan-400 transition"><i class="fas fa-shipping-fast mr-1"></i> Track Order</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <select id="language-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+        <option value="es">ES</option>
+      </select>
+      <select id="currency-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold font-accent tracking-wider text-slate-900 dark:text-white flex items-center">
+          ELE<span class="text-blue-600">VORA</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="/" class="hover:text-blue-500 transition">Home</a>
+        <a href="/shop" class="text-blue-600 dark:text-cyan-400 font-bold transition">Shop</a>
+        <a href="/blog" class="hover:text-blue-500 transition">Blog</a>
+        <a href="/faq" class="hover:text-blue-500 transition">FAQ</a>
+        <a href="/contact" class="hover:text-blue-500 transition">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-6">
+        <button id="theme-toggle" class="hover:text-blue-500 transition"><i class="fas fa-moon text-xl"></i></button>
+        <a href="/my-account" class="hover:text-blue-500 transition"><i class="fas fa-user text-xl"></i></a>
+        <a href="/wishlist" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-heart text-xl"></i>
+          <span class="wishlist-badge absolute -top-2 -right-2 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+        <a href="/cart" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-shopping-bag text-xl"></i>
+          <span class="cart-badge absolute -top-2 -right-2 bg-blue-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SHOPPING WORKSPACE -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <div class="flex flex-col lg:flex-row gap-8">
+      
+      <!-- Left Sidebar Filters -->
+      <aside class="w-full lg:w-64 space-y-6 flex-shrink-0">
+        <div class="glass p-6 rounded-3xl border border-white/20 space-y-6">
+          
+          <!-- Search input -->
+          <div>
+            <h4 class="font-bold text-xs uppercase text-gray-400 mb-3">Search Catalog</h4>
+            <div class="relative">
+              <input type="text" id="shop-search-input" placeholder="Type keywords..." class="w-full bg-slate-100 dark:bg-slate-800 text-xs px-4 py-2.5 rounded-xl focus:outline-none">
+              <i class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+            </div>
+          </div>
+
+          <!-- Category filter list -->
+          <div>
+            <h4 class="font-bold text-xs uppercase text-gray-400 mb-3">Categories</h4>
+            <div class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="Accessories" class="category-filter checkbox-premium rounded">
+                <span>Accessories</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="Audio Products" class="category-filter checkbox-premium rounded">
+                <span>Audio Products</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="Wearables" class="category-filter checkbox-premium rounded">
+                <span>Wearables</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="Computer Accessories" class="category-filter checkbox-premium rounded">
+                <span>Computer Accessories</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="Smart Home" class="category-filter checkbox-premium rounded">
+                <span>Smart Home</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Brand checklist -->
+          <div>
+            <h4 class="font-bold text-xs uppercase text-gray-400 mb-3">Brands</h4>
+            <div class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="AeroPulse" class="brand-filter checkbox-premium rounded">
+                <span>AeroPulse</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="VoltMax" class="brand-filter checkbox-premium rounded">
+                <span>VoltMax</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="ApexTrack" class="brand-filter checkbox-premium rounded">
+                <span>ApexTrack</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="KeyPro" class="brand-filter checkbox-premium rounded">
+                <span>KeyPro</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" value="Lumino" class="brand-filter checkbox-premium rounded">
+                <span>Lumino</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price range boundaries slider -->
+          <div>
+            <h4 class="font-bold text-xs uppercase text-gray-400 mb-3">Price Range</h4>
+            <div class="space-y-3">
+              <input type="range" id="price-slider" min="10" max="300" value="300" class="w-full accent-blue-600">
+              <div class="flex items-center justify-between text-[10px] text-gray-400">
+                <input type="number" id="price-min" value="0" class="w-16 bg-slate-100 dark:bg-slate-800 p-1.5 rounded text-center focus:outline-none">
+                <span>to</span>
+                <input type="number" id="price-max" value="300" class="w-16 bg-slate-100 dark:bg-slate-800 p-1.5 rounded text-center focus:outline-none">
+              </div>
+            </div>
+          </div>
+
+          <!-- Rating Stars selectors -->
+          <div>
+            <h4 class="font-bold text-xs uppercase text-gray-400 mb-3">Minimum Rating</h4>
+            <div class="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="rating-filter" value="4.5" class="rating-filter checkbox-premium">
+                <span>4.5 Stars & Above</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="rating-filter" value="4" class="rating-filter checkbox-premium">
+                <span>4.0 Stars & Above</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="rating-filter" value="0" checked class="rating-filter checkbox-premium">
+                <span>Show All</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- Right Catalog container -->
+      <section class="flex-1 space-y-6">
+        
+        <!-- Controls bar -->
+        <div class="glass p-4 rounded-3xl border border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center space-x-3 text-xs">
+            <span class="text-gray-400">Sort By</span>
+            <select id="sort-select" class="bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-xl focus:outline-none font-semibold">
+              <option value="featured">Featured / Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Rating Reviews</option>
+            </select>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <!-- Grid / List layouts toggles -->
+            <button id="layout-grid-btn" class="text-blue-600 dark:text-cyan-400 text-lg hover:opacity-85 transition"><i class="fas fa-th-large"></i></button>
+            <button id="layout-list-btn" class="text-gray-400 text-lg hover:text-blue-500 transition"><i class="fas fa-list"></i></button>
+          </div>
+        </div>
+
+        <!-- Products Listings target -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="catalog-grid-container">
+          <!-- Injected dynamically by filters.js -->
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-16 px-6 border-t border-slate-800 text-center text-[10px]">
+    <p>&copy; 2026 Elevora Tech Inc. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/wishlist.js"></script>
+  <script src="/js/filters.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initShop();
+    });
+  </script>
+</body>
+</html>

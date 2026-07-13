@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Detail | Elevora Tech Journal</title>
+  <meta name="description" content="Read full technical columns on active noise cancellation, mechanical switches, and advanced wireless charging technologies.">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+            glassBg: 'rgba(255, 255, 255, 0.7)',
+            glassBorder: 'rgba(255, 255, 255, 0.15)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200">
+
+  <!-- TOP mini-bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-6 flex justify-between items-center z-50">
+    <div class="flex space-x-4">
+      <a href="/my-account" class="hover:text-cyan-400 transition"><i class="fas fa-store mr-1"></i> Become a Seller</a>
+      <a href="/track-order" class="hover:text-cyan-400 transition"><i class="fas fa-shipping-fast mr-1"></i> Track Order</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <select id="language-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+        <option value="es">ES</option>
+      </select>
+      <select id="currency-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold font-accent tracking-wider text-slate-900 dark:text-white flex items-center">
+          ELE<span class="text-blue-600">VORA</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="/" class="hover:text-blue-500 transition">Home</a>
+        <a href="/shop" class="hover:text-blue-500 transition">Shop</a>
+        <a href="/blog" class="hover:text-blue-500 transition">Blog</a>
+        <a href="/faq" class="hover:text-blue-500 transition">FAQ</a>
+        <a href="/contact" class="hover:text-blue-500 transition">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-6">
+        <button id="theme-toggle" class="hover:text-blue-500 transition"><i class="fas fa-moon text-xl"></i></button>
+        <a href="/my-account" class="hover:text-blue-500 transition"><i class="fas fa-user text-xl"></i></a>
+        <a href="/wishlist" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-heart text-xl"></i>
+          <span class="wishlist-badge absolute -top-2 -right-2 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+        <a href="/cart" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-shopping-bag text-xl"></i>
+          <span class="cart-badge absolute -top-2 -right-2 bg-blue-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOG ARTICLE DETAILS -->
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <article class="space-y-8" id="blog-content">
+      
+      <!-- Meta -->
+      <div class="space-y-4">
+        <span class="text-blue-600 dark:text-cyan-400 font-bold uppercase tracking-widest text-[10px]" id="blog-badge">Acoustics Journal</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight font-accent leading-tight" id="blog-title">
+          Are Hybrid Active Noise Cancellation Headphones Worth It?
+        </h1>
+        <div class="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400 pt-2 border-b border-gray-100 dark:border-slate-800 pb-4">
+          <span class="font-semibold text-slate-800 dark:text-white">Admin Author</span>
+          <span>&bull;</span>
+          <span>July 10, 2026</span>
+          <span>&bull;</span>
+          <span>5 Min Read</span>
+        </div>
+      </div>
+
+      <!-- Main Featured Image -->
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" alt="ANC Headphones" class="w-full h-88 object-cover rounded-3xl shadow-lg" id="blog-img">
+
+      <!-- Body Copy -->
+      <div class="text-slate-700 dark:text-gray-300 text-sm leading-relaxed space-y-6">
+        <p class="font-medium text-slate-800 dark:text-white text-base">
+          Active Noise Cancellation (ANC) has quickly become the primary benchmark for wireless audio equipment. However, not all ANC implementations are designed equally. Today, we unpack the engineering of Hybrid systems.
+        </p>
+        <p>
+          At its core, ANC operates on the principle of phase inversion. Acoustic waves are captured by microphones, processed by an internal DSP (Digital Signal Processor), and played back out of phase—effectively neutralizing environmental sound waves.
+        </p>
+        <h3 class="text-lg font-bold font-accent text-slate-900 dark:text-white pt-2">Feedforward vs Feedback Configurations</h3>
+        <p>
+          Standard budget systems use feedforward microphones (mounted outside the ear cushion) or feedback designs (monitoring sound directly inside the acoustic chamber).
+        </p>
+        <blockquote class="border-l-4 border-blue-500 pl-4 py-1 my-4 italic bg-slate-50 dark:bg-slate-800/40 rounded-r-xl">
+          "Hybrid ANC represents the pinnacle of personal soundproofing, combining both external and internal microphones to block out up to 98% of environmental frequencies."
+        </blockquote>
+        <p>
+          By positioning microphones both inside and outside the audio driver chamber, headphones like the AeroPulse ANC monitor outside traffic noise while adjusting for leakage or acoustic reflections in real time inside the ear, creating an incredibly quiet auditory space.
+        </p>
+      </div>
+
+      <!-- Social sharing mockup -->
+      <div class="flex items-center space-x-4 pt-6 border-t border-gray-100 dark:border-slate-800">
+        <span class="text-xs font-semibold text-gray-500">Share Article:</span>
+        <button onclick="showNotification('Link copied to clipboard!', 'success')" class="text-slate-500 hover:text-blue-500 transition text-sm"><i class="fas fa-link mr-1"></i> Copy Link</button>
+        <button onclick="showNotification('Shared to Twitter', 'info')" class="text-slate-500 hover:text-blue-400 transition text-sm"><i class="fab fa-twitter mr-1"></i> Twitter</button>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-16 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto pt-8 text-center text-[10px]">
+      <p>&copy; 2026 Elevora Tech Inc. All rights reserved. Created in partnership with Antigravity AI.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

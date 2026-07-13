@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Success | Thank You For Choosing Elevora</title>
+  <meta name="description" content="Your order was registered successfully. Print invoice receipts and track package status.">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+            glassBg: 'rgba(255, 255, 255, 0.7)',
+            glassBorder: 'rgba(255, 255, 255, 0.15)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200 flex items-center justify-center min-h-screen p-6">
+
+  <!-- SUCCESS BOX -->
+  <div class="glass-heavy max-w-lg w-full rounded-3xl p-12 text-center border border-white/20 shadow-2xl relative overflow-hidden animate-fade-in-up">
+    <!-- Circle pulse backgrounds -->
+    <div class="absolute -top-12 -left-12 w-32 h-32 bg-green-500/10 rounded-full blur-2xl"></div>
+    <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+    <div class="relative z-10 space-y-6">
+      <div class="w-20 h-20 bg-green-100 dark:bg-green-950/40 rounded-full flex items-center justify-center mx-auto text-green-500 text-4xl shadow-inner border border-green-200 dark:border-green-800">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1 class="text-2xl font-bold font-accent">Thank You For Your Order!</h1>
+      <p class="text-xs text-gray-500 dark:text-gray-400 max-w-sm mx-auto leading-relaxed">
+        Your shipment has been registered successfully. A confirmation message with invoice records and parcel tracking credentials has been sent to your profile.
+      </p>
+
+      <div class="bg-slate-50 dark:bg-slate-800/40 border border-gray-100 dark:border-slate-800 rounded-2xl p-6 text-xs text-left space-y-2">
+        <div class="flex justify-between items-center text-gray-400">
+          <span>Order Reference</span>
+          <span class="font-bold text-slate-800 dark:text-white" id="success-id">-</span>
+        </div>
+        <div class="flex justify-between items-center text-gray-400">
+          <span>Amount Paid</span>
+          <span class="font-extrabold text-blue-600 dark:text-cyan-400 font-accent" id="success-total">-</span>
+        </div>
+        <div class="flex justify-between items-center text-gray-400">
+          <span>Delivery Timeline</span>
+          <span class="font-bold text-slate-800 dark:text-white">Standard (3-5 business days)</span>
+        </div>
+      </div>
+
+      <!-- Action anchors -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a id="success-track-btn" href="/track-order" class="w-full sm:w-auto bg-gradient-premium bg-gradient-premium-hover text-white text-xs font-bold px-6 py-4 rounded-xl btn-premium flex items-center justify-center">
+          <i class="fas fa-shipping-fast mr-2"></i> Track Shipments
+        </a>
+        <button onclick="downloadReceipt()" class="w-full sm:w-auto bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white text-xs font-bold px-6 py-4 rounded-xl transition flex items-center justify-center">
+          <i class="fas fa-file-invoice mr-2"></i> Save Invoice PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderId = localStorage.getItem('elevora_success_order_id') || 'EV-000000';
+      const lastOrders = JSON.parse(localStorage.getItem('elevora_orders') || '[]');
+      const orderMatch = lastOrders.find(o => o.id === orderId);
+
+      document.getElementById('success-id').innerText = orderId;
+      document.getElementById('success-track-btn').href = `/track-order?id=${orderId}`;
+
+      if (orderMatch) {
+        // Reformat total price using formatted currency
+        document.getElementById('success-total').innerText = formatPrice(orderMatch.total);
+      } else {
+        document.getElementById('success-total').innerText = formatPrice(0.00);
+      }
+    });
+
+    function downloadReceipt() {
+      const orderId = localStorage.getItem('elevora_success_order_id') || 'EV-000000';
+      showNotification('Invoice PDF compiling... Downloading receipt', 'info');
+      
+      // Simple HTML file generation as receipt download
+      const invoiceContent = `
+        Elevora Premium Electronics
+        ------------------------------------
+        Invoice Receipt for: ${orderId}
+        Date: ${new Date().toLocaleDateString()}
+        Payment Status: Approved / Paid
+        ------------------------------------
+        Thank you for purchasing next-gen tech.
+        Contact Support: support@elevora.com
+      `;
+      
+      const blob = new Blob([invoiceContent], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `Invoice-${orderId}.txt`;
+      link.click();
+    }
+  </script>
+</body>
+</html>

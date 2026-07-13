@@ -1,0 +1,16 @@
+{
+  "name": "elevora",
+  "version": "1.0.0",
+  "description": "Elevora - Premium AI-Powered Electronics eCommerce Theme",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "lint": "echo 'No lint required'",
+    "build": "echo 'No build required'"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refund Policy | Elevora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold font-accent tracking-wider text-slate-900 dark:text-white">ELE<span class="text-blue-600">VORA</span></span>
+      </a>
+      <a href="/" class="text-xs font-bold text-blue-500 hover:underline"><i class="fas fa-arrow-left mr-1"></i> Back to Store</a>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <div class="space-y-6">
+      <h1 class="text-3xl font-extrabold font-accent mb-8">Refund Policy</h1>
+      <p class="text-xs text-gray-400">Last updated: July 13, 2026</p>
+      
+      <section class="space-y-3">
+        <h3 class="text-lg font-bold font-accent">1. Return Timeline</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+          Refund requests must be initiated within 30 days of receiving your device package. Custom configurations or physical damage are excluded from standard returns.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h3 class="text-lg font-bold font-accent">2. Processing Period</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+          Once the returned item is received and inspected at our warehouse, credits will be issued to your bank card or store wallet within 5 to 7 business days.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h3 class="text-lg font-bold font-accent">3. Restocking Charges</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+          Elevora does not charge restocking fees for unopened products. Opened devices returned in original packing box are subject to shipping return adjustments.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-gray-500 py-8 text-center text-[10px] border-t border-slate-800">
+    <p>&copy; 2026 Elevora Tech Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

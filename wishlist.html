@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wishlist | Elevora</title>
+  <meta name="description" content="View your saved items and tech accessories. Buy now or compare options.">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+            glassBg: 'rgba(255, 255, 255, 0.7)',
+            glassBorder: 'rgba(255, 255, 255, 0.15)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200">
+
+  <!-- TOP mini-bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-6 flex justify-between items-center z-50">
+    <div class="flex space-x-4">
+      <a href="/my-account" class="hover:text-cyan-400 transition"><i class="fas fa-store mr-1"></i> Become a Seller</a>
+      <a href="/track-order" class="hover:text-cyan-400 transition"><i class="fas fa-shipping-fast mr-1"></i> Track Order</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <select id="language-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+        <option value="es">ES</option>
+      </select>
+      <select id="currency-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold font-accent tracking-wider text-slate-900 dark:text-white flex items-center">
+          ELE<span class="text-blue-600">VORA</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="/" class="hover:text-blue-500 transition">Home</a>
+        <a href="/shop" class="hover:text-blue-500 transition">Shop</a>
+        <a href="/blog" class="hover:text-blue-500 transition">Blog</a>
+        <a href="/faq" class="hover:text-blue-500 transition">FAQ</a>
+        <a href="/contact" class="hover:text-blue-500 transition">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-6">
+        <button id="theme-toggle" class="hover:text-blue-500 transition"><i class="fas fa-moon text-xl"></i></button>
+        <a href="/my-account" class="hover:text-blue-500 transition"><i class="fas fa-user text-xl"></i></a>
+        <a href="/wishlist" class="text-blue-600 dark:text-cyan-400 font-bold transition relative">
+          <i class="fas fa-heart text-xl"></i>
+          <span class="wishlist-badge absolute -top-2 -right-2 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+        <a href="/cart" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-shopping-bag text-xl"></i>
+          <span class="cart-badge absolute -top-2 -right-2 bg-blue-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- WISHLIST PAGE CONTENT -->
+  <main class="max-w-7xl mx-auto px-6 py-16 min-h-[60vh]">
+    <div class="space-y-4 mb-12">
+      <h1 class="text-3xl font-extrabold font-accent">My Wishlist</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-xs">Saved products you're watching.</p>
+    </div>
+
+    <!-- Wishlist grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" id="wishlist-items-container">
+      <!-- Injected by script dynamically -->
+    </div>
+    
+    <div id="wishlist-empty-msg" class="text-center py-20 hidden">
+      <i class="far fa-heart text-6xl text-gray-300 dark:text-slate-700 mb-4 block"></i>
+      <h3 class="text-xl font-bold font-accent mb-2">Your wishlist is empty</h3>
+      <p class="text-gray-500 dark:text-gray-400 text-xs mb-6 max-w-xs mx-auto">Explore our premium catalog to add products here.</p>
+      <a href="/shop" class="bg-gradient-premium bg-gradient-premium-hover text-white text-xs font-bold px-6 py-3 rounded-xl btn-premium">Shop Tech Items</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-16 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-[10px]">
+      <p>&copy; 2026 Elevora Tech Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/wishlist.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderWishlistPage();
+      window.addEventListener('wishlistUpdated', renderWishlistPage);
+    });
+
+    function renderWishlistPage() {
+      const wishlist = getWishlist();
+      const container = document.getElementById('wishlist-items-container');
+      const emptyMsg = document.getElementById('wishlist-empty-msg');
+
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      if (wishlist.length === 0) {
+        container.classList.add('hidden');
+        emptyMsg.classList.remove('hidden');
+        return;
+      }
+
+      container.classList.remove('hidden');
+      emptyMsg.classList.add('hidden');
+
+      wishlist.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'glass rounded-3xl overflow-hidden flex flex-col justify-between product-card relative animate-fade-in-up';
+        
+        let badgeHtml = '';
+        if (item.badge) {
+          let colorClass = 'bg-blue-600';
+          if (item.badgeType === 'new') colorClass = 'bg-cyan-500';
+          if (item.badgeType === 'hot') colorClass = 'bg-purple-600';
+          badgeHtml = `<span class="absolute top-4 left-4 text-[10px] font-bold text-white px-3 py-1 rounded-full uppercase tracking-wider ${colorClass}">${item.badge}</span>`;
+        }
+
+        div.innerHTML = `
+          <div class="relative">
+            ${badgeHtml}
+            <button onclick="toggleWishlist(${item.id})" class="absolute top-4 right-4 text-red-500 hover:text-red-600 bg-white/80 dark:bg-slate-900/80 w-8 h-8 rounded-full flex items-center justify-center shadow transition"><i class="fas fa-trash-alt text-sm"></i></button>
+            <a href="/product?id=${item.id}">
+              <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+            </a>
+            <div class="p-6 space-y-2">
+              <h3 class="font-bold text-sm font-accent tracking-tight leading-snug"><a href="/product?id=${item.id}" class="hover:text-blue-500 transition">${item.name}</a></h3>
+              <p class="text-slate-800 dark:text-white font-extrabold text-sm" data-price="${item.price}">${formatPrice(item.price)}</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <button onclick="moveWishlistToCart(${item.id})" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-3 rounded-xl transition flex items-center justify-center"><i class="fas fa-shopping-bag mr-2"></i> Move to Cart</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+      
+      // Update formatted prices
+      if (typeof applyCurrencies === 'function') {
+        applyCurrencies();
+      }
+    }
+  </script>
+</body>
+</html>

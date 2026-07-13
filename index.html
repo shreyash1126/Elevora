@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevora | Premium AI-Powered Electronics Store</title>
+  <meta name="description" content="Discover Elevora. Shop next-generation premium electronics: Active Noise Cancellation headphones, AMOLED smart watches, multi-port GaN blocks, and MagSafe accessories.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elevora | Premium AI-Powered Electronics Store">
+  <meta property="og:description" content="Shop next-generation premium electronics with luxury minimalist designs. Fast shipping, 1-year warranty.">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+            glassBg: 'rgba(255, 255, 255, 0.7)',
+            glassBorder: 'rgba(255, 255, 255, 0.15)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200">
+
+  <!-- TOP mini-bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-6 flex justify-between items-center z-50">
+    <div class="flex space-x-4">
+      <a href="/my-account" class="hover:text-cyan-400 transition"><i class="fas fa-store mr-1"></i> Become a Seller</a>
+      <a href="/track-order" class="hover:text-cyan-400 transition"><i class="fas fa-shipping-fast mr-1"></i> Track Order</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <select id="language-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+        <option value="es">ES</option>
+      </select>
+      <select id="currency-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold font-accent tracking-wider text-slate-900 dark:text-white flex items-center">
+          ELE<span class="text-blue-600">VORA</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="/" class="text-blue-600 dark:text-cyan-400 font-bold transition">Home</a>
+        <a href="/shop" class="hover:text-blue-500 transition">Shop</a>
+        <a href="/blog" class="hover:text-blue-500 transition">Blog</a>
+        <a href="/faq" class="hover:text-blue-500 transition">FAQ</a>
+        <a href="/contact" class="hover:text-blue-500 transition">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-6">
+        <div class="relative hidden sm:block">
+          <input type="text" id="search-input" placeholder="Search electronics with AI..." class="w-64 bg-slate-100 dark:bg-slate-800 text-xs px-4 py-2.5 rounded-full focus:outline-none dark:text-white transition">
+          <button id="voice-search-btn" class="absolute right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-500 text-[11px]"><i class="fas fa-microphone"></i></button>
+          <button id="image-search-btn" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-cyan-500 text-[11px]"><i class="fas fa-camera"></i></button>
+          <div id="search-suggestions" class="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-900 border rounded-2xl shadow-xl hidden overflow-hidden z-50"></div>
+        </div>
+        <button id="theme-toggle" class="hover:text-blue-500 transition"><i class="fas fa-moon text-xl"></i></button>
+        <a href="/my-account" class="hover:text-blue-500 transition"><i class="fas fa-user text-xl"></i></a>
+        <a href="/wishlist" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-heart text-xl"></i>
+          <span class="wishlist-badge absolute -top-2 -right-2 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+        <a href="/cart" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-shopping-bag text-xl"></i>
+          <span class="cart-badge absolute -top-2 -right-2 bg-blue-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ANIMATED HERO HERO SECTION -->
+  <section class="max-w-7xl mx-auto px-6 pt-12">
+    <div class="glass-heavy rounded-3xl p-8 md:p-16 border border-white/20 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 min-h-[500px]">
+      
+      <!-- Vector mesh grids background -->
+      <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-cyan-500/5 z-0"></div>
+
+      <!-- Left Text -->
+      <div class="space-y-6 relative z-10 max-w-lg">
+        <span class="text-xs font-bold text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1.5 rounded-full uppercase tracking-wider">Summer Collection 2026</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight font-accent leading-tight">
+          Sound Reimagined. AeroPulse Studio ANC
+        </h1>
+        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+          Escape the noise. Experience studio-grade acoustic depth, advanced hybrid noise cancellation, and up to 45 hours playtime.
+        </p>
+        <div class="flex items-center space-x-4">
+          <a href="/product?id=1" class="bg-gradient-premium bg-gradient-premium-hover text-white text-xs font-bold px-6 py-4 rounded-xl btn-premium">
+            Configure Device <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="/shop" class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white text-xs font-bold px-6 py-4 rounded-xl hover:bg-slate-200 transition">
+            Explore All Tech
+          </a>
+        </div>
+      </div>
+
+      <!-- Right image showcase -->
+      <div class="relative z-10 w-full md:w-1/2 flex justify-center">
+        <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl scale-75 animate-pulse"></div>
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80" alt="ANC Headphones" class="w-[380px] h-[380px] object-cover rounded-3xl shadow-2xl border border-white/10 animate-float">
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY QUICK LINKS -->
+  <section class="max-w-7xl mx-auto px-6 py-16 space-y-8">
+    <h2 class="text-2xl font-bold font-accent text-slate-900 dark:text-white">Shop by Category</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      
+      <!-- Category Card 1 -->
+      <a href="/shop?category=Audio%20Products" class="glass p-6 rounded-3xl border border-white/10 text-center hover:-translate-y-2 transition duration-300 block">
+        <i class="fas fa-headphones text-2xl text-blue-500 mb-3 block animate-float"></i>
+        <h4 class="font-bold text-xs font-accent">Audio Products</h4>
+      </a>
+
+      <!-- Category Card 2 -->
+      <a href="/shop?category=Wearables" class="glass p-6 rounded-3xl border border-white/10 text-center hover:-translate-y-2 transition duration-300 block">
+        <i class="fas fa-clock text-2xl text-cyan-500 mb-3 block animate-float"></i>
+        <h4 class="font-bold text-xs font-accent">Wearables</h4>
+      </a>
+
+      <!-- Category Card 3 -->
+      <a href="/shop?category=Accessories" class="glass p-6 rounded-3xl border border-white/10 text-center hover:-translate-y-2 transition duration-300 block">
+        <i class="fas fa-bolt text-2xl text-yellow-500 mb-3 block animate-float"></i>
+        <h4 class="font-bold text-xs font-accent">Power Accessories</h4>
+      </a>
+
+      <!-- Category Card 4 -->
+      <a href="/shop?category=Computer%20Accessories" class="glass p-6 rounded-3xl border border-white/10 text-center hover:-translate-y-2 transition duration-300 block">
+        <i class="fas fa-keyboard text-2xl text-purple-500 mb-3 block animate-float"></i>
+        <h4 class="font-bold text-xs font-accent">Decks & Inputs</h4>
+      </a>
+
+      <!-- Category Card 5 -->
+      <a href="/shop?category=Smart%20Home" class="glass p-6 rounded-3xl border border-white/10 text-center hover:-translate-y-2 transition duration-300 block">
+        <i class="fas fa-lightbulb text-2xl text-green-500 mb-3 block animate-float"></i>
+        <h4 class="font-bold text-xs font-accent">Smart Home</h4>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- TODAY'S DEALS FLASH SALE WITH COUNTDOWN -->
+  <section class="max-w-7xl mx-auto px-6 py-8">
+    <div class="glass p-8 rounded-3xl border border-white/20 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-4">
+        <span class="bg-red-500 text-white font-bold text-[9px] px-3 py-1 rounded-full uppercase tracking-wider">Flash Sale</span>
+        <div>
+          <h3 class="font-bold text-base font-accent">Exclusive Today's Deals</h3>
+          <p class="text-[10px] text-gray-400 mt-0.5">Special pricing on trending tech accessories.</p>
+        </div>
+      </div>
+
+      <!-- Realtime countdown timer -->
+      <div class="flex items-center space-x-2 font-mono text-slate-800 dark:text-white" id="countdown-timer">
+        <div class="bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-xl text-center">
+          <span class="block font-bold text-sm" id="hours-val">08</span>
+        </div>
+        <span>:</span>
+        <div class="bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-xl text-center">
+          <span class="block font-bold text-sm" id="mins-val">24</span>
+        </div>
+        <span>:</span>
+        <div class="bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-xl text-center">
+          <span class="block font-bold text-sm" id="secs-val">52</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS CATALOG GRID -->
+  <section class="max-w-7xl mx-auto px-6 py-16 space-y-8">
+    <h2 class="text-2xl font-bold font-accent">Featured Best Sellers</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="home-featured-grid">
+      <!-- Injected by products-data JS -->
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-16 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="space-y-4">
+        <span class="text-2xl font-bold font-accent tracking-wider text-white">ELE<span class="text-blue-500">VORA</span></span>
+        <p class="text-xs leading-relaxed">Premium online tech gadgets with a modern minimalist aesthetic.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 font-accent">Quick Links</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/shop" class="hover:text-white transition">Shop All</a></li>
+          <li><a href="/about" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/blog" class="hover:text-white transition">Latest News</a></li>
+          <li><a href="/faq" class="hover:text-white transition">FAQ Hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 font-accent">Policies</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/privacy-policy" class="hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="/refund-policy" class="hover:text-white transition">Refund Policy</a></li>
+          <li><a href="/return-policy" class="hover:text-white transition">Return Policy</a></li>
+          <li><a href="/shipping-policy" class="hover:text-white transition">Shipping Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 font-accent">Newsletter</h4>
+        <p class="text-xs mb-3 font-semibold">Join Elevora tech updates list.</p>
+        <form class="flex" onsubmit="event.preventDefault(); showNotification('Subscribed successfully!', 'success');">
+          <input type="email" placeholder="Email Address" class="bg-slate-800 text-xs px-4 py-2 rounded-l-xl w-full text-white border-none focus:outline-none">
+          <button type="submit" class="bg-blue-600 text-white text-xs px-4 rounded-r-xl font-semibold hover:bg-blue-700 transition">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-[10px]">
+      <p>&copy; 2026 Elevora Tech Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/wishlist.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Render homepage catalog
+      const list = await getProducts();
+      const container = document.getElementById('home-featured-grid');
+      
+      if (container && list.length > 0) {
+        container.innerHTML = '';
+        // Inject first 4 products
+        list.slice(0, 4).forEach(prod => {
+          const card = document.createElement('div');
+          card.className = 'glass rounded-3xl overflow-hidden flex flex-col justify-between product-card relative animate-fade-in-up';
+          
+          let badgeHtml = '';
+          if (prod.badge) {
+            let colorClass = 'bg-blue-600';
+            if (prod.badgeType === 'new') colorClass = 'bg-cyan-500';
+            if (prod.badgeType === 'hot') colorClass = 'bg-purple-600';
+            badgeHtml = `<span class="absolute top-4 left-4 text-[9px] font-bold text-white px-3 py-1 rounded-full uppercase tracking-wider ${colorClass} z-10">${prod.badge}</span>`;
+          }
+
+          card.innerHTML = `
+            <div class="relative">
+              ${badgeHtml}
+              <button onclick="toggleWishlist(${prod.id}); this.querySelector('i').className = isInWishlist(${prod.id}) ? 'fas fa-heart text-red-500' : 'far fa-heart'" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 bg-white/80 dark:bg-slate-900/80 w-8 h-8 rounded-full flex items-center justify-center shadow transition z-10"><i class="${isInWishlist(prod.id) ? 'fas fa-heart text-red-500' : 'far fa-heart'} text-sm"></i></button>
+              
+              <a href="/product?id=${prod.id}">
+                <img src="${prod.images[0]}" alt="${prod.name}" class="w-full h-48 object-cover">
+              </a>
+              
+              <div class="p-6 space-y-2">
+                <div class="flex items-center justify-between text-[10px] text-gray-400">
+                  <span>${prod.brand}</span>
+                  <span class="flex items-center"><i class="fas fa-star text-yellow-400 mr-1"></i> ${prod.rating}</span>
+                </div>
+                <h3 class="font-bold text-sm font-accent tracking-tight leading-snug"><a href="/product?id=${prod.id}" class="hover:text-blue-500 transition">${prod.name}</a></h3>
+                <p class="text-slate-800 dark:text-white font-extrabold text-sm" data-price="${prod.price}">${formatPrice(prod.price)}</p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 flex space-x-2">
+              <a href="/product?id=${prod.id}" class="flex-1 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white text-center text-[10px] font-bold py-2.5 rounded-xl transition">Configure</a>
+              <button onclick="addToCart(${prod.id}, null, 1)" class="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold px-3 py-2.5 rounded-xl transition"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+        
+        if (typeof applyCurrencies === 'function') {
+          applyCurrencies();
+        }
+      }
+
+      // 2. Setup Deal Flash Sale Countdown timer
+      let totalSeconds = 8 * 3600 + 24 * 60 + 52;
+      const timerInterval = setInterval(() => {
+        totalSeconds--;
+        if (totalSeconds <= 0) {
+          clearInterval(timerInterval);
+          return;
+        }
+
+        const hrs = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        document.getElementById('hours-val').innerText = hrs.toString().padStart(2, '0');
+        document.getElementById('mins-val').innerText = mins.toString().padStart(2, '0');
+        document.getElementById('secs-val').innerText = secs.toString().padStart(2, '0');
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

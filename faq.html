@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Hub | Elevora Electronics Help Center</title>
+  <meta name="description" content="Find answers to frequently asked questions about Elevora shipping, payments, returns, warranty, and seller options.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="FAQ Hub | Elevora Electronics Help Center">
+  <meta property="og:description" content="Find answers to frequently asked questions about Elevora shipping, payments, returns, warranty, and seller options.">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#06B6D4',
+            darkBg: '#090D1A',
+            glassBg: 'rgba(255, 255, 255, 0.7)',
+            glassBorder: 'rgba(255, 255, 255, 0.15)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FCFCFD] dark:bg-darkBg text-slate-800 dark:text-slate-200">
+
+  <!-- TOP mini-bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-6 flex justify-between items-center z-50">
+    <div class="flex space-x-4">
+      <a href="/my-account" class="hover:text-cyan-400 transition"><i class="fas fa-store mr-1"></i> Become a Seller</a>
+      <a href="/track-order" class="hover:text-cyan-400 transition"><i class="fas fa-shipping-fast mr-1"></i> Track Order</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <select id="language-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="en">EN</option>
+        <option value="hi">हिं</option>
+        <option value="es">ES</option>
+      </select>
+      <select id="currency-selector" class="bg-transparent border-none text-white focus:outline-none cursor-pointer">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="INR">INR (₹)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold font-accent tracking-wider text-slate-900 dark:text-white flex items-center">
+          ELE<span class="text-blue-600">VORA</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="/" class="hover:text-blue-500 transition">Home</a>
+        <a href="/shop" class="hover:text-blue-500 transition">Shop</a>
+        <a href="/blog" class="hover:text-blue-500 transition">Blog</a>
+        <a href="/faq" class="text-blue-600 dark:text-cyan-400 font-bold transition">FAQ</a>
+        <a href="/contact" class="hover:text-blue-500 transition">Contact Us</a>
+      </nav>
+      <div class="flex items-center space-x-6">
+        <button id="theme-toggle" class="hover:text-blue-500 transition"><i class="fas fa-moon text-xl"></i></button>
+        <a href="/my-account" class="hover:text-blue-500 transition"><i class="fas fa-user text-xl"></i></a>
+        <a href="/wishlist" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-heart text-xl"></i>
+          <span class="wishlist-badge absolute -top-2 -right-2 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+        <a href="/cart" class="hover:text-blue-500 transition relative">
+          <i class="fas fa-shopping-bag text-xl"></i>
+          <span class="cart-badge absolute -top-2 -right-2 bg-blue-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FAQ HUB CONTENT -->
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <div class="text-center space-y-4 mb-16">
+      <span class="text-blue-600 dark:text-cyan-400 font-bold uppercase tracking-widest text-xs">Help Desk</span>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight font-accent">Frequently Asked Questions</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-sm max-w-xl mx-auto">
+        Search our active help library or select categories to narrow down queries.
+      </p>
+      
+      <!-- Instant Search input for FAQ -->
+      <div class="relative max-w-md mx-auto pt-4">
+        <input type="text" id="faq-search" placeholder="Search questions..." class="w-full bg-slate-100 dark:bg-slate-800 text-sm px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 border border-transparent dark:text-white transition">
+        <i class="fas fa-search absolute right-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex justify-center space-x-3 mb-12 border-b border-gray-100 dark:border-slate-800 pb-4">
+      <button class="faq-tab active bg-blue-600 text-white shadow-md text-xs font-bold px-4 py-2 rounded-full transition" data-category="all">All</button>
+      <button class="faq-tab text-slate-600 dark:text-gray-400 hover:text-blue-500 text-xs font-bold px-4 py-2 rounded-full transition" data-category="shipping">Shipping</button>
+      <button class="faq-tab text-slate-600 dark:text-gray-400 hover:text-blue-500 text-xs font-bold px-4 py-2 rounded-full transition" data-category="payments">Payments</button>
+      <button class="faq-tab text-slate-600 dark:text-gray-400 hover:text-blue-500 text-xs font-bold px-4 py-2 rounded-full transition" data-category="warranty">Warranty</button>
+    </div>
+
+    <!-- Accordion listings -->
+    <div class="space-y-4" id="faq-accordion-container">
+      
+      <!-- FAQ item -->
+      <div class="faq-item glass rounded-2xl border border-white/20 overflow-hidden" data-cat="shipping">
+        <button class="w-full flex items-center justify-between p-6 focus:outline-none text-left" onclick="toggleFaq(this)">
+          <span class="font-bold text-sm font-accent">What are the shipping zones and delivery durations?</span>
+          <i class="fas fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+          We ship globally. Domestic deliveries (US and India regions) take between 2 to 4 business days. International standard shipments take 7 to 14 business days. Real-time updates can be monitored using our Live Track tool.
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl border border-white/20 overflow-hidden" data-cat="payments">
+        <button class="w-full flex items-center justify-between p-6 focus:outline-none text-left" onclick="toggleFaq(this)">
+          <span class="font-bold text-sm font-accent">Which payment gateways and currencies are supported?</span>
+          <i class="fas fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+          We support major Credit Cards (Visa, Mastercard, Amex), UPI transactions, PayPal, and Apple Pay. Prices will automatically adapt to your chosen currency layout (USD, EUR, or INR) dynamically via the selector.
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl border border-white/20 overflow-hidden" data-cat="warranty">
+        <button class="w-full flex items-center justify-between p-6 focus:outline-none text-left" onclick="toggleFaq(this)">
+          <span class="font-bold text-sm font-accent">How do I claim product warranty?</span>
+          <i class="fas fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+          All Elevora accessories come with a 1-year limited warranty coverage. If you experience hardware failure, go to your My Account dashboard, navigate to the Support Ticket tab, and submit a warranty claim.
+        </div>
+      </div>
+
+      <div class="faq-item glass rounded-2xl border border-white/20 overflow-hidden" data-cat="shipping">
+        <button class="w-full flex items-center justify-between p-6 focus:outline-none text-left" onclick="toggleFaq(this)">
+          <span class="font-bold text-sm font-accent">Can I cancel my order after check out?</span>
+          <i class="fas fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer px-6 pb-6 text-xs text-gray-500 dark:text-gray-400 leading-relaxed hidden">
+          Orders can be cancelled directly from the Account Dashboard before they are processed by the shipping warehouse (typically within 45 minutes of creation).
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-16 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="space-y-4">
+        <span class="text-2xl font-bold font-accent tracking-wider text-white">ELE<span class="text-blue-500">VORA</span></span>
+        <p class="text-xs leading-relaxed">Premium online tech gadgets with a modern minimalist aesthetic.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 font-accent">Quick Links</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/shop" class="hover:text-white transition">Shop All</a></li>
+          <li><a href="/about" class="hover:text-white transition">About Us</a></li>
+          <li><a href="/blog" class="hover:text-white transition">Latest News</a></li>
+          <li><a href="/faq" class="hover:text-white transition">FAQ Hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 font-accent">Policies</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/privacy-policy" class="hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="/refund-policy" class="hover:text-white transition">Refund Policy</a></li>
+          <li><a href="/return-policy" class="hover:text-white transition">Return Policy</a></li>
+          <li><a href="/shipping-policy" class="hover:text-white transition">Shipping Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4 font-accent">Newsletter</h4>
+        <form class="flex" onsubmit="event.preventDefault(); showNotification('Subscribed successfully!', 'success');">
+          <input type="email" placeholder="Email Address" class="bg-slate-800 text-xs px-4 py-2 rounded-l-xl w-full text-white border-none focus:outline-none">
+          <button type="submit" class="bg-blue-600 text-white text-xs px-4 rounded-r-xl font-semibold hover:bg-blue-700 transition">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-[10px]">
+      <p>&copy; 2026 Elevora Tech Inc. All rights reserved. Created in partnership with Antigravity AI.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/products-data.js"></script>
+  <script src="/js/script.js"></script>
+  
+  <script>
+    // Accordion Toggle function
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('i');
+      
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        button.classList.add('bg-slate-50', 'dark:bg-slate-800/20');
+        icon.classList.replace('fa-plus', 'fa-minus');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        answer.classList.add('hidden');
+        button.classList.remove('bg-slate-50', 'dark:bg-slate-800/20');
+        icon.classList.replace('fa-minus', 'fa-plus');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // Category and search filtering logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('faq-search');
+      const tabs = document.querySelectorAll('.faq-tab');
+      const items = document.querySelectorAll('.faq-item');
+
+      let currentCat = 'all';
+      let searchQuery = '';
+
+      function filterFaqs() {
+        items.forEach(item => {
+          const catMatch = currentCat === 'all' || item.getAttribute('data-cat') === currentCat;
+          const text = item.querySelector('span').innerText.toLowerCase() + 
+                       item.querySelector('.faq-answer').innerText.toLowerCase();
+          const queryMatch = text.includes(searchQuery);
+
+          if (catMatch && queryMatch) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      }
+
+      // Search event listener
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        filterFaqs();
+      });
+
+      // Tabs switcher event listener
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active', 'bg-blue-600', 'text-white', 'shadow-md'));
+          tabs.forEach(t => t.classList.add('text-slate-600', 'dark:text-gray-400'));
+          
+          tab.classList.add('active', 'bg-blue-600', 'text-white', 'shadow-md');
+          tab.classList.remove('text-slate-600', 'dark:text-gray-400');
+          
+          currentCat = tab.getAttribute('data-category');
+          filterFaqs();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
