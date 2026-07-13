@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The page you are looking for does not exist. Browse Elevora's premium catalog of smart electronics.">
+  <title>Page Not Found | Elevora Store</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .error-card {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .error-num {
+      font-family: 'Outfit';
+      font-size: 6rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--accent-dark);
+      margin-bottom: 24px;
+      letter-spacing: -0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Error body -->
+  <main class="container">
+    <div class="error-card reveal-element revealed">
+      <div class="error-num">404</div>
+      <h2 style="font-family: Outfit; font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Gadget Not Found</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 30px; font-size: 0.95rem;">The page or smart electronic accessory you searched for has departed transit or does not exist.</p>
+      
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-primary" style="width: auto; padding: 12px 24px;">Return Home</a>
+        <a href="shop.html" class="btn btn-secondary" style="width: auto; padding: 12px 24px;">Shop Smartwatches & Earbuds</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-bottom" style="border-top: 1px solid var(--border-color); margin-top: 60px;">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

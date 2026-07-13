@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Elevora's premium collection of smart electronics, wireless charger banks, earbuds, mechanical keyboards and premium tech accessories.">
+  <title>Shop Tech Gadgets & Accessories | Elevora Catalog</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Shop Catalog Specific Styles */
+    .shop-page-hero {
+      background-color: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 40px 0;
+      margin-bottom: 40px;
+    }
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .breadcrumb a:hover {
+      color: var(--text-primary);
+    }
+    .shop-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Layout grid: Sidebar vs Products list */
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+
+    /* Sidebar Filters */
+    .filter-section {
+      margin-bottom: 30px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .filter-section:last-child {
+      border-bottom: none;
+    }
+    .filter-section-title {
+      font-family: 'Outfit';
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .filter-category-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .filter-category-btn {
+      width: 100%;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: var(--border-radius-sm);
+      transition: all var(--transition-fast);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .filter-category-btn:hover,
+    .filter-category-btn.active {
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    
+    .checkbox-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+    .checkbox-label input {
+      accent-color: var(--accent-dark);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    /* Price Slider */
+    .price-range-slider {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .price-slider-input {
+      width: 100%;
+      height: 6px;
+      background: var(--border-color);
+      border-radius: 3px;
+      outline: none;
+      -webkit-appearance: none;
+      accent-color: var(--text-primary);
+    }
+    
+    /* Shop Catalog Header Control Bar */
+    .shop-control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .sort-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+    .sort-select {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: var(--border-radius-sm);
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+    }
+    .sort-select:focus {
+      border-color: var(--text-primary);
+    }
+    
+    /* Mobile filter toggles display none on desktop */
+    .filter-mobile-bar {
+      display: none;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 40px;
+    }
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all var(--transition-fast);
+    }
+    .page-btn:hover,
+    .page-btn.active {
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
+      border-color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-item"><i class="fa-solid fa-truck-fast"></i> Free Worldwide Delivery on orders above $100</div>
+      <div class="announcement-item" style="display: none;"><i class="fa-solid fa-bolt"></i> Flash Sale: Use code <span>ELEVORA20</span> for 20% off</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Live Search -->
+        <div class="header-search-wrap">
+          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+          <input type="text" class="header-search-input" placeholder="Search gadgets...">
+        </div>
+
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category sub-navigation bar -->
+  <nav class="category-nav-bar">
+    <div class="container category-nav-container">
+      <div class="category-nav-list">
+        
+        <!-- New Arrivals -->
+        <a href="shop.html" class="category-nav-item">New Arrivals</a>
+        
+        <!-- Mobile Accessories -->
+        <div class="category-nav-item">
+          Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+          </div>
+        </div>
+        
+        <!-- Tech Gadgets -->
+        <div class="category-nav-item">
+          Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+          </div>
+        </div>
+        
+        <!-- Tools & Utility -->
+        <div class="category-nav-item">
+          Tools & Utility <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+          </div>
+        </div>
+        
+        <!-- Car & Travel -->
+        <div class="category-nav-item">
+          Car & Travel <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+          </div>
+        </div>
+        
+        <!-- Offers & Combos -->
+        <div class="category-nav-item">
+          Offers & Combos <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html" class="dropdown-link">Buy 1 Get 1 Free</a>
+            <a href="shop.html" class="dropdown-link">Under ₹999 Deals</a>
+            <a href="shop.html" class="dropdown-link">Combo Packs</a>
+            <a href="shop.html" class="dropdown-link">Clearance Sale</a>
+          </div>
+        </div>
+        
+        <!-- Shop By Price -->
+        <div class="category-nav-item">
+          Shop By Price <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html" class="dropdown-link">Under ₹499</a>
+            <a href="shop.html" class="dropdown-link">Under ₹999</a>
+            <a href="shop.html" class="dropdown-link">Under ₹1999</a>
+            <a href="shop.html" class="dropdown-link">Premium Selection</a>
+          </div>
+        </div>
+        
+        <!-- Gifting -->
+        <div class="category-nav-item">
+          Gifting <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="shop.html?category=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
+            <a href="shop.html?category=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="shop.html?category=Power%20Banks" class="dropdown-link">Power Banks</a>
+            <a href="shop.html?category=Charging%20Cables" class="dropdown-link">Charging Cables</a>
+            <a href="shop.html?category=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
+            <a href="shop.html?category=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
+            <a href="shop.html?category=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
+            <a href="shop.html?category=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="shop.html?category=Home%20Utility" class="dropdown-link">Home Utility</a>
+            <a href="shop.html?category=Humidifiers" class="dropdown-link">Humidifiers</a>
+            <a href="shop.html?category=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="shop.html?category=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="shop.html?category=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
+            <a href="shop.html?category=Home%20Decor" class="dropdown-link">Home Decor</a>
+            <a href="shop.html?category=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="shop.html?category=Projectors" class="dropdown-link">Projectors</a>
+            <a href="shop.html?category=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
+            <a href="shop.html?category=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
+          </div>
+        </div>
+        
+        <!-- Support -->
+        <div class="category-nav-item">
+          Support <i class="fa-solid fa-chevron-down"></i>
+          <div class="category-dropdown">
+            <a href="track-order.html" class="dropdown-link">Track Order</a>
+            <a href="contact.html" class="dropdown-link">Contact Us</a>
+            <a href="faq.html" class="dropdown-link">FAQ Desk</a>
+            <a href="my-account.html" class="dropdown-link">Returns & Refunds</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Page banner -->
+  <section class="shop-page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Shop</span>
+      </div>
+      <h1 class="shop-title">All Smart Electronics</h1>
+    </div>
+  </section>
+
+  <!-- Shop Main section -->
+  <main class="container">
+    
+    <!-- Mobile Filter Toggle Bar (Visible on mobile/tablet screens only) -->
+    <div class="filter-mobile-bar">
+      <button class="btn btn-secondary" onclick="openMobileFilters()" style="padding: 10px 16px; font-size: 0.85rem;"><i class="fa-solid fa-filter"></i> Filters</button>
+      <span id="mobile-results-count" style="font-size: 0.85rem; font-weight: 500;">8 products</span>
+    </div>
+
+    <div class="shop-layout">
+      
+      <!-- Overlay for mobile filters drawer -->
+      <div class="filter-sidebar-overlay" id="filter-sidebar-overlay" onclick="closeMobileFilters()"></div>
+
+      <!-- Left Filters Sidebar -->
+      <aside class="filter-sidebar" id="filter-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1.5px solid var(--border-color); padding-bottom: 10px;">
+          <h3 style="font-family: 'Outfit'; font-size: 1.25rem;">Filters</h3>
+          <button id="clear-all-filters-btn" style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); cursor: pointer;">Clear All</button>
+        </div>
+
+        <!-- Search in Catalog -->
+        <div class="filter-section">
+          <h4 class="filter-section-title">Search</h4>
+          <div style="position: relative;">
+            <input type="text" id="shop-catalog-search" class="shop-search-input" placeholder="Type name..." style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); font-size: 0.85rem; background-color: var(--bg-secondary);">
+          </div>
+        </div>
+
+        <!-- Categories List -->
+        <div class="filter-section">
+          <h4 class="filter-section-title">Categories</h4>
+          <div class="filter-category-list">
+            <button class="filter-category-btn active" data-category="all">All Categories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Headphones">Headphones <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Smart Watches">Smart Watches <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Earbuds">Earbuds <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Power Banks">Power Banks <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Bluetooth Speakers">Speakers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Gaming Accessories">Keyboards <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Smart Home">Smart Home <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+            <button class="filter-category-btn" data-category="Chargers">Chargers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
+          </div>
+        </div>
+
+        <!-- Brands Checkboxes -->
+        <div class="filter-section">
+          <h4 class="filter-section-title">Brands</h4>
+          <div class="checkbox-list">
+            <label class="checkbox-label">
+              <input type="checkbox" class="brand-filter-checkbox" value="AeroPulse">
+              <span>AeroPulse</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="brand-filter-checkbox" value="ApexTrack">
+              <span>ApexTrack</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="brand-filter-checkbox" value="VoltMax">
+              <span>VoltMax</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="brand-filter-checkbox" value="KeyPro">
+              <span>KeyPro</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="brand-filter-checkbox" value="Lumino">
+              <span>LuminoSmart</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-section">
+          <h4 class="filter-section-title">Price Range</h4>
+          <div class="price-range-slider">
+            <input type="range" id="price-range-input" class="price-slider-input" min="30" max="300" value="300">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 500;">
+              <span>Min: $30</span>
+              <span>Max: <strong id="price-range-value" style="color: var(--accent-dark); font-weight: 700;">$300</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Rating filters -->
+        <div class="filter-section">
+          <h4 class="filter-section-title">Ratings</h4>
+          <div class="checkbox-list">
+            <label class="checkbox-label">
+              <input type="checkbox" class="rating-filter-checkbox" value="4">
+              <span style="color: var(--accent-dark);"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star" style="color: var(--text-muted);"></i> & Up</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="rating-filter-checkbox" value="5">
+              <span style="color: var(--accent-dark);"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (5.0 Only)</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Products Grid Area -->
+      <section>
+        <!-- Control Bar -->
+        <div class="shop-control-bar">
+          <span id="shop-results-count" style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">8 gadgets found</span>
+          <div class="sort-wrap">
+            <label for="shop-sort-select">Sort By:</label>
+            <select id="shop-sort-select" class="sort-select">
+              <option value="featured">Featured Options</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated Stars</option>
+              <option value="reviews">Popularity Reviews</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="shop-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
+          <!-- Managed and Rendered dynamically via filters.js -->
+        </div>
+
+        <!-- Pagination Footer -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?category=Headphones">Headphones</a></li>
+          <li><a href="shop.html?category=Smart%20Watches">Smart Watches</a></li>
+          <li><a href="shop.html?category=Earbuds">Earbuds</a></li>
+          <li><a href="shop.html?category=Power%20Banks">Power Banks</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ Desk</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="track-order.html">Track Order</a></li>
+          <li><a href="my-account.html">My Account</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Brand</a></li>
+          <li><a href="blog.html">Tech Blog</a></li>
+          <li><a href="privacy-policy.html">Privacy Guidelines</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column footer-newsletter">
+        <h4>Subscribe</h4>
+        <p>Get early product launches and exclusive VIP coupon discount offers directly in your inbox.</p>
+        <form class="newsletter-section-form">
+          <input type="email" placeholder="Email address" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+      <div class="payment-methods">
+        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mini Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h4 class="cart-drawer-title"><i class="fa-solid fa-shopping-bag" style="color: var(--accent-dark);"></i> Your Cart</h4>
+        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-drawer-items" id="cart-drawer-items">
+        <!-- Loaded dynamically -->
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal</span>
+          <span style="font-weight: 600;" id="cart-drawer-subtotal">$0.00</span>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Shipping & promo coupons calculated at checkout page.</div>
+        <div class="cart-drawer-actions">
+          <a href="cart.html" class="btn btn-secondary" style="width: 100%;" onclick="closeMiniCartDrawer()">View Full Cart</a>
+          <a href="checkout.html" class="btn btn-primary" style="width: 100%;" id="mini-cart-checkout-btn">Checkout Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Javascript dependencies -->
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+
+  <!-- Mobile filters specific drawers switcher script -->
+  <script>
+    function openMobileFilters() {
+      const sidebar = document.getElementById("filter-sidebar");
+      const overlay = document.getElementById("filter-sidebar-overlay");
+      if (sidebar && overlay) {
+        sidebar.classList.add("open");
+        overlay.classList.add("show");
+      }
+    }
+    
+    function closeMobileFilters() {
+      const sidebar = document.getElementById("filter-sidebar");
+      const overlay = document.getElementById("filter-sidebar-overlay");
+      if (sidebar && overlay) {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("show");
+      }
+    }
+  </script>
+</body>
+</html>

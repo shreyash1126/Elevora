@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure Checkout - Complete your Elevora smart electronics order with secure payment methods. SSL Protected.">
+  <title>Secure Checkout | Elevora Store</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Checkout Page specific styles */
+    .checkout-container {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    
+    .checkout-form-box {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      background-color: var(--bg-primary);
+    }
+    
+    .checkout-step-title {
+      font-family: 'Outfit';
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .checkout-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-field label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .form-field input,
+    .form-field select {
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      padding: 12px;
+      font-size: 0.9rem;
+      background-color: var(--bg-primary);
+      width: 100%;
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: var(--text-primary);
+    }
+
+    /* Shipping option pills */
+    .shipping-method-option {
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all var(--transition-fast);
+    }
+    .shipping-method-option:hover,
+    .shipping-method-option.active {
+      border-color: var(--text-primary);
+      background-color: var(--bg-secondary);
+    }
+    .shipping-method-option input {
+      accent-color: var(--text-primary);
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Summary Pane */
+    .checkout-summary-wrap {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 30px;
+      align-self: start;
+    }
+    .summary-product-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .summary-product-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .summary-product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .summary-totals-box {
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .total-row-summary {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-item"><i class="fa-solid fa-lock"></i> SSL Secured Payment Checkout Portal</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero Title -->
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="cart.html">Cart</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Checkout</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Secure Checkout</h1>
+    </div>
+  </section>
+
+  <!-- Checkout Stepper Layout -->
+  <main class="container">
+    <div class="checkout-container">
+      
+      <!-- Left Column: Checkout stepped forms -->
+      <form id="checkout-main-form" class="checkout-form-box" onsubmit="handlePlaceOrder(event)">
+        
+        <!-- Step 1: Shipping Address info -->
+        <div class="filter-section" style="border-bottom: none; margin-bottom: 20px;">
+          <h3 class="checkout-step-title"><span class="checkout-step-num">1</span> Shipping Details</h3>
+          
+          <div class="form-group-row">
+            <div class="form-field">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" required placeholder="e.g. John">
+            </div>
+            <div class="form-field">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" required placeholder="e.g. Doe">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email-address">Email Address</label>
+            <input type="email" id="email-address" required placeholder="e.g. john@example.com">
+          </div>
+
+          <div class="form-field">
+            <label for="shipping-street">Street Address</label>
+            <input type="text" id="shipping-street" required placeholder="e.g. 123 Tech Lane, Apt 4">
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-field">
+              <label for="shipping-city">City</label>
+              <input type="text" id="shipping-city" required placeholder="e.g. New York">
+            </div>
+            <div class="form-field">
+              <label for="shipping-zip">Zip/Postal Code</label>
+              <input type="text" id="shipping-zip" required placeholder="e.g. 10001">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="shipping-country">Country</label>
+            <select id="shipping-country" required>
+              <option value="US">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="DE">Germany</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Step 2: Shipping Courier options -->
+        <div class="filter-section" style="border-bottom: none; margin-bottom: 20px;">
+          <h3 class="checkout-step-title"><span class="checkout-step-num">2</span> Shipping Service</h3>
+          
+          <div class="shipping-method-option active" onclick="selectShippingMethod('free', this)">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <input type="radio" name="shipping_radio" id="ship-free" checked>
+              <div>
+                <h4 style="font-size: 0.9rem; font-weight: 700;">Standard Insured Shipping</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Delivery takes 5-10 business days</p>
+              </div>
+            </div>
+            <span style="font-weight: 700; font-size: 0.9rem; color: var(--success);">FREE</span>
+          </div>
+
+          <div class="shipping-method-option" onclick="selectShippingMethod('express', this)">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <input type="radio" name="shipping_radio" id="ship-express">
+              <div>
+                <h4 style="font-size: 0.9rem; font-weight: 700;">Express Courier Dispatch</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Delivery takes 2-4 business days</p>
+              </div>
+            </div>
+            <span style="font-weight: 700; font-size: 0.9rem;">$9.99</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment Mock inputs -->
+        <div class="filter-section" style="border-bottom: none; margin-bottom: 30px;">
+          <h3 class="checkout-step-title"><span class="checkout-step-num">3</span> Payment Method</h3>
+          
+          <div class="form-field">
+            <label for="cc-name">Name on Credit Card</label>
+            <input type="text" id="cc-name" required placeholder="e.g. John Doe">
+          </div>
+
+          <div class="form-field">
+            <label for="cc-num">Credit Card Number</label>
+            <input type="text" id="cc-num" required placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-field">
+              <label for="cc-exp">Expiration Date</label>
+              <input type="text" id="cc-exp" required placeholder="MM/YY" maxlength="5">
+            </div>
+            <div class="form-field">
+              <label for="cc-cvv">CVV/Security Code</label>
+              <input type="password" id="cc-cvv" required placeholder="XXX" maxlength="3">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; height: 50px;"><i class="fa-solid fa-lock" style="margin-right: 8px;"></i> Place Order & Pay</button>
+      </form>
+
+      <!-- Right Column: Checkout item totals summary -->
+      <aside class="checkout-summary-wrap">
+        <h3 style="font-family: 'Outfit'; font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; border-bottom: 1.5px solid var(--border-color); padding-bottom: 12px;">Order Summary</h3>
+        
+        <!-- Cart Items list -->
+        <div id="checkout-summary-items-list" style="display: flex; flex-direction: column; gap: 16px; max-height: 250px; overflow-y: auto; padding-right: 8px;">
+          <!-- Loaded dynamically -->
+        </div>
+
+        <!-- Checkout Pricing math -->
+        <div class="summary-totals-box">
+          <div class="total-row-summary">
+            <span>Subtotal</span>
+            <span style="font-weight: 600;" id="chk-subtotal">$0.00</span>
+          </div>
+          <div class="total-row-summary" id="chk-discount-row" style="color: var(--danger); display: none;">
+            <span>Coupon Discount</span>
+            <span style="font-weight: 600;" id="chk-discount">-$0.00</span>
+          </div>
+          <div class="total-row-summary">
+            <span>Shipping Cost</span>
+            <span style="font-weight: 600;" id="chk-shipping">FREE</span>
+          </div>
+          <div class="total-row-summary" style="font-family: 'Outfit'; font-size: 1.2rem; font-weight: 800; border-top: 1.5px solid var(--border-color); padding-top: 16px; margin-top: 8px;">
+            <span>Grand Total</span>
+            <span id="chk-total">$0.00</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?category=Headphones">Headphones</a></li>
+          <li><a href="shop.html?category=Smart%20Watches">Smart Watches</a></li>
+          <li><a href="shop.html?category=Earbuds">Earbuds</a></li>
+          <li><a href="shop.html?category=Power%20Banks">Power Banks</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ Desk</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="track-order.html">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Brand</a></li>
+          <li><a href="blog.html">Tech Blog</a></li>
+          <li><a href="privacy-policy.html">Privacy Guidelines</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column footer-newsletter">
+        <h4>Subscribe</h4>
+        <p>Get early product launches and exclusive VIP coupon discount offers directly in your inbox.</p>
+        <form class="newsletter-section-form">
+          <input type="email" placeholder="Email address" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+      <div class="payment-methods">
+        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mini Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h4 class="cart-drawer-title"><i class="fa-solid fa-shopping-bag" style="color: var(--accent-dark);"></i> Your Cart</h4>
+        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-drawer-items" id="cart-drawer-items">
+        <!-- Loaded dynamically -->
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal</span>
+          <span style="font-weight: 600;" id="cart-drawer-subtotal">$0.00</span>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Shipping & promo coupons calculated at checkout page.</div>
+        <div class="cart-drawer-actions">
+          <a href="cart.html" class="btn btn-secondary" style="width: 100%;" onclick="closeMiniCartDrawer()">View Full Cart</a>
+          <a href="checkout.html" class="btn btn-primary" style="width: 100%;" id="mini-cart-checkout-btn">Checkout Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Javascript dependencies -->
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+
+  <!-- Checkout specific rendering logic -->
+  <script>
+    let chkSubtotal = 0;
+    let chkShippingCost = 0; // standard default free
+    let chkDiscount = 0;
+
+    // 1. Render items in summary column
+    function renderCheckoutSummary() {
+      const listContainer = document.getElementById("checkout-summary-items-list");
+      if (!listContainer) return;
+
+      const cart = getCart();
+      if (cart.length === 0) {
+        window.location.href = "cart.html"; // Go back if no items
+        return;
+      }
+
+      let html = "";
+      chkSubtotal = 0;
+
+      cart.forEach(item => {
+        const p = ElevoraProducts.find(prod => prod.id === item.productId);
+        if (p) {
+          const price = p.price;
+          const total = price * item.quantity;
+          chkSubtotal += total;
+
+          html += `
+            <div class="summary-product-item">
+              <div class="summary-product-img">
+                <img src="${p.images[0]}" alt="${p.name}">
+              </div>
+              <div style="flex-grow: 1;">
+                <h4 style="font-size: 0.8rem; font-weight: 700; line-height: 1.3;">${p.name}</h4>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Color: ${item.color} | Qty: ${item.quantity}</div>
+              </div>
+              <span style="font-size: 0.85rem; font-weight: 700; font-family: Outfit;">$${total.toFixed(2)}</span>
+            </div>
+          `;
+        }
+      });
+
+      listContainer.innerHTML = html;
+      calculateCheckoutTotals();
+    }
+
+    // 2. Shipping Radio selects
+    function selectShippingMethod(type, element) {
+      document.querySelectorAll(".shipping-method-option").forEach(opt => opt.classList.remove("active"));
+      element.classList.add("active");
+      
+      const radioFree = document.getElementById("ship-free");
+      const radioExpress = document.getElementById("ship-express");
+
+      if (type === "free") {
+        if (radioFree) radioFree.checked = true;
+        chkShippingCost = 0;
+      } else {
+        if (radioExpress) radioExpress.checked = true;
+        chkShippingCost = 9.99;
+      }
+
+      calculateCheckoutTotals();
+    }
+
+    // 3. Mathematical Totals compiler
+    function calculateCheckoutTotals() {
+      const subtotalEl = document.getElementById("chk-subtotal");
+      const discountEl = document.getElementById("chk-discount");
+      const discountRow = document.getElementById("chk-discount-row");
+      const shippingEl = document.getElementById("chk-shipping");
+      const totalEl = document.getElementById("chk-total");
+
+      if (!subtotalEl) return;
+
+      subtotalEl.textContent = `$${chkSubtotal.toFixed(2)}`;
+
+      // Coupon discount validation
+      const coupon = localStorage.getItem("elevora_applied_coupon");
+      if (coupon === "ELEVORA20") {
+        chkDiscount = chkSubtotal * 0.20;
+        if (discountEl && discountRow) {
+          discountEl.textContent = `-$${chkDiscount.toFixed(2)}`;
+          discountRow.style.display = "flex";
+        }
+      } else {
+        chkDiscount = 0;
+        if (discountRow) discountRow.style.display = "none";
+      }
+
+      // Shipping text
+      if (shippingEl) {
+        shippingEl.textContent = chkShippingCost === 0 ? "FREE" : `$${chkShippingCost.toFixed(2)}`;
+      }
+
+      const grandTotal = chkSubtotal - chkDiscount + chkShippingCost;
+      if (totalEl) {
+        totalEl.textContent = `$${grandTotal.toFixed(2)}`;
+      }
+    }
+
+    // Format inputs expiration slash and CC spaces
+    document.getElementById("cc-num").addEventListener("input", (e) => {
+      let val = e.target.value.replace(/\D/g, "");
+      let formatted = "";
+      for (let i = 0; i < val.length; i++) {
+        if (i > 0 && i % 4 === 0) formatted += " ";
+        formatted += val[i];
+      }
+      e.target.value = formatted;
+    });
+
+    document.getElementById("cc-exp").addEventListener("input", (e) => {
+      let val = e.target.value.replace(/\D/g, "");
+      if (val.length >= 2) {
+        e.target.value = val.slice(0, 2) + "/" + val.slice(2, 4);
+      } else {
+        e.target.value = val;
+      }
+    });
+
+    // 4. Place Order & trigger confirmation redirection
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      
+      // Generate a mock tracking code: ELV-XXXXXXXX-US
+      const trackingCode = `ELV-${Math.floor(10000000 + Math.random() * 90000000)}-${document.getElementById("shipping-country").value}`;
+      
+      // Save order details to localstorage to render on order-success page
+      const orderDetails = {
+        name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
+        email: document.getElementById("email-address").value,
+        address: `${document.getElementById("shipping-street").value}, ${document.getElementById("shipping-city").value}, ${document.getElementById("shipping-zip").value}`,
+        tracking: trackingCode,
+        amount: chkSubtotal - chkDiscount + chkShippingCost
+      };
+      
+      localStorage.setItem("elevora_last_order", JSON.stringify(orderDetails));
+
+      // Clear Shopping Cart state
+      clearCart();
+
+      // Redirect
+      window.location.href = "order-success.html";
+    }
+
+    window.addEventListener("DOMContentLoaded", renderCheckoutSummary);
+  </script>
+</body>
+</html>

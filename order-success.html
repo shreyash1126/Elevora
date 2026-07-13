@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for your purchase. Your Elevora order has been successfully placed. View your tracking details here.">
+  <title>Order Confirmed | Elevora Electronics</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .success-card {
+      max-width: 600px;
+      margin: 80px auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 48px;
+      background-color: var(--bg-primary);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .success-icon {
+      font-size: 4rem;
+      color: var(--success);
+      margin-bottom: 24px;
+    }
+    .success-title {
+      font-family: 'Outfit';
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .receipt-box {
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius-md);
+      padding: 20px;
+      margin: 30px 0;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .receipt-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .receipt-row:last-child {
+      margin-bottom: 0;
+      border-top: 1px solid var(--border-color);
+      padding-top: 10px;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Success confirmation card -->
+  <main class="container">
+    <div class="success-card reveal-element revealed">
+      <i class="fa-solid fa-circle-check success-icon"></i>
+      <h1 class="success-title">Order Placed Successfully!</h1>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">Thank you for shopping at Elevora. We have sent a purchase invoice confirmation email to your shipping address.</p>
+      
+      <!-- Receipt details loaded dynamically -->
+      <div class="receipt-box">
+        <div class="receipt-row">
+          <span>Customer:</span>
+          <strong id="rec-name">John Doe</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Address:</span>
+          <strong id="rec-address" style="text-align: right; max-width: 60%;">123 Tech Ave, New York</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Package Tracking Code:</span>
+          <strong id="rec-tracking" style="color: var(--accent-dark);">ELV-84920485-US</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Amount Charged:</span>
+          <strong id="rec-total">$0.00</strong>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="track-order.html" class="btn btn-primary" style="width: auto; padding: 12px 24px;">Track My Package</a>
+        <a href="shop.html" class="btn btn-secondary" style="width: auto; padding: 12px 24px;">Keep Shopping</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-column footer-about">
+        <a href="index.html" class="logo">
+          <span>ELEVORA</span><span class="logo-dot"></span>
+        </a>
+        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ Desk</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Brand</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+    </div>
+  </footer>
+
+  <!-- Mini Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h4 class="cart-drawer-title">Your Cart</h4>
+        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cart-drawer-items" id="cart-drawer-items"></div>
+    </div>
+  </div>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const order = localStorage.getItem("elevora_last_order");
+      if (order) {
+        const details = JSON.parse(order);
+        document.getElementById("rec-name").textContent = details.name;
+        document.getElementById("rec-address").textContent = details.address;
+        document.getElementById("rec-tracking").textContent = details.tracking;
+        document.getElementById("rec-total").textContent = `$${details.amount.toFixed(2)}`;
+      }
+    });
+  </script>
+</body>
+</html>

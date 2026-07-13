@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View Elevora's Returns Policy. Learn how to return your smart tech accessories within our 30-day trial period.">
+  <title>Return Policy | Elevora Store</title>
+  
+  <!-- FontAwesome & Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .policy-container {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 48px;
+      background-color: var(--bg-primary);
+    }
+    .policy-container h2 {
+      font-family: 'Outfit';
+      font-size: 1.5rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .policy-container p,
+    .policy-container li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>ELEVORA</span><span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="wishlist.html" class="action-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count">0</span>
+        </a>
+
+        <button class="action-btn" onclick="openMiniCartDrawer()">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="badge-count cart-count">0</span>
+        </button>
+
+        <button class="action-btn theme-toggle-btn">
+          <i class="fa-regular fa-moon"></i>
+          <i class="fa-regular fa-sun"></i>
+        </button>
+
+        <a href="my-account.html" class="action-btn">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Title hero -->
+  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: var(--text-primary);">Return Policy</span>
+      </div>
+      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Return Policy</h1>
+    </div>
+  </section>
+
+  <!-- Main Return Content -->
+  <main class="container">
+    <article class="policy-container reveal-element revealed">
+      <p style="font-size: 0.8rem; color: var(--text-muted);">Last Updated: June 28, 2026</p>
+      
+      <h2>1. 30-Day trial Guideline</h2>
+      <p>We want you to be fully satisfied with your tech accessory. If you aren't completely happy with your gadget purchase, you can return it within 30 days of arrival for a full refund or exchange. Returning items must be in original condition, including boxes and manuals.</p>
+
+      <h2>2. Step-by-Step Return Instructions</h2>
+      <p>To start a return, complete these simple steps:</p>
+      <ul style="padding-left: 20px; list-style-type: decimal; color: var(--text-secondary); margin-bottom: 16px;">
+        <li>Email support@elevora.com with your Order ID and subject "Return Request".</li>
+        <li>Our desk will verify the purchase details and email a prepaid courier return label.</li>
+        <li>Place the gadget back in its box casing, tape the label securely to the external package, and drop it off at the designated courier location.</li>
+      </ul>
+
+      <h2>3. Return Shipping Fees</h2>
+      <p>Elevora provides free return shipping labels for all approved returns containing manufacturing faults. For returns based on a change of mind, a flat return handling fee of $5.99 will be deducted from your final refund credit.</p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-bottom" style="border-top: 1px solid var(--border-color); padding-top: 30px;">
+      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
+    </div>
+  </footer>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,1995 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+     xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/commentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+  <title>Elevora Store</title>
+  <link>https://elevora.com</link>
+  <description>Premium Electronics Dropshipping Store</description>
+  <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+  <language>en-US</language>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>http://localhost/elevora</wp:base_site_url>
+  <wp:base_blog_url>http://localhost/elevora</wp:base_blog_url>
+  <wp:author>
+    <wp:author_id>1</wp:author_id>
+    <wp:author_login>admin</wp:author_login>
+    <wp:author_email>admin@elevora.com</wp:author_email>
+    <wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+    <wp:author_first_name><![CDATA[Admin]]></wp:author_first_name>
+    <wp:author_last_name><![CDATA[User]]></wp:author_last_name>
+  </wp:author>
+  <item>
+    <title>Home</title>
+    <link>http://localhost/elevora/home/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=101</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>101</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[home]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Shop</title>
+    <link>http://localhost/elevora/shop/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=102</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>102</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[shop]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-shop.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>About Us</title>
+    <link>http://localhost/elevora/about/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=103</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>103</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[about]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-about.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Contact Us</title>
+    <link>http://localhost/elevora/contact/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=104</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>104</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[contact]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-contact.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>FAQ Desk</title>
+    <link>http://localhost/elevora/faq/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=105</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>105</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[faq]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-faq.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Track Order</title>
+    <link>http://localhost/elevora/track-order/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=106</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>106</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[track-order]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-track-order.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Wishlist</title>
+    <link>http://localhost/elevora/wishlist/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=107</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>107</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[wishlist]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-wishlist.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Cart</title>
+    <link>http://localhost/elevora/cart/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=108</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>108</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[cart]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-cart.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Checkout</title>
+    <link>http://localhost/elevora/checkout/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=109</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>109</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[checkout]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-checkout.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>My Account</title>
+    <link>http://localhost/elevora/my-account/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=110</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>110</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[my-account]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-my-account.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Order Success</title>
+    <link>http://localhost/elevora/order-success/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=111</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>111</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[order-success]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+      <wp:meta_value><![CDATA[template-order-success.php]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Blog</title>
+    <link>http://localhost/elevora/blog/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=112</guid>
+    <description></description>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>112</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[blog]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Privacy Policy</title>
+    <link>http://localhost/elevora/privacy-policy/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=113</guid>
+    <description></description>
+    <content:encoded><![CDATA[<h2>1. Information We Collect</h2>
+      <p>We collect information directly from you when you complete purchases, register user account details, sign up for news letters, or contact our support desks. This includes details like name, shipping addresses, emails, and transaction history.</p>
+
+      <h2>2. SSL Payment Gateway Encryption</h2>
+      <p>Your payment security is our top priority. We implement 256-bit Secure Socket Layer (SSL) encryption protocols. We do not store raw card numbers, CVVs, or bank logins on our server databases. Payments are handled via tokenized API calls through major international card processors (Stripe, Visa, Mastercard).</p>
+
+      <h2>3. How We Use Cookies</h2>
+      <p>We use local cookies and storage parameters (LocalStorage) to synchronize shopping carts, wishlist preferences, and dark mode choices on your browser. This improves performance and ensures a smooth user experience.</p>
+
+      <h2>4. Third-Party Sharing</h2>
+      <p>We do not sell, swap, or trade your personal information with external advertising agencies. We only share details with dropshipping fulfillment centers and international couriers (UPS, FedEx, DHL) to dispatch packages and route shipment tracking updates.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>113</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[privacy-policy]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Refund Policy</title>
+    <link>http://localhost/elevora/refund-policy/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=114</guid>
+    <description></description>
+    <content:encoded><![CDATA[<h2>1. Eligibility for Refunds</h2>
+      <p>We provide full transaction refunds under the following parameters:</p>
+      <ul style="padding-left: 20px; list-style-type: disc; color: var(--text-secondary); margin-bottom: 16px;">
+        <li>Products containing manufacturing defects or dead battery units.</li>
+        <li>Incorrect variant or gadget model delivered.</li>
+        <li>Unused packaging returned within our 30-day trial guideline.</li>
+      </ul>
+
+      <h2>2. Refund Processing Time</h2>
+      <p>Once our sorting centers receive and inspect your returned package, we approve the request and issue a credit refund. The credit is sent to your original credit card or Stripe token. Refunds settle on statements within 5-7 business days.</p>
+
+      <h2>3. Non-Refundable Situations</h2>
+      <p>We do not issue credit refunds for devices containing clear physical drops damages, custom firmware mods, or water exposures past IP ratings limits.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>114</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[refund-policy]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Return Policy</title>
+    <link>http://localhost/elevora/return-policy/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=115</guid>
+    <description></description>
+    <content:encoded><![CDATA[<h2>1. 30-Day trial Guideline</h2>
+      <p>We want you to be fully satisfied with your tech accessory. If you aren't completely happy with your gadget purchase, you can return it within 30 days of arrival for a full refund or exchange. Returning items must be in original condition, including boxes and manuals.</p>
+
+      <h2>2. Step-by-Step Return Instructions</h2>
+      <p>To start a return, complete these simple steps:</p>
+      <ul style="padding-left: 20px; list-style-type: decimal; color: var(--text-secondary); margin-bottom: 16px;">
+        <li>Email support@elevora.com with your Order ID and subject "Return Request".</li>
+        <li>Our desk will verify the purchase details and email a prepaid courier return label.</li>
+        <li>Place the gadget back in its box casing, tape the label securely to the external package, and drop it off at the designated courier location.</li>
+      </ul>
+
+      <h2>3. Return Shipping Fees</h2>
+      <p>Elevora provides free return shipping labels for all approved returns containing manufacturing faults. For returns based on a change of mind, a flat return handling fee of $5.99 will be deducted from your final refund credit.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>115</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[return-policy]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Shipping Policy</title>
+    <link>http://localhost/elevora/shipping-policy/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=116</guid>
+    <description></description>
+    <content:encoded><![CDATA[<h2>1. Order Processing Thresholds</h2>
+      <p>Orders are verified, packed, and released to international couriers within 1-2 business days. During peak sale periods, processing may take up to 3 business days.</p>
+
+      <h2>2. Delivery Methods and Transit Durations</h2>
+      <p>We provide two shipping classes at checkout:</p>
+      <ul style="padding-left: 20px; list-style-type: disc; color: var(--text-secondary); margin-bottom: 16px;">
+        <li><strong>Standard Insured Shipping:</strong> FREE for all orders above $100 (otherwise flat $9.99). Delivery takes 5-10 business days.</li>
+        <li><strong>Express Courier Service:</strong> Flat $9.99. Package departs via priority courier (DHL/FedEx) and arrives in 2-4 business days.</li>
+      </ul>
+
+      <h2>3. Shipment Tracking Codes</h2>
+      <p>Tracking numbers are registered with logistics systems within 24 hours of package departure from our sorting hubs. Enter your code in our "Track Order" portal to view live tracking.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>116</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[shipping-policy]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Terms of Service</title>
+    <link>http://localhost/elevora/terms/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?page_id=117</guid>
+    <description></description>
+    <content:encoded><![CDATA[<h2>1. Conditions of Website Use</h2>
+      <p>By accessing Elevora's catalog and purchasing accessories, you agree to comply with our purchasing guidelines, return rules, and applicable international commerce regulations.</p>
+
+      <h2>2. Pricing and Payments</h2>
+      <p>Elevora reserves the right to adjust prices of smart gadgets without notification to accommodate international logistics, material hikes, and dropshipping courier adjustments. If a price adjustment occurs after payment, your order will be filled at the original check-out cost.</p>
+
+      <h2>3. Intellectual Property Rights</h2>
+      <p>All brand icons, photography layouts, CSS variables, and HTML templates are the proprietary property of Elevora and its developers. Unauthorized copying or redistribution is prohibited.</p>
+
+      <h2>4. Limitation of Liability</h2>
+      <p>Elevora is not liable for device failures or accessory degradation resulting from improper installations or chargers not complying with official Power Delivery safety standards. Always refer to specifications booklets.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>117</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[terms]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[page]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>The Evolution of MagSafe: Snapping Into the Wireless Future</title>
+    <link>http://localhost/elevora/blog/magsafe-evolution/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?p=301</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Inductive wireless charging has existed for years, but standard alignment issues plagued early attempts. Apple's introduction of MagSafe in the iPhone 12 solved the alignment issue by positioning N52 Neodymium magnet loops around central copper charging coils.</p>
+<h2>The Physics of Induced Coils</h2>
+<p>When an electromagnetic current flows through a primary transmitter coil, it creates an alternating magnetic field. Placing a receiver coil within this field induces an electrical current in the secondary coil, charging the lithium pack. However, even a minor offset of 2-3 millimeters causes high thermal dissipation and drops efficiency by up to 50%.</p>
+<blockquote class="wp-block-quote">
+  <p>"MagSafe's design genius lies in magnets matching the coordinates exactly, ensuring the transmitter and receiver lock at peak efficiency."</p>
+</blockquote>
+<h2>Snapping in the Retractable Stands</h2>
+<p>For dropshipping sites and device developers, MagSafe accessories present high conversion potentials. Magnetic wallets, ring holders, and thin folding powerbanks satisfy both the utility and minimalism metrics that premium consumers actively look for online.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Explore the physics behind N52 magnetic coils and how inductive wireless coupling delivers rapid power transfer safely.]]></excerpt:encoded>
+    <wp:post_id>301</wp:post_id>
+    <wp:post_date><![CDATA[2026-06-28 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-06-28 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[open]]></wp:ping_status>
+    <wp:post_name><![CDATA[magsafe-evolution]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="tech"><![CDATA[Tech]]></category>
+    <category domain="category" nicename="editorial"><![CDATA[Editorial]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1301]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[The Evolution of MagSafe: Snapping Into the Wireless Future Cover Image]]></title>
+    <link>http://localhost/elevora/?attachment_id=1301</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1301</guid>
+    <wp:post_id>1301</wp:post_id>
+    <wp:post_date><![CDATA[2026-06-28 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-06-28 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[magsafe-evolution-cover]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>301</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1609592424085-f55a64388432?w=1000]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1609592424085-f55a64388432?w=1000]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Gallium Nitride (GaN): Why it's replacing silicon charger bricks</title>
+    <link>http://localhost/elevora/blog/gan-chargers/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?p=302</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>For decades, silicon has been the bedrock of power transistors. However, as power requirements for laptops, tablets, and smartphones surged, silicon reached its physical thermal caps. Enter Gallium Nitride (GaN)â€”a crystal semiconductor capable of conducting much higher voltages with lower resistance.</p>
+<h2>Understanding Bandgap Physics</h2>
+<p>GaN possesses a "wide bandgap" of 3.4 eV compared to silicon's 1.1 eV. This wide bandgap allows electrical currents to pass through components faster, with less energy lost to heat. Consequently, transistors can be placed closer together, reducing charger volume by up to 40%.</p>
+<blockquote class="wp-block-quote">
+  <p>"By utilizing GaN, chargers can supply 100W of power from an adapter block smaller than a deck of playing cards."</p>
+</blockquote>
+<h2>Cooler Transistors and Multiport Chargers</h2>
+<p>With less heat loss, chargers don't require heavy heatsinks. This enables developers to pack multiple USB-C Power Delivery ports into travel-friendly charger blocks, protecting gadgets from electrical spikes and heat thresholds.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Why are GaN blocks smaller and cooler than old silicon adapters? We outline thermal efficiency and power allocation equations.]]></excerpt:encoded>
+    <wp:post_id>302</wp:post_id>
+    <wp:post_date><![CDATA[2026-06-24 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-06-24 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[open]]></wp:ping_status>
+    <wp:post_name><![CDATA[gan-chargers]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="tech"><![CDATA[Tech]]></category>
+    <category domain="category" nicename="editorial"><![CDATA[Editorial]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1302]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[Gallium Nitride (GaN): Why it's replacing silicon charger bricks Cover Image]]></title>
+    <link>http://localhost/elevora/?attachment_id=1302</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1302</guid>
+    <wp:post_id>1302</wp:post_id>
+    <wp:post_date><![CDATA[2026-06-24 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-06-24 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[gan-chargers-cover]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>302</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1618220179428-22790b461013?w=1000]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1618220179428-22790b461013?w=1000]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title>Hybrid Active Noise Cancellation: Sound waves in modern workspaces</title>
+    <link>http://localhost/elevora/blog/hybrid-anc-headphones/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?p=303</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Active Noise Cancellation (ANC) has evolved from simple isolation cushions to active DSP algorithms. Modern premium headphones utilize hybrid ANC networks to erase distraction noise across workspaces.</p>
+<h2>Feedforward vs Feedback Microphones</h2>
+<p>Hybrid ANC combines feedforward microphones (facing outwards to detect ambient noise) and feedback microphones (facing inwards near the ear canal to monitor audio leakage). The digital sound processor (DSP) analyzes these waveforms and projects an inverted soundwave (180 degrees out of phase) to cancel the noise.</p>
+<blockquote class="wp-block-quote">
+  <p>"Keep in mind that Hybrid ANC operates like acoustic addition, summing the ambient wave with its inverse mirror image to result in pure silence."</p>
+</blockquote>
+<h2>Transparency Mode Integration</h2>
+<p>By reversing the microphone feeds, hybrid headsets can inject ambient sounds back into the ear cushions. This transparency mode allows consumers to conduct chats or hear announcements without needing to pull the headphones off their ears.</p>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Tuning out focus distractions. Discover the microphone structures and algorithms behind phase-reversing soundwave silence.]]></excerpt:encoded>
+    <wp:post_id>303</wp:post_id>
+    <wp:post_date><![CDATA[2026-06-18 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-06-18 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[open]]></wp:ping_status>
+    <wp:post_name><![CDATA[hybrid-anc-headphones]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[post]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="category" nicename="tech"><![CDATA[Tech]]></category>
+    <category domain="category" nicename="editorial"><![CDATA[Editorial]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1303]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[Hybrid Active Noise Cancellation: Sound waves in modern workspaces Cover Image]]></title>
+    <link>http://localhost/elevora/?attachment_id=1303</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1303</guid>
+    <wp:post_id>1303</wp:post_id>
+    <wp:post_date><![CDATA[2026-06-18 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-06-18 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[hybrid-anc-headphones-cover]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>303</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1000]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1000]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[AeroPulse ANC Wireless Headphones]]></title>
+    <link>http://localhost/elevora/product/aeropulse-anc-wireless-headphones/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=201</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Experience silence perfected. The AeroPulse ANC headphones deliver high-fidelity acoustic performance, class-leading hybrid Active Noise Cancellation, and up to 45 hours of immersive playtime.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>Hybrid Active Noise Cancellation with Transparency Mode</li>
+  <li>Premium memory-foam ear cushions wrapped in protein leather</li>
+  <li>Quad-microphone beamforming array for crystal-clear calls</li>
+  <li>Multipoint connection: Seamlessly switch between laptop and phone</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Driver Size</td>
+      <td style='padding: 8px;'>40mm Dynamic Driver</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Frequency Response</td>
+      <td style='padding: 8px;'>20Hz - 20kHz</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Bluetooth Version</td>
+      <td style='padding: 8px;'>Bluetooth 5.2 (aptX Adaptive)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Battery Life</td>
+      <td style='padding: 8px;'>Up to 45 Hours (ANC Off) / 32 Hours (ANC On)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Charging Port</td>
+      <td style='padding: 8px;'>USB-C Fast Charging (10-min charge = 5 hours play)</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Experience silence perfected. The AeroPulse ANC headphones deliver high-fidelity acoustic performance, class-leading hybrid Active Noise Cancellation, and up to 45 hours of immersive playtime.]]></excerpt:encoded>
+    <wp:post_id>201</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[aeropulse-anc-wireless-headphones]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="headphones"><![CDATA[Headphones]]></category>
+    <category domain="product_tag" nicename="sale"><![CDATA[Sale]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-AER-201]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[199.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[299.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[199.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[35]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:9:"AeroPulse";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:40:"Matte Black | Space Gray | Arctic Silver";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1010]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1011,1012]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[AeroPulse ANC Wireless Headphones Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1010</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1010</guid>
+    <wp:post_id>1010</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[aeropulse-anc-wireless-headphones-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>201</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[AeroPulse ANC Wireless Headphones Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1011</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1011</guid>
+    <wp:post_id>1011</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[aeropulse-anc-wireless-headphones-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>201</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[AeroPulse ANC Wireless Headphones Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1012</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1012</guid>
+    <wp:post_id>1012</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[aeropulse-anc-wireless-headphones-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>201</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[Apex Chrono OLED Smart Watch]]></title>
+    <link>http://localhost/elevora/product/apex-chrono-oled-smart-watch/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=202</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Elevate your health, fitness, and connectivity. Encased in aerospace-grade titanium with an ultra-bright Always-On AMOLED screen, the Apex Chrono monitors biometrics, sleep cycles, and daily performance metrics.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>Continuous Blood Oxygen (SpO2) and Heart Rate Monitoring</li>
+  <li>120+ specialized tracking modes from running to swimming</li>
+  <li>Offline music storage and Bluetooth calling directly from the wrist</li>
+  <li>Over 150+ customizable premium designer watch faces</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Display</td>
+      <td style='padding: 8px;'>1.43" Always-On AMOLED, 466x466 pixels, 1000 nits</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Water Resistance</td>
+      <td style='padding: 8px;'>5ATM (Up to 50 meters depth)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Sensors</td>
+      <td style='padding: 8px;'>Heart Rate, SpO2, Accelerometer, Gyroscope, Barometer</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Battery Life</td>
+      <td style='padding: 8px;'>Up to 10 days normal usage / 4 days intensive</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>GPS</td>
+      <td style='padding: 8px;'>Dual-Band Multi-system GPS built-in</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Elevate your health, fitness, and connectivity. Encased in aerospace-grade titanium with an ultra-bright Always-On AMOLED screen, the Apex Chrono monitors biometrics, sleep cycles, and daily performance metrics.]]></excerpt:encoded>
+    <wp:post_id>202</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[apex-chrono-oled-smart-watch]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="smart-watches"><![CDATA[Smart Watches]]></category>
+    <category domain="product_tag" nicename="new"><![CDATA[New]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-APE-202]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[249.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[329.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[249.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[39]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:9:"ApexTrack";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:40:"Titanium Black | Mist Gray | Sunset Gold";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1020]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1021,1022]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[Apex Chrono OLED Smart Watch Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1020</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1020</guid>
+    <wp:post_id>1020</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[apex-chrono-oled-smart-watch-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>202</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[Apex Chrono OLED Smart Watch Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1021</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1021</guid>
+    <wp:post_id>1021</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[apex-chrono-oled-smart-watch-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>202</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[Apex Chrono OLED Smart Watch Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1022</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1022</guid>
+    <wp:post_id>1022</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[apex-chrono-oled-smart-watch-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>202</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1517502884422-41eaaced0168?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1517502884422-41eaaced0168?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[VoltMag 15W MagSafe Power Bank]]></title>
+    <link>http://localhost/elevora/product/voltmag-15w-magsafe-power-bank/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=203</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Snap and go. The VoltMag provides a secure magnetic connection for 15W wireless charging, paired with a sleek folding kickstand and a premium rubberized anti-scratch shell.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>Strong N52 neodymium magnets align perfectly with iPhone 12/13/14/15</li>
+  <li>LED digital display tracks remaining battery life down to 1%</li>
+  <li>Smart circuitry protects against over-voltage, short-circuits, and high heat</li>
+  <li>Built-in aluminum alloy kickstand for horizontal or vertical viewing</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Capacity</td>
+      <td style='padding: 8px;'>10,000mAh Lithium-Polymer</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Wireless Output</td>
+      <td style='padding: 8px;'>5W / 7.5W / 10W / 15W MagSafe Compatible</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Wired Input/Output</td>
+      <td style='padding: 8px;'>USB-C PD 20W Max Input/Output</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Dimensions</td>
+      <td style='padding: 8px;'>104 x 68 x 15 mm</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Weight</td>
+      <td style='padding: 8px;'>185g</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Snap and go. The VoltMag provides a secure magnetic connection for 15W wireless charging, paired with a sleek folding kickstand and a premium rubberized anti-scratch shell.]]></excerpt:encoded>
+    <wp:post_id>203</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[voltmag-15w-magsafe-power-bank]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="power-banks"><![CDATA[Power Banks]]></category>
+    <category domain="product_tag" nicename="hot"><![CDATA[Hot]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-VOL-203]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[49.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[79.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[49.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[125]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:7:"VoltMax";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:40:"Carbon Fiber | Phantom Blue | Pure White";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1030]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1031,1032]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[VoltMag 15W MagSafe Power Bank Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1030</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1030</guid>
+    <wp:post_id>1030</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[voltmag-15w-magsafe-power-bank-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>203</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1609592424085-f55a64388432?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1609592424085-f55a64388432?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[VoltMag 15W MagSafe Power Bank Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1031</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1031</guid>
+    <wp:post_id>1031</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[voltmag-15w-magsafe-power-bank-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>203</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1622445262465-2481c4574875?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1622445262465-2481c4574875?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[VoltMag 15W MagSafe Power Bank Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1032</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1032</guid>
+    <wp:post_id>1032</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[voltmag-15w-magsafe-power-bank-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>203</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[EchoSphere 360 Portable Speaker]]></title>
+    <link>http://localhost/elevora/product/echosphere-360-portable-speaker/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=204</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Rich, room-filling audio in a ruggedly elegant design. Sporting dual passive radiators and custom acoustic drivers, the EchoSphere delivers true 360-degree sound with deep bass and high vocal clarity.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>Acoustic 360 sound projection reaches every corner of the room</li>
+  <li>IPX7 waterproof rating ensures it can survive drops in water, sand, or rain</li>
+  <li>Built-in microphone for hands-free speakerphone calling</li>
+  <li>Dynamic multi-color RGB ambient LED ring synchronized to the music</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Audio Output</td>
+      <td style='padding: 8px;'>30W Stereo Peak (2x 15W drivers)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Waterproofing</td>
+      <td style='padding: 8px;'>IPX7 Certified Waterproof & Dustproof</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Playtime</td>
+      <td style='padding: 8px;'>Up to 24 Hours on a single charge</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Charge Time</td>
+      <td style='padding: 8px;'>3 Hours via USB-C Quick Charge</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Connectivity</td>
+      <td style='padding: 8px;'>Bluetooth 5.0, AUX 3.5mm, TWS Dual Speaker pairing</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Rich, room-filling audio in a ruggedly elegant design. Sporting dual passive radiators and custom acoustic drivers, the EchoSphere delivers true 360-degree sound with deep bass and high vocal clarity.]]></excerpt:encoded>
+    <wp:post_id>204</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[echosphere-360-portable-speaker]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="bluetooth-speakers"><![CDATA[Bluetooth Speakers]]></category>
+    <category domain="product_tag" nicename="best-seller"><![CDATA[Best Seller]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-AER-204]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[89.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[129.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[89.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[70]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:9:"AeroPulse";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:37:"Teal Green | Navy Indigo | Stone Gray";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1040]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1041,1042]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[EchoSphere 360 Portable Speaker Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1040</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1040</guid>
+    <wp:post_id>1040</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[echosphere-360-portable-speaker-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>204</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[EchoSphere 360 Portable Speaker Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1041</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1041</guid>
+    <wp:post_id>1041</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[echosphere-360-portable-speaker-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>204</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[EchoSphere 360 Portable Speaker Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1042</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1042</guid>
+    <wp:post_id>1042</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[echosphere-360-portable-speaker-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>204</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1564424224827-cd24b8915874?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1564424224827-cd24b8915874?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[SoundPod Studio Pro Earbuds]]></title>
+    <link>http://localhost/elevora/product/soundpod-studio-pro-earbuds/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=205</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Redefine sound on the go. Powered by dual-armature drivers, these ultra-compact wireless earbuds provide studio-grade sound quality, customizable equalizer presets, and ergonomic active-fit tips.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>Hi-Res Wireless audio certified with LDAC streaming codec support</li>
+  <li>Active-Fit liquid silicone eartips in 3 sizes for perfect isolation</li>
+  <li>Adaptive ANC dynamically adjusts noise cancellation based on environment</li>
+  <li>Qi wireless charging compatible case with charging status indicator</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Frequency Response</td>
+      <td style='padding: 8px;'>10Hz - 40kHz (Hi-Res Audio Wireless)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Codecs Supported</td>
+      <td style='padding: 8px;'>LDAC, AAC, SBC</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>IP Rating</td>
+      <td style='padding: 8px;'>IPX4 Sweat & Water Resistant</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Total Playtime</td>
+      <td style='padding: 8px;'>40 Hours total (8 hrs earbuds + 32 hrs case)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Sensors</td>
+      <td style='padding: 8px;'>In-ear detection, Touch controls</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Redefine sound on the go. Powered by dual-armature drivers, these ultra-compact wireless earbuds provide studio-grade sound quality, customizable equalizer presets, and ergonomic active-fit tips.]]></excerpt:encoded>
+    <wp:post_id>205</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[soundpod-studio-pro-earbuds]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="earbuds"><![CDATA[Earbuds]]></category>
+    <category domain="product_tag" nicename="20--off"><![CDATA[20% OFF]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-AER-205]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[129.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[189.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[129.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[70]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:9:"AeroPulse";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:40:"Chalk White | Slate Grey | Midnight Navy";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1050]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1051,1052]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[SoundPod Studio Pro Earbuds Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1050</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1050</guid>
+    <wp:post_id>1050</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[soundpod-studio-pro-earbuds-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>205</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[SoundPod Studio Pro Earbuds Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1051</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1051</guid>
+    <wp:post_id>1051</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[soundpod-studio-pro-earbuds-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>205</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[SoundPod Studio Pro Earbuds Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1052</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1052</guid>
+    <wp:post_id>1052</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[soundpod-studio-pro-earbuds-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>205</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1599669454699-248893623440?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1599669454699-248893623440?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[KeyPro mechanical gaming keyboard]]></title>
+    <link>http://localhost/elevora/product/keypro-mechanical-gaming-keyboard/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=206</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Compact form factor, maximum impact. Built with lubed linear red switches, hot-swappable sockets, and double-shot PBT keycaps, the KeyPro delivers lightning-fast inputs and satisfying typing acoustics.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>Hot-swappable 3/5 pin sockets make modding and changing switches simple</li>
+  <li>Dual-layer acoustic dampening foam absorbs typing echo and ping</li>
+  <li>Double-shot PBT keycaps with anti-oil texture and shine-through legend</li>
+  <li>Tri-mode connectivity pairs up to 3 devices simultaneously</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Form Factor</td>
+      <td style='padding: 8px;'>75% Compact Layout (84 Keys)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Switch Type</td>
+      <td style='padding: 8px;'>Gateron G-Pro Red Linear (Hot-Swappable)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Connectivity</td>
+      <td style='padding: 8px;'>Tri-Mode (Bluetooth 5.1 / 2.4GHz Dongle / Wired USB-C)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Backlight</td>
+      <td style='padding: 8px;'>South-Facing RGB with 18 animations</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Battery Capacity</td>
+      <td style='padding: 8px;'>4000mAh rechargeable lithium</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Compact form factor, maximum impact. Built with lubed linear red switches, hot-swappable sockets, and double-shot PBT keycaps, the KeyPro delivers lightning-fast inputs and satisfying typing acoustics.]]></excerpt:encoded>
+    <wp:post_id>206</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[keypro-mechanical-gaming-keyboard]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="gaming-accessories"><![CDATA[Gaming Accessories]]></category>
+    <category domain="product_tag" nicename="new"><![CDATA[New]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-KEY-206]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[139.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[199.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[139.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[28]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:6:"KeyPro";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:29:"Classic White | Midnight Grey";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1060]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1061,1062]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[KeyPro mechanical gaming keyboard Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1060</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1060</guid>
+    <wp:post_id>1060</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[keypro-mechanical-gaming-keyboard-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>206</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[KeyPro mechanical gaming keyboard Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1061</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1061</guid>
+    <wp:post_id>1061</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[keypro-mechanical-gaming-keyboard-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>206</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[KeyPro mechanical gaming keyboard Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1062</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1062</guid>
+    <wp:post_id>1062</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[keypro-mechanical-gaming-keyboard-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>206</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[LuminoSmart Aura Accent Bar]]></title>
+    <link>http://localhost/elevora/product/luminosmart-aura-accent-bar/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=207</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Transform your living space. Syncing seamlessly with games, movies, and music, the LuminoSmart Aura bathes your desk or media center in stunning, smart multi-color reactive lighting.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>RGBIC technology displays multiple vibrant colors on one light bar concurrently</li>
+  <li>High-sensitivity internal microphone matches light rhythms to audio</li>
+  <li>Voice controlled via Amazon Alexa or Google Home integration</li>
+  <li>Sleek stand mounts horizontally or vertically behind monitors/TVs</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Light Source</td>
+      <td style='padding: 8px;'>RGBIC Dynamic Addressable LEDs</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Power Rating</td>
+      <td style='padding: 8px;'>15W Max (5V 3A)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Control Method</td>
+      <td style='padding: 8px;'>App Control, Voice Assistant (Alexa/Google), Physical Buttons</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Wireless Range</td>
+      <td style='padding: 8px;'>Wi-Fi 2.4GHz + Bluetooth 4.2</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Length</td>
+      <td style='padding: 8px;'>45cm per Lightbar</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[Transform your living space. Syncing seamlessly with games, movies, and music, the LuminoSmart Aura bathes your desk or media center in stunning, smart multi-color reactive lighting.]]></excerpt:encoded>
+    <wp:post_id>207</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[luminosmart-aura-accent-bar]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="smart-home"><![CDATA[Smart Home]]></category>
+    <category domain="product_tag" nicename="sale"><![CDATA[Sale]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-LUM-207]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[69.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[99.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[69.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[40]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:6:"Lumino";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:28:"Classic Black | Arctic White";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1070]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1071,1072]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[LuminoSmart Aura Accent Bar Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1070</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1070</guid>
+    <wp:post_id>1070</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[luminosmart-aura-accent-bar-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>207</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[LuminoSmart Aura Accent Bar Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1071</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1071</guid>
+    <wp:post_id>1071</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[luminosmart-aura-accent-bar-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>207</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[LuminoSmart Aura Accent Bar Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1072</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1072</guid>
+    <wp:post_id>1072</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[luminosmart-aura-accent-bar-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>207</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[GaNCharge 100W multi-port block]]></title>
+    <link>http://localhost/elevora/product/gancharge-100w-multi-port-block/</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?post_type=product&amp;p=208</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>One charger to power them all. The GaNCharge 100W replaces bulky bricks, utilizing cutting-edge Gallium Nitride tech to fast charge up to four devices simultaneously including laptops, tablets, and phones.</p>
+<h3>Key Features</h3>
+<ul>
+  <li>GaN II tech offers smaller sizes and better thermal dissipation efficiency</li>
+  <li>Intelligent power allocation distributes wattage optimally between devices</li>
+  <li>Folding wall prongs prevent scratching items when stored in travel bags</li>
+  <li>Built-in protection shields against overcurrent, overcharge, and overheating</li>
+</ul>
+<h3>Technical Specifications</h3>
+<table border='1' style='width: 100%; border-collapse: collapse; margin-top: 10px;'>
+  <tbody>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Total Wattage</td>
+      <td style='padding: 8px;'>100W Max Shared Output</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Ports Layout</td>
+      <td style='padding: 8px;'>3x USB-C (PD 3.0) + 1x USB-A (QC 4.0/3.0)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Single Port Output</td>
+      <td style='padding: 8px;'>USB-C1/C2 up to 100W (Max)</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Technology</td>
+      <td style='padding: 8px;'>Gallium Nitride (GaN II) Technology</td>
+    </tr>
+    <tr>
+      <td style='padding: 8px; font-weight: bold; background-color: #f9f9f9; width: 35%;'>Dimensions</td>
+      <td style='padding: 8px;'>65 x 65 x 32 mm</td>
+    </tr>
+  </tbody>
+</table>]]></content:encoded>
+    <excerpt:encoded><![CDATA[One charger to power them all. The GaNCharge 100W replaces bulky bricks, utilizing cutting-edge Gallium Nitride tech to fast charge up to four devices simultaneously including laptops, tablets, and phones.]]></excerpt:encoded>
+    <wp:post_id>208</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[gancharge-100w-multi-port-block]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[product]]></wp:post_type>
+    <wp:post_password><![CDATA[]]></wp:post_password>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="product_cat" nicename="chargers"><![CDATA[Chargers]]></category>
+    <category domain="product_tag" nicename="15--off"><![CDATA[15% OFF]]></category>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_visibility]]></wp:meta_key>
+      <wp:meta_value><![CDATA[visible]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
+      <wp:meta_value><![CDATA[instock]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sku]]></wp:meta_key>
+      <wp:meta_value><![CDATA[EV-VOL-208]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[59.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[89.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_sale_price]]></wp:meta_key>
+      <wp:meta_value><![CDATA[59.99]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_stock]]></wp:meta_key>
+      <wp:meta_value><![CDATA[75]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_attributes]]></wp:meta_key>
+      <wp:meta_value><![CDATA[a:2:{s:5:"brand";a:6:{s:4:"name";s:5:"Brand";s:5:"value";s:7:"VoltMax";s:8:"position";i:0;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}s:6:"colors";a:6:{s:4:"name";s:6:"Colors";s:5:"value";s:25:"Space Black | Polar White";s:8:"position";i:1;s:10:"is_visible";i:1;s:12:"is_variation";i:0;s:11:"is_taxonomy";i:0;}}]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1080]]></wp:meta_value>
+    </wp:post_meta>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_product_image_gallery]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1081,1082]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[GaNCharge 100W multi-port block Image 1]]></title>
+    <link>http://localhost/elevora/?attachment_id=1080</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1080</guid>
+    <wp:post_id>1080</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[gancharge-100w-multi-port-block-1]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>208</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[GaNCharge 100W multi-port block Image 2]]></title>
+    <link>http://localhost/elevora/?attachment_id=1081</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1081</guid>
+    <wp:post_id>1081</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[gancharge-100w-multi-port-block-2]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>208</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1622445262465-2481c4574875?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1622445262465-2481c4574875?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+  <item>
+    <title><![CDATA[GaNCharge 100W multi-port block Image 3]]></title>
+    <link>http://localhost/elevora/?attachment_id=1082</link>
+    <pubDate>Wed, 01 Jul 2026 12:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost/elevora/?attachment_id=1082</guid>
+    <wp:post_id>1082</wp:post_id>
+    <wp:post_date><![CDATA[2026-07-01 12:00:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-07-01 12:00:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[open]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[gancharge-100w-multi-port-block-3]]></wp:post_name>
+    <wp:status><![CDATA[inherit]]></wp:status>
+    <wp:post_parent>208</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    <wp:attachment_url><![CDATA[https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80]]></wp:attachment_url>
+    <wp:post_meta>
+      <wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+      <wp:meta_value><![CDATA[https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80]]></wp:meta_value>
+    </wp:post_meta>
+  </item>
+</channel>
+</rss>
