@@ -1,4 +1,4 @@
-// Elevora Premium Electronics Dropshipping Store - Mock Product Database
+﻿// Elevora Premium Electronics Dropshipping Store - Mock Product Database
 const ElevoraProducts = [
   {
     id: 1,
