@@ -94,11 +94,11 @@
           Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
             <a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop'))) : esc_url(home_url('/shop/')); ?>" class="dropdown-link">Mobile Accessories</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Phone%20Holders') ); ?>" class="dropdown-link">Phone Holders</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Chargers') ); ?>" class="dropdown-link">Chargers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Phone%20Holders') ); ?>" class="dropdown-link">Phone Holders</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Chargers') ); ?>" class="dropdown-link">Chargers</a>
           </div>
         </div>
         
@@ -106,24 +106,24 @@
         <div class="category-nav-item">
           Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="<?php echo esc_url( home_url('/shop/?category=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Projectors') ); ?>" class="dropdown-link">Projectors</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Projectors') ); ?>" class="dropdown-link">Projectors</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
           </div>
         </div>
         
@@ -131,24 +131,24 @@
         <div class="category-nav-item">
           Tools & Utility <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="<?php echo esc_url( home_url('/shop/?category=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Projectors') ); ?>" class="dropdown-link">Projectors</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Projectors') ); ?>" class="dropdown-link">Projectors</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
           </div>
         </div>
         
@@ -156,24 +156,24 @@
         <div class="category-nav-item">
           Car & Travel <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="<?php echo esc_url( home_url('/shop/?category=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Projectors') ); ?>" class="dropdown-link">Projectors</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Projectors') ); ?>" class="dropdown-link">Projectors</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
           </div>
         </div>
         
@@ -203,24 +203,24 @@
         <div class="category-nav-item">
           Gifting <i class="fa-solid fa-chevron-down"></i>
           <div class="category-dropdown">
-            <a href="<?php echo esc_url( home_url('/shop/?category=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Projectors') ); ?>" class="dropdown-link">Projectors</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
-            <a href="<?php echo esc_url( home_url('/shop/?category=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Games%20%26%20Consoles') ); ?>" class="dropdown-link">Games & Consoles</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Bluetooth%20Speakers') ); ?>" class="dropdown-link">Bluetooth Speakers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Power%20Banks') ); ?>" class="dropdown-link">Power Banks</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Charging%20Cables') ); ?>" class="dropdown-link">Charging Cables</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Floating%20Lamps') ); ?>" class="dropdown-link">Floating Lamps</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Wireless%20Chargers') ); ?>" class="dropdown-link">Wireless Chargers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Clocks%20%26%20Timers') ); ?>" class="dropdown-link">Clocks & Timers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=RGB%20%26%20Mood%20Lighting') ); ?>" class="dropdown-link">RGB & Mood Lighting</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Utility') ); ?>" class="dropdown-link">Home Utility</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Humidifiers') ); ?>" class="dropdown-link">Humidifiers</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Kitchen%20Gadgets') ); ?>" class="dropdown-link">Kitchen Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Extensions%20%26%20Multi-Plugs') ); ?>" class="dropdown-link">Extensions & Multi-Plugs</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Computer%20Accessories') ); ?>" class="dropdown-link">Computer Accessories</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Home%20Decor') ); ?>" class="dropdown-link">Home Decor</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera') ); ?>" class="dropdown-link">Spy Camera & WiFi Camera</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Projectors') ); ?>" class="dropdown-link">Projectors</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Party%20Gadgets') ); ?>" class="dropdown-link">Party Gadgets</a>
+            <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Health%20%26%20Beauty') ); ?>" class="dropdown-link">Health & Beauty</a>
           </div>
         </div>
         

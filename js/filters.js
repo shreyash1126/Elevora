@@ -25,12 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
     sortBy: "featured"
   };
 
-  // 1. Initial State parsing from URL search params (e.g. ?category=Headphones or ?search=volt)
+  // 1. Initial State parsing from URL search params (e.g. ?filter_cat=Headphones or ?search=volt)
   function parseURLParameters() {
     const params = new URLSearchParams(window.location.search);
     
-    if (params.has("category")) {
-      activeFilters.category = params.get("category");
+    let catParam = "";
+    if (params.has("filter_cat")) {
+      catParam = params.get("filter_cat");
+    } else if (params.has("category")) {
+      catParam = params.get("category");
+    }
+    
+    if (catParam) {
+      activeFilters.category = catParam;
       // Highlight category button
       categoryFilters.forEach(btn => {
         if (btn.getAttribute("data-category") === activeFilters.category) {

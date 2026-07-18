@@ -61,22 +61,22 @@ get_header(); ?>
     <div style="width: 100%; overflow: hidden; position: relative;">
       <div class="category-grid" id="category-carousel-inner" style="display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; padding-bottom: 10px;">
         <!-- Card 1 -->
-        <a href="<?php echo esc_url( home_url('/shop/?category=Headphones') ); ?>" class="category-card" style="flex: 0 0 250px;">
+        <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Headphones') ); ?>" class="category-card" style="flex: 0 0 250px;">
           <i class="fa-solid fa-headphones category-card-icon"></i>
           <span class="category-card-title">Headphones</span>
         </a>
         <!-- Card 2 -->
-        <a href="<?php echo esc_url( home_url('/shop/?category=Smart%20Watches') ); ?>" class="category-card" style="flex: 0 0 250px;">
+        <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Smart%20Watches') ); ?>" class="category-card" style="flex: 0 0 250px;">
           <i class="fa-solid fa-clock category-card-icon"></i>
           <span class="category-card-title">Smart Watches</span>
         </a>
         <!-- Card 3 -->
-        <a href="<?php echo esc_url( home_url('/shop/?category=Earbuds') ); ?>" class="category-card" style="flex: 0 0 250px;">
+        <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Earbuds') ); ?>" class="category-card" style="flex: 0 0 250px;">
           <i class="fa-solid fa-ear-listen category-card-icon"></i>
           <span class="category-card-title">Wireless Earbuds</span>
         </a>
         <!-- Card 4 -->
-        <a href="<?php echo esc_url( home_url('/shop/?category=Power%20Banks') ); ?>" class="category-card" style="flex: 0 0 250px;">
+        <a href="<?php echo esc_url( home_url('/shop/?filter_cat=Power%20Banks') ); ?>" class="category-card" style="flex: 0 0 250px;">
           <i class="fa-solid fa-battery-three-quarters category-card-icon"></i>
           <span class="category-card-title">Power Banks</span>
         </a>

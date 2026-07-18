@@ -17,10 +17,10 @@
         <h4>Shop</h4>
         <ul>
           <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop'))) : esc_url(home_url('/shop/')); ?>">All Products</a></li>
-          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?category=headphones') : esc_url(home_url('/shop/?category=Headphones')); ?>">Headphones</a></li>
-          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?category=smart-watches') : esc_url(home_url('/shop/?category=Smart%20Watches')); ?>">Smart Watches</a></li>
-          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?category=earbuds') : esc_url(home_url('/shop/?category=Earbuds')); ?>">Earbuds</a></li>
-          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?category=power-banks') : esc_url(home_url('/shop/?category=Power%20Banks')); ?>">Power Banks</a></li>
+          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?filter_cat=headphones') : esc_url(home_url('/shop/?filter_cat=Headphones')); ?>">Headphones</a></li>
+          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?filter_cat=smart-watches') : esc_url(home_url('/shop/?filter_cat=Smart%20Watches')); ?>">Smart Watches</a></li>
+          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?filter_cat=earbuds') : esc_url(home_url('/shop/?filter_cat=Earbuds')); ?>">Earbuds</a></li>
+          <li><a href="<?php echo class_exists('WooCommerce') ? esc_url(get_permalink(wc_get_page_id('shop')) . '?filter_cat=power-banks') : esc_url(home_url('/shop/?filter_cat=Power%20Banks')); ?>">Power Banks</a></li>
         </ul>
       </div>
       <div class="footer-column">

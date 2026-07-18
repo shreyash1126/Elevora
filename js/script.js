@@ -120,6 +120,67 @@ document.addEventListener("DOMContentLoaded", () => {
       closeQuickView();
     }
   });
+
+  // Toggle category dropdowns on click/tap for touch and mobile screens
+  const categoryNavItems = document.querySelectorAll(".category-nav-item");
+  categoryNavItems.forEach(item => {
+    const dropdown = item.querySelector(".category-dropdown");
+    if (dropdown) {
+      item.addEventListener("click", (e) => {
+        // If clicking a link inside the dropdown, let it navigate
+        if (e.target.closest("a")) return;
+        
+        // Check if device supports hover (desktop) or is touch-based/mobile
+        const isTouchOrMobile = window.innerWidth <= 1024 || window.matchMedia("(pointer: coarse)").matches;
+        if (isTouchOrMobile) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const isOpen = item.classList.contains("active-dropdown");
+          
+          // Close all other dropdowns
+          categoryNavItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active-dropdown");
+              const otherDropdown = otherItem.querySelector(".category-dropdown");
+              if (otherDropdown) {
+                otherDropdown.style.opacity = "";
+                otherDropdown.style.visibility = "";
+                otherDropdown.style.transform = "";
+              }
+            }
+          });
+          
+          if (!isOpen) {
+            item.classList.add("active-dropdown");
+            dropdown.style.opacity = "1";
+            dropdown.style.visibility = "visible";
+            dropdown.style.transform = "translateX(-50%) translateY(0)";
+          } else {
+            item.classList.remove("active-dropdown");
+            dropdown.style.opacity = "";
+            dropdown.style.visibility = "";
+            dropdown.style.transform = "";
+          }
+        }
+      });
+    }
+  });
+
+  // Close dropdowns if clicking outside on mobile
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".category-nav-item")) {
+      categoryNavItems.forEach(item => {
+        item.classList.remove("active-dropdown");
+        const dropdown = item.querySelector(".category-dropdown");
+        if (dropdown) {
+          dropdown.style.opacity = "";
+          dropdown.style.visibility = "";
+          dropdown.style.transform = "";
+        }
+      });
+    }
+  });
 });
 
 // Toast notification trigger
