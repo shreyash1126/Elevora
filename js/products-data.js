@@ -295,45 +295,7 @@ const ElevoraProducts = [
   }
 ];
 
-// Sanitize products array to ensure no missing fields throw errors in template renders
-ElevoraProducts.forEach(p => {
-  if (p.price === undefined || p.price === null || isNaN(p.price)) {
-    p.price = 0.0;
-  }
-  if (!p.images || !Array.isArray(p.images) || p.images.length === 0) {
-    p.images = ["https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&auto=format&fit=crop&q=80"];
-  }
-  if (!p.colors || !Array.isArray(p.colors) || p.colors.length === 0) {
-    p.colors = ["Default"];
-  }
-  if (!p.variants || !Array.isArray(p.variants) || p.variants.length === 0) {
-    p.variants = [{ color: p.colors[0], stock: 10 }];
-  }
-  if (!p.specs || typeof p.specs !== "object") {
-    p.specs = { "Category": p.category || "General" };
-  }
-  if (!p.features || !Array.isArray(p.features)) {
-    p.features = ["Premium quality design", "Built for modern lifestyles"];
-  }
-  if (p.rating === undefined || p.rating === null) {
-    p.rating = 5.0;
-  }
-  if (p.reviewsCount === undefined || p.reviewsCount === null) {
-    p.reviewsCount = 0;
-  }
-  if (!p.description) {
-    p.description = "Premium selected gadget curated for style and utility.";
-  }
-  if (!p.brand) {
-    p.brand = "Elevora";
-  }
-  if (!p.category) {
-    p.category = "Electronics";
-  }
-});
-
 // Helper to fetch product by ID
 function getProductById(id) {
   return ElevoraProducts.find(p => p.id === parseInt(id));
 }
-
