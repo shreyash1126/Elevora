@@ -3,355 +3,426 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Secure Checkout - Complete your Elevora smart electronics order with secure payment methods. SSL Protected.">
-  <title>Secure Checkout | Elevora Store</title>
+  <title>Checkout | Dopahr Sunscreen & Skincare Products Website</title>
+  <meta name="description" content="Securely checkout your sunscreen & skincare products. Fast shipping on invisible SPF and hydrating sun lotion.">
+  <meta name="keywords" content="checkout, secure checkout, purchase sunscreen, Dopahr Sunscreen & Skincare Products website">
   
-  <!-- FontAwesome & Custom CSS -->
+  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
-  <style>
-    /* Checkout Page specific styles */
-    .checkout-container {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 40px;
-      margin-bottom: 80px;
-    }
-    
-    .checkout-form-box {
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: 32px;
-      background-color: var(--bg-primary);
-    }
-    
-    .checkout-step-title {
-      font-family: 'Outfit';
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .checkout-step-num {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: var(--text-primary);
-      color: var(--bg-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .form-group-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .form-field label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-    .form-field input,
-    .form-field select {
-      border: 1.5px solid var(--border-color);
-      border-radius: var(--border-radius-sm);
-      padding: 12px;
-      font-size: 0.9rem;
-      background-color: var(--bg-primary);
-      width: 100%;
-      outline: none;
-      transition: border-color var(--transition-fast);
-    }
-    .form-field input:focus,
-    .form-field select:focus {
-      border-color: var(--text-primary);
-    }
-
-    /* Shipping option pills */
-    .shipping-method-option {
-      border: 1.5px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      padding: 16px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all var(--transition-fast);
-    }
-    .shipping-method-option:hover,
-    .shipping-method-option.active {
-      border-color: var(--text-primary);
-      background-color: var(--bg-secondary);
-    }
-    .shipping-method-option input {
-      accent-color: var(--text-primary);
-      width: 18px;
-      height: 18px;
-    }
-
-    /* Summary Pane */
-    .checkout-summary-wrap {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: 30px;
-      align-self: start;
-    }
-    .summary-product-item {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 16px;
-      align-items: center;
-    }
-    .summary-product-img {
-      width: 50px;
-      height: 50px;
-      border-radius: 4px;
-      background-color: var(--bg-primary);
-      border: 1px solid var(--border-color);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .summary-product-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .summary-totals-box {
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .total-row-summary {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 <body>
 
-  <!-- Announcement Bar -->
+  <!-- 1. Announcement Bar -->
   <div class="announcement-bar">
-    <div class="announcement-slider">
-      <div class="announcement-item"><i class="fa-solid fa-lock"></i> SSL Secured Payment Checkout Portal</div>
+    <div class="announcement-bar-content">
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
+      <span>☀️ PROTECT YOUR SKIN FROM THE INTENSE AFTERNOON HEAT</span>
+      <span>☀️ GET 10% OFF YOUR FIRST ORDER WITH CODE: SUNCARE10</span>
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
     </div>
   </div>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            d<span class="logo-sun-container"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </a>
+        </div>
 
-      <div class="header-actions">
-        <a href="wishlist.html" class="action-btn">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count">0</span>
-        </a>
-
-        <button class="action-btn" onclick="openMiniCartDrawer()">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count">0</span>
-        </button>
-
-        <button class="action-btn theme-toggle-btn">
-          <i class="fa-regular fa-moon"></i>
-          <i class="fa-regular fa-sun"></i>
-        </button>
-
-        <a href="my-account.html" class="action-btn">
-          <i class="fa-regular fa-user"></i>
-        </a>
-
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="New!">
+                      </div>
+                      <span class="category-card-title">New!</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?formulation=Mineral" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                      </div>
+                      <span class="category-card-title">Mineral</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Men" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Men">
+                      </div>
+                      <span class="category-card-title">Men</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Face%20%26%20Lip" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Face & Lip">
+                      </div>
+                      <span class="category-card-title">Face & Lip</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Makeup" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="Makeup">
+                      </div>
+                      <span class="category-card-title">Makeup</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Sets%20%26%20Gifts" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Sets & Gifts">
+                      </div>
+                      <span class="category-card-title">Sets & Gifts</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Body" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Body">
+                      </div>
+                      <span class="category-card-title">Body</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Kids" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Kids & Family">
+                      </div>
+                      <span class="category-card-title">Kids & Family</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Gifting" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Group Gifting">
+                      </div>
+                      <span class="category-card-title">Group Gifting</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Shop All</a>
+              </div>
+            </div>
+          </li><li class="nav-item"><a href="shop.html" class="nav-link">Bestsellers</a></li>
+                              <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/body_mist.jpg" alt="PLAY Body Mist Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=body_mist" class="spotlight-title-link">
+                    <span>Reapply with PLAY Body Mist SPF 50</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Lotion" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/play_lotion.jpg" alt="Lotion & Moisturizer">
+                        </div>
+                        <span class="category-card-title">Lotion & Moisturizer</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Stick" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Stick">
+                        </div>
+                        <span class="category-card-title">Stick</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Lip" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Lip">
+                        </div>
+                        <span class="category-card-title">Lip</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Spray" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/body_mist.jpg" alt="Spray">
+                        </div>
+                        <span class="category-card-title">Spray</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Serum" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Oil & Serum">
+                        </div>
+                        <span class="category-card-title">Oil & Serum</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?formulation=Mineral" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                        </div>
+                        <span class="category-card-title">Mineral</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Shop All Shop By Type</a>
+                </div>
+              </div>
+            </div>
+          </li>
+<li class="nav-item"><a href="about.html" class="nav-link">Discover</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <!-- Page Hero Title -->
-  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <a href="cart.html">Cart</a>
-        <span>/</span>
-        <span style="color: var(--text-primary);">Checkout</span>
-      </div>
-      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">Secure Checkout</h1>
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop All</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Bestsellers</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">Discover</a></li>
+    </ul>
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Sunscreens..." id="mobile-search-trigger" readonly>
     </div>
-  </section>
+  </div>
 
-  <!-- Checkout Stepper Layout -->
+  <div class="overlay" id="site-overlay"></div>
+
+  <!-- Checkout Section Content -->
   <main class="container">
-    <div class="checkout-container">
+    <div class="checkout-layout">
       
-      <!-- Left Column: Checkout stepped forms -->
-      <form id="checkout-main-form" class="checkout-form-box" onsubmit="handlePlaceOrder(event)">
-        
-        <!-- Step 1: Shipping Address info -->
-        <div class="filter-section" style="border-bottom: none; margin-bottom: 20px;">
-          <h3 class="checkout-step-title"><span class="checkout-step-num">1</span> Shipping Details</h3>
-          
-          <div class="form-group-row">
-            <div class="form-field">
-              <label for="first-name">First Name</label>
-              <input type="text" id="first-name" required placeholder="e.g. John">
-            </div>
-            <div class="form-field">
-              <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" required placeholder="e.g. Doe">
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="email-address">Email Address</label>
-            <input type="email" id="email-address" required placeholder="e.g. john@example.com">
-          </div>
-
-          <div class="form-field">
-            <label for="shipping-street">Street Address</label>
-            <input type="text" id="shipping-street" required placeholder="e.g. 123 Tech Lane, Apt 4">
-          </div>
-
-          <div class="form-group-row">
-            <div class="form-field">
-              <label for="shipping-city">City</label>
-              <input type="text" id="shipping-city" required placeholder="e.g. New York">
-            </div>
-            <div class="form-field">
-              <label for="shipping-zip">Zip/Postal Code</label>
-              <input type="text" id="shipping-zip" required placeholder="e.g. 10001">
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="shipping-country">Country</label>
-            <select id="shipping-country" required>
-              <option value="US">United States</option>
-              <option value="UK">United Kingdom</option>
-              <option value="CA">Canada</option>
-              <option value="AU">Australia</option>
-              <option value="DE">Germany</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Step 2: Shipping Courier options -->
-        <div class="filter-section" style="border-bottom: none; margin-bottom: 20px;">
-          <h3 class="checkout-step-title"><span class="checkout-step-num">2</span> Shipping Service</h3>
-          
-          <div class="shipping-method-option active" onclick="selectShippingMethod('free', this)">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <input type="radio" name="shipping_radio" id="ship-free" checked>
-              <div>
-                <h4 style="font-size: 0.9rem; font-weight: 700;">Standard Insured Shipping</h4>
-                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Delivery takes 5-10 business days</p>
+      <!-- Checkout Forms (Left) -->
+      <section style="background-color: var(--bg-card); border:1px solid var(--border-color); border-radius:var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-sm);">
+        <form id="checkout-form">
+          <!-- Shipping Address -->
+          <div style="margin-bottom: 40px;">
+            <h2 class="checkout-section-title">Shipping Address</h2>
+            
+            <div class="checkout-form-group">
+              <div class="form-field">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" required placeholder="e.g. John">
+              </div>
+              <div class="form-field">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" required placeholder="e.g. Doe">
               </div>
             </div>
-            <span style="font-weight: 700; font-size: 0.9rem; color: var(--success);">FREE</span>
-          </div>
 
-          <div class="shipping-method-option" onclick="selectShippingMethod('express', this)">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <input type="radio" name="shipping_radio" id="ship-express">
-              <div>
-                <h4 style="font-size: 0.9rem; font-weight: 700;">Express Courier Dispatch</h4>
-                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Delivery takes 2-4 business days</p>
+            <div class="checkout-form-group">
+              <div class="form-field full">
+                <label for="address">Address</label>
+                <input type="text" id="address" required placeholder="e.g. 123 Sunlit Lane">
               </div>
             </div>
-            <span style="font-weight: 700; font-size: 0.9rem;">$9.99</span>
-          </div>
-        </div>
 
-        <!-- Step 3: Payment Mock inputs -->
-        <div class="filter-section" style="border-bottom: none; margin-bottom: 30px;">
-          <h3 class="checkout-step-title"><span class="checkout-step-num">3</span> Payment Method</h3>
+            <div class="checkout-form-group">
+              <div class="form-field">
+                <label for="city">City</label>
+                <input type="text" id="city" required placeholder="e.g. Los Angeles">
+              </div>
+              <div class="form-field">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" required placeholder="e.g. 90001">
+              </div>
+            </div>
+
+            <div class="checkout-form-group">
+              <div class="form-field full">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="e.g. john@example.com">
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Info -->
+          <div style="margin-bottom: 40px;">
+            <h2 class="checkout-section-title">Payment details</h2>
+            
+            <div class="checkout-form-group">
+              <div class="form-field full">
+                <label for="card-num">Card Number</label>
+                <input type="text" id="card-num" required placeholder="xxxx xxxx xxxx xxxx" pattern="\d{16}" title="Please enter a valid 16 digit card number.">
+              </div>
+            </div>
+
+            <div class="checkout-form-group">
+              <div class="form-field">
+                <label for="card-expiry">Expiry Date</label>
+                <input type="text" id="card-expiry" required placeholder="MM/YY">
+              </div>
+              <div class="form-field">
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" required placeholder="123" pattern="\d{3}" title="Please enter a valid 3 digit CVV.">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size:16px;">Place Order</button>
+        </form>
+      </section>
+
+      <!-- Order Summary (Right) -->
+      <aside>
+        <div class="order-summary-box">
+          <h3 style="font-size:18px; text-transform:uppercase; margin-bottom:20px; font-weight:800; border-bottom:1px solid var(--border-color); padding-bottom:10px;">Order Summary</h3>
           
-          <div class="form-field">
-            <label for="cc-name">Name on Credit Card</label>
-            <input type="text" id="cc-name" required placeholder="e.g. John Doe">
+          <!-- Dynamic Items List -->
+          <div class="order-items-list" id="checkout-items-list">
+            <!-- Loaded dynamically -->
           </div>
 
-          <div class="form-field">
-            <label for="cc-num">Credit Card Number</label>
-            <input type="text" id="cc-num" required placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
-          </div>
-
-          <div class="form-group-row">
-            <div class="form-field">
-              <label for="cc-exp">Expiration Date</label>
-              <input type="text" id="cc-exp" required placeholder="MM/YY" maxlength="5">
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px; border-bottom:1px solid var(--border-color); padding-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; font-size:14px; color:var(--text-secondary);">
+              <span>Subtotal</span>
+              <span id="checkout-subtotal">$0.00</span>
             </div>
-            <div class="form-field">
-              <label for="cc-cvv">CVV/Security Code</label>
-              <input type="password" id="cc-cvv" required placeholder="XXX" maxlength="3">
+            <div style="display:flex; justify-content:space-between; font-size:14px; color:var(--text-secondary);">
+              <span>Shipping</span>
+              <span id="checkout-shipping">Calculated at checkout</span>
             </div>
           </div>
-        </div>
 
-        <button type="submit" class="btn btn-primary" style="width: 100%; height: 50px;"><i class="fa-solid fa-lock" style="margin-right: 8px;"></i> Place Order & Pay</button>
-      </form>
-
-      <!-- Right Column: Checkout item totals summary -->
-      <aside class="checkout-summary-wrap">
-        <h3 style="font-family: 'Outfit'; font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; border-bottom: 1.5px solid var(--border-color); padding-bottom: 12px;">Order Summary</h3>
-        
-        <!-- Cart Items list -->
-        <div id="checkout-summary-items-list" style="display: flex; flex-direction: column; gap: 16px; max-height: 250px; overflow-y: auto; padding-right: 8px;">
-          <!-- Loaded dynamically -->
-        </div>
-
-        <!-- Checkout Pricing math -->
-        <div class="summary-totals-box">
-          <div class="total-row-summary">
-            <span>Subtotal</span>
-            <span style="font-weight: 600;" id="chk-subtotal">$0.00</span>
-          </div>
-          <div class="total-row-summary" id="chk-discount-row" style="color: var(--danger); display: none;">
-            <span>Coupon Discount</span>
-            <span style="font-weight: 600;" id="chk-discount">-$0.00</span>
-          </div>
-          <div class="total-row-summary">
-            <span>Shipping Cost</span>
-            <span style="font-weight: 600;" id="chk-shipping">FREE</span>
-          </div>
-          <div class="total-row-summary" style="font-family: 'Outfit'; font-size: 1.2rem; font-weight: 800; border-top: 1.5px solid var(--border-color); padding-top: 16px; margin-top: 8px;">
-            <span>Grand Total</span>
-            <span id="chk-total">$0.00</span>
+          <div style="display:flex; justify-content:space-between; font-size:20px; font-weight:800; margin-top:20px; color:var(--text-primary);">
+            <span>Total</span>
+            <span id="checkout-total">$0.00</span>
           </div>
         </div>
       </aside>
@@ -359,247 +430,66 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-top">
-      <div class="footer-column footer-about">
-        <a href="index.html" class="logo">
-          <span>ELEVORA</span><span class="logo-dot"></span>
-        </a>
-        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-      </div>
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="shop.html">All Products</a></li>
-          <li><a href="shop.html?category=Headphones">Headphones</a></li>
-          <li><a href="shop.html?category=Smart%20Watches">Smart Watches</a></li>
-          <li><a href="shop.html?category=Earbuds">Earbuds</a></li>
-          <li><a href="shop.html?category=Power%20Banks">Power Banks</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ Desk</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="track-order.html">Track Order</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About Brand</a></li>
-          <li><a href="blog.html">Tech Blog</a></li>
-          <li><a href="privacy-policy.html">Privacy Guidelines</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-column footer-newsletter">
-        <h4>Subscribe</h4>
-        <p>Get early product launches and exclusive VIP coupon discount offers directly in your inbox.</p>
-        <form class="newsletter-section-form">
-          <input type="email" placeholder="Email address" class="newsletter-input" required>
-          <button type="submit" class="newsletter-btn">Join</button>
-        </form>
-      </div>
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
     </div>
-    
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
-      <div class="payment-methods">
-        <i class="fa-brands fa-cc-visa" title="Visa"></i>
-        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search sunscreens (e.g. Unseen, Glow, Spray)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dopahr Skincare. All rights reserved. Designed for optimal afternoon skin protection.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Mini Cart Drawer Overlay -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
-    <div class="cart-drawer">
-      <div class="cart-drawer-header">
-        <h4 class="cart-drawer-title"><i class="fa-solid fa-shopping-bag" style="color: var(--accent-dark);"></i> Your Cart</h4>
-        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="cart-drawer-items" id="cart-drawer-items">
-        <!-- Loaded dynamically -->
-      </div>
-      <div class="cart-drawer-footer">
-        <div class="cart-totals-row">
-          <span>Subtotal</span>
-          <span style="font-weight: 600;" id="cart-drawer-subtotal">$0.00</span>
-        </div>
-        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Shipping & promo coupons calculated at checkout page.</div>
-        <div class="cart-drawer-actions">
-          <a href="cart.html" class="btn btn-secondary" style="width: 100%;" onclick="closeMiniCartDrawer()">View Full Cart</a>
-          <a href="checkout.html" class="btn btn-primary" style="width: 100%;" id="mini-cart-checkout-btn">Checkout Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Shared Javascript dependencies -->
-  <script src="js/products-data.js"></script>
-  <script src="js/darkmode.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/wishlist.js"></script>
-  <script src="js/search.js"></script>
-
-  <!-- Checkout specific rendering logic -->
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
   <script>
-    let chkSubtotal = 0;
-    let chkShippingCost = 0; // standard default free
-    let chkDiscount = 0;
-
-    // 1. Render items in summary column
-    function renderCheckoutSummary() {
-      const listContainer = document.getElementById("checkout-summary-items-list");
-      if (!listContainer) return;
-
-      const cart = getCart();
-      if (cart.length === 0) {
-        window.location.href = "cart.html"; // Go back if no items
-        return;
-      }
-
-      let html = "";
-      chkSubtotal = 0;
-
-      cart.forEach(item => {
-        const p = ElevoraProducts.find(prod => prod.id === item.productId);
-        if (p) {
-          const price = p.price;
-          const total = price * item.quantity;
-          chkSubtotal += total;
-
-          html += `
-            <div class="summary-product-item">
-              <div class="summary-product-img">
-                <img src="${p.images[0]}" alt="${p.name}">
-              </div>
-              <div style="flex-grow: 1;">
-                <h4 style="font-size: 0.8rem; font-weight: 700; line-height: 1.3;">${p.name}</h4>
-                <div style="font-size: 0.75rem; color: var(--text-muted);">Color: ${item.color} | Qty: ${item.quantity}</div>
-              </div>
-              <span style="font-size: 0.85rem; font-weight: 700; font-family: Outfit;">$${total.toFixed(2)}</span>
-            </div>
-          `;
-        }
-      });
-
-      listContainer.innerHTML = html;
-      calculateCheckoutTotals();
-    }
-
-    // 2. Shipping Radio selects
-    function selectShippingMethod(type, element) {
-      document.querySelectorAll(".shipping-method-option").forEach(opt => opt.classList.remove("active"));
-      element.classList.add("active");
-      
-      const radioFree = document.getElementById("ship-free");
-      const radioExpress = document.getElementById("ship-express");
-
-      if (type === "free") {
-        if (radioFree) radioFree.checked = true;
-        chkShippingCost = 0;
-      } else {
-        if (radioExpress) radioExpress.checked = true;
-        chkShippingCost = 9.99;
-      }
-
-      calculateCheckoutTotals();
-    }
-
-    // 3. Mathematical Totals compiler
-    function calculateCheckoutTotals() {
-      const subtotalEl = document.getElementById("chk-subtotal");
-      const discountEl = document.getElementById("chk-discount");
-      const discountRow = document.getElementById("chk-discount-row");
-      const shippingEl = document.getElementById("chk-shipping");
-      const totalEl = document.getElementById("chk-total");
-
-      if (!subtotalEl) return;
-
-      subtotalEl.textContent = `$${chkSubtotal.toFixed(2)}`;
-
-      // Coupon discount validation
-      const coupon = localStorage.getItem("elevora_applied_coupon");
-      if (coupon === "ELEVORA20") {
-        chkDiscount = chkSubtotal * 0.20;
-        if (discountEl && discountRow) {
-          discountEl.textContent = `-$${chkDiscount.toFixed(2)}`;
-          discountRow.style.display = "flex";
-        }
-      } else {
-        chkDiscount = 0;
-        if (discountRow) discountRow.style.display = "none";
-      }
-
-      // Shipping text
-      if (shippingEl) {
-        shippingEl.textContent = chkShippingCost === 0 ? "FREE" : `$${chkShippingCost.toFixed(2)}`;
-      }
-
-      const grandTotal = chkSubtotal - chkDiscount + chkShippingCost;
-      if (totalEl) {
-        totalEl.textContent = `$${grandTotal.toFixed(2)}`;
-      }
-    }
-
-    // Format inputs expiration slash and CC spaces
-    document.getElementById("cc-num").addEventListener("input", (e) => {
-      let val = e.target.value.replace(/\D/g, "");
-      let formatted = "";
-      for (let i = 0; i < val.length; i++) {
-        if (i > 0 && i % 4 === 0) formatted += " ";
-        formatted += val[i];
-      }
-      e.target.value = formatted;
+    // Search elements bindings
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
     });
 
-    document.getElementById("cc-exp").addEventListener("input", (e) => {
-      let val = e.target.value.replace(/\D/g, "");
-      if (val.length >= 2) {
-        e.target.value = val.slice(0, 2) + "/" + val.slice(2, 4);
-      } else {
-        e.target.value = val;
-      }
-    });
-
-    // 4. Place Order & trigger confirmation redirection
-    function handlePlaceOrder(e) {
-      e.preventDefault();
-      
-      // Generate a mock tracking code: ELV-XXXXXXXX-US
-      const trackingCode = `ELV-${Math.floor(10000000 + Math.random() * 90000000)}-${document.getElementById("shipping-country").value}`;
-      
-      // Save order details to localstorage to render on order-success page
-      const orderDetails = {
-        name: `${document.getElementById("first-name").value} ${document.getElementById("last-name").value}`,
-        email: document.getElementById("email-address").value,
-        address: `${document.getElementById("shipping-street").value}, ${document.getElementById("shipping-city").value}, ${document.getElementById("shipping-zip").value}`,
-        tracking: trackingCode,
-        amount: chkSubtotal - chkDiscount + chkShippingCost
-      };
-      
-      localStorage.setItem("elevora_last_order", JSON.stringify(orderDetails));
-
-      // Clear Shopping Cart state
-      clearCart();
-
-      // Redirect
-      window.location.href = "order-success.html";
-    }
-
-    window.addEventListener("DOMContentLoaded", renderCheckoutSummary);
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
   </script>
 </body>
 </html>
+

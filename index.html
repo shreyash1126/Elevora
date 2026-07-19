@@ -3,1870 +3,1070 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Elevora - Premium Dropshipping Electronics Store. Buy smart watches, earbuds, powerbanks, and wireless accessories with international shipping.">
-  <meta name="keywords" content="Online Electronics Store, Tech Accessories, Smart Gadgets, Chargers, Earbuds, Power Banks, Elevora Shop">
-  <meta name="robots" content="index, follow">
-  
+  <title>Dopahr Sunscreen & Skincare Products Website | Premium UV Protection</title>
+  <meta name="description" content="Shield your skin from intense peak sunlight with Dopahr. Explore the ultimate Sunscreen & Skincare Products website for 100% invisible daily SPF, hydrating lotions, glows, and body mists. Modern, lightweight skincare formulas for ultimate protection.">
+  <meta name="keywords" content="Dopahr, Sunscreen & Skincare Products website, sunscreen, skincare products, UV protection, SPF 50, invisible sunscreen, mineral sunscreen, daily moisturizer SPF, body mist SPF">
   <!-- Open Graph -->
-  <meta property="og:title" content="Elevora | Elevate Your Tech Lifestyle">
-  <meta property="og:description" content="Shop the finest curated smart gadgets and mobile accessories online. Fast shipping, secure payments.">
+  <meta property="og:title" content="Dopahr Sunscreen & Skincare Products Website | Premium UV Protection">
+  <meta property="og:description" content="Vibrant, lightweight, premium sunscreens and skincare items for peak afternoon protection. Shop invisible SPF 50, glow screen SPF 40, and hydrating sprays.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://elevora.com">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800">
-
-  <title>Elevora | Premium Online Electronics & Tech Gadgets</title>
-
-  <!-- Google Fonts & FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Core Custom Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
-  <style>
-    /* Homepage Specific Custom CSS */
-    /* Hero Slider Container */
-    .hero-slider-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-    }
-    .hero-slider {
-      display: flex;
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .hero-slide {
-      flex: 0 0 100%;
-      height: 600px;
-      display: none;
-      align-items: center;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-slide.active {
-      display: flex;
-      animation: fadeIn 0.8s ease-in-out forwards;
-    }
-    .hero-slide::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
-      z-index: 1;
-    }
-    [data-theme="light"] .hero-slide::before {
-      background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0.1) 100%);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 600px;
-      padding: 0 24px;
-      color: #ffffff;
-    }
-    [data-theme="light"] .hero-content {
-      color: #111111;
-    }
-    .hero-tag {
-      display: inline-block;
-      background-color: var(--accent);
-      color: var(--accent-contrast);
-      font-family: 'Outfit';
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: var(--border-radius-sm);
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      letter-spacing: 0.05em;
-    }
-    .hero-content h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      letter-spacing: -0.03em;
-    }
-    .hero-content p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 30px;
-    }
-    [data-theme="light"] .hero-content p {
-      color: var(--text-secondary);
-    }
-    /* Slider Controls */
-    .slider-arrows {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      display: flex;
-      gap: 12px;
-      z-index: 3;
-    }
-    .slider-arrow {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all var(--transition-fast);
-    }
-    [data-theme="light"] .slider-arrow {
-      background-color: rgba(0,0,0,0.05);
-      border-color: rgba(0,0,0,0.1);
-      color: #111111;
-    }
-    .slider-arrow:hover {
-      background-color: var(--accent);
-      color: var(--accent-contrast);
-      border-color: var(--accent);
-    }
-    .slider-dots {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 3;
-    }
-    .slider-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: rgba(255,255,255,0.3);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-    }
-    [data-theme="light"] .slider-dot {
-      background-color: rgba(0,0,0,0.2);
-    }
-    .slider-dot.active {
-      background-color: var(--accent);
-      width: 30px;
-      border-radius: 10px;
-    }
-
-    /* Category Quick Grid */
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .category-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: 30px 24px;
-      text-align: center;
-      transition: all var(--transition-normal);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    .category-card:hover {
-      transform: translateY(-6px);
-      background-color: var(--bg-primary);
-      border-color: var(--accent);
-      box-shadow: var(--shadow-md);
-    }
-    .category-card-icon {
-      font-size: 2.25rem;
-      color: var(--text-primary);
-      transition: transform var(--transition-normal);
-    }
-    .category-card:hover .category-card-icon {
-      transform: scale(1.15) rotate(5deg);
-      color: var(--accent-dark);
-    }
-    .category-card-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    /* Tabs Component */
-    .tabs-nav {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 16px;
-    }
-    .tab-btn {
-      font-family: 'Outfit';
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: var(--border-radius-sm);
-      transition: all var(--transition-fast);
-    }
-    .tab-btn.active {
-      color: var(--text-primary);
-      background-color: var(--bg-tertiary);
-    }
-
-    /* Deal of the Day Promo Panel */
-    .promo-deal-section {
-      background-color: #0b0b0d;
-      color: #ffffff;
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .promo-deal-wrap {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .deal-timer-wrap {
-      display: flex;
-      gap: 16px;
-      margin: 30px 0;
-    }
-    .timer-box {
-      background-color: #1c1c22;
-      border: 1px solid #2d2d35;
-      min-width: 80px;
-      padding: 16px;
-      border-radius: var(--border-radius-md);
-      text-align: center;
-    }
-    .timer-num {
-      font-family: 'Outfit';
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-    .timer-label {
-      font-size: 0.75rem;
-      color: #a0a0a5;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 4px;
-    }
-
-    /* Why Choose US USPs Cards */
-    .usps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .usp-card {
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      padding: 24px;
-      transition: transform var(--transition-fast);
-    }
-    .usp-card:hover {
-      transform: translateY(-4px);
-    }
-    .usp-icon {
-      font-size: 1.75rem;
-      color: var(--accent-dark);
-      margin-bottom: 16px;
-    }
-    .usp-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .usp-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* FAQ accordion styling */
-    .faq-accordion {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .faq-item {
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-      transition: background-color var(--transition-fast);
-    }
-    .faq-question {
-      padding: 20px 24px;
-      width: 100%;
-      text-align: left;
-      font-family: 'Outfit';
-      font-size: 1.05rem;
-      font-weight: 600;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height var(--transition-normal);
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      background-color: var(--bg-primary);
-    }
-    .faq-answer-inner {
-      padding: 20px 24px;
-      line-height: 1.6;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 200px;
-    }
-    .faq-item.active {
-      background-color: var(--bg-primary);
-      border-color: var(--text-primary);
-    }
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
-    }
-    .faq-question i {
-      transition: transform var(--transition-fast);
-    }
-
-    /* Premium Brands & Categories Section */
-    .premium-brands-categories {
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
-    .brand-carousel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      gap: 20px;
-    }
-    .brand-logos-row {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      flex-grow: 1;
-    }
-    .brand-logo-item {
-      display: flex;
-      align-items: center;
-      opacity: 0.8;
-      transition: all var(--transition-fast);
-      color: var(--text-primary);
-    }
-    .brand-logo-item:hover {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-    
-    /* Logo Brand specifics */
-    .amazon-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      position: relative;
-    }
-    .amazon-logo .amz-bold {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      letter-spacing: -0.05em;
-    }
-    .amazon-logo .amz-light {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 1.1rem;
-    }
-    .amazon-arrow {
-      margin-top: -2px;
-      width: 80px;
-    }
-    
-    .flipkart-logo {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #2874f0;
-    }
-    [data-theme="dark"] .flipkart-logo {
-      color: #ffffff;
-    }
-    .fk-bag {
-      margin-top: -2px;
-    }
-    
-    .meesho-logo {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      color: #f43397;
-      font-size: 1.6rem;
-      letter-spacing: -0.04em;
-    }
-    
-    .cred-logo {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .cred-shield {
-      color: var(--text-primary);
-    }
-    .cred-text {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: 0.15em;
-    }
-    
-    .zop-logo {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 1.7rem;
-      letter-spacing: -0.03em;
-    }
-    .zop-dot {
-      color: var(--accent-dark);
-    }
-    
-    .zavo-logo {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 1.7rem;
-      letter-spacing: -0.02em;
-    }
-    .zavo-dot {
-      color: #ff5e62;
-    }
-
-    /* Carousel controls */
-    .carousel-nav-arrows {
-      display: flex;
-      gap: 12px;
-    }
-    .carousel-nav-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background-color: var(--accent);
-      border: 1.5px solid var(--accent);
-      color: var(--accent-contrast);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
-      transition: all var(--transition-fast);
-    }
-    .carousel-nav-btn:hover {
-      background-color: var(--accent-dark);
-      border-color: var(--accent-dark);
-      transform: scale(1.05);
-    }
-    .carousel-nav-btn:active {
-      transform: scale(0.95);
-    }
-    
-    /* Category Cards Carousel Layout */
-    .category-carousel-outer {
-      position: relative;
-      width: 100%;
-      margin-top: 10px;
-    }
-    .category-carousel-inner {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 10px 5px 25px;
-      scrollbar-width: none; /* Hide scrollbar Firefox */
-    }
-    .category-carousel-inner::-webkit-scrollbar {
-      display: none; /* Hide scrollbar Chrome/Safari */
-    }
-    
-    /* Premium category card */
-    .premium-cat-card {
-      flex: 0 0 calc(25% - 15px); /* 4 cards on desktop */
-      min-width: 250px;
-      height: 290px;
-      border-radius: var(--border-radius-lg);
-      border: 3px solid #ffcc00;
-      background: var(--card-grad);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px 20px 0;
-      transition: all var(--transition-normal);
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
-    }
-    
-    .premium-cat-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(255, 204, 0, 0.25);
-    }
-    
-    /* Badges */
-    .cat-card-badge {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      background-color: #ffffff;
-      color: #111111;
-      padding: 4px 14px;
-      border-radius: var(--border-radius-full);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index: 2;
-    }
-    
-    .cat-card-badge-exclusive {
-      background-color: #e03131;
-      color: #ffffff;
-    }
-    
-    /* Titles */
-    .cat-card-title {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 1.35rem;
-      color: #ffffff;
-      text-align: center;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      margin-bottom: auto;
-      z-index: 2;
-    }
-    
-    /* Image wrap and positioning */
-    .cat-card-img-wrap {
-      width: 100%;
-      height: 140px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      margin-top: 15px;
-    }
-    
-    .cat-card-img {
-      max-height: 130px;
-      object-fit: contain;
-      transition: transform var(--transition-normal);
-      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
-    }
-    
-    .premium-cat-card:hover .cat-card-img {
-      transform: scale(1.1) translateY(-5px);
-    }
-
-    /* Tablet and Mobile responsiveness */
-    @media (max-width: 1024px) {
-      .premium-cat-card {
-        flex: 0 0 calc(33.333% - 14px); /* 3 cards */
-      }
-    }
-    @media (max-width: 768px) {
-      .brand-carousel-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .brand-logos-row {
-        width: 100%;
-        justify-content: space-between;
-        gap: 20px;
-      }
-      .carousel-nav-arrows {
-        align-self: flex-end;
-      }
-      .premium-cat-card {
-        flex: 0 0 calc(50% - 10px); /* 2 cards */
-      }
-    }
-    @media (max-width: 480px) {
-      .brand-logos-row {
-        gap: 15px;
-      }
-      .premium-cat-card {
-        flex: 0 0 100%; /* 1 card */
-      }
-    }
-
-
-    /* Most Used Gadgets Section */
-    .most-used-section {
-      padding-top: 60px;
-      padding-bottom: 60px;
-      text-align: center;
-    }
-    .most-used-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-      text-align: left;
-    }
-    .most-used-card {
-      background-color: var(--bg-secondary);
-      border: 1.5px solid var(--border-color);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      position: relative;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-      cursor: pointer;
-    }
-    .most-used-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--accent-dark);
-    }
-    
-    /* Product visual wrapper */
-    .most-used-img-wrap {
-      width: 100%;
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      background-color: var(--bg-primary);
-      border-radius: var(--border-radius-sm);
-      overflow: hidden;
-      position: relative;
-    }
-    .most-used-img {
-      max-height: 180px;
-      max-width: 90%;
-      object-fit: contain;
-      transition: transform var(--transition-normal);
-    }
-    .most-used-card:hover .most-used-img {
-      transform: scale(1.05);
-    }
-    
-    /* Custom Badges */
-    .most-used-badge-container {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      z-index: 2;
-    }
-    .badge-yellow-flag {
-      background-color: #ffd60a;
-      color: #111111;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      border: 1.5px solid #111111;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      box-shadow: 2px 2px 0px #111111;
-    }
-    .badge-flash-sale {
-      background-color: #ff9f1c;
-      color: #ffffff;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 0.7rem;
-      padding: 4px 8px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    
-    /* Title & Details */
-    .most-used-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      line-height: 1.4;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      height: 40px;
-    }
-    .most-used-price-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: auto;
-      font-family: 'Outfit', sans-serif;
-    }
-    .most-used-price {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
-    .most-used-oldprice {
-      font-size: 0.95rem;
-      text-decoration: line-through;
-      color: var(--text-muted);
-    }
-    
-    /* Neo-Brutalism action button */
-    .explore-brutal-wrap {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin-top: 40px;
-    }
-    .explore-brutal-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background-color: #ffd60a;
-      color: #111111;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      padding: 14px 38px;
-      border: 3.5px solid #111111;
-      border-radius: var(--border-radius-sm);
-      box-shadow: 6px 6px 0px #111111;
-      transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .explore-brutal-btn:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 9px 9px 0px #111111;
-      background-color: #ffd000;
-    }
-    .explore-brutal-btn:active {
-      transform: translate(3px, 3px);
-      box-shadow: 3px 3px 0px #111111;
-    }
-    
-    /* Responsiveness */
-    @media (max-width: 992px) {
-      .most-used-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-    }
-
-
-    /* Delivery Road Animation Sibling Divider */
-    .road-divider-container {
-      position: relative;
-      width: 100%;
-      height: 90px;
-      background-color: var(--bg-primary);
-      overflow: visible;
-      margin-top: 20px;
-    }
-    .road-divider {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 40px;
-      background-color: #2c2d30;
-      border-top: 3px solid #111111;
-      border-bottom: 3.5px solid #111111;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      z-index: 5;
-    }
-    .road-lane-line {
-      width: 100%;
-      height: 3px;
-      background: repeating-linear-gradient(90deg, transparent, transparent 24px, #ffffff 24px, #ffffff 48px);
-      opacity: 0.5;
-    }
-    .speed-bump {
-      position: absolute;
-      bottom: 3.5px;
-      width: 20px;
-      height: 12px;
-      background: repeating-linear-gradient(45deg, #ffd60a, #ffd60a 4px, #111111 4px, #111111 8px);
-      border-radius: 8px 8px 0 0;
-      border-top: 2.5px solid #111111;
-      border-left: 2.5px solid #111111;
-      border-right: 2.5px solid #111111;
-      z-index: 6;
-    }
-    .speed-bump-1 { left: 35%; }
-    .speed-bump-2 { left: 68%; }
-    
-    /* Keyframes for continuous scooter riding */
-    @keyframes ride-scooter {
-      0% {
-        left: -200px;
-      }
-      100% {
-        left: calc(100% + 20px);
-      }
-    }
-
-    .delivery-scooter-wrap {
-      position: absolute;
-      bottom: -6px; /* align tyres precisely on the road divider */
-      left: -200px; /* starts off-screen */
-      width: 180px;
-      height: 125px;
-      background-image: url('images/road-delivery.png');
-      background-size: auto 100%;
-      background-position: left bottom;
-      background-repeat: no-repeat;
-      z-index: 10;
-      pointer-events: none;
-      filter: url(#remove-white);
-      animation: ride-scooter 10s linear infinite;
-      clip-path: inset(0% 0% 13% 0%); /* crop the road strip underneath the wheels */
-    }
-    
-    /* Brand Story Section below road */
-    .brand-story-section {
-      background-color: #ffcc00;
-      color: #111111;
-      padding: 80px 0;
-      border-top: 3.5px solid #111111;
-      border-bottom: 3.5px solid #111111;
-      transition: background-color var(--transition-normal);
-    }
-    
-    .brand-story-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
-      align-items: center;
-    }
-    
-    .brand-story-img-frame {
-      border: 3.5px solid #111111;
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      box-shadow: 10px 10px 0px #111111;
-      aspect-ratio: 4/3;
-      display: flex;
-    }
-    
-    .brand-story-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-normal);
-    }
-    
-    .brand-story-img-frame:hover .brand-story-img {
-      transform: scale(1.04);
-    }
-    
-    .brand-story-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-    }
-    
-    .brand-story-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.65rem;
-      font-weight: 800;
-      color: #111111;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-    }
-    
-    .brand-story-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #222222;
-      margin-bottom: 30px;
-    }
-    
-    /* Brutalist White Button */
-    .brand-story-btn {
-      background-color: #ffffff;
-      color: #111111;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      padding: 14px 34px;
-      border: 3.5px solid #111111;
-      border-radius: var(--border-radius-sm);
-      box-shadow: 6px 6px 0px #111111;
-      transition: all 0.15s ease;
-      cursor: pointer;
-      display: inline-block;
-    }
-    .brand-story-btn:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 9px 9px 0px #111111;
-      background-color: #f8f9fa;
-    }
-    .brand-story-btn:active {
-      transform: translate(3px, 3px);
-      box-shadow: 3px 3px 0px #111111;
-    }
-
-    /* Override dark-theme styles for this specific block to keep it yellow */
-    [data-theme="dark"] .brand-story-section {
-      background-color: #ffcc00;
-      color: #111111;
-      border-color: #111111;
-    }
-    [data-theme="dark"] .brand-story-title {
-      color: #111111;
-    }
-    [data-theme="dark"] .brand-story-text {
-      color: #222222;
-    }
-    [data-theme="dark"] .brand-story-img-frame {
-      border-color: #111111;
-      box-shadow: 10px 10px 0px #111111;
-    }
-    [data-theme="dark"] .brand-story-btn {
-      background-color: #ffffff;
-      color: #111111;
-      border-color: #111111;
-      box-shadow: 6px 6px 0px #111111;
-    }
-
-    /* Responsive brand story layouts */
-    @media (max-width: 992px) {
-      .brand-story-wrap {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .brand-story-img-frame {
-        max-width: 500px;
-        margin: 0 auto;
-      }
-      .brand-story-content {
-        align-items: center;
-        text-align: center;
-      }
-    }
-  </style>
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for branding -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 <body>
 
-  <!-- Announcement Bar -->
+  <!-- 1. Announcement Bar -->
   <div class="announcement-bar">
-    <div class="announcement-slider">
-      <div class="announcement-item"><i class="fa-solid fa-truck-fast"></i> Free Worldwide Delivery on orders above $100</div>
-      <div class="announcement-item" style="display: none;"><i class="fa-solid fa-bolt"></i> Flash Sale: Use code <span>ELEVORA20</span> for 20% off</div>
-      <div class="announcement-item" style="display: none;"><i class="fa-solid fa-shield-halved"></i> 100% Genuine Certified Gadgets Only</div>
+    <div class="announcement-bar-content">
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
+      <span>☀️ PROTECT YOUR SKIN FROM THE INTENSE AFTERNOON HEAT</span>
+      <span>☀️ GET 10% OFF YOUR FIRST ORDER WITH CODE: SUNCARE10</span>
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
+      <span>☀️ PROTECT YOUR SKIN FROM THE INTENSE AFTERNOON HEAT</span>
+      <span>☀️ GET 10% OFF YOUR FIRST ORDER WITH CODE: SUNCARE10</span>
     </div>
   </div>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <!-- Logo -->
-      <a href="index.html" class="logo" aria-label="Elevora home">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
-
-      <!-- Desktop Navigation Menu -->
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <!-- Actions -->
-      <div class="header-actions">
-        <!-- Search bar widget -->
-        <div class="header-search-wrap">
-          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-          <input type="text" class="header-search-input" placeholder="Search gadgets...">
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
 
-        <!-- Wishlist -->
-        <a href="wishlist.html" class="action-btn" aria-label="View Saved Items">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count">0</span>
-        </a>
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            d<span class="logo-sun-container"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </a>
+        </div>
 
-        <!-- Shopping Cart Drawer button -->
-        <button class="action-btn" onclick="openMiniCartDrawer()" aria-label="Open Cart Drawer">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count">0</span>
-        </button>
-
-        <!-- Dark/Light Theme Switching -->
-        <button class="action-btn theme-toggle-btn" aria-label="Toggle Theme Mode">
-          <i class="fa-regular fa-moon"></i>
-          <i class="fa-regular fa-sun"></i>
-        </button>
-
-        <!-- Account -->
-        <a href="my-account.html" class="action-btn" aria-label="Login/Account Portal">
-          <i class="fa-regular fa-user"></i>
-        </a>
-
-        <!-- Mobile hamburger Menu toggle -->
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="New!">
+                      </div>
+                      <span class="category-card-title">New!</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?formulation=Mineral" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                      </div>
+                      <span class="category-card-title">Mineral</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Men" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Men">
+                      </div>
+                      <span class="category-card-title">Men</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Face%20%26%20Lip" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Face & Lip">
+                      </div>
+                      <span class="category-card-title">Face & Lip</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Makeup" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="Makeup">
+                      </div>
+                      <span class="category-card-title">Makeup</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Sets%20%26%20Gifts" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Sets & Gifts">
+                      </div>
+                      <span class="category-card-title">Sets & Gifts</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Body" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Body">
+                      </div>
+                      <span class="category-card-title">Body</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Kids" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Kids & Family">
+                      </div>
+                      <span class="category-card-title">Kids & Family</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Gifting" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Group Gifting">
+                      </div>
+                      <span class="category-card-title">Group Gifting</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Shop All</a>
+              </div>
+            </div>
+          </li><li class="nav-item">
+            <a href="shop.html" class="nav-link">Bestsellers</a>
+            <!-- Mega Menu Dropdown for Bestsellers -->
+            <div class="mega-menu" style="grid-template-columns: 1fr 2fr; gap: 40px;">
+              <!-- Left side Spotlight Card -->
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%; min-height: 250px;">
+                <img src="assets/images/hero_bg.jpg" alt="Dopahr Golfer Spotlight" style="filter: brightness(0.95) contrast(1.05);">
+                <div class="mega-card-content">
+                  <h4>Dopahr Golf & Sports</h4>
+                  <p>Official SPF Sponsor</p>
+                </div>
+              </div>
+              
+              <!-- Right side Product list -->
+              <div>
+                <h4 class="mega-col-title" style="margin-bottom: 20px;">Our Top Sellers</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px 30px;">
+                  <a href="product.html?id=unseen" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/unseen_sunscreen.jpg" alt="Unseen Sunscreen">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Unseen Sunscreen SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+                  
+                  <a href="product.html?id=glow" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/glowscreen.jpg" alt="Glowscreen">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Glowscreen SPF 40</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=play-lotion" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/play_lotion.jpg" alt="PLAY Lotion">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">PLAY Everyday Lotion SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=body-mist" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/body_mist.jpg" alt="Body Mist">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">PLAY Body Mist SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=mattescreen" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/unseen_sunscreen.jpg" alt="Mattescreen">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Mineral Mattescreen SPF 40</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=skin-tint" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/glowscreen.jpg" alt="Skin Tint">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Protec(tint) Skin Tint SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+                </div>
+                <div style="margin-top: 24px; text-align: right;">
+                  <a href="shop.html" style="font-size:14px; font-weight:700; color:var(--color-secondary); border-bottom:2px solid var(--color-secondary); padding-bottom:2px;">Shop All Bestsellers</a>
+                </div>
+              </div>
+            </div>
+          </li>
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/body_mist.jpg" alt="PLAY Body Mist Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=body_mist" class="spotlight-title-link">
+                    <span>Reapply with PLAY Body Mist SPF 50</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Lotion" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/play_lotion.jpg" alt="Lotion & Moisturizer">
+                        </div>
+                        <span class="category-card-title">Lotion & Moisturizer</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Stick" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Stick">
+                        </div>
+                        <span class="category-card-title">Stick</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Lip" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Lip">
+                        </div>
+                        <span class="category-card-title">Lip</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Spray" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/body_mist.jpg" alt="Spray">
+                        </div>
+                        <span class="category-card-title">Spray</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Serum" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Oil & Serum">
+                        </div>
+                        <span class="category-card-title">Oil & Serum</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?formulation=Mineral" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                        </div>
+                        <span class="category-card-title">Mineral</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Shop All Shop By Type</a>
+                </div>
+              </div>
+            </div>
+          </li>
+<li class="nav-item">
+            <a href="about.html" class="nav-link">Discover</a>
+            <div class="mega-menu" style="grid-template-columns: 1.5fr 1fr;">
+              <div>
+                <h4 class="mega-col-title">About Dopahr</h4>
+                <ul class="mega-links" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+                  <li><a href="about.html">Our Story</a></li>
+                  <li><a href="quiz.html">Find Your SPF Quiz</a></li>
+                  <li><a href="about.html#science">Suncare Science</a></li>
+                  <li><a href="about.html#sustainability">Clean Ingredients</a></li>
+                </ul>
+              </div>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/hero_bg.jpg" alt="Our Promise">
+                <div class="mega-card-content">
+                  <h4>The Dopahr Promise</h4>
+                  <p>Clean Protection</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <!-- Category sub-navigation bar -->
-  <nav class="category-nav-bar">
-    <div class="container category-nav-container">
-      <div class="category-nav-list">
-        
-        <!-- New Arrivals -->
-        <a href="shop.html" class="category-nav-item">New Arrivals</a>
-        
-        <!-- Mobile Accessories -->
-        <div class="category-nav-item">
-          Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Mobile Accessories</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Phone%20Holders" class="dropdown-link">Phone Holders</a>
-            <a href="shop.html?filter_cat=Chargers" class="dropdown-link">Chargers</a>
-          </div>
-        </div>
-        
-        <!-- Tech Gadgets -->
-        <div class="category-nav-item">
-          Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Tools & Utility -->
-        <div class="category-nav-item">
-          Tools & Utility <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Car & Travel -->
-        <div class="category-nav-item">
-          Car & Travel <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Offers & Combos -->
-        <div class="category-nav-item">
-          Offers & Combos <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Buy 1 Get 1 Free</a>
-            <a href="shop.html" class="dropdown-link">Under ₹999 Deals</a>
-            <a href="shop.html" class="dropdown-link">Combo Packs</a>
-            <a href="shop.html" class="dropdown-link">Clearance Sale</a>
-          </div>
-        </div>
-        
-        <!-- Shop By Price -->
-        <div class="category-nav-item">
-          Shop By Price <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Under ₹499</a>
-            <a href="shop.html" class="dropdown-link">Under ₹999</a>
-            <a href="shop.html" class="dropdown-link">Under ₹1999</a>
-            <a href="shop.html" class="dropdown-link">Premium Selection</a>
-          </div>
-        </div>
-        
-        <!-- Gifting -->
-        <div class="category-nav-item">
-          Gifting <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Support -->
-        <div class="category-nav-item">
-          Support <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="track-order.html" class="dropdown-link">Track Order</a>
-            <a href="contact.html" class="dropdown-link">Contact Us</a>
-            <a href="faq.html" class="dropdown-link">FAQ Desk</a>
-            <a href="my-account.html" class="dropdown-link">Returns & Refunds</a>
-          </div>
-        </div>
-
-      </div>
+  <!-- 3. Mobile Hamburger Navigation Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Shop All <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html">All Sunscreens</a></li>
+          <li><a href="shop.html?category=Face%20%26%20Lip">Face & Lip</a></li>
+          <li><a href="shop.html?category=Body">Body Protection</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="shop.html" class="mobile-nav-link">Bestsellers</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Shop By Type <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html">Lotions</a></li>
+          <li><a href="shop.html">Sprays & Mists</a></li>
+          <li><a href="shop.html">Mineral Options</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Discover <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="quiz.html">SPF Recommendation Quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Sunscreens..." id="mobile-search-trigger" readonly>
     </div>
-  </nav>
-
-  <!-- Hero Slider -->
-  <section class="hero-slider-container">
-    <div class="hero-slider">
-      
-      <!-- Slide 1 -->
-      <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&auto=format&fit=crop&q=80');">
-        <div class="container">
-          <div class="hero-content">
-            <span class="hero-tag">Acoustics Launch</span>
-            <h1>AeroPulse ANC Headphones</h1>
-            <p>Immerse yourself in pure studio sound. Block out the chaos with active noise cancellation and ultra memory-foam cushions.</p>
-            <div style="display: flex; gap: 12px;">
-              <a href="product.html?id=1" class="btn btn-accent">Explore Gadget</a>
-              <a href="shop.html?filter_cat=Headphones" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">View Collection</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1600&auto=format&fit=crop&q=80');">
-        <div class="container">
-          <div class="hero-content">
-            <span class="hero-tag">Fitness Upgrade</span>
-            <h1>Apex Chrono Smartwatch</h1>
-            <p>Titanium grade metrics on your wrist. Track sleep, heart rate, blood oxygen levels, and 120+ workouts seamlessly.</p>
-            <div style="display: flex; gap: 12px;">
-              <a href="product.html?id=2" class="btn btn-accent">Shop Now</a>
-              <a href="shop.html?filter_cat=Smart%20Watches" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">See Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Arrows -->
-    <div class="slider-arrows">
-      <button class="slider-arrow prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
-      <button class="slider-arrow next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-
-    <!-- Dots -->
-    <div class="slider-dots">
-      <div class="slider-dot active"></div>
-      <div class="slider-dot"></div>
-    </div>
-  </section>
-
-  <!-- Premium Brand & Categories Section -->
-  <section class="section-spacing container reveal-element premium-brands-categories">
-    <!-- Brand Logos & Carousel Controls Row -->
-    <div class="brand-carousel-header">
-      <div class="brand-logos-row">
-        <!-- Amazon.in Logo -->
-        <div class="brand-logo-item">
-          <div class="amazon-logo">
-            <div><span class="amz-bold">amazon</span><span class="amz-light">.in</span></div>
-            <svg class="amazon-arrow" viewBox="0 0 100 15">
-              <path d="M5 2 C 25 12, 75 12, 95 2" fill="none" stroke="#ff9900" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M92 2 L 96 6 L 96 1 Z" fill="#ff9900"/>
-            </svg>
-          </div>
-        </div>
-        <!-- Flipkart Logo -->
-        <div class="brand-logo-item">
-          <div class="flipkart-logo">
-            <span class="fk-text">Flipkart</span>
-            <svg class="fk-bag" viewBox="0 0 24 24">
-              <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 15c-2.76 0-2.24-5-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z" fill="#ffa800"/>
-            </svg>
-          </div>
-        </div>
-        <!-- Meesho Logo -->
-        <div class="brand-logo-item">
-          <div class="meesho-logo">meesho</div>
-        </div>
-        <!-- CRED Logo -->
-        <div class="brand-logo-item">
-          <div class="cred-logo">
-            <svg viewBox="0 0 24 24" class="cred-shield" width="22" height="22">
-              <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 18c-3.75-1-6.5-4.88-6.5-9V6.3l6.5-2.17 6.5 2.17V11c0 4.12-2.75 8-6.5 9z" fill="currentColor"/>
-            </svg>
-            <span class="cred-text">CRED</span>
-          </div>
-        </div>
-        <!-- Zop Logo -->
-        <div class="brand-logo-item">
-          <div class="zop-logo">zop<span class="zop-dot">.</span></div>
-        </div>
-        <!-- Zavo. Logo -->
-        <div class="brand-logo-item">
-          <div class="zavo-logo">zavo<span class="zavo-dot">.</span></div>
-        </div>
-      </div>
-      
-      <!-- Arrow controls -->
-      <div class="carousel-nav-arrows">
-        <button class="carousel-nav-btn prev" id="category-carousel-prev" aria-label="Scroll Categories Left">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="carousel-nav-btn next" id="category-carousel-next" aria-label="Scroll Categories Right">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Horizontal Category Cards Carousel -->
-    <div class="category-carousel-outer">
-      <div class="category-carousel-inner" id="category-carousel-inner">
-        
-        <!-- Card 1: Best Sellers -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">Best<br>Sellers</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?w=400&auto=format&fit=crop&q=80" alt="Best Sellers" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 2: New Arrivals -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #ff5e62 0%, #a61c22 100%);" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">New<br>Arrivals</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400&auto=format&fit=crop&q=80" alt="New Arrivals" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 3: Top Tech Gadgets -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #3a6073 0%, #16222f 100%);" onclick="window.location.href='shop.html?filter_cat=Headphones'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">Top Tech<br>Gadgets</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?w=400&auto=format&fit=crop&q=80" alt="Top Tech Gadgets" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 4: All Things Quirky -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #f12711 0%, #f5af19 100%);" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">All Things<br>Quirky</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?w=400&auto=format&fit=crop&q=80" alt="All Things Quirky" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 5: Car Gadgets -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #232526 0%, #414345 100%);" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">Car<br>Gadgets</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&auto=format&fit=crop&q=80" alt="Car Gadgets" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 6: Power Banks & Chargers -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #ff416c 0%, #ff4b2b 100%);" onclick="window.location.href='shop.html?filter_cat=Power%20Banks'">
-          <div class="cat-card-badge cat-card-badge-exclusive">Exclusive</div>
-          <h3 class="cat-card-title">Power Banks<br>& Chargers</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1609592424085-f55a64388432?w=400&auto=format&fit=crop&q=80" alt="Power Banks & Chargers" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 7: Super Cute Stationery -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #b5498a 0%, #5d1d44 100%);" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">Super Cute<br>Stationery</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400&auto=format&fit=crop&q=80" alt="Super Cute Stationery" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 8: Desk Accessories -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(180deg, #134e5e 0%, #71b280 100%);" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">Featured</div>
-          <h3 class="cat-card-title">Desk<br>Accessories</h3>
-          <div class="cat-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&auto=format&fit=crop&q=80" alt="Desk Accessories" class="cat-card-img">
-          </div>
-        </div>
-
-        <!-- Card 9: Gradient Card -->
-        <div class="premium-cat-card" style="--card-grad: linear-gradient(135deg, #a8ff78 0%, #78ffd6 100%); border-color: #78ffd6;" onclick="window.location.href='shop.html'">
-          <div class="cat-card-badge">New</div>
-          <h3 class="cat-card-title" style="color: #111111;">Explore More<br>Tech Drops</h3>
-          <div class="cat-card-img-wrap" style="color: #111111; font-size: 3rem; display: flex; align-items: center; justify-content: center; height: 100%; min-height: 120px;">
-            <i class="fa-solid fa-circle-arrow-right"></i>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Tabbed Trending Section -->
-  <section class="section-spacing container reveal-element">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 class="section-title" style="display: inline-block;">Premium Collections</h2>
-      <p class="section-subtitle" style="margin: 8px auto 0;">Explore hand-picked trending accessories, hot sales, and brand new additions.</p>
-    </div>
-
-    <!-- Tabs Nav -->
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="loadTabProducts('all')">Trending</button>
-      <button class="tab-btn" onclick="loadTabProducts('new')">New Arrivals</button>
-      <button class="tab-btn" onclick="loadTabProducts('sale')">Hot Sales</button>
-    </div>
-
-    <!-- Products Grid -->
-    <div class="products-grid" id="homepage-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
-      <!-- Loaded dynamically via products-data.js inside window onload -->
-    </div>
-  </section>
-
-
-  <!-- Most Used Gadgets Section -->
-  <section class="section-spacing container reveal-element most-used-section">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 class="section-title" style="display: inline-block;">Most Used Gadgets</h2>
-      <p class="section-subtitle" style="margin: 8px auto 0;">The highest rated and most frequently used items in our electronic catalog.</p>
-    </div>
-
-    <div class="most-used-grid">
-      
-      <!-- Card 1 -->
-      <div class="most-used-card" onclick="window.location.href='shop.html'">
-        <div class="most-used-badge-container">
-          <span class="badge-yellow-flag">Pick Any 3 @ ₹599 CLICK HERE</span>
-        </div>
-        <div class="most-used-img-wrap">
-          <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=400&auto=format&fit=crop&q=80" alt="Sealy Bag Sealer" class="most-used-img">
-        </div>
-        <h4 class="most-used-title" title="Sealy: 2-in-1 Mini Bag Sealer & Cutter, USB-C Rechargeable Portable Handheld Food Storage">
-          Sealy: 2-in-1 Mini Bag Sealer & Cutter, USB-C Rechargeable Portable Handheld Food Storage...
-        </h4>
-        <div class="most-used-price-row">
-          <span class="most-used-price">Rs. 299</span>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="most-used-card" onclick="window.location.href='shop.html'">
-        <div class="most-used-badge-container">
-          <span class="badge-flash-sale">⚡ Flash Sale</span>
-        </div>
-        <div class="most-used-img-wrap">
-          <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&auto=format&fit=crop&q=80" alt="Buddy Charger Power Bank" class="most-used-img">
-        </div>
-        <h4 class="most-used-title" title="Buddy: 5-in-1 Wireless Charging Power Bank (5200mAh) with Fast Charging, PD 3.0, Qi Dock, LED Display">
-          Buddy: 5-in-1 Wireless Charging Power Bank (5200mAh) with Fast Charging, PD 3.0, Qi Dock, LED...
-        </h4>
-        <div class="most-used-price-row">
-          <span class="most-used-price">Rs. 899</span>
-          <span class="most-used-oldprice">Rs. 2,499</span>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="most-used-card" onclick="window.location.href='shop.html'">
-        <div class="most-used-img-wrap">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&auto=format&fit=crop&q=80" alt="Shield Sling Bag" class="most-used-img">
-        </div>
-        <h4 class="most-used-title" title="Shield: Anti-Theft Crossbody Messenger Sling Bag Waterproof Gadget Chest Bag with TSA Lock">
-          Shield: Anti-Theft Crossbody Messenger Sling Bag Waterproof Gadget Chest Bag with TSA Lock...
-        </h4>
-        <div class="most-used-price-row">
-          <span class="most-used-price">Rs. 699</span>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="most-used-card" onclick="window.location.href='shop.html'">
-        <div class="most-used-badge-container">
-          <span class="badge-yellow-flag">Pick Any 3 @ ₹599 CLICK HERE</span>
-        </div>
-        <div class="most-used-img-wrap">
-          <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=400&auto=format&fit=crop&q=80" alt="Lumiq Sensor Light" class="most-used-img">
-        </div>
-        <h4 class="most-used-title" title="Lumiq: Motion Sensor LED Night Light, USB Rechargeable, Auto-On Cabinet Light with Warm Glow">
-          Lumiq: Motion Sensor LED Night Light, USB Rechargeable, Auto-On Cabinet Light with Warm Glow...
-        </h4>
-        <div class="most-used-price-row">
-          <span class="most-used-price">Rs. 299</span>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="most-used-card" onclick="window.location.href='shop.html'">
-        <div class="most-used-badge-container">
-          <span class="badge-flash-sale">⚡ Flash Sale</span>
-        </div>
-        <div class="most-used-img-wrap">
-          <img src="images/headphone-banner.jpg">
-        </div>
-        <h4 class="most-used-title" title="Voyager: Premium All-In-One MagSafe LiPo Power Bank with PD, Built-In Cables & Outlet Charger">
-          Voyager: Premium All-In-One MagSafe LiPo Power Bank with PD, Built-In Cables & Outlet Charger...
-        </h4>
-        <div class="most-used-price-row">
-          <span class="most-used-price">Rs. 1,999</span>
-          <span class="most-used-oldprice">Rs. 3,999</span>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="most-used-card" onclick="window.location.href='shop.html'">
-        <div class="most-used-img-wrap">
-          <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&auto=format&fit=crop&q=80" alt="Gripon Wall Hooks" class="most-used-img">
-        </div>
-        <h4 class="most-used-title" title="Gripon: Heavy-Duty Suction Cup Wall Hooks for Bathroom, Kitchen & Home Organization Hanger">
-          Gripon: Heavy-Duty Suction Cup Wall Hooks for Bathroom, Kitchen & Home Organization...
-        </h4>
-        <div class="most-used-price-row">
-          <span class="most-used-price">Rs. 499</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Explore More Brutalist Button -->
-    <div class="explore-brutal-wrap">
-      <button class="explore-brutal-btn" onclick="window.location.href='shop.html'">
-        Explore More <i class="fa-solid fa-chevron-right"></i>
-      </button>
-    </div>
-  </section>
-
-  <!-- Hidden SVG Filter to remove white background from the custom scooter image -->
-  <svg width="0" height="0" style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
-    <filter id="remove-white">
-      <feColorMatrix type="matrix" values="
-        1 0 0 0 0
-        0 1 0 0 0
-        0 0 1 0 0
-        -1 -1 -1 3 0
-      "/>
-    </filter>
-  </svg>
-
-  <!-- Scooter Delivery Road Divider -->
-  <div class="road-divider-container">
-    <div class="road-divider">
-      <div class="road-lane-line"></div>
-      <div class="speed-bump speed-bump-1"></div>
-      <div class="speed-bump speed-bump-2"></div>
-    </div>
-    <!-- Delivery Boy Scooter (Rendered via CSS background-image crop) -->
-    <div class="delivery-scooter-wrap" id="delivery-scooter-wrap"></div>
   </div>
 
-  <!-- Brand Story Section -->
-  <section class="brand-story-section">
-    <div class="container brand-story-wrap">
-      <!-- Left Stack Boxes Column -->
-      <div class="brand-story-img-frame">
-        <img src="https://images.unsplash.com/photo-1566241477600-ac026ad43874?w=600&auto=format&fit=crop&q=80" alt="Elevora packages" class="brand-story-img">
-      </div>
-      <!-- Right Details Column -->
-      <div class="brand-story-content">
-        <h2 class="brand-story-title">All Things Tech & Trusted</h2>
-        <p class="brand-story-text">
-          At Elevora, we offer more than gadgets—we deliver experiences. With handpicked, authentic products for every occasion, we set trends, not follow them!
-        </p>
-        <button class="brand-story-btn" onclick="window.location.href='about.html'">
-          Get to Know Us
-        </button>
-      </div>
-    </div>
-  </section>
+  <!-- Overlay for drawers -->
+  <div class="overlay" id="site-overlay"></div>
 
-  <!-- Why Choose Us USPs Grid -->
-  <section class="section-spacing container reveal-element">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 class="section-title">Why Elevora?</h2>
-      <p class="section-subtitle" style="margin: 8px auto 0;">We build premium tech essentials with bulletproof warranties and secure delivery pipelines.</p>
-    </div>
-
-    <div class="usps-grid">
-      <div class="usp-card">
-        <i class="fa-solid fa-truck-fast usp-icon"></i>
-        <h4 class="usp-title">Fast Shipping</h4>
-        <p class="usp-text">Express worldwide logistics direct to your doorstep with real-time route tracing codes.</p>
-      </div>
-      <div class="usp-card">
-        <i class="fa-solid fa-shield-halved usp-icon"></i>
-        <h4 class="usp-title">Secure Checkout</h4>
-        <p class="usp-text">Encrypted token gateways protecting your payments via major international card processors.</p>
-      </div>
-      <div class="usp-card">
-        <i class="fa-solid fa-rotate-left usp-icon"></i>
-        <h4 class="usp-title">30-Day Returns</h4>
-        <p class="usp-text">Not fully satisfied? Return your unused gadget within 30 days for a swift full refund.</p>
-      </div>
-      <div class="usp-card">
-        <i class="fa-solid fa-circle-question usp-icon"></i>
-        <h4 class="usp-title">24/7 Desk Help</h4>
-        <p class="usp-text">Professional service engineers answering technical questions and order inquiries day or night.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Accordion FAQs -->
-  <section class="section-spacing container reveal-element">
-    <div style="text-align: center; margin-bottom: 50px;">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtitle" style="margin: 8px auto 0;">Find swift solutions to common inquiries about shipping, warranty, and returns.</p>
-    </div>
-
-    <div class="faq-accordion">
-      <div class="faq-item">
-        <button class="faq-question">
-          How long does delivery take?
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Standard delivery takes 5-10 business days depending on location. Express courier delivery options are available at checkout, delivering within 2-4 business days.
+  <!-- 4. Hero Section with Auto Slider & Manual Controls -->
+  <main>
+    <section class="hero-section" id="hero-slider-section">
+      <div class="hero-slider" id="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide">
+          <img src="assets/images/hero_bg.jpg" alt="Dopahr Sunscreen Bottles on Beach" class="hero-bg">
+          <div class="hero-overlay"></div>
+          <div class="container" style="position:relative; z-index:3; width:100%;">
+            <div class="hero-content">
+              <span class="hero-tag">Best Seller</span>
+              <h1 class="hero-title">SPF That Protects<br>When You Play</h1>
+              <p class="hero-desc">Dopahr is crafted specifically for the peak afternoon sun. Hydrating, lightweight, and 100% invisible suncare for body and face.</p>
+              <div style="display:flex; gap:16px;">
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                <a href="quiz.html" class="btn btn-secondary">Find Your SPF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img src="assets/images/hero_bg.jpg" alt="Premium skincare serum dropper" class="hero-bg" style="filter: hue-rotate(45deg);">
+          <div class="hero-overlay"></div>
+          <div class="container" style="position:relative; z-index:3; width:100%;">
+            <div class="hero-content">
+              <span class="hero-tag" style="background-color: var(--color-accent);">New Glow</span>
+              <h1 class="hero-title">Drench Skin In<br>Dewy Protection</h1>
+              <p class="hero-desc">Meet Glowscreen SPF 40. Formulated with Hyaluronic Acid and Niacinamide to prime, hydrate, and illuminate skin.</p>
+              <div style="display:flex; gap:16px;">
+                <a href="product.html?id=glow" class="btn btn-primary">Shop Glowscreen</a>
+                <a href="shop.html" class="btn btn-secondary">Explore All</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img src="assets/images/hero_bg.jpg" alt="Waterproof spray sunscreen mist" class="hero-bg" style="filter: saturate(1.5);">
+          <div class="hero-overlay"></div>
+          <div class="container" style="position:relative; z-index:3; width:100%;">
+            <div class="hero-content">
+              <span class="hero-tag">Summer Essential</span>
+              <h1 class="hero-title">Quick-Dry Spray<br>With Vitamin C</h1>
+              <p class="hero-desc">PLAY Antioxidant Body Mist SPF 50. Water resistant for 80 minutes. The continuous mist makes reapplication effortless.</p>
+              <div style="display:flex; gap:16px;">
+                <a href="product.html?id=body-mist" class="btn btn-primary">Shop Mist</a>
+                <a href="shop.html" class="btn btn-secondary">Discover Mineral</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          Do Elevora gadgets come with a warranty?
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Yes, every single product sold on Elevora comes with a standard 12-month manufacturer warranty. The warranty covers hardware malfunctions and battery degradation defects.
+      <!-- Slider Arrows -->
+      <button class="slider-arrow prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-arrow next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+      <!-- Slider Dots -->
+      <div class="slider-dots"></div>
+    </section>
+
+    <!-- Live Brand Marquee -->
+    <section class="live-brand-marquee">
+      <div class="marquee-track">
+        <div class="marquee-list">
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+        </div>
+        <!-- Repeat list for seamless loop -->
+        <div class="marquee-list" aria-hidden="true">
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+          <span>Free Shipping On All Orders</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Our Picks Section -->
+    <section class="section-padding our-picks-section">
+      <div class="picks-header-container">
+        <div class="section-header">
+          <h2 class="section-title text-uppercase">Our Picks For You</h2>
+        </div>
+      </div>
+      
+      <div class="picks-carousel-container">
+          <div class="picks-row">
+            <!-- Product 1 -->
+            <div class="pick-card">
+              <a href="product.html?id=body-mist" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <img src="assets/images/body_mist.jpg" alt="PLAY Antioxidant Body Mist">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">PLAY Antioxidant Body Mist SPF 50 with Vitamin C</h4>
+                  <p class="pick-desc">Water-resistant spray sunscreen</p>
+                  <p class="pick-price">$15 - $22</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="pick-card">
+              <a href="product.html?id=play-lotion" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-yellow">Moisturizing Sunscreen</span>
+                  <img src="assets/images/play_lotion.jpg" alt="PLAY Everyday Lotion">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">PLAY Everyday Lotion SPF 50</h4>
+                  <p class="pick-desc">Fast-absorbing, water-resistant sunscreen for face</p>
+                  <p class="pick-price">$12 - $58</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="pick-card">
+              <a href="product.html?id=unseen" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <!-- Allure Red Badge -->
+                  <div class="allure-badge">
+                    <svg viewBox="0 0 100 100" class="allure-svg">
+                      <circle cx="50" cy="50" r="48" fill="#E81D23" />
+                      <text x="50" y="32" font-family="'Outfit', sans-serif" font-weight="800" font-size="9" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">BEST OF</text>
+                      <text x="50" y="47" font-family="'Playfair Display', serif" font-weight="900" font-style="italic" font-size="16" fill="#FFFFFF" text-anchor="middle">allure</text>
+                      <text x="50" y="62" font-family="'Outfit', sans-serif" font-weight="800" font-size="9" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">BEAUTY</text>
+                      <text x="50" y="73" font-family="'Outfit', sans-serif" font-weight="800" font-size="7" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.1em">AWARD WINNER</text>
+                      <text x="50" y="85" font-family="'Outfit', sans-serif" font-weight="800" font-size="10" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">2025</text>
+                    </svg>
+                  </div>
+                  <img src="assets/images/unseen_sunscreen.jpg" alt="Unseen Sunscreen">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Unseen Sunscreen SPF 40</h4>
+                  <p class="pick-desc">100% invisible, weightless sunscreen primer</p>
+                  <p class="pick-price">$22 - $70</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="pick-card">
+              <div class="pick-card-img-wrapper">
+                <span class="pick-badge badge-yellow">Shining Protection</span>
+                <a href="product.html?id=glow" class="pick-card-link">
+                  <img src="assets/images/glowscreen.jpg" alt="GlowGloss SPF 40">
+                </a>
+              </div>
+              <div class="pick-card-info">
+                <div class="pick-rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <h4 class="pick-title">GlowGloss SPF 40 Lip Balm</h4>
+                <p class="pick-desc">High-shine hydrating lip balm</p>
+                <p class="pick-price">$22</p>
+                
+                <!-- Lip Swatches -->
+                <div class="swatches-section">
+                  <div class="swatches-row">
+                    <span class="swatch active" style="background-color: #F8BBD0;" title="Mauve" data-color="Vanilla Soft Mauve"></span>
+                    <span class="swatch" style="background-color: #E91E63;" title="Berry" data-color="Wild Berry Glow"></span>
+                    <span class="swatch" style="background-color: #FFB74D;" title="Peach" data-color="Golden Hour Peach"></span>
+                    <span class="swatch" style="background-color: #A1887F;" title="Cocoa" data-color="Cocoa Sunshine"></span>
+                  </div>
+                  <p class="swatch-label">Color: <span id="active-swatch-name">Vanilla Soft Mauve</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5: Mineral Mattescreen -->
+            <div class="pick-card">
+              <a href="product.html?id=mattescreen" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-yellow">Mineral Matte</span>
+                  <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral Mattescreen">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <h4 class="pick-title">Mineral Mattescreen SPF 40</h4>
+                  <p class="pick-desc">100% mineral sunscreen with soft matte finish</p>
+                  <p class="pick-price">$38</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 6: Skin Tint -->
+            <div class="pick-card">
+              <a href="product.html?id=skin-tint" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">New Glow</span>
+                  <img src="assets/images/glowscreen.jpg" alt="Protec(tint) Skin Tint">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Protec(tint) Skin Tint SPF 50</h4>
+                  <p class="pick-desc">Hydrating squalane mineral skin tint</p>
+                  <p class="pick-price">$44</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 7: Sheerscreen -->
+            <div class="pick-card">
+              <a href="product.html?id=sheerscreen" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-yellow">Ultra-Sheer</span>
+                  <img src="assets/images/clear_spf.jpg" alt="Sheerscreen SPF 30">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Sheerscreen SPF 30</h4>
+                  <p class="pick-desc">100% mineral daily face sunscreen lotion</p>
+                  <p class="pick-price">$38</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 8: Glow Stick -->
+            <div class="pick-card">
+              <a href="product.html?id=glow-stick" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-yellow">Glow Highlighter</span>
+                  <img src="assets/images/tinted_spf.jpg" alt="Glow Stick SPF 50">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Glow Stick SPF 50</h4>
+                  <p class="pick-desc">Portable dry-oil sunscreen glow stick</p>
+                  <p class="pick-price">$26</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 9: PLAY Mineral -->
+            <div class="pick-card">
+              <a href="product.html?id=play-gel" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">Sports Active</span>
+                  <img src="assets/images/play_lotion.jpg" alt="PLAY Mineral Lotion">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <h4 class="pick-title">PLAY 100% Mineral Lotion SPF 30</h4>
+                  <p class="pick-desc">Water-resistant mineral active sunscreen</p>
+                  <p class="pick-price">$36</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 10: Lip Shield Trio -->
+            <div class="pick-card">
+              <a href="product.html?id=lip-shield" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-yellow">SPF Lip Care</span>
+                  <img src="assets/images/glowscreen.jpg" alt="Lip Shield SPF 30 Trio">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Lip Shield SPF 30 Trio</h4>
+                  <p class="pick-desc">Three hydrating balms: Mint, Coconut & Strawberry</p>
+                  <p class="pick-price">$18</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Slider Next Arrow overlay -->
+          <button class="picks-next-btn" aria-label="Next Products"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- 5. Shop by Category Section (Yellow Marquee/Slider) -->
+    <section class="category-slider-section">
+      <div class="category-slider-wrapper">
+        <!-- Scroll Track -->
+        <div class="category-slider-track">
+          <!-- Card 1 -->
+          <div class="category-slide-card">
+            <a href="shop.html?formulation=Invisible">
+              <div class="category-slide-img-box">
+                <img src="assets/images/clear_spf.jpg" alt="Clear SPF">
+              </div>
+              <div class="category-slide-label">
+                <span>Clear SPF</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="category-slide-card">
+            <a href="shop.html?formulation=Tinted">
+              <div class="category-slide-img-box">
+                <img src="assets/images/tinted_spf.jpg" alt="Tinted SPF">
+              </div>
+              <div class="category-slide-label">
+                <span>Tinted SPF</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="category-slide-card">
+            <a href="shop.html?concern=Glow">
+              <div class="category-slide-img-box">
+                <img src="assets/images/glowscreen.jpg" alt="Glowy SPF">
+              </div>
+              <div class="category-slide-label">
+                <span>Glowy SPF</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="category-slide-card">
+            <a href="shop.html?category=Body">
+              <div class="category-slide-img-box">
+                <img src="assets/images/body_mist.jpg" alt="Body SPF">
+              </div>
+              <div class="category-slide-label">
+                <span>Body SPF</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="category-slide-card">
+            <a href="shop.html">
+              <div class="category-slide-img-box">
+                <img src="assets/images/unseen_sunscreen.jpg" alt="Best Sellers">
+              </div>
+              <div class="category-slide-label">
+                <span>Best Sellers</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slider Arrows -->
+        <button class="cat-slider-arrow cat-prev" aria-label="Previous Category"><i class="fas fa-chevron-left"></i></button>
+        <button class="cat-slider-arrow cat-next" aria-label="Next Category"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- 6b. Subscribe & Save Banner Section -->
+    <section class="section-padding subscribe-banner-section">
+      <div class="container">
+        <div class="subscribe-banner-box">
+          <div class="subscribe-banner-image">
+            <img src="assets/images/subscribe_banner.jpg" alt="Dopahr SPF Collection">
+          </div>
+          <div class="subscribe-banner-card">
+            <span class="sub-badge">Never Run Out</span>
+            <h3 class="sub-title">SPF ON REPEAT</h3>
+            <p class="sub-text">Unlock 10% + free shipping every time with easy Subscribe & Save.</p>
+            <a href="shop.html" class="btn btn-subscribe">Subscribe Now</a>
           </div>
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          How can I track my package?
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Once your order is processed, you will receive an email containing a route tracking code. Simply enter this tracking number on our "Track Order" portal to view live courier status updates.
+    </section>
+
+    <!-- 7. Brand Discovery (SPF Quiz Spotlight) -->
+    <section class="section-padding" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="discover-grid">
+          <div class="discover-image">
+            <img src="assets/images/hero_bg.jpg" alt="Sunscreen Oil Bottles on beach" style="filter: sepia(0.2) saturate(1.2);">
+          </div>
+          <div class="discover-content">
+            <span class="hero-tag" style="background-color: var(--color-accent);">Interactive Finder</span>
+            <h3>Find Your SPF Match in 60 Seconds</h3>
+            <p>Not sure which SPF fits your skin type and daily habits? Our suncare experts have designed a quick quiz to determine the perfect texture, SPF factor, and ingredients for your lifestyle.</p>
+            
+            <div class="discover-features">
+              <div class="discover-feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                  <h4>Tailored Protection</h4>
+                  <p>Matched to your daily UV index exposure.</p>
+                </div>
+              </div>
+              <div class="discover-feature-item">
+                <i class="fas fa-feather-alt"></i>
+                <div>
+                  <h4>Zero White Cast</h4>
+                  <p>Formulas hand-picked to blend flawlessly.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="quiz.html" class="btn btn-primary">Take the SPF Quiz</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Customer Newsletter Section -->
-  <section style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 80px 0;" class="reveal-element">
-    <div class="container" style="max-width: 600px; text-align: center;">
-      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 12px; font-family: Outfit;">Stay in the Tech Loop</h2>
-      <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Join Elevora's circular letters for early drops, exclusive coupon codes, and guides.</p>
-      <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;">
-        <input type="email" placeholder="Your premium email address" class="newsletter-input" required style="background-color: var(--bg-primary); color: var(--text-primary); border: 1.5px solid var(--border-color);">
-        <button type="submit" class="newsletter-btn">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-top">
-      <div class="footer-column footer-about">
-        <a href="index.html" class="logo">
-          <span>ELEVORA</span><span class="logo-dot"></span>
-        </a>
-        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-link" aria-label="Elevora Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-link" aria-label="Elevora Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social-link" aria-label="Elevora Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="social-link" aria-label="Elevora LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <!-- 8. Newsletter Sign Up -->
+    <section class="section-padding newsletter-section">
+      <div class="container">
+        <div class="newsletter-box">
+          <h2>Join the Sunshine Club</h2>
+          <p>Subscribe to receive sunscreen application tips, exclusive early product access, and 10% off your first order.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required aria-label="Email address for newsletter sign-up">
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="shop.html">All Products</a></li>
-          <li><a href="shop.html?filter_cat=Headphones">Headphones</a></li>
-          <li><a href="shop.html?filter_cat=Smart%20Watches">Smart Watches</a></li>
-          <li><a href="shop.html?filter_cat=Earbuds">Earbuds</a></li>
-          <li><a href="shop.html?filter_cat=Power%20Banks">Power Banks</a></li>
-        </ul>
+    </section>
+  </main>
+
+  <!-- 9. Cart Slide Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <!-- Dynamic Items Container -->
+    <div class="cart-items" id="cart-items-list"></div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
       </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ Desk</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="track-order.html">Track Order</a></li>
-          <li><a href="my-account.html">My Account</a></li>
-        </ul>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
       </div>
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About Brand</a></li>
-          <li><a href="blog.html">Tech Blog</a></li>
-          <li><a href="privacy-policy.html">Privacy Guidelines</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
       </div>
-      <div class="footer-column footer-newsletter">
-        <h4>Subscribe</h4>
-        <p>Get early product launches and exclusive VIP coupon discount offers directly in your inbox.</p>
-        <form class="newsletter-section-form" style="display: flex; border: 1.5px solid #2d2d35; border-radius: var(--border-radius-md); overflow: hidden; background-color: #141417;">
-          <input type="email" placeholder="Email address" class="newsletter-input" style="flex-grow: 1; padding: 12px; color: #ffffff;" required>
-          <button type="submit" class="newsletter-btn">Join</button>
-        </form>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- 10. Search Fullscreen Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search sunscreens (e.g. Unseen, Glow, Spray)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
+  <!-- 11. Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-info-logo">
+            d<span class="logo-sun-container" style="width:24px; height:24px;"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </div>
+          <p class="footer-info-desc">Dopahr protects your skin when the afternoon heat is at its strongest. Clean, dermatologist-tested, lightweight sunscreens.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop SPFs</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?category=Face%20%26%20Lip">Face Sunscreen</a></li>
+            <li><a href="shop.html?category=Body">Body Suncare</a></li>
+            <li><a href="shop.html">Mineral SPF</a></li>
+            <li><a href="shop.html">Travel Sizes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quiz.html">SPF Finder Quiz</a></li>
+            <li><a href="about.html#science">Suncare FAQ</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+            <li><a href="about.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SEO Keywords</h4>
+          <ul class="footer-links" style="font-size:12px; color:var(--text-secondary);">
+            <li>Dopahr Sunscreen & Skincare Products website</li>
+            <li>Best Sunscreen Skincare Website</li>
+            <li>Invisible SPF 50 Face Protection</li>
+            <li>Non-greasy Body Sunscreen Lotion</li>
+            <li>Premium Clean Ingredients SPF</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dopahr Skincare. All rights reserved. Designed for optimal afternoon skin protection.</p>
+        <div class="footer-payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-stripe"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
       </div>
     </div>
     
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
-      <div class="payment-methods">
-        <i class="fa-brands fa-cc-visa" title="Visa"></i>
-        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
-      </div>
+    <!-- Giant Decorative Branding Logo -->
+    <div class="giant-brand-banner">
+      <div class="giant-brand-text">dopahr!</div>
     </div>
   </footer>
 
-  <!-- Mini Cart Drawer Modal Overlay -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
-    <div class="cart-drawer">
-      <div class="cart-drawer-header">
-        <h4 class="cart-drawer-title"><i class="fa-solid fa-shopping-bag" style="color: var(--accent-dark);"></i> Your Cart</h4>
-        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="cart-drawer-items" id="cart-drawer-items">
-        <!-- Loaded Dynamically via cart.js -->
-      </div>
-      <div class="cart-drawer-footer">
-        <div class="cart-totals-row">
-          <span>Subtotal</span>
-          <span style="font-weight: 600;" id="cart-drawer-subtotal">$0.00</span>
-        </div>
-        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Shipping & promo coupons calculated at checkout page.</div>
-        <div class="cart-drawer-actions">
-          <a href="cart.html" class="btn btn-secondary" style="width: 100%;" onclick="closeMiniCartDrawer()">View Full Cart</a>
-          <a href="checkout.html" class="btn btn-primary" style="width: 100%;" id="mini-cart-checkout-btn">Checkout Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Shared Javascript files -->
-  <script src="js/products-data.js"></script>
-  <script src="js/darkmode.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/wishlist.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/slider.js"></script>
-
-  <!-- Page Loader Logic -->
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
   <script>
-    // Load collection items for tabs dynamically
-    function loadTabProducts(filterType) {
-      const grid = document.getElementById("homepage-products-grid");
-      if (!grid) return;
+    // Link search elements to dynamic app.js modal
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    
+    // Add newsletter validation
+    document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for subscribing to Dopahr! Use code SUNCARE10 for 10% off your purchase.');
+      e.target.reset();
+    });
 
-      const tabButtons = document.querySelectorAll(".tab-btn");
-      tabButtons.forEach(btn => {
-        if (btn.textContent.toLowerCase().includes(filterType === "all" ? "trending" : filterType === "new" ? "new" : "sale")) {
-          btn.classList.add("active");
-        } else {
-          btn.classList.remove("active");
-        }
+    // Handle Lip Balm Swatches on Home Page
+    document.querySelectorAll('.swatch').forEach(swatch => {
+      swatch.addEventListener('click', function() {
+        this.parentNode.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+        this.classList.add('active');
+        const colorName = this.getAttribute('data-color');
+        document.getElementById('active-swatch-name').textContent = colorName;
       });
+    });
 
-      let list = [...ElevoraProducts];
-      if (filterType === "new") {
-        list = list.filter(p => p.badge && p.badge.toLowerCase().includes("new"));
-      } else if (filterType === "sale") {
-        list = list.filter(p => p.badge && p.badge.toLowerCase().includes("off") || p.badge && p.badge.toLowerCase().includes("sale"));
+    // Category Slider horizontal scroll navigation
+    const catTrack = document.querySelector('.category-slider-track');
+    document.querySelector('.cat-prev').addEventListener('click', () => {
+      catTrack.scrollBy({ left: -404, behavior: 'smooth' });
+    });
+    document.querySelector('.cat-next').addEventListener('click', () => {
+      catTrack.scrollBy({ left: 404, behavior: 'smooth' });
+    });
+
+    // Picks Slider horizontal scroll navigation
+    const picksTrack = document.querySelector('.picks-row');
+    document.querySelector('.picks-next-btn').addEventListener('click', () => {
+      if (picksTrack.scrollLeft + picksTrack.clientWidth >= picksTrack.scrollWidth - 10) {
+        picksTrack.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        // Trending: list first 4 items
-        list = list.slice(0, 4);
-      }
-
-      let html = "";
-      list.forEach(p => {
-        const discountPercentage = Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100);
-        html += `
-          <div class="product-card reveal-element revealed" data-id="${p.id}">
-            <div class="card-media">
-              <div class="card-badges">
-                ${p.badge ? `<span class="badge badge-${p.badgeType}">${p.badge}</span>` : ""}
-              </div>
-              <a href="product.html?id=${p.id}">
-                <img src="${p.images[0]}" alt="${p.name}">
-                ${p.images[1] ? `<img src="${p.images[1]}" class="card-img-hover" alt="${p.name}">` : ""}
-              </a>
-              <div class="card-actions">
-                <button class="card-action-btn wishlist-toggle-btn" data-id="${p.id}" onclick="toggleWishlist(${p.id})">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-                <button class="card-action-btn" onclick="openQuickView(${p.id})">
-                  <i class="fa-regular fa-eye"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-info">
-              <span class="card-category">${p.category}</span>
-              <a href="product.html?id=${p.id}" class="card-title">${p.name}</a>
-              <div class="card-rating">
-                <div class="stars">
-                  ${generateStars(p.rating)}
-                </div>
-                <span class="rating-value">${p.rating}</span>
-                <span class="reviews-count">(${p.reviewsCount})</span>
-              </div>
-              <div class="card-price-row">
-                <div class="price-wrap">
-                  <span class="price">$${p.price.toFixed(2)}</span>
-                  ${p.oldPrice ? `<span class="old-price">$${p.oldPrice.toFixed(2)}</span>` : ""}
-                  ${p.oldPrice ? `<span class="discount">${discountPercentage}% OFF</span>` : ""}
-                </div>
-                <button class="btn btn-primary card-add-btn" onclick="addToCart(${p.id}, 1, '${p.colors[0]}')">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        `;
-      });
-
-      grid.innerHTML = html;
-      if (typeof syncWishlistStates === "function") syncWishlistStates();
-    }
-
-    // Interactive Accordion Questions
-    document.querySelectorAll(".faq-question").forEach(q => {
-      q.addEventListener("click", () => {
-        const item = q.parentElement;
-        const activeItem = document.querySelector(".faq-item.active");
-        if (activeItem && activeItem !== item) {
-          activeItem.classList.remove("active");
-        }
-        item.classList.toggle("active");
-      });
-    });
-
-    window.addEventListener("load", () => {
-      loadTabProducts('all');
-
-      // Initialize Category Carousel scroll controls
-      const catCarousel = document.getElementById("category-carousel-inner");
-      const catPrevBtn = document.getElementById("category-carousel-prev");
-      const catNextBtn = document.getElementById("category-carousel-next");
-      
-      if (catCarousel && catPrevBtn && catNextBtn) {
-        const scrollAmount = 300;
-        catPrevBtn.addEventListener("click", () => {
-          catCarousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        });
-        catNextBtn.addEventListener("click", () => {
-          catCarousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        });
+        picksTrack.scrollBy({ left: 414, behavior: 'smooth' });
       }
     });
+
+    // Create a virtual button for trigger in JS if needed
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
   </script>
 </body>
 </html>

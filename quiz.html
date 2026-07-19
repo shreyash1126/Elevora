@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details | Dopahr Sunscreen & Skincare Products Website</title>
-  <meta name="description" content="View product details, SPF ratings, key ingredients, benefits, and customer reviews. Shop the highest quality sunscreen & skincare products website here.">
-  <meta name="keywords" content="skincare ingredients, SPF benefits, broad spectrum protection, mineral shield, invisible sunscreen, Dopahr Sunscreen & Skincare Products website">
+  <title>Find Your SPF Quiz | Dopahr Sunscreen & Skincare Products Website</title>
+  <meta name="description" content="Take our interactive Find Your SPF Quiz to discover your custom sunscreen match. Personalized sunscreen & skincare products website recommendation.">
+  <meta name="keywords" content="SPF finder, sunscreen quiz, skin type test, daily skincare recommendation, Dopahr Sunscreen & Skincare Products website">
   
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -197,10 +197,8 @@
                 <a href="shop.html" class="mega-menu-footer-link">Shop All</a>
               </div>
             </div>
-          </li><li class="nav-item">
-            <a href="shop.html" class="nav-link">Bestsellers</a>
-          </li>
-                    <li class="nav-item">
+          </li><li class="nav-item"><a href="shop.html" class="nav-link">Bestsellers</a></li>
+                              <li class="nav-item">
             <a href="shop.html" class="nav-link">Shop By Type</a>
             <!-- Mega Menu Dropdown -->
             <div class="mega-menu shop-by-type-mega">
@@ -305,9 +303,7 @@
               </div>
             </div>
           </li>
-<li class="nav-item">
-            <a href="about.html" class="nav-link">Discover</a>
-          </li>
+<li class="nav-item"><a href="about.html" class="nav-link">Discover</a></li>
         </ul>
       </div>
     </nav>
@@ -316,15 +312,9 @@
   <!-- Mobile Drawer -->
   <div class="mobile-menu-drawer" id="mobile-drawer">
     <ul class="mobile-nav-list">
-      <li class="mobile-nav-item">
-        <a href="shop.html" class="mobile-nav-link">Shop All</a>
-      </li>
-      <li class="mobile-nav-item">
-        <a href="shop.html" class="mobile-nav-link">Bestsellers</a>
-      </li>
-      <li class="mobile-nav-item">
-        <a href="about.html" class="mobile-nav-link">Discover</a>
-      </li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop All</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Bestsellers</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">Discover</a></li>
     </ul>
     <div class="mobile-search">
       <i class="fas fa-search"></i>
@@ -334,89 +324,149 @@
 
   <div class="overlay" id="site-overlay"></div>
 
-  <!-- Main Product Detail Page Content -->
+  <!-- Quiz Layout Content -->
   <main class="container">
-    <div class="product-details-layout">
-      
-      <!-- Product Gallery (Left) -->
-      <section class="product-gallery">
-        <div class="product-main-img" id="detail-main-img">
-          <!-- Rendered dynamically -->
-        </div>
-        <div style="font-size:12px; color:var(--text-secondary); text-align:center;">
-          <i class="fas fa-search-plus" style="margin-right:6px;"></i> Roll over image to zoom
-        </div>
-      </section>
+    <div class="quiz-container">
+      <!-- Top progress bar -->
+      <div class="quiz-progress-bar" id="quiz-progress"></div>
 
-      <!-- Product Information (Right) -->
-      <section class="product-info-panel">
-        <h1 class="product-title" id="detail-title">Loading Sunscreen Name...</h1>
-        <p class="product-tagline" id="detail-tagline">Loading sunscreen tagline...</p>
-        
-        <div class="product-meta-row">
-          <div class="product-rating-stars" id="detail-stars">
-            <!-- Stars loaded dynamically -->
-          </div>
-          <span class="product-rating-text" id="detail-reviews-count">(0 reviews)</span>
-        </div>
-
-        <div class="product-price" id="detail-price">$0.00</div>
-
-        <div style="margin: 24px 0; border-top:1px solid var(--border-color); padding-top:24px;">
-          <!-- Option Size selector mockup -->
-          <div class="product-options">
-            <h4 class="option-group-title">Select Size</h4>
-            <div class="size-selector">
-              <button class="size-btn active">1.7 fl. oz. / 50ml</button>
-              <button class="size-btn">2.4 fl. oz. / 71ml</button>
+      <!-- Question 1 -->
+      <div class="quiz-step active" id="step-1">
+        <h2 class="quiz-question">What best describes your skin type?</h2>
+        <div class="quiz-options-list">
+          <div class="quiz-option" data-question="skinType" data-val="oily">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Oily or Shiny</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Excess sebum, pores look enlarged, and shine develops quickly.</p>
             </div>
           </div>
-
-          <!-- Add to bag controls -->
-          <div class="product-actions-row">
-            <div class="product-quantity">
-              <button id="detail-qty-minus" aria-label="Decrease Quantity">-</button>
-              <span id="detail-qty-val">1</span>
-              <button id="detail-qty-plus" aria-label="Increase Quantity">+</button>
+          <div class="quiz-option" data-question="skinType" data-val="dry">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Dry or Flaky</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Feels tight, lacks hydration, or exhibits dry patches.</p>
             </div>
-            <button class="btn btn-primary product-add-btn" id="detail-add-btn">Add to Bag</button>
+          </div>
+          <div class="quiz-option" data-question="skinType" data-val="sensitive">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Sensitive</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Prone to redness, burning, stinging, or allergic reactions.</p>
+            </div>
+          </div>
+          <div class="quiz-option" data-question="skinType" data-val="normal">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Normal or Balanced</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Neither extremely oily nor dry. Clear skin with no major concerns.</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Detail Tabs (Description, Ingredients, Benefits, Usage) -->
-        <div class="product-tabs">
-          <ul class="tabs-nav">
-            <li><button class="tab-btn active" data-tab="description">Description</button></li>
-            <li><button class="tab-btn" data-tab="benefits">Benefits</button></li>
-            <li><button class="tab-btn" data-tab="usage">How to Use</button></li>
-            <li><button class="tab-btn" data-tab="ingredients">Ingredients</button></li>
-          </ul>
-          
-          <div class="tab-content active" id="tab-description">
-            <!-- Dynamic -->
+      <!-- Question 2 -->
+      <div class="quiz-step" id="step-2">
+        <h2 class="quiz-question">What is your primary outdoor activity level?</h2>
+        <div class="quiz-options-list">
+          <div class="quiz-option" data-question="activity" data-val="daily">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Daily Commute / Light exposure</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Mainly indoors at work or school, quick walks under the sun.</p>
+            </div>
           </div>
-          <div class="tab-content" id="tab-benefits">
-            <!-- Dynamic -->
+          <div class="quiz-option" data-question="activity" data-val="sports">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Active Sports / Workouts</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Sweating outdoors, running, cycling, or doing outdoor exercises.</p>
+            </div>
           </div>
-          <div class="tab-content" id="tab-usage">
-            <!-- Dynamic -->
-          </div>
-          <div class="tab-content" id="tab-ingredients">
-            <!-- Dynamic -->
+          <div class="quiz-option" data-question="activity" data-val="beach">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Beach & Swimming</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Extended time under strong direct sunlight and inside water.</p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-step" id="step-3">
+        <h2 class="quiz-question">What skin finish do you prefer?</h2>
+        <div class="quiz-options-list">
+          <div class="quiz-option" data-question="finish" data-val="matte">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Soft Matte / Velvet</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">No shine, pore-blurring, clean velvet texture.</p>
+            </div>
+          </div>
+          <div class="quiz-option" data-question="finish" data-val="glowy">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Dewy & Glowing</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Luminous, hydrated, fresh-faced glass skin appearance.</p>
+            </div>
+          </div>
+          <div class="quiz-option" data-question="finish" data-val="natural">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Invisible / Skin-like</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Absorbs fully like water, completely weightless and transparent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-step" id="step-4">
+        <h2 class="quiz-question">What is your main suncare skincare concern?</h2>
+        <div class="quiz-options-list">
+          <div class="quiz-option" data-question="concern" data-val="aging">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Preventing aging & wrinkles</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Protection from UVA rays which accelerate dark spots and fine lines.</p>
+            </div>
+          </div>
+          <div class="quiz-option" data-question="concern" data-val="makeup">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Sunscreen piling under makeup</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Need SPF that doubles as a primer, leaving skin gripping for foundation.</p>
+            </div>
+          </div>
+          <div class="quiz-option" data-question="concern" data-val="whitecast">
+            <div class="quiz-option-circle"></div>
+            <div>
+              <h3 style="font-size:16px; margin-bottom:4px;">Avoiding chalky white cast</h3>
+              <p style="font-size:13px; color:var(--text-secondary);">Need a formula that goes on transparently on all skin tones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendation Screen -->
+      <div class="quiz-step" id="step-result">
+        <div id="quiz-result-box">
+          <!-- Replaced dynamically by app.js -->
+          <div style="text-align:center; padding:40px 0;">
+            <i class="fas fa-spinner fa-spin" style="font-size:40px; color:var(--color-secondary);"></i>
+            <p style="margin-top:16px;">Calculating your perfect SPF recommendation...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Navigation Buttons -->
+      <div class="quiz-navigation-buttons">
+        <button class="btn btn-secondary" id="quiz-prev" style="display:none;"><i class="fas fa-arrow-left" style="margin-right:8px;"></i> Back</button>
+        <button class="btn btn-primary" id="quiz-next" style="display:none;">Next <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+      </div>
 
     </div>
-
-    <!-- Related Products section -->
-    <section class="section-padding" style="border-top: 1px solid var(--border-color);">
-      <div class="section-header">
-        <h2 class="section-title">You May Also Like</h2>
-        <a href="shop.html" class="section-link">Shop All Sunscreens</a>
-      </div>
-      <div class="product-grid" id="related-products-grid"></div>
-    </section>
   </main>
 
   <!-- Cart Drawer -->
@@ -478,22 +528,9 @@
             <li><a href="quiz.html">SPF Finder Quiz</a></li>
           </ul>
         </div>
-        <div>
-          <h4 class="footer-title">SEO Keywords</h4>
-          <ul class="footer-links" style="font-size:12px; color:var(--text-secondary);">
-            <li>Dopahr Sunscreen & Skincare Products website</li>
-            <li>Best Sunscreen Skincare Website</li>
-          </ul>
-        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Dopahr Skincare. All rights reserved. Designed for optimal afternoon skin protection.</p>
-        <div class="footer-payment-icons">
-          <i class="fab fa-cc-visa"></i>
-          <i class="fab fa-cc-mastercard"></i>
-          <i class="fab fa-cc-stripe"></i>
-          <i class="fab fa-cc-apple-pay"></i>
-        </div>
       </div>
     </div>
   </footer>

@@ -3,662 +3,612 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse Elevora's premium collection of smart electronics, wireless charger banks, earbuds, mechanical keyboards and premium tech accessories.">
-  <title>Shop Tech Gadgets & Accessories | Elevora Catalog</title>
+  <title>Shop SPF Sunscreens | Dopahr Sunscreen & Skincare Products Website</title>
+  <meta name="description" content="Shop the complete catalog of Dopahr Sunscreens. Filter by skin concern, SPF level, format, or category. Finding the perfect sunscreen & skincare products website has never been easier. Non-greasy, 100% invisible sun protection.">
+  <meta name="keywords" content="Shop sunscreen, best sunscreen, daily SPF 50, daily SPF 40, mineral sunscreen catalog, Dopahr Sunscreen & Skincare Products website">
   
-  <!-- FontAwesome & Custom CSS -->
+  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
-  <style>
-    /* Shop Catalog Specific Styles */
-    .shop-page-hero {
-      background-color: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-      padding: 40px 0;
-      margin-bottom: 40px;
-    }
-    .breadcrumb {
-      display: flex;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-    .breadcrumb a:hover {
-      color: var(--text-primary);
-    }
-    .shop-title {
-      font-size: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    
-    /* Layout grid: Sidebar vs Products list */
-    .shop-layout {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 40px;
-      margin-bottom: 80px;
-      align-items: start;
-    }
-
-    /* Sidebar Filters */
-    .filter-section {
-      margin-bottom: 30px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .filter-section:last-child {
-      border-bottom: none;
-    }
-    .filter-section-title {
-      font-family: 'Outfit';
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .filter-category-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .filter-category-btn {
-      width: 100%;
-      text-align: left;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      padding: 6px 12px;
-      border-radius: var(--border-radius-sm);
-      transition: all var(--transition-fast);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .filter-category-btn:hover,
-    .filter-category-btn.active {
-      background-color: var(--bg-tertiary);
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    
-    .checkbox-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      cursor: pointer;
-    }
-    .checkbox-label input {
-      accent-color: var(--accent-dark);
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
-
-    /* Price Slider */
-    .price-range-slider {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .price-slider-input {
-      width: 100%;
-      height: 6px;
-      background: var(--border-color);
-      border-radius: 3px;
-      outline: none;
-      -webkit-appearance: none;
-      accent-color: var(--text-primary);
-    }
-    
-    /* Shop Catalog Header Control Bar */
-    .shop-control-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .sort-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-    }
-    .sort-select {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 8px 16px;
-      border-radius: var(--border-radius-sm);
-      font-weight: 500;
-      outline: none;
-      cursor: pointer;
-    }
-    .sort-select:focus {
-      border-color: var(--text-primary);
-    }
-    
-    /* Mobile filter toggles display none on desktop */
-    .filter-mobile-bar {
-      display: none;
-    }
-
-    /* Pagination */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 40px;
-    }
-    .page-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--border-radius-sm);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all var(--transition-fast);
-    }
-    .page-btn:hover,
-    .page-btn.active {
-      background-color: var(--text-primary);
-      color: var(--bg-primary);
-      border-color: var(--text-primary);
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 <body>
 
-  <!-- Announcement Bar -->
+  <!-- 1. Announcement Bar -->
   <div class="announcement-bar">
-    <div class="announcement-slider">
-      <div class="announcement-item"><i class="fa-solid fa-truck-fast"></i> Free Worldwide Delivery on orders above $100</div>
-      <div class="announcement-item" style="display: none;"><i class="fa-solid fa-bolt"></i> Flash Sale: Use code <span>ELEVORA20</span> for 20% off</div>
+    <div class="announcement-bar-content">
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
+      <span>☀️ PROTECT YOUR SKIN FROM THE INTENSE AFTERNOON HEAT</span>
+      <span>☀️ GET 10% OFF YOUR FIRST ORDER WITH CODE: SUNCARE10</span>
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
     </div>
   </div>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
-
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link active">Shop</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <!-- Live Search -->
-        <div class="header-search-wrap">
-          <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-          <input type="text" class="header-search-input" placeholder="Search gadgets...">
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
 
-        <a href="wishlist.html" class="action-btn">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count">0</span>
-        </a>
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            d<span class="logo-sun-container"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </a>
+        </div>
 
-        <button class="action-btn" onclick="openMiniCartDrawer()">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count">0</span>
-        </button>
-
-        <button class="action-btn theme-toggle-btn">
-          <i class="fa-regular fa-moon"></i>
-          <i class="fa-regular fa-sun"></i>
-        </button>
-
-        <a href="my-account.html" class="action-btn">
-          <i class="fa-regular fa-user"></i>
-        </a>
-
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="New!">
+                      </div>
+                      <span class="category-card-title">New!</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?formulation=Mineral" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                      </div>
+                      <span class="category-card-title">Mineral</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Men" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Men">
+                      </div>
+                      <span class="category-card-title">Men</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Face%20%26%20Lip" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Face & Lip">
+                      </div>
+                      <span class="category-card-title">Face & Lip</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Makeup" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="Makeup">
+                      </div>
+                      <span class="category-card-title">Makeup</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Sets%20%26%20Gifts" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Sets & Gifts">
+                      </div>
+                      <span class="category-card-title">Sets & Gifts</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Body" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Body">
+                      </div>
+                      <span class="category-card-title">Body</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Kids" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Kids & Family">
+                      </div>
+                      <span class="category-card-title">Kids & Family</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Gifting" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Group Gifting">
+                      </div>
+                      <span class="category-card-title">Group Gifting</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Shop All</a>
+              </div>
+            </div>
+          </li><li class="nav-item">
+            <a href="shop.html" class="nav-link">Bestsellers</a>
+            <!-- Mega Menu Dropdown for Bestsellers -->
+            <div class="mega-menu" style="grid-template-columns: 1fr 2fr; gap: 40px;">
+              <!-- Left side Spotlight Card -->
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%; min-height: 250px;">
+                <img src="assets/images/hero_bg.jpg" alt="Dopahr Golfer Spotlight" style="filter: brightness(0.95) contrast(1.05);">
+                <div class="mega-card-content">
+                  <h4>Dopahr Golf & Sports</h4>
+                  <p>Official SPF Sponsor</p>
+                </div>
+              </div>
+              
+              <!-- Right side Product list -->
+              <div>
+                <h4 class="mega-col-title" style="margin-bottom: 20px;">Our Top Sellers</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px 30px;">
+                  <a href="product.html?id=unseen" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/unseen_sunscreen.jpg" alt="Unseen Sunscreen">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Unseen Sunscreen SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+                  
+                  <a href="product.html?id=glow" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/glowscreen.jpg" alt="Glowscreen">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Glowscreen SPF 40</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=play-lotion" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/play_lotion.jpg" alt="PLAY Lotion">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">PLAY Everyday Lotion SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=body-mist" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/body_mist.jpg" alt="Body Mist">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">PLAY Body Mist SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=mattescreen" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/unseen_sunscreen.jpg" alt="Mattescreen">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Mineral Mattescreen SPF 40</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=skin-tint" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/glowscreen.jpg" alt="Skin Tint">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Protec(tint) Skin Tint SPF 50</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+                </div>
+                <div style="margin-top: 24px; text-align: right;">
+                  <a href="shop.html" style="font-size:14px; font-weight:700; color:var(--color-secondary); border-bottom:2px solid var(--color-secondary); padding-bottom:2px;">Shop All Bestsellers</a>
+                </div>
+              </div>
+            </div>
+          </li>
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/body_mist.jpg" alt="PLAY Body Mist Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=body_mist" class="spotlight-title-link">
+                    <span>Reapply with PLAY Body Mist SPF 50</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Lotion" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/play_lotion.jpg" alt="Lotion & Moisturizer">
+                        </div>
+                        <span class="category-card-title">Lotion & Moisturizer</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Stick" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Stick">
+                        </div>
+                        <span class="category-card-title">Stick</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Lip" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Lip">
+                        </div>
+                        <span class="category-card-title">Lip</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Spray" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/body_mist.jpg" alt="Spray">
+                        </div>
+                        <span class="category-card-title">Spray</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Serum" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Oil & Serum">
+                        </div>
+                        <span class="category-card-title">Oil & Serum</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?formulation=Mineral" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                        </div>
+                        <span class="category-card-title">Mineral</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Shop All Shop By Type</a>
+                </div>
+              </div>
+            </div>
+          </li>
+<li class="nav-item">
+            <a href="about.html" class="nav-link">Discover</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <!-- Category sub-navigation bar -->
-  <nav class="category-nav-bar">
-    <div class="container category-nav-container">
-      <div class="category-nav-list">
-        
-        <!-- New Arrivals -->
-        <a href="shop.html" class="category-nav-item">New Arrivals</a>
-        
-        <!-- Mobile Accessories -->
-        <div class="category-nav-item">
-          Mobile Accessories <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Mobile Accessories</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Phone%20Holders" class="dropdown-link">Phone Holders</a>
-            <a href="shop.html?filter_cat=Chargers" class="dropdown-link">Chargers</a>
-          </div>
-        </div>
-        
-        <!-- Tech Gadgets -->
-        <div class="category-nav-item">
-          Tech Gadgets <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Tools & Utility -->
-        <div class="category-nav-item">
-          Tools & Utility <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Car & Travel -->
-        <div class="category-nav-item">
-          Car & Travel <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Offers & Combos -->
-        <div class="category-nav-item">
-          Offers & Combos <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Buy 1 Get 1 Free</a>
-            <a href="shop.html" class="dropdown-link">Under ₹999 Deals</a>
-            <a href="shop.html" class="dropdown-link">Combo Packs</a>
-            <a href="shop.html" class="dropdown-link">Clearance Sale</a>
-          </div>
-        </div>
-        
-        <!-- Shop By Price -->
-        <div class="category-nav-item">
-          Shop By Price <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html" class="dropdown-link">Under ₹499</a>
-            <a href="shop.html" class="dropdown-link">Under ₹999</a>
-            <a href="shop.html" class="dropdown-link">Under ₹1999</a>
-            <a href="shop.html" class="dropdown-link">Premium Selection</a>
-          </div>
-        </div>
-        
-        <!-- Gifting -->
-        <div class="category-nav-item">
-          Gifting <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="shop.html?filter_cat=Games%20%26%20Consoles" class="dropdown-link">Games & Consoles</a>
-            <a href="shop.html?filter_cat=Bluetooth%20Speakers" class="dropdown-link">Bluetooth Speakers</a>
-            <a href="shop.html?filter_cat=Power%20Banks" class="dropdown-link">Power Banks</a>
-            <a href="shop.html?filter_cat=Charging%20Cables" class="dropdown-link">Charging Cables</a>
-            <a href="shop.html?filter_cat=Floating%20Lamps" class="dropdown-link">Floating Lamps</a>
-            <a href="shop.html?filter_cat=Wireless%20Chargers" class="dropdown-link">Wireless Chargers</a>
-            <a href="shop.html?filter_cat=Clocks%20%26%20Timers" class="dropdown-link">Clocks & Timers</a>
-            <a href="shop.html?filter_cat=RGB%20%26%20Mood%20Lighting" class="dropdown-link">RGB & Mood Lighting</a>
-            <a href="shop.html?filter_cat=Home%20Utility" class="dropdown-link">Home Utility</a>
-            <a href="shop.html?filter_cat=Humidifiers" class="dropdown-link">Humidifiers</a>
-            <a href="shop.html?filter_cat=Kitchen%20Gadgets" class="dropdown-link">Kitchen Gadgets</a>
-            <a href="shop.html?filter_cat=Extensions%20%26%20Multi-Plugs" class="dropdown-link">Extensions & Multi-Plugs</a>
-            <a href="shop.html?filter_cat=Computer%20Accessories" class="dropdown-link">Computer Accessories</a>
-            <a href="shop.html?filter_cat=Home%20Decor" class="dropdown-link">Home Decor</a>
-            <a href="shop.html?filter_cat=Spy%20Camera%20%26%20WiFi%20Camera" class="dropdown-link">Spy Camera & WiFi Camera</a>
-            <a href="shop.html?filter_cat=Projectors" class="dropdown-link">Projectors</a>
-            <a href="shop.html?filter_cat=Party%20Gadgets" class="dropdown-link">Party Gadgets</a>
-            <a href="shop.html?filter_cat=Health%20%26%20Beauty" class="dropdown-link">Health & Beauty</a>
-          </div>
-        </div>
-        
-        <!-- Support -->
-        <div class="category-nav-item">
-          Support <i class="fa-solid fa-chevron-down"></i>
-          <div class="category-dropdown">
-            <a href="track-order.html" class="dropdown-link">Track Order</a>
-            <a href="contact.html" class="dropdown-link">Contact Us</a>
-            <a href="faq.html" class="dropdown-link">FAQ Desk</a>
-            <a href="my-account.html" class="dropdown-link">Returns & Refunds</a>
-          </div>
-        </div>
-
-      </div>
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Shop All <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html">All Sunscreens</a></li>
+          <li><a href="shop.html?category=Face%20%26%20Lip">Face & Lip</a></li>
+          <li><a href="shop.html?category=Body">Body Protection</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="shop.html" class="mobile-nav-link">Bestsellers</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="about.html" class="mobile-nav-link">Discover</a>
+      </li>
+    </ul>
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Sunscreens..." id="mobile-search-trigger" readonly>
     </div>
-  </nav>
+  </div>
 
-  <!-- Hero Page banner -->
-  <section class="shop-page-hero">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span style="color: var(--text-primary);">Shop</span>
-      </div>
-      <h1 class="shop-title">All Smart Electronics</h1>
-    </div>
-  </section>
+  <div class="overlay" id="site-overlay"></div>
 
-  <!-- Shop Main section -->
+  <!-- Shop Catalog Content -->
   <main class="container">
-    
-    <!-- Mobile Filter Toggle Bar (Visible on mobile/tablet screens only) -->
-    <div class="filter-mobile-bar">
-      <button class="btn btn-secondary" onclick="openMobileFilters()" style="padding: 10px 16px; font-size: 0.85rem;"><i class="fa-solid fa-filter"></i> Filters</button>
-      <span id="mobile-results-count" style="font-size: 0.85rem; font-weight: 500;">8 products</span>
-    </div>
-
-    <!-- Overlay for mobile filters drawer -->
-    <div class="filter-sidebar-overlay" id="filter-sidebar-overlay" onclick="closeMobileFilters()"></div>
+    <section style="margin-top: 40px;">
+      <h1 style="font-size:40px; font-weight:800; text-transform:uppercase; margin-bottom:12px;">All Sunscreen SPFs</h1>
+      <p style="color:var(--text-secondary); max-width:700px;">Explore our entire lineup of daily weightless sunscreens, glowing primers, active body mists, and mineral shields. Formulated for high UV peak hours to keep you protected.</p>
+    </section>
 
     <div class="shop-layout">
-
-      <!-- Left Filters Sidebar -->
-      <aside class="filter-sidebar" id="filter-sidebar">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1.5px solid var(--border-color); padding-bottom: 10px;">
-          <h3 style="font-family: 'Outfit'; font-size: 1.25rem;">Filters</h3>
-          <button id="clear-all-filters-btn" style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); cursor: pointer;">Clear All</button>
+      <!-- Filter Sidebar -->
+      <aside class="filters-sidebar" id="filters-sidebar">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid var(--border-color); padding-bottom:10px;">
+          <h3 style="text-transform:uppercase; font-size:16px; font-weight:800;">Filters</h3>
+          <button id="filters-close" class="mobile-filter-trigger" style="border:none; background:none; font-size:18px;"><i class="fas fa-times"></i></button>
         </div>
 
-        <!-- Search in Catalog -->
-        <div class="filter-section">
-          <h4 class="filter-section-title">Search</h4>
-          <div style="position: relative;">
-            <input type="text" id="shop-catalog-search" class="shop-search-input" placeholder="Type name..." style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); font-size: 0.85rem; background-color: var(--bg-secondary);">
-          </div>
-        </div>
-
-        <!-- Categories List -->
-        <div class="filter-section">
-          <h4 class="filter-section-title">Categories</h4>
-          <div class="filter-category-list">
-            <button class="filter-category-btn active" data-category="all">All Categories <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Headphones">Headphones <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Smart Watches">Smart Watches <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Earbuds">Earbuds <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Power Banks">Power Banks <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Bluetooth Speakers">Speakers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Gaming Accessories">Keyboards <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Smart Home">Smart Home <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-            <button class="filter-category-btn" data-category="Chargers">Chargers <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i></button>
-          </div>
-        </div>
-
-        <!-- Brands Checkboxes -->
-        <div class="filter-section">
-          <h4 class="filter-section-title">Brands</h4>
-          <div class="checkbox-list">
-            <label class="checkbox-label">
-              <input type="checkbox" class="brand-filter-checkbox" value="AeroPulse">
-              <span>AeroPulse</span>
+        <!-- Filter by Category -->
+        <div class="filter-group">
+          <h4 class="filter-title">Category</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="category" value="Face & Lip">
+              <span>Face & Lip</span>
             </label>
-            <label class="checkbox-label">
-              <input type="checkbox" class="brand-filter-checkbox" value="ApexTrack">
-              <span>ApexTrack</span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" class="brand-filter-checkbox" value="VoltMax">
-              <span>VoltMax</span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" class="brand-filter-checkbox" value="KeyPro">
-              <span>KeyPro</span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" class="brand-filter-checkbox" value="Lumino">
-              <span>LuminoSmart</span>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="category" value="Body">
+              <span>Body Protection</span>
             </label>
           </div>
         </div>
 
-        <!-- Price Range Filter -->
-        <div class="filter-section">
-          <h4 class="filter-section-title">Price Range</h4>
-          <div class="price-range-slider">
-            <input type="range" id="price-range-input" class="price-slider-input" min="30" max="300" value="300">
-            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 500;">
-              <span>Min: $30</span>
-              <span>Max: <strong id="price-range-value" style="color: var(--accent-dark); font-weight: 700;">$300</strong></span>
-            </div>
+        <!-- Filter by SPF -->
+        <div class="filter-group">
+          <h4 class="filter-title">SPF Factor</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="spf" value="50+">
+              <span>SPF 50 & Higher</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="spf" value="40">
+              <span>SPF 40 Protection</span>
+            </label>
           </div>
         </div>
 
-        <!-- Review Rating filters -->
-        <div class="filter-section">
-          <h4 class="filter-section-title">Ratings</h4>
-          <div class="checkbox-list">
-            <label class="checkbox-label">
-              <input type="checkbox" class="rating-filter-checkbox" value="4">
-              <span style="color: var(--accent-dark);"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star" style="color: var(--text-muted);"></i> & Up</span>
+        <!-- Filter by Formula Type -->
+        <div class="filter-group">
+          <h4 class="filter-title">Formula Format</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="type" value="Lotion & Moisturizer">
+              <span>Lotion & Cream</span>
             </label>
-            <label class="checkbox-label">
-              <input type="checkbox" class="rating-filter-checkbox" value="5">
-              <span style="color: var(--accent-dark);"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (5.0 Only)</span>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="type" value="Spray">
+              <span>Sunscreen Spray / Mist</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="type" value="Mineral">
+              <span>Mineral (Zinc Oxide)</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="type" value="Oil & Serum">
+              <span>Glow Serums / Oils</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" name="type" value="Makeup">
+              <span>Tinted / Makeup primer</span>
             </label>
           </div>
         </div>
       </aside>
 
-      <!-- Right Products Grid Area -->
-      <section>
-        <!-- Control Bar -->
-        <div class="shop-control-bar">
-          <span id="shop-results-count" style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">8 gadgets found</span>
-          <div class="sort-wrap">
-            <label for="shop-sort-select">Sort By:</label>
-            <select id="shop-sort-select" class="sort-select">
-              <option value="featured">Featured Options</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="rating">Top Rated Stars</option>
-              <option value="reviews">Popularity Reviews</option>
+      <!-- Shop Products Grid -->
+      <section style="flex-grow: 1;">
+        <div class="shop-toolbar">
+          <button class="mobile-filter-trigger" id="mobile-filter-btn"><i class="fas fa-filter"></i> Filters</button>
+          <div class="shop-results-count" id="results-count">0 Products</div>
+          <div class="shop-sorting">
+            <label for="sort-by" style="font-size:13px; font-weight:700; text-transform:uppercase; margin-right:8px; color:var(--text-secondary);">Sort By:</label>
+            <select id="sort-by">
+              <option value="bestsellers">Featured / Bestsellers</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
             </select>
           </div>
         </div>
 
-        <!-- Products Grid Container -->
-        <div class="products-grid" id="shop-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
-          <!-- Managed and Rendered dynamically via filters.js -->
-        </div>
-
-        <!-- Pagination Footer -->
-        <div class="pagination">
-          <button class="page-btn active">1</button>
-          <button class="page-btn">2</button>
-          <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
+        <!-- Dynamic Grid -->
+        <div class="product-grid" id="shop-products-grid"></div>
       </section>
-
     </div>
   </main>
 
+  <!-- Cart Slide Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search sunscreens (e.g. Unseen, Glow, Spray)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
   <!-- Footer -->
-  <footer>
-    <div class="container footer-top">
-      <div class="footer-column footer-about">
-        <a href="index.html" class="logo">
-          <span>ELEVORA</span><span class="logo-dot"></span>
-        </a>
-        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles. Buy electronics in sleek minimalist designs.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-info-logo">
+            d<span class="logo-sun-container" style="width:24px; height:24px;"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </div>
+          <p class="footer-info-desc">Dopahr protects your skin when the afternoon heat is at its strongest. Clean, dermatologist-tested, lightweight sunscreens.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop SPFs</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?category=Face%20%26%20Lip">Face Sunscreen</a></li>
+            <li><a href="shop.html?category=Body">Body Suncare</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quiz.html">SPF Finder Quiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SEO Keywords</h4>
+          <ul class="footer-links" style="font-size:12px; color:var(--text-secondary);">
+            <li>Dopahr Sunscreen & Skincare Products website</li>
+            <li>Best Sunscreen Skincare Website</li>
+          </ul>
         </div>
       </div>
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="shop.html">All Products</a></li>
-          <li><a href="shop.html?filter_cat=Headphones">Headphones</a></li>
-          <li><a href="shop.html?filter_cat=Smart%20Watches">Smart Watches</a></li>
-          <li><a href="shop.html?filter_cat=Earbuds">Earbuds</a></li>
-          <li><a href="shop.html?filter_cat=Power%20Banks">Power Banks</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ Desk</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="track-order.html">Track Order</a></li>
-          <li><a href="my-account.html">My Account</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About Brand</a></li>
-          <li><a href="blog.html">Tech Blog</a></li>
-          <li><a href="privacy-policy.html">Privacy Guidelines</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-column footer-newsletter">
-        <h4>Subscribe</h4>
-        <p>Get early product launches and exclusive VIP coupon discount offers directly in your inbox.</p>
-        <form class="newsletter-section-form">
-          <input type="email" placeholder="Email address" class="newsletter-input" required>
-          <button type="submit" class="newsletter-btn">Join</button>
-        </form>
-      </div>
-    </div>
-    
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
-      <div class="payment-methods">
-        <i class="fa-brands fa-cc-visa" title="Visa"></i>
-        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dopahr Skincare. All rights reserved. Designed for optimal afternoon skin protection.</p>
+        <div class="footer-payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-stripe"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Mini Cart Drawer Overlay -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
-    <div class="cart-drawer">
-      <div class="cart-drawer-header">
-        <h4 class="cart-drawer-title"><i class="fa-solid fa-shopping-bag" style="color: var(--accent-dark);"></i> Your Cart</h4>
-        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="cart-drawer-items" id="cart-drawer-items">
-        <!-- Loaded dynamically -->
-      </div>
-      <div class="cart-drawer-footer">
-        <div class="cart-totals-row">
-          <span>Subtotal</span>
-          <span style="font-weight: 600;" id="cart-drawer-subtotal">$0.00</span>
-        </div>
-        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 16px;">Shipping & promo coupons calculated at checkout page.</div>
-        <div class="cart-drawer-actions">
-          <a href="cart.html" class="btn btn-secondary" style="width: 100%;" onclick="closeMiniCartDrawer()">View Full Cart</a>
-          <a href="checkout.html" class="btn btn-primary" style="width: 100%;" id="mini-cart-checkout-btn">Checkout Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Shared Javascript dependencies -->
-  <script src="js/products-data.js"></script>
-  <script src="js/darkmode.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/wishlist.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/filters.js"></script>
-
-  <!-- Mobile filters specific drawers switcher script -->
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
   <script>
-    function openMobileFilters() {
-      const sidebar = document.getElementById("filter-sidebar");
-      const overlay = document.getElementById("filter-sidebar-overlay");
-      if (sidebar && overlay) {
-        sidebar.classList.add("open");
-        overlay.classList.add("show");
-      }
-    }
-    
-    function closeMobileFilters() {
-      const sidebar = document.getElementById("filter-sidebar");
-      const overlay = document.getElementById("filter-sidebar-overlay");
-      if (sidebar && overlay) {
-        sidebar.classList.remove("open");
-        overlay.classList.remove("show");
-      }
-    }
+    // Search elements bindings
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
   </script>
 </body>
 </html>

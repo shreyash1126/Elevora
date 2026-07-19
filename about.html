@@ -3,202 +3,494 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Elevora's brand mission. We design and curate luxury, high-performance tech accessories and gadgets for international delivery.">
-  <title>About Us | Elevora Tech Aesthetics</title>
+  <title>Our Story & Suncare Science | Dopahr Sunscreen & Skincare Products Website</title>
+  <meta name="description" content="Learn the story of Dopahr. Discover the science of UV protection and the peak afternoon sun. The clean sunscreen & skincare products website promise.">
+  <meta name="keywords" content="Dopahr story, UV science, mineral vs chemical, reef safe sunscreen, dermatologist tested, Dopahr Sunscreen & Skincare Products website">
   
-  <!-- FontAwesome & Custom CSS -->
+  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
-  <style>
-    /* About Us Specific Styles */
-    .about-story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-    .about-story-img {
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      background-color: var(--bg-secondary);
-    }
-    .about-values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 80px;
-    }
-    .value-card {
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      padding: 32px;
-      text-align: center;
-      background-color: var(--bg-secondary);
-      transition: background-color var(--transition-fast);
-    }
-    .value-card:hover {
-      background-color: var(--bg-primary);
-      border-color: var(--accent);
-    }
-    .value-icon {
-      font-size: 2.5rem;
-      color: var(--accent-dark);
-      margin-bottom: 20px;
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">
-        <span>ELEVORA</span><span class="logo-dot"></span>
-      </a>
+  <!-- 1. Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-bar-content">
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
+      <span>☀️ PROTECT YOUR SKIN FROM THE INTENSE AFTERNOON HEAT</span>
+      <span>☀️ GET 10% OFF YOUR FIRST ORDER WITH CODE: SUNCARE10</span>
+      <span>☀️ ENJOY FREE SHIPPING ON ALL ORDERS $50+!</span>
+    </div>
+  </div>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="faq.html" class="nav-link">FAQ</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
 
-      <div class="header-actions">
-        <a href="wishlist.html" class="action-btn">
-          <i class="fa-regular fa-heart"></i>
-          <span class="badge-count wishlist-count">0</span>
-        </a>
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            d<span class="logo-sun-container"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </a>
+        </div>
 
-        <button class="action-btn" onclick="openMiniCartDrawer()">
-          <i class="fa-solid fa-shopping-bag"></i>
-          <span class="badge-count cart-count">0</span>
-        </button>
-
-        <button class="action-btn theme-toggle-btn">
-          <i class="fa-regular fa-moon"></i>
-          <i class="fa-regular fa-sun"></i>
-        </button>
-
-        <a href="my-account.html" class="action-btn">
-          <i class="fa-regular fa-user"></i>
-        </a>
-
-        <button class="action-btn mobile-nav-toggle" id="mobile-menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="New!">
+                      </div>
+                      <span class="category-card-title">New!</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?formulation=Mineral" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                      </div>
+                      <span class="category-card-title">Mineral</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Men" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Men">
+                      </div>
+                      <span class="category-card-title">Men</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Face%20%26%20Lip" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/unseen_sunscreen.jpg" alt="Face & Lip">
+                      </div>
+                      <span class="category-card-title">Face & Lip</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Makeup" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/glowscreen.jpg" alt="Makeup">
+                      </div>
+                      <span class="category-card-title">Makeup</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?category=Sets%20%26%20Gifts" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Sets & Gifts">
+                      </div>
+                      <span class="category-card-title">Sets & Gifts</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Body" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Body">
+                      </div>
+                      <span class="category-card-title">Body</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Kids" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/play_lotion.jpg" alt="Kids & Family">
+                      </div>
+                      <span class="category-card-title">Kids & Family</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?concern=Gifting" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/body_mist.jpg" alt="Group Gifting">
+                      </div>
+                      <span class="category-card-title">Group Gifting</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Shop All</a>
+              </div>
+            </div>
+          </li><li class="nav-item"><a href="shop.html" class="nav-link">Bestsellers</a></li>
+                              <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/body_mist.jpg" alt="PLAY Body Mist Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=body_mist" class="spotlight-title-link">
+                    <span>Reapply with PLAY Body Mist SPF 50</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Lotion" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/play_lotion.jpg" alt="Lotion & Moisturizer">
+                        </div>
+                        <span class="category-card-title">Lotion & Moisturizer</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Stick" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Stick">
+                        </div>
+                        <span class="category-card-title">Stick</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Lip" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Lip">
+                        </div>
+                        <span class="category-card-title">Lip</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Spray" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/body_mist.jpg" alt="Spray">
+                        </div>
+                        <span class="category-card-title">Spray</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Serum" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/glowscreen.jpg" alt="Oil & Serum">
+                        </div>
+                        <span class="category-card-title">Oil & Serum</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?formulation=Mineral" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/unseen_sunscreen.jpg" alt="Mineral">
+                        </div>
+                        <span class="category-card-title">Mineral</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Shop All Shop By Type</a>
+                </div>
+              </div>
+            </div>
+          </li>
+<li class="nav-item"><a href="about.html" class="nav-link">Discover</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <!-- Page Title hero -->
-  <section style="padding: 40px 0; background-color: var(--bg-secondary); border-bottom: 1px solid var(--border-color); margin-bottom: 60px;">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span style="color: var(--text-primary);">About Us</span>
-      </div>
-      <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px;">About Elevora</h1>
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop All</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Bestsellers</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">Discover</a></li>
+    </ul>
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Sunscreens..." id="mobile-search-trigger" readonly>
     </div>
-  </section>
+  </div>
 
-  <!-- About story Grid -->
-  <main class="container">
-    <div class="about-story-grid reveal-element">
-      <div class="about-story-img">
-        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800" alt="Elevora headphone creation story">
-      </div>
-      <div>
-        <span style="color: var(--accent-dark); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;">Our Brand Story</span>
-        <h2 style="font-family: Outfit; font-size: 2rem; font-weight: 800; margin-bottom: 18px; line-height: 1.3;">Elevate Your Tech Lifestyle</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem; line-height: 1.7;">Elevora was founded in 2026 with a singular, clear vision: to design and curate highly aesthetic, luxury mobile accessories that fit seamlessly into modern daily routines.</p>
-        <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.7;">We bridge the gap between utility and design elegance. By prioritizing high-grade raw components, advanced power safety certifications, and clean geometric designs, our gadgets act as statements of fashion as much as blocks of high performance.</p>
-        <a href="shop.html" class="btn btn-primary" style="width: auto;">Shop The Catalog</a>
-      </div>
-    </div>
+  <div class="overlay" id="site-overlay"></div>
 
-    <!-- Core Values -->
-    <section class="reveal-element">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-family: Outfit; font-size: 2rem; font-weight: 800;">Our Core Values</h2>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">The principles guiding our designs and customer support pipelines.</p>
+  <!-- About Page Content -->
+  <main>
+    <!-- Story Hero -->
+    <section class="section-padding" style="background-color: var(--color-primary); color: var(--text-light); text-align: center; position:relative; overflow:hidden;">
+      <div class="container" style="position:relative; z-index:2;">
+        <span class="hero-tag" style="background-color:var(--color-secondary);">Our Mission</span>
+        <h1 style="font-size: 48px; font-weight:800; text-transform:uppercase; margin-bottom:16px; color:var(--text-light) !important;">Why Dopahr?</h1>
+        <p style="font-size:18px; max-width:700px; margin: 0 auto; line-height:1.6; opacity:0.95;">
+          "Dopahr" is the Hindi word for the afternoon—the time of day when the sun rides highest in the sky and UV levels surge to their peak. That's when your skin needs protection most. We built Dopahr to deliver weightless, premium, invisible shield formulas that turn daily suncare into a delightful ritual.
+        </p>
+      </div>
+      <div style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.15); z-index:1;"></div>
+    </section>
+
+    <!-- Suncare Science & The Promise -->
+    <section class="section-padding container">
+      <div class="discover-grid" style="align-items: flex-start; margin-bottom: 60px;">
+        <div class="discover-content">
+          <h2 style="font-size:32px; font-weight:800; text-transform:uppercase; margin-bottom:20px; color:var(--color-secondary);">The Science of Suncare</h2>
+          <p>Many people think sunscreen is only for hot beach days. In reality, UV rays penetrate clouds and glass daily, causing premature aging, cell damage, and dehydration.</p>
+          <p style="margin-top:12px;">At Dopahr, we focus on broad-spectrum filters. This means our sunscreens shield you from both:</p>
+          <ul style="margin: 20px 0; padding-left: 20px; color: var(--text-secondary);">
+            <li style="margin-bottom:10px;"><strong>UVA Rays (Aging):</strong> Long wavelengths that penetrate deep into the dermis, breaking down collagen and causing wrinkles.</li>
+            <li style="margin-bottom:10px;"><strong>UVB Rays (Burning):</strong> Shorter wavelengths that affect the outer layer of skin, causing sunburns and redness.</li>
+          </ul>
+          <p>Our formulas also include blue-light filters to shield skin from screens (HEV light) and pollution (antioxidants).</p>
+        </div>
+        <div class="discover-image">
+          <img src="assets/images/hero_bg.jpg" alt="UV Sunlight protection schematic">
+        </div>
       </div>
 
-      <div class="about-values-grid">
-        <div class="value-card">
-          <i class="fa-solid fa-cube value-icon"></i>
-          <h3 style="font-family: Outfit; font-size: 1.15rem; margin-bottom: 12px;">Luxury Minimalism</h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">No unnecessary layers. Sleek matte blocks, clean lines, and soft palettes matching the modern professional.</p>
+      <div class="discover-grid" style="align-items: flex-start;">
+        <div class="discover-image" style="order:2;">
+          <img src="assets/images/hero_bg.jpg" alt="skincare ingredients layout" style="filter: grayscale(1) invert(0.1);">
         </div>
-        <div class="value-card">
-          <i class="fa-solid fa-shield-check value-icon"></i>
-          <h3 style="font-family: Outfit; font-size: 1.15rem; margin-bottom: 12px;">Premium Quality</h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Aerospace-grade titanium, dual-layer dacron shielding, and smart lithium protection safety grids.</p>
+        <div class="discover-content" style="order:1;">
+          <h2 style="font-size:32px; font-weight:800; text-transform:uppercase; margin-bottom:20px; color:var(--color-secondary);">The Dopahr Promise</h2>
+          <p>We believe sunscreen should feel like high-end skincare. No chalky textures, no oily films, and absolutely no artificial fragrances.</p>
+          
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:30px;">
+            <div style="display:flex; gap:12px;">
+              <i class="fas fa-check-circle" style="color:var(--color-accent); font-size:20px; margin-top:4px;"></i>
+              <div>
+                <h4 style="font-size:16px; margin-bottom:4px;">100% Invisible</h4>
+                <p style="font-size:12px; color:var(--text-secondary);">Zero white cast, engineered to blend transparently on every skin tone.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <i class="fas fa-check-circle" style="color:var(--color-accent); font-size:20px; margin-top:4px;"></i>
+              <div>
+                <h4 style="font-size:16px; margin-bottom:4px;">Reef Safe</h4>
+                <p style="font-size:12px; color:var(--text-secondary);">Octinoxate and Oxybenzone free to protect oceans and coral reefs.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <i class="fas fa-check-circle" style="color:var(--color-accent); font-size:20px; margin-top:4px;"></i>
+              <div>
+                <h4 style="font-size:16px; margin-bottom:4px;">Cruelty Free</h4>
+                <p style="font-size:12px; color:var(--text-secondary);">No animal testing, certified vegan ingredients only.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px;">
+              <i class="fas fa-check-circle" style="color:var(--color-accent); font-size:20px; margin-top:4px;"></i>
+              <div>
+                <h4 style="font-size:16px; margin-bottom:4px;">Derm Tested</h4>
+                <p style="font-size:12px; color:var(--text-secondary);">Dermatologist certified, non-comedogenic, safe for sensitive skin.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="value-card">
-          <i class="fa-solid fa-globe value-icon"></i>
-          <h3 style="font-family: Outfit; font-size: 1.15rem; margin-bottom: 12px;">Global Accessibility</h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Fast logistics hubs supporting reliable shipping to over 150 countries with active routing codes.</p>
-        </div>
+      </div>
+    </section>
+
+    <!-- SPF Finder Promotion -->
+    <section class="section-padding" style="background-color: var(--bg-secondary); text-align: center;">
+      <div class="container" style="max-width:600px;">
+        <h2 style="font-size:32px; font-weight:800; text-transform:uppercase; margin-bottom:12px;">Let's Find Your Shield</h2>
+        <p style="color:var(--text-secondary); margin-bottom:24px;">Don't let the afternoon sun catch you off guard. Take our quick SPF finder quiz and discover your ultimate protection partner.</p>
+        <a href="quiz.html" class="btn btn-primary">Start the Quiz</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-top">
-      <div class="footer-column footer-about">
-        <a href="index.html" class="logo">
-          <span>ELEVORA</span><span class="logo-dot"></span>
-        </a>
-        <p>Curating premium smart gadgets and mobile power essentials that match modern digital lifestyles.</p>
-      </div>
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="shop.html">All Products</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ Desk</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About Brand</a></li>
-        </ul>
-      </div>
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
     </div>
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Elevora. All rights reserved. Premium Electronics Dropshipping.</p>
-    </div>
-  </footer>
-
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
-    <div class="cart-drawer">
-      <div class="cart-drawer-header">
-        <h4 class="cart-drawer-title">Your Cart</h4>
-        <button class="close-drawer-btn" onclick="closeMiniCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
       </div>
-      <div class="cart-drawer-items" id="cart-drawer-items"></div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
     </div>
   </div>
 
-  <script src="js/products-data.js"></script>
-  <script src="js/darkmode.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/wishlist.js"></script>
-  <script src="js/search.js"></script>
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search sunscreens (e.g. Unseen, Glow, Spray)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-info-logo">
+            d<span class="logo-sun-container" style="width:24px; height:24px;"><svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="8" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="16" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2.5" /><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2.5" /></svg></span>pahr
+          </div>
+          <p class="footer-info-desc">Dopahr protects your skin when the afternoon heat is at its strongest. Clean, dermatologist-tested, lightweight sunscreens.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop SPFs</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?category=Face%20%26%20Lip">Face Sunscreen</a></li>
+            <li><a href="shop.html?category=Body">Body Suncare</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quiz.html">SPF Finder Quiz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dopahr Skincare. All rights reserved. Designed for optimal afternoon skin protection.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Search elements bindings
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
+  </script>
 </body>
 </html>
+
