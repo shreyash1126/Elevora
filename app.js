@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dopahr SUNSCREEN & SKINCARE BRAND - GLOBAL APPLICATION JS
+   Elevora PREMIUM ELECTRONICS BRAND - GLOBAL APPLICATION JS
    Handles: Cart, Search, Theme Switching, Slider, and Dynamic Rendering
    ========================================================================== */
 
@@ -180,7 +180,7 @@ function initSearch() {
             </div>
             <div class="search-result-info">
               <h4>${p.name}</h4>
-              <p>${p.type} • SPF ${p.spf} • $${p.price.toFixed(2)}</p>
+              <p>${p.type} • Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''} • $${p.price.toFixed(2)}</p>
             </div>
           </a>
         `).join('')}
@@ -266,7 +266,7 @@ let cart = [];
 
 function initCart() {
   // Load Cart from localStorage
-  const savedCart = localStorage.getItem('Dopahr_cart');
+  const savedCart = localStorage.getItem('Elevora_cart');
   if (savedCart) {
     try {
       cart = JSON.parse(savedCart);
@@ -406,7 +406,7 @@ window.addToCart = function(productId, qty = 1, showDrawer = true) {
     cart.push({ id: productId, quantity: qty });
   }
 
-  localStorage.setItem('Dopahr_cart', JSON.stringify(cart));
+  localStorage.setItem('Elevora_cart', JSON.stringify(cart));
   updateCartUI();
   
   const product = products.find(p => p.id === productId);
@@ -430,14 +430,14 @@ function adjustQuantity(id, delta) {
   if (item.quantity <= 0) {
     removeFromCart(id);
   } else {
-    localStorage.setItem('Dopahr_cart', JSON.stringify(cart));
+    localStorage.setItem('Elevora_cart', JSON.stringify(cart));
     updateCartUI();
   }
 }
 
 function removeFromCart(id) {
   cart = cart.filter(item => item.id !== id);
-  localStorage.setItem('Dopahr_cart', JSON.stringify(cart));
+  localStorage.setItem('Elevora_cart', JSON.stringify(cart));
   updateCartUI();
   showToast("Removed item from bag.");
 }
@@ -497,7 +497,7 @@ function renderFeaturedProducts() {
         </div>
         <div class="product-card-footer">
           <div class="product-card-price">$${p.price.toFixed(2)}</div>
-          <span class="product-card-spf">SPF ${p.spf}</span>
+          <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
         </div>
       </div>
     </div>
@@ -567,10 +567,7 @@ function initShopPage() {
 
     if (activeFilters.spf.length > 0) {
       filtered = filtered.filter(p => {
-        if (activeFilters.spf.includes("50+") && p.spf >= 50) return true;
-        if (activeFilters.spf.includes("40") && p.spf === 40) return true;
-        if (activeFilters.spf.includes("30") && p.spf === 30) return true;
-        return false;
+        return activeFilters.spf.includes(String(p.spf));
       });
     }
 
@@ -629,7 +626,7 @@ function initShopPage() {
           </div>
           <div class="product-card-footer">
             <div class="product-card-price">$${p.price.toFixed(2)}</div>
-            <span class="product-card-spf">SPF ${p.spf}</span>
+            <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
           </div>
         </div>
       </div>
@@ -675,10 +672,10 @@ function initProductDetailsPage() {
   }
 
   // SEO updates
-  document.title = `${product.name} | Dopahr Sunscreen & Skincare`;
+  document.title = `${product.name} | Elevora Electronics`;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
-    metaDesc.setAttribute('content', `${product.tagline} Buy now at Dopahr Sunscreen & Skincare Products website.`);
+    metaDesc.setAttribute('content', `${product.tagline} Buy now at Elevora Electronics website.`);
   }
 
   // Render Product Page Info
@@ -780,7 +777,7 @@ function initProductDetailsPage() {
           </div>
           <div class="product-card-footer">
             <div class="product-card-price">$${p.price.toFixed(2)}</div>
-            <span class="product-card-spf">SPF ${p.spf}</span>
+            <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
           </div>
         </div>
       </div>
@@ -896,7 +893,7 @@ function initQuizPage() {
             <img src="${recommendedProduct.image}" alt="${recommendedProduct.name}">
           </div>
           <h3 class="quiz-result-title">${recommendedProduct.name}</h3>
-          <p class="quiz-result-desc">${recommendedProduct.tagline} Based on your answers, this sunscreen aligns best with your daily skin requirements, skin tone, and activity type.</p>
+          <p class="quiz-result-desc">${recommendedProduct.tagline} Based on your answers, this premium device aligns best with your productivity, style, and tech requirements.</p>
           <div style="font-size:24px; font-weight:800; margin-bottom:24px;">$${recommendedProduct.price.toFixed(2)}</div>
           <div style="display:flex; gap:16px; justify-content:center;">
             <button class="btn btn-primary" onclick="addToCart('${recommendedProduct.id}', 1, true)">Add to Bag</button>
@@ -970,7 +967,7 @@ function initCheckoutPage() {
 
       // Clear cart
       cart = [];
-      localStorage.removeItem('Dopahr_cart');
+      localStorage.removeItem('Elevora_cart');
       updateCartUI();
 
       // Render Order Success Screen
@@ -979,7 +976,7 @@ function initCheckoutPage() {
           <i class="fas fa-check-circle" style="font-size:72px; color:var(--color-accent); margin-bottom:24px;"></i>
           <h2 style="font-size:36px; font-weight:800; text-transform:uppercase; margin-bottom:16px;">Order Confirmed!</h2>
           <p style="font-size:16px; color:var(--text-secondary); max-width:600px; margin: 0 auto 30px;">
-            Thank you for shopping with Dopahr. Your sunscreen protection pack is on its way to shield your skin from the intense afternoon rays! Your order number is #DPH-${Math.floor(100000 + Math.random() * 900000)}.
+            Thank you for shopping with Elevora. Your premium electronic order is on its way to upgrade your tech experience! Your order number is #ELV-${Math.floor(100000 + Math.random() * 900000)}.
           </p>
           <a href="index.html" class="btn btn-primary">Go to Home</a>
         </div>

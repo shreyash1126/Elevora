@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dopahr SUNSCREEN & SKINCARE BRAND - GLOBAL STYLESHEET
+   Elevora PREMIUM ELECTRONICS BRAND - GLOBAL STYLESHEET
    Features: Light/Dark Theme variables, transitions, animations, responsiveness
    ========================================================================== */
 
@@ -7,43 +7,43 @@
 
 /* --- Theme Variables --- */
 :root {
-  /* Light Theme (Default) */
-  --bg-primary: #FCFAF7;
-  --bg-secondary: #F4F0EA;
+  /* Light Theme (Default) - Sleek Premium Tech */
+  --bg-primary: #F8F9FC;
+  --bg-secondary: #F0F2F8;
   --bg-card: #FFFFFF;
-  --text-primary: #1A1A1A;
-  --text-secondary: #5A5A5A;
+  --text-primary: #0F111A;
+  --text-secondary: #5C627A;
   --text-light: #FFFFFF;
-  --color-primary: #FFF200; /* Sunny Yellow */
-  --color-secondary: #0020C2; /* Royal Blue */
-  --color-secondary-hover: #00178E;
-  --color-accent: #E58E26;
-  --border-color: #E2DDD5;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
-  --border-radius: 8px;
-  --border-radius-lg: 16px;
+  --color-primary: #0052FF; /* Electric Tech Blue */
+  --color-secondary: #0F111A; /* Matte Black */
+  --color-secondary-hover: #1A1D2C;
+  --color-accent: #00D2FF; /* Vibrant Cyan */
+  --border-color: #E2E6EF;
+  --shadow-sm: 0 2px 8px rgba(0, 52, 255, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 17, 26, 0.06);
+  --shadow-lg: 0 16px 48px rgba(15, 17, 26, 0.1);
+  --border-radius: 10px;
+  --border-radius-lg: 20px;
   --transition-speed: 0.3s;
   --header-height: 120px;
 }
 
 [data-theme="dark"] {
-  /* Dark Theme */
-  --bg-primary: #0F1016;
-  --bg-secondary: #171923;
-  --bg-card: #1F2232;
-  --text-primary: #F5F6FA;
-  --text-secondary: #A0A5C0;
-  --text-light: #1A1A1A;
-  --color-primary: #5D3FD3; /* Deep Purple / Electric Indigo */
-  --color-secondary: #FFF200; /* Sunny Yellow Accent */
-  --color-secondary-hover: #E6D900;
-  --color-accent: #F4D068;
-  --border-color: #2F334D;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.5);
+  /* Dark Theme - Futuristic Gaming Cyberpunk */
+  --bg-primary: #08090E;
+  --bg-secondary: #0F111A;
+  --bg-card: #141724;
+  --text-primary: #F0F2F8;
+  --text-secondary: #8A92B2;
+  --text-light: #08090E;
+  --color-primary: #0052FF; /* Electric Tech Blue */
+  --color-secondary: #F0F2F8; /* Bright Tech Silver */
+  --color-secondary-hover: #D0D4E4;
+  --color-accent: #00D2FF; /* Vibrant Cyan */
+  --border-color: #1E2235;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
 }
 
 /* --- Base Resets --- */
@@ -2684,8 +2684,8 @@ img {
 }
 
 .badge-yellow {
-  background-color: #FFF200; /* Sunny yellow badge matching Supergoop */
-  color: #0020C2; /* Royal blue text */
+  background-color: var(--color-primary);
+  color: var(--text-light);
 }
 
 /* Allure Red Award Badge */
@@ -2818,7 +2818,7 @@ img {
 
 /* --- Yellow Category Slider Section --- */
 .category-slider-section {
-  background-color: #FFF200 !important; /* Sunny yellow background matching screenshot */
+  background-color: var(--bg-secondary) !important;
   padding: 40px 0;
   width: 100%;
   overflow: hidden;
@@ -2896,7 +2896,7 @@ img {
   font-weight: 800;
   font-size: 13px;
   text-transform: uppercase;
-  color: #0020C2 !important; /* Bold royal blue text */
+  color: var(--text-primary) !important;
   letter-spacing: 0.05em;
   text-align: left;
 }
@@ -2905,19 +2905,19 @@ img {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #FFFFFF;
+  background-color: var(--bg-card);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  color: #0020C2;
+  color: var(--color-primary);
   transition: transform var(--transition-speed) ease;
 }
 
 .category-slide-card:hover .label-arrow {
   transform: translateX(3px);
-  background-color: #0020C2;
-  color: #FFFFFF;
+  background-color: var(--color-primary);
+  color: var(--text-light);
 }
 
 /* Arrows styling */
@@ -3089,14 +3089,14 @@ img {
   justify-content: center;
   align-items: flex-end;
   padding-top: 60px;
-  border-bottom: 25px solid var(--color-primary); /* Bold yellow bottom bar */
+  border-bottom: 25px solid var(--color-primary); /* Bold primary bottom bar */
   margin-top: 60px;
 }
 
 .giant-brand-text {
   font-family: 'Pacifico', cursive;
   font-size: 22vw; /* Made even larger as requested */
-  color: var(--color-primary); /* Dopahr signature yellow */
+  color: var(--color-primary); /* Elevora signature electric blue */
   line-height: 0.75;
   margin-bottom: 3.5vw; /* Lifted further upward */
   white-space: nowrap;
