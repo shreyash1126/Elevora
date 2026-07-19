@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevora Electronics | Premium Tech & Smart Devices Store</title>
+  <meta name="description" content="Discover premium, high-performance electronics and smart devices at Elevora. Shop smartphones, laptops, wireless noise-canceling headphones, smartwatches, and key accessories. Upgrade your digital lifestyle today.">
+  <meta name="keywords" content="Elevora, electronics store, premium gadgets, smartwatches, laptops, active noise canceling headphones, GaN fast chargers, 4K curved monitors">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elevora Electronics | Premium Tech & Smart Devices Store">
+  <meta property="og:description" content="Sleek, high-performance, premium smart devices at Elevora. Shop smartphones, laptops, headphones, smartwatches, and keyboards.">
+  <meta property="og:type" content="website">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for branding -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
+</head>
+<body>
+
+  <!-- 1. Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-bar-content">
+      <span>⚡ FREE SHIPPING ON ORDERS $150+!</span>
+      <span>⚡ UPGRADE YOUR DAILY PRODUCTIVITY WITH ELEVORA TECH</span>
+      <span>⚡ GET 10% OFF YOUR FIRST ORDER WITH CODE: TECH10</span>
+      <span>⚡ FREE SHIPPING ON ORDERS $150+!</span>
+      <span>⚡ UPGRADE YOUR DAILY PRODUCTIVITY WITH ELEVORA TECH</span>
+      <span>⚡ GET 10% OFF YOUR FIRST ORDER WITH CODE: TECH10</span>
+    </div>
+  </div>
+
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            ele<span class="logo-tech-container"><svg viewBox="0 0 100 100" style="width:20px; height:20px; display:inline-block; vertical-align:middle; margin:0 2px; color:var(--color-primary);"><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 10 L50 40 M50 60 L50 90 M10 50 L40 50 M60 50 L90 50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span>ora
+          </a>
+        </div>
+
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All Categories</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Mobiles%20%26%20Audio" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/smartphone.jpg" alt="Mobiles & Audio">
+                      </div>
+                      <span class="category-card-title">Mobiles & Audio</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Phones" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/smartphone.jpg" alt="Smartphones">
+                      </div>
+                      <span class="category-card-title">Smartphones</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Laptops%20%26%20Wearables" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/laptop.jpg" alt="Laptops & Wearables">
+                      </div>
+                      <span class="category-card-title">Laptops & Wearables</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Computers" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/monitor.jpg" alt="Computers & Displays">
+                      </div>
+                      <span class="category-card-title">Computers & Displays</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?type=Audio" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/headphones.jpg" alt="Audio & Speakers">
+                      </div>
+                      <span class="category-card-title">Audio & Speakers</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Accessories" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/keyboard.jpg" alt="Tech Accessories">
+                      </div>
+                      <span class="category-card-title">Tech Accessories</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Browse Full Tech Catalog</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">Bestsellers</a>
+            <!-- Mega Menu Dropdown for Bestsellers -->
+            <div class="mega-menu" style="grid-template-columns: 1fr 2fr; gap: 40px;">
+              <!-- Left side Spotlight Card -->
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%; min-height: 250px;">
+                <img src="assets/images/headphones.jpg" alt="Elevora Audio Spotlight" style="filter: brightness(0.95) contrast(1.05);">
+                <div class="mega-card-content">
+                  <h4>Elevora Sound Experience</h4>
+                  <p>True Noise-Canceling Audio</p>
+                </div>
+              </div>
+              
+              <!-- Right side Product list -->
+              <div>
+                <h4 class="mega-col-title" style="margin-bottom: 20px;">Top Selling Gadgets</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px 30px;">
+                  <a href="product.html?id=unseen" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/smartphone.jpg" alt="Apex Smartphone">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">Apex Smartphone 5G</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+                  
+                  <a href="product.html?id=glow" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/headphones.jpg" alt="SoundFlow Headphones">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">SoundFlow Headphones</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=play-lotion" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/smartwatch.jpg" alt="ChronoFit Smartwatch">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">ChronoFit Smartwatch</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=body-mist" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/speaker.jpg" alt="WaveBlast Speaker">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">WaveBlast Bluetooth Speaker</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=mattescreen" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/keyboard.jpg" alt="ClickMaster Keyboard">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">ClickMaster Keyboard</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+
+                  <a href="product.html?id=skin-tint" class="search-result-item" style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <div class="search-result-img" style="width: 40px; height: 40px;">
+                      <img src="assets/images/monitor.jpg" alt="CineVue Monitor">
+                    </div>
+                    <div style="flex-grow:1; display:flex; align-items:center; justify-content:space-between; margin-left: 10px;">
+                      <span style="font-size: 14px; font-weight:600; color:var(--text-primary);">CineVue 4K Curved Monitor</span>
+                      <i class="fas fa-chevron-right" style="font-size: 11px; color: var(--text-secondary);"></i>
+                    </div>
+                  </a>
+                </div>
+                <div style="margin-top: 24px; text-align: right;">
+                  <a href="shop.html" style="font-size:14px; font-weight:700; color:var(--color-primary); border-bottom:2px solid var(--color-primary); padding-bottom:2px;">Shop All Tech Picks</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/headphones.jpg" alt="SoundFlow Headphones Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=glow" class="spotlight-title-link">
+                    <span>Immerse Yourself in SoundFlow Headphones</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Device Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Phones" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/smartphone.jpg" alt="Phones">
+                        </div>
+                        <span class="category-card-title">Phones & Mobiles</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Wearables" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/smartwatch.jpg" alt="Wearables">
+                        </div>
+                        <span class="category-card-title">Smart Wearables</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Cameras" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/camera.jpg" alt="Cameras">
+                        </div>
+                        <span class="category-card-title">DSLR & Action Cameras</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Computers" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/laptop.jpg" alt="Computers">
+                        </div>
+                        <span class="category-card-title">Laptops & Displays</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Audio" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/earbuds.jpg" alt="Audio">
+                        </div>
+                        <span class="category-card-title">Earbuds & Speakers</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Accessories" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/keyboard.jpg" alt="Accessories">
+                        </div>
+                        <span class="category-card-title">Tech Accessories</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Explore Advanced Gear</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">Discover</a>
+            <div class="mega-menu" style="grid-template-columns: 1.5fr 1fr;">
+              <div>
+                <h4 class="mega-col-title">About Elevora</h4>
+                <ul class="mega-links" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+                  <li><a href="about.html">Our Story</a></li>
+                  <li><a href="quiz.html">Tech Recommendation Quiz</a></li>
+                  <li><a href="about.html#science">Tech Engineering</a></li>
+                  <li><a href="about.html#sustainability">Eco-Friendly Standards</a></li>
+                </ul>
+              </div>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/subscribe_banner.jpg" alt="Our Promise">
+                <div class="mega-card-content">
+                  <h4>The Elevora Promise</h4>
+                  <p>1-Year Standard Warranty</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. Mobile Hamburger Navigation Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Shop Categories <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html">All Gadgets</a></li>
+          <li><a href="shop.html?category=Mobiles%20%26%20Audio">Mobiles & Audio</a></li>
+          <li><a href="shop.html?category=Laptops%20%26%20Wearables">Laptops & Wearables</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="shop.html" class="mobile-nav-link">Bestsellers</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Device Types <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?type=Phones">Phones</a></li>
+          <li><a href="shop.html?type=Computers">Laptops & Displays</a></li>
+          <li><a href="shop.html?type=Audio">Earbuds & Speakers</a></li>
+          <li><a href="shop.html?type=Accessories">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Discover <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="quiz.html">Gadget Match Quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Elevora Tech..." id="mobile-search-trigger" readonly>
+    </div>
+  </div>
+
+  <!-- Overlay for drawers -->
+  <div class="overlay" id="site-overlay"></div>
+
+  <!-- 4. Hero Section with Auto Slider & Manual Controls -->
+  <main>
+    <section class="hero-section" id="hero-slider-section">
+      <div class="hero-slider" id="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide">
+          <img src="assets/images/hero_bg.jpg" alt="Elevora Premium Electronics Setup" class="hero-bg">
+          <div class="hero-overlay"></div>
+          <div class="container" style="position:relative; z-index:3; width:100%;">
+            <div class="hero-content">
+              <span class="hero-tag">Bestseller</span>
+              <h1 class="hero-title">Tech that Powers<br>Your Passion</h1>
+              <p class="hero-desc">Meet the Elevora Apex Smartphone 5G. Ultimate speed, professional triple cameras, and a jaw-dropping 120Hz LTPO display.</p>
+              <div style="display:flex; gap:16px;">
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                <a href="quiz.html" class="btn btn-secondary">Find Your Gear</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img src="assets/images/laptop.jpg" alt="Premium ultra-thin laptop open on desk" class="hero-bg">
+          <div class="hero-overlay"></div>
+          <div class="container" style="position:relative; z-index:3; width:100%;">
+            <div class="hero-content">
+              <span class="hero-tag" style="background-color: var(--color-accent);">Ultra Slim</span>
+              <h1 class="hero-title">Power Meets<br>Extreme Portability</h1>
+              <p class="hero-desc">Meet Elevora AirBook Slim. A featherlight quad-core laptop engineered for creators, developers, and professionals on the go.</p>
+              <div style="display:flex; gap:16px;">
+                <a href="product.html?id=sheerscreen" class="btn btn-primary">Shop AirBook</a>
+                <a href="shop.html" class="btn btn-secondary">Explore All</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img src="assets/images/headphones.jpg" alt="Wireless active noise canceling headphones" class="hero-bg" style="filter: saturate(1.2);">
+          <div class="hero-overlay"></div>
+          <div class="container" style="position:relative; z-index:3; width:100%;">
+            <div class="hero-content">
+              <span class="hero-tag">Premium Audio</span>
+              <h1 class="hero-title">Pure Audio Bliss,<br>Zero Distraction</h1>
+              <p class="hero-desc">SoundFlow Wireless Headphones with hybrid ANC, spatial 3D audio, and up to 40 hours of continuous music enjoyment.</p>
+              <div style="display:flex; gap:16px;">
+                <a href="product.html?id=glow" class="btn btn-primary">Shop SoundFlow</a>
+                <a href="shop.html" class="btn btn-secondary">View Key Specs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slider Arrows -->
+      <button class="slider-arrow prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-arrow next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+      <!-- Slider Dots -->
+      <div class="slider-dots"></div>
+    </section>
+
+    <!-- Live Brand Marquee -->
+    <section class="live-brand-marquee">
+      <div class="marquee-track">
+        <div class="marquee-list">
+          <span>ELEVATE YOUR TECH EXPERIENCE</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>1-YEAR STANDARD WARRANTY</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>FREE SHIPPING ON ORDERS $150+</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>PREMIUM CUSTOMER SUPPORT</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <!-- Repeat list for seamless loop -->
+        <div class="marquee-list" aria-hidden="true">
+          <span>ELEVATE YOUR TECH EXPERIENCE</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>1-YEAR STANDARD WARRANTY</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>FREE SHIPPING ON ORDERS $150+</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>PREMIUM CUSTOMER SUPPORT</span>
+          <svg class="marquee-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Our Picks Section -->
+    <section class="section-padding our-picks-section">
+      <div class="picks-header-container">
+        <div class="section-header">
+          <h2 class="section-title text-uppercase">Our Picks For You</h2>
+        </div>
+      </div>
+      
+      <div class="picks-carousel-container">
+          <div class="picks-row">
+            <!-- Product 1 -->
+            <div class="pick-card">
+              <a href="product.html?id=body-mist" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">IPX7 Waterproof</span>
+                  <img src="assets/images/speaker.jpg" alt="Elevora WaveBlast Speaker">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora WaveBlast Speaker</h4>
+                  <p class="pick-desc">360-degree sound with deep bass</p>
+                  <p class="pick-price">$129.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="pick-card">
+              <a href="product.html?id=play-lotion" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">Wearable</span>
+                  <img src="assets/images/smartwatch.jpg" alt="Elevora ChronoFit Smartwatch">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora ChronoFit Smartwatch</h4>
+                  <p class="pick-desc">Advanced GPS health & fitness tracker</p>
+                  <p class="pick-price">$249.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="pick-card">
+              <a href="product.html?id=unseen" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <!-- Allure Red Badge transformed to Tech Award Badge -->
+                  <div class="allure-badge">
+                    <svg viewBox="0 0 100 100" class="allure-svg">
+                      <circle cx="50" cy="50" r="48" fill="#0052FF" />
+                      <text x="50" y="32" font-family="'Outfit', sans-serif" font-weight="800" font-size="8" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">BEST OF</text>
+                      <text x="50" y="47" font-family="'Playfair Display', serif" font-weight="900" font-style="italic" font-size="14" fill="#FFFFFF" text-anchor="middle">tech</text>
+                      <text x="50" y="62" font-family="'Outfit', sans-serif" font-weight="800" font-size="8" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">AWARDS</text>
+                      <text x="50" y="73" font-family="'Outfit', sans-serif" font-weight="800" font-size="7" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.1em">GOLD WINNER</text>
+                      <text x="50" y="85" font-family="'Outfit', sans-serif" font-weight="800" font-size="10" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.05em">2026</text>
+                    </svg>
+                  </div>
+                  <img src="assets/images/smartphone.jpg" alt="Elevora Apex Smartphone">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora Apex Smartphone 5G</h4>
+                  <p class="pick-desc">Flagship speed, 120Hz LTPO display</p>
+                  <p class="pick-price">$899.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="pick-card">
+              <div class="pick-card-img-wrapper">
+                <span class="pick-badge badge-blue">Active ANC</span>
+                <a href="product.html?id=glow" class="pick-card-link">
+                  <img src="assets/images/headphones.jpg" alt="Elevora SoundFlow Headphones">
+                </a>
+              </div>
+              <div class="pick-card-info">
+                <div class="pick-rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <h4 class="pick-title">Elevora SoundFlow Headphones</h4>
+                <p class="pick-desc">Spatial audio wireless headphones</p>
+                <p class="pick-price">$299.00</p>
+                
+                <!-- Swatches for Tech Colors -->
+                <div class="swatches-section">
+                  <div class="swatches-row">
+                    <span class="swatch active" style="background-color: #1A1A1A;" title="Charcoal" data-color="Charcoal Black"></span>
+                    <span class="swatch" style="background-color: #7E7E7E;" title="Silver" data-color="Platinum Silver"></span>
+                    <span class="swatch" style="background-color: #3F51B5;" title="Indigo" data-color="Electric Indigo"></span>
+                    <span class="swatch" style="background-color: #D4AF37;" title="Gold" data-color="Tech Gold"></span>
+                  </div>
+                  <p class="swatch-label">Color: <span id="active-swatch-name">Charcoal Black</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="pick-card">
+              <a href="product.html?id=mattescreen" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">Mechanical</span>
+                  <img src="assets/images/keyboard.jpg" alt="Elevora ClickMaster Keyboard">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora ClickMaster Keyboard</h4>
+                  <p class="pick-desc">Tactile mechanical brown switches & RGB</p>
+                  <p class="pick-price">$149.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="pick-card">
+              <a href="product.html?id=skin-tint" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">Curved 4K</span>
+                  <img src="assets/images/monitor.jpg" alt="Elevora CineVue Monitor">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora CineVue Curved Monitor</h4>
+                  <p class="pick-desc">32" QHD curved workspace display</p>
+                  <p class="pick-price">$449.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="pick-card">
+              <a href="product.html?id=sheerscreen" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">Ultra Slim</span>
+                  <img src="assets/images/laptop.jpg" alt="Elevora AirBook Slim">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora AirBook Slim Laptop</h4>
+                  <p class="pick-desc">14" FHD IPS metal notebook</p>
+                  <p class="pick-price">$999.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="pick-card">
+              <a href="product.html?id=glow-stick" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">GaN 100W</span>
+                  <img src="assets/images/charger.jpg" alt="Elevora PowerDock Charger">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora PowerDock GaN Charger</h4>
+                  <p class="pick-desc">Multi-port fast wall charger dock</p>
+                  <p class="pick-price">$49.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="pick-card">
+              <a href="product.html?id=play-gel" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">ANC Earbuds</span>
+                  <img src="assets/images/earbuds.jpg" alt="Elevora Pods Pro Earbuds">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora Pods Pro Earbuds</h4>
+                  <p class="pick-desc">True wireless active sport earbuds</p>
+                  <p class="pick-price">$179.00</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="pick-card">
+              <a href="product.html?id=lip-shield" class="pick-card-link">
+                <div class="pick-card-img-wrapper">
+                  <span class="pick-badge badge-blue">Focus DSLR</span>
+                  <img src="assets/images/camera.jpg" alt="Elevora Focus DSLR Camera">
+                </div>
+                <div class="pick-card-info">
+                  <div class="pick-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="pick-title">Elevora Focus DSLR Camera</h4>
+                  <p class="pick-desc">Professional high-res kit with lens</p>
+                  <p class="pick-price">$699.00</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Slider Next Arrow overlay -->
+          <button class="picks-next-btn" aria-label="Next Products"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- 5. Shop by Category Section (Category Slider) -->
+    <section class="category-slider-section">
+      <div class="category-slider-wrapper">
+        <!-- Scroll Track -->
+        <div class="category-slider-track">
+          <!-- Card 1 -->
+          <div class="category-slide-card">
+            <a href="shop.html?type=Phones">
+              <div class="category-slide-img-box">
+                <img src="assets/images/smartphone.jpg" alt="Smartphones">
+              </div>
+              <div class="category-slide-label">
+                <span>Smartphones</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="category-slide-card">
+            <a href="shop.html?type=Computers">
+              <div class="category-slide-img-box">
+                <img src="assets/images/laptop.jpg" alt="Laptops">
+              </div>
+              <div class="category-slide-label">
+                <span>Laptops</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="category-slide-card">
+            <a href="shop.html?type=Audio">
+              <div class="category-slide-img-box">
+                <img src="assets/images/headphones.jpg" alt="Audio & Speakers">
+              </div>
+              <div class="category-slide-label">
+                <span>Audio & Speakers</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="category-slide-card">
+            <a href="shop.html?type=Accessories">
+              <div class="category-slide-img-box">
+                <img src="assets/images/keyboard.jpg" alt="Accessories">
+              </div>
+              <div class="category-slide-label">
+                <span>Accessories</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="category-slide-card">
+            <a href="shop.html?type=Cameras">
+              <div class="category-slide-img-box">
+                <img src="assets/images/camera.jpg" alt="Cameras">
+              </div>
+              <div class="category-slide-label">
+                <span>Cameras</span>
+                <span class="label-arrow"><i class="fas fa-chevron-right"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slider Arrows -->
+        <button class="cat-slider-arrow cat-prev" aria-label="Previous Category"><i class="fas fa-chevron-left"></i></button>
+        <button class="cat-slider-arrow cat-next" aria-label="Next Category"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- 6b. Subscribe & Save Banner Section -->
+    <section class="section-padding subscribe-banner-section">
+      <div class="container">
+        <div class="subscribe-banner-box">
+          <div class="subscribe-banner-image">
+            <img src="assets/images/subscribe_banner.jpg" alt="Elevora Tech Collection">
+          </div>
+          <div class="subscribe-banner-card">
+            <span class="sub-badge">Never Run Out</span>
+            <h3 class="sub-title">TECH REFILLS</h3>
+            <p class="sub-text">Join the Elevora Tech Club. Unlock 10% + free express shipping with our smart subscription refills.</p>
+            <a href="shop.html" class="btn btn-subscribe">Subscribe Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Brand Discovery (SPF Quiz Spotlight) -->
+    <section class="section-padding" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="discover-grid">
+          <div class="discover-image">
+            <img src="assets/images/subscribe_banner.jpg" alt="Elevora Premium Gadgets" style="filter: brightness(0.95);">
+          </div>
+          <div class="discover-content">
+            <span class="hero-tag" style="background-color: var(--color-accent);">Interactive Finder</span>
+            <h3>Find Your Perfect Gadget in 60 Seconds</h3>
+            <p>Not sure which device fits your workflow and budget? Take our quick tech match quiz and discover the ideal configuration for your day-to-day productivity.</p>
+            
+            <div class="discover-features">
+              <div class="discover-feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                  <h4>Tailored Specifications</h4>
+                  <p>Matched to your workload, storage, and screen needs.</p>
+                </div>
+              </div>
+              <div class="discover-feature-item">
+                <i class="fas fa-feather-alt"></i>
+                <div>
+                  <h4>Tested Performance</h4>
+                  <p>Reliable battery life and hardware specs handpicked for you.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="quiz.html" class="btn btn-primary">Take the Tech Quiz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Newsletter Sign Up -->
+    <section class="section-padding newsletter-section">
+      <div class="container">
+        <div class="newsletter-box">
+          <h2>Join the Elevora Tech Club</h2>
+          <p>Subscribe to receive hardware releases, exclusive early access codes, and 10% off your first purchase.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required aria-label="Email address for newsletter sign-up">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Cart Slide Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <!-- Dynamic Items Container -->
+    <div class="cart-items" id="cart-items-list"></div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- 10. Search Fullscreen Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search tech (e.g. Apex, SoundFlow, AirBook)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
+  <!-- 11. Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-info-logo">
+            ele<span class="logo-tech-container" style="width:24px; height:24px; display:inline-block; vertical-align:middle; margin-left: 2px;"><svg viewBox="0 0 100 100" style="width:100%; height:100%; color:var(--color-primary);"><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 10 L50 40 M50 60 L50 90 M10 50 L40 50 M60 50 L90 50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span>ora
+          </div>
+          <p class="footer-info-desc">Elevora designs premium, high-performance electronics and smart devices to elevate your daily digital lifestyle.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop Laptops & Devices</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?category=Mobiles%20%26%20Audio">Mobiles & Audio</a></li>
+            <li><a href="shop.html?category=Laptops%20%26%20Wearables">Laptops & Wearables</a></li>
+            <li><a href="shop.html?type=Accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quiz.html">Tech Match Quiz</a></li>
+            <li><a href="about.html#science">Support FAQ</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+            <li><a href="about.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SEO Keywords</h4>
+          <ul class="footer-links" style="font-size:12px; color:var(--text-secondary);">
+            <li>Elevora Premium Electronics</li>
+            <li>Best Smart Devices Website</li>
+            <li>Sleek High-End Tech Laptops</li>
+            <li>GaN Fast Chargers USB-C</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elevora Electronics. All rights reserved.</p>
+        <div class="footer-payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-stripe"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Giant Decorative Branding Logo -->
+    <div class="giant-brand-banner">
+      <div class="giant-brand-text">elevora!</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Link search elements to dynamic app.js modal
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    
+    // Add newsletter validation
+    document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for subscribing to Elevora! Use code TECH10 for 10% off your purchase.');
+      e.target.reset();
+    });
+
+    // Handle Lip Balm Swatches on Home Page
+    document.querySelectorAll('.swatch').forEach(swatch => {
+      swatch.addEventListener('click', function() {
+        this.parentNode.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+        this.classList.add('active');
+        const colorName = this.getAttribute('data-color');
+        document.getElementById('active-swatch-name').textContent = colorName;
+      });
+    });
+
+    // Category Slider horizontal scroll navigation
+    const catTrack = document.querySelector('.category-slider-track');
+    document.querySelector('.cat-prev').addEventListener('click', () => {
+      catTrack.scrollBy({ left: -404, behavior: 'smooth' });
+    });
+    document.querySelector('.cat-next').addEventListener('click', () => {
+      catTrack.scrollBy({ left: 404, behavior: 'smooth' });
+    });
+
+    // Picks Slider horizontal scroll navigation
+    const picksTrack = document.querySelector('.picks-row');
+    document.querySelector('.picks-next-btn').addEventListener('click', () => {
+      if (picksTrack.scrollLeft + picksTrack.clientWidth >= picksTrack.scrollWidth - 10) {
+        picksTrack.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        picksTrack.scrollBy({ left: 414, behavior: 'smooth' });
+      }
+    });
+
+    // Create a virtual button for trigger in JS if needed
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
+  </script>
+</body>
+</html>
+

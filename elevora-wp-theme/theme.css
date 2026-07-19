@@ -1,0 +1,169 @@
+/* ==========================================================================
+   ELEVORA ELECTRONICS - MODULAR THEME DESIGN SYSTEM (theme.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* --- 1. DESIGN TOKENS & CSS VARIABLES --- */
+:root {
+  /* Brand Colors */
+  --elevora-blue: #0052FF;        /* Primary Electric Tech Blue */
+  --elevora-cyan: #00D2FF;        /* Vibrant Cyan Accent */
+  --elevora-black: #0F111A;       /* Matte Obsidian Black */
+  --elevora-dark-hover: #1A1D2C;
+  --elevora-white: #FFFFFF;
+
+  /* Theme Colors (Light Default) */
+  --bg-primary: #F8F9FC;
+  --bg-secondary: #F0F2F8;
+  --bg-card: #FFFFFF;
+  --text-primary: #0F111A;
+  --text-secondary: #5C627A;
+  --text-light: #FFFFFF;
+  --color-primary: var(--elevora-blue);
+  --color-secondary: var(--elevora-black);
+  --color-secondary-hover: var(--elevora-dark-hover);
+  --color-accent: var(--elevora-cyan);
+  --border-color: #E2E6EF;
+
+  /* Typography */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Spacing & Radii */
+  --border-radius-sm: 6px;
+  --border-radius: 10px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 52, 255, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 17, 26, 0.06);
+  --shadow-lg: 0 16px 48px rgba(15, 17, 26, 0.1);
+  --shadow-glow: 0 0 20px rgba(0, 210, 255, 0.4);
+
+  /* Animations & Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: 0.5s ease;
+}
+
+/* --- 2. DARK MODE THEME --- */
+[data-theme="dark"] {
+  --bg-primary: #08090E;
+  --bg-secondary: #0F111A;
+  --bg-card: #141724;
+  --text-primary: #F0F2F8;
+  --text-secondary: #8A92B2;
+  --text-light: #08090E;
+  --color-primary: var(--elevora-blue);
+  --color-secondary: #F0F2F8;
+  --color-secondary-hover: #D0D4E4;
+  --color-accent: var(--elevora-cyan);
+  --border-color: #1E2235;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+}
+
+/* --- 3. REUSABLE COMPONENT UTILITIES --- */
+
+/* Buttons */
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--border-radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.theme-btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 52, 255, 0.3);
+}
+
+.theme-btn-primary:hover {
+  background-color: #0042CC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 52, 255, 0.4);
+}
+
+.theme-btn-secondary {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.theme-btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--color-primary);
+}
+
+.theme-btn-accent {
+  background-color: var(--color-accent);
+  color: #000000;
+  font-weight: 800;
+}
+
+.theme-btn-accent:hover {
+  filter: brightness(1.1);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Badges */
+.theme-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--border-radius-sm);
+}
+
+.theme-badge-blue {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.theme-badge-cyan {
+  background-color: var(--color-accent);
+  color: #000000;
+}
+
+.theme-badge-dark {
+  background-color: var(--color-secondary);
+  color: var(--bg-primary);
+}
+
+/* Product Cards */
+.theme-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 20px;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.theme-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glassmorphism Panel */
+.theme-glass {
+  background: rgba(15, 17, 26, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}

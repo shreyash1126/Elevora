@@ -1,0 +1,48 @@
+{
+  "name": "Elevora Electronics Premium Theme",
+  "version": "2.0.0",
+  "author": "Elevora Team",
+  "description": "High-end tech design system featuring electric blue, matte black, vibrant cyan, dark mode support, and glassmorphism UI.",
+  "colors": {
+    "primary": {
+      "name": "Electric Tech Blue",
+      "hex": "#0052FF",
+      "rgb": "rgb(0, 82, 255)"
+    },
+    "secondary": {
+      "name": "Matte Obsidian Black",
+      "hex": "#0F111A",
+      "rgb": "rgb(15, 17, 26)"
+    },
+    "accent": {
+      "name": "Vibrant Cyan",
+      "hex": "#00D2FF",
+      "rgb": "rgb(0, 210, 255)"
+    },
+    "neutral": {
+      "lightBackground": "#F8F9FC",
+      "darkBackground": "#08090E",
+      "lightCard": "#FFFFFF",
+      "darkCard": "#141724",
+      "lightBorder": "#E2E6EF",
+      "darkBorder": "#1E2235"
+    }
+  },
+  "typography": {
+    "fontFamilyPrimary": "Outfit, sans-serif",
+    "fontFamilySecondary": "Playfair Display, serif",
+    "weights": [300, 400, 500, 600, 700, 800]
+  },
+  "radii": {
+    "small": "6px",
+    "medium": "10px",
+    "large": "20px",
+    "pill": "9999px"
+  },
+  "shadows": {
+    "small": "0 2px 8px rgba(0, 52, 255, 0.04)",
+    "medium": "0 8px 24px rgba(15, 17, 26, 0.06)",
+    "large": "0 16px 48px rgba(15, 17, 26, 0.1)",
+    "glow": "0 0 20px rgba(0, 210, 255, 0.4)"
+  }
+}

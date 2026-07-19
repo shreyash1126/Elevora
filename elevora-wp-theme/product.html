@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Elevora Electronics</title>
+  <meta name="description" content="View product specifications, key features, user guides, and customer reviews. Shop premium smart tech and gadgets at Elevora.">
+  <meta name="keywords" content="product specifications, key features, hardware details, premium gadgets, Elevora Electronics">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
+</head>
+<body>
+
+  <!-- 1. Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-bar-content">
+      <span>⚡ FREE SHIPPING ON ORDERS $150+!</span>
+      <span>⚡ UPGRADE YOUR DAILY PRODUCTIVITY WITH ELEVORA TECH</span>
+      <span>⚡ GET 10% OFF YOUR FIRST ORDER WITH CODE: TECH10</span>
+      <span>⚡ FREE SHIPPING ON ORDERS $150+!</span>
+    </div>
+  </div>
+
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            ele<span class="logo-tech-container"><svg viewBox="0 0 100 100" style="width:20px; height:20px; display:inline-block; vertical-align:middle; margin:0 2px; color:var(--color-primary);"><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 10 L50 40 M50 60 L50 90 M10 50 L40 50 M60 50 L90 50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span>ora
+          </a>
+        </div>
+
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All Categories</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Mobiles%20%26%20Audio" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/smartphone.jpg" alt="Mobiles & Audio">
+                      </div>
+                      <span class="category-card-title">Mobiles & Audio</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Phones" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/smartphone.jpg" alt="Smartphones">
+                      </div>
+                      <span class="category-card-title">Smartphones</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Laptops%20%26%20Wearables" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/laptop.jpg" alt="Laptops & Wearables">
+                      </div>
+                      <span class="category-card-title">Laptops & Wearables</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Computers" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/laptop.jpg" alt="Laptops">
+                      </div>
+                      <span class="category-card-title">Laptops</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?type=Audio" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/headphones.jpg" alt="Audio">
+                      </div>
+                      <span class="category-card-title">Audio</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Accessories" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/keyboard.jpg" alt="Accessories">
+                      </div>
+                      <span class="category-card-title">Accessories</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Shop All Products</a>
+              </div>
+            </div>
+          </li><li class="nav-item">
+            <a href="shop.html" class="nav-link">Bestsellers</a>
+          </li>
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/headphones.jpg" alt="SoundFlow Headphones Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=glow" class="spotlight-title-link">
+                    <span>Immerse yourself with SoundFlow ANC Headphones</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Phones" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/smartphone.jpg" alt="Phones">
+                        </div>
+                        <span class="category-card-title">Smartphones</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Computers" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/laptop.jpg" alt="Computers">
+                        </div>
+                        <span class="category-card-title">Computers & Screens</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Audio" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/headphones.jpg" alt="Audio">
+                        </div>
+                        <span class="category-card-title">Audio & Sound</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Accessories" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/keyboard.jpg" alt="Accessories">
+                        </div>
+                        <span class="category-card-title">Accessories</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Shop All Types</a>
+                </div>
+              </div>
+            </div>
+          </li>
+<li class="nav-item">
+            <a href="about.html" class="nav-link">Discover</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="shop.html" class="mobile-nav-link">Shop All</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="shop.html" class="mobile-nav-link">Bestsellers</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="about.html" class="mobile-nav-link">Discover</a>
+      </li>
+    </ul>
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Elevora Tech..." id="mobile-search-trigger" readonly>
+    </div>
+  </div>
+
+  <div class="overlay" id="site-overlay"></div>
+
+  <!-- Main Product Detail Page Content -->
+  <main class="container">
+    <div class="product-details-layout">
+      
+      <!-- Product Gallery (Left) -->
+      <section class="product-gallery">
+        <div class="product-main-img" id="detail-main-img">
+          <!-- Rendered dynamically -->
+        </div>
+        <div style="font-size:12px; color:var(--text-secondary); text-align:center;">
+          <i class="fas fa-search-plus" style="margin-right:6px;"></i> Roll over image to zoom
+        </div>
+      </section>
+
+      <!-- Product Information (Right) -->
+      <section class="product-info-panel">
+        <h1 class="product-title" id="detail-title">Loading Product Name...</h1>
+        <p class="product-tagline" id="detail-tagline">Loading product details...</p>
+        
+        <div class="product-meta-row">
+          <div class="product-rating-stars" id="detail-stars">
+            <!-- Stars loaded dynamically -->
+          </div>
+          <span class="product-rating-text" id="detail-reviews-count">(0 reviews)</span>
+        </div>
+
+        <div class="product-price" id="detail-price">$0.00</div>
+
+        <div style="margin: 24px 0; border-top:1px solid var(--border-color); padding-top:24px;">
+          <!-- Option Size selector mockup -->
+          <div class="product-options">
+            <h4 class="option-group-title">Select Color</h4>
+            <div class="size-selector">
+              <button class="size-btn active">Matte Black</button>
+              <button class="size-btn">Space Gray</button>
+            </div>
+          </div>
+
+          <!-- Add to bag controls -->
+          <div class="product-actions-row">
+            <div class="product-quantity">
+              <button id="detail-qty-minus" aria-label="Decrease Quantity">-</button>
+              <span id="detail-qty-val">1</span>
+              <button id="detail-qty-plus" aria-label="Increase Quantity">+</button>
+            </div>
+            <button class="btn btn-primary product-add-btn" id="detail-add-btn">Add to Bag</button>
+          </div>
+        </div>
+
+        <!-- Detail Tabs (Description, Specifications, Key Features, User Guide) -->
+        <div class="product-tabs">
+          <ul class="tabs-nav">
+            <li><button class="tab-btn active" data-tab="description">Description</button></li>
+            <li><button class="tab-btn" data-tab="benefits">Key Features</button></li>
+            <li><button class="tab-btn" data-tab="usage">User Guide</button></li>
+            <li><button class="tab-btn" data-tab="ingredients">Specifications</button></li>
+          </ul>
+          
+          <div class="tab-content active" id="tab-description">
+            <!-- Dynamic -->
+          </div>
+          <div class="tab-content" id="tab-benefits">
+            <!-- Dynamic -->
+          </div>
+          <div class="tab-content" id="tab-usage">
+            <!-- Dynamic -->
+          </div>
+          <div class="tab-content" id="tab-ingredients">
+            <!-- Dynamic -->
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Related Products section -->
+    <section class="section-padding" style="border-top: 1px solid var(--border-color);">
+      <div class="section-header">
+        <h2 class="section-title">You May Also Like</h2>
+        <a href="shop.html" class="section-link">Shop All Products</a>
+      </div>
+      <div class="product-grid" id="related-products-grid"></div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search tech (e.g. Apex, SoundFlow, AirBook)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-info-logo">
+            ele<span class="logo-tech-container" style="width:24px; height:24px; display:inline-block; vertical-align:middle; margin-left: 2px;"><svg viewBox="0 0 100 100" style="width:100%; height:100%; color:var(--color-primary);"><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 10 L50 40 M50 60 L50 90 M10 50 L40 50 M60 50 L90 50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span>ora
+          </div>
+          <p class="footer-info-desc">Elevora designs premium, high-performance electronics and smart devices to elevate your daily digital lifestyle.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop Laptops & Devices</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?category=Mobiles%20%26%20Audio">Mobiles & Audio</a></li>
+            <li><a href="shop.html?category=Laptops%20%26%20Wearables">Laptops & Wearables</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quiz.html">Tech Match Quiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">SEO Keywords</h4>
+          <ul class="footer-links" style="font-size:12px; color:var(--text-secondary);">
+            <li>Elevora Premium Electronics</li>
+            <li>Best Smart Devices Website</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elevora Electronics. All rights reserved.</p>
+        <div class="footer-payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-stripe"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Search elements bindings
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
+  </script>
+</body>
+</html>
+

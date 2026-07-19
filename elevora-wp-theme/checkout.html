@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Elevora Electronics</title>
+  <meta name="description" content="Securely checkout your Elevora premium gadgets. Fast express shipping on smartphones, laptops, headphones, and more.">
+  <meta name="keywords" content="checkout, secure checkout, purchase smart devices, Elevora Electronics">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=1.3">
+</head>
+<body>
+
+  <!-- 1. Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-bar-content">
+      <span>⚡ FREE SHIPPING ON ORDERS $150+!</span>
+      <span>⚡ UPGRADE YOUR DAILY PRODUCTIVITY WITH ELEVORA TECH</span>
+      <span>⚡ GET 10% OFF YOUR FIRST ORDER WITH CODE: TECH10</span>
+      <span>⚡ FREE SHIPPING ON ORDERS $150+!</span>
+    </div>
+  </div>
+
+  <!-- 2. Sticky Header -->
+    <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <!-- Left Section (hamburger on mobile, empty/placeholder on desktop for logo centering) -->
+        <div class="header-left">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Center Section (Centered Logo) -->
+        <div class="header-center">
+          <a href="index.html" class="logo" id="brand-logo">
+            ele<span class="logo-tech-container"><svg viewBox="0 0 100 100" style="width:20px; height:20px; display:inline-block; vertical-align:middle; margin:0 2px; color:var(--color-primary);"><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="8" fill="none"/><path d="M50 10 L50 40 M50 60 L50 90 M10 50 L40 50 M60 50 L90 50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span>ora
+          </a>
+        </div>
+
+        <!-- Right Section (Search, Theme Toggle, Account, Cart) -->
+        <div class="header-right">
+          <!-- Desktop Search Bar -->
+          <div class="header-search" id="desktop-search-trigger">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." readonly>
+          </div>
+          
+          <!-- Attractive Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Bright Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+          
+          <!-- Account Sign In -->
+          <a href="#" class="header-account-link" id="account-btn">
+            <i class="far fa-user"></i>
+            <span>Sign In</span>
+          </a>
+          
+          <button class="header-btn" id="cart-btn" aria-label="Open Shopping Bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-list">
+                    <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop All</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-all-mega">
+              <div class="mega-menu-header">
+                <h3>Shop All Categories</h3>
+              </div>
+              
+              <div class="category-grid">
+                <!-- Column 1 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Mobiles%20%26%20Audio" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/smartphone.jpg" alt="Mobiles & Audio">
+                      </div>
+                      <span class="category-card-title">Mobiles & Audio</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Phones" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/smartphone.jpg" alt="Smartphones">
+                      </div>
+                      <span class="category-card-title">Smartphones</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="category-col">
+                  <a href="shop.html?category=Laptops%20%26%20Wearables" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/laptop.jpg" alt="Laptops & Wearables">
+                      </div>
+                      <span class="category-card-title">Laptops & Wearables</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Computers" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/laptop.jpg" alt="Laptops">
+                      </div>
+                      <span class="category-card-title">Laptops</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="category-col">
+                  <a href="shop.html?type=Audio" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/headphones.jpg" alt="Audio">
+                      </div>
+                      <span class="category-card-title">Audio</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Accessories" class="category-card-link">
+                    <div class="category-card">
+                      <div class="category-card-img">
+                        <img src="assets/images/keyboard.jpg" alt="Accessories">
+                      </div>
+                      <span class="category-card-title">Accessories</span>
+                      <div class="category-card-btn">
+                        <i class="fas fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <a href="shop.html" class="mega-menu-footer-link">Shop All Products</a>
+              </div>
+            </div>
+          </li><li class="nav-item"><a href="shop.html" class="nav-link">Bestsellers</a></li>
+                              <li class="nav-item">
+            <a href="shop.html" class="nav-link">Shop By Type</a>
+            <!-- Mega Menu Dropdown -->
+            <div class="mega-menu shop-by-type-mega">
+              <!-- Left Spotlight Side -->
+              <div class="mega-spotlight">
+                <div class="spotlight-image-container">
+                  <img src="assets/images/headphones.jpg" alt="SoundFlow Headphones Spotlight">
+                </div>
+                <div class="spotlight-content">
+                  <a href="product.html?id=glow" class="spotlight-title-link">
+                    <span>Immerse yourself with SoundFlow ANC Headphones</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Grid Side -->
+              <div class="mega-grid-side">
+                <div class="mega-menu-header">
+                  <h3>Shop By Type</h3>
+                </div>
+                
+                <div class="type-grid">
+                  <!-- Column 1 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Phones" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/smartphone.jpg" alt="Phones">
+                        </div>
+                        <span class="category-card-title">Smartphones</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Computers" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/laptop.jpg" alt="Computers">
+                        </div>
+                        <span class="category-card-title">Computers & Screens</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="category-col">
+                    <a href="shop.html?type=Audio" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/headphones.jpg" alt="Audio">
+                        </div>
+                        <span class="category-card-title">Audio & Sound</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="shop.html?type=Accessories" class="category-card-link">
+                      <div class="category-card">
+                        <div class="category-card-img">
+                          <img src="assets/images/keyboard.jpg" alt="Accessories">
+                        </div>
+                        <span class="category-card-title">Accessories</span>
+                        <div class="category-card-btn">
+                          <i class="fas fa-chevron-right"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="mega-menu-footer">
+                  <a href="shop.html" class="mega-menu-footer-link">Shop All Types</a>
+                </div>
+              </div>
+            </div>
+          </li>
+<li class="nav-item"><a href="about.html" class="nav-link">Discover</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop All</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Bestsellers</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">Discover</a></li>
+    </ul>
+    <div class="mobile-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Elevora Tech..." id="mobile-search-trigger" readonly>
+    </div>
+  </div>
+
+  <div class="overlay" id="site-overlay"></div>
+
+  <!-- Checkout Section Content -->
+  <main class="container">
+    <div class="checkout-layout">
+      
+      <!-- Checkout Forms (Left) -->
+      <section style="background-color: var(--bg-card); border:1px solid var(--border-color); border-radius:var(--border-radius-lg); padding: 30px; box-shadow: var(--shadow-sm);">
+        <form id="checkout-form">
+          <!-- Shipping Address -->
+          <div style="margin-bottom: 40px;">
+            <h2 class="checkout-section-title">Shipping Address</h2>
+            
+            <div class="checkout-form-group">
+              <div class="form-field">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" required placeholder="e.g. John">
+              </div>
+              <div class="form-field">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" required placeholder="e.g. Doe">
+              </div>
+            </div>
+
+            <div class="checkout-form-group">
+              <div class="form-field full">
+                <label for="address">Address</label>
+                <input type="text" id="address" required placeholder="e.g. 123 Tech Boulevard">
+              </div>
+            </div>
+
+            <div class="checkout-form-group">
+              <div class="form-field">
+                <label for="city">City</label>
+                <input type="text" id="city" required placeholder="e.g. Los Angeles">
+              </div>
+              <div class="form-field">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" required placeholder="e.g. 90001">
+              </div>
+            </div>
+
+            <div class="checkout-form-group">
+              <div class="form-field full">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="e.g. john@example.com">
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Info -->
+          <div style="margin-bottom: 40px;">
+            <h2 class="checkout-section-title">Payment details</h2>
+            
+            <div class="checkout-form-group">
+              <div class="form-field full">
+                <label for="card-num">Card Number</label>
+                <input type="text" id="card-num" required placeholder="xxxx xxxx xxxx xxxx" pattern="\d{16}" title="Please enter a valid 16 digit card number.">
+              </div>
+            </div>
+
+            <div class="checkout-form-group">
+              <div class="form-field">
+                <label for="card-expiry">Expiry Date</label>
+                <input type="text" id="card-expiry" required placeholder="MM/YY">
+              </div>
+              <div class="form-field">
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" required placeholder="123" pattern="\d{3}" title="Please enter a valid 3 digit CVV.">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size:16px;">Place Order</button>
+        </form>
+      </section>
+
+      <!-- Order Summary (Right) -->
+      <aside>
+        <div class="order-summary-box">
+          <h3 style="font-size:18px; text-transform:uppercase; margin-bottom:20px; font-weight:800; border-bottom:1px solid var(--border-color); padding-bottom:10px;">Order Summary</h3>
+          
+          <!-- Dynamic Items List -->
+          <div class="order-items-list" id="checkout-items-list">
+            <!-- Loaded dynamically -->
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px; border-bottom:1px solid var(--border-color); padding-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; font-size:14px; color:var(--text-secondary);">
+              <span>Subtotal</span>
+              <span id="checkout-subtotal">$0.00</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:14px; color:var(--text-secondary);">
+              <span>Shipping</span>
+              <span id="checkout-shipping">Calculated at checkout</span>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; font-size:20px; font-weight:800; margin-top:20px; color:var(--text-primary);">
+            <span>Total</span>
+            <span id="checkout-total">$0.00</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close Shopping Bag"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="cart-shipping">Calculated at checkout</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <button class="search-modal-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+    <div class="search-modal-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Type to search tech (e.g. Apex, SoundFlow, AirBook)..." id="search-input">
+    </div>
+    <div class="search-results-container" id="search-results"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elevora Electronics. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Search elements bindings
+    document.getElementById('desktop-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+    document.getElementById('mobile-search-trigger').addEventListener('click', () => {
+      document.getElementById('search-btn').click();
+    });
+
+    const vSearchBtn = document.createElement('button');
+    vSearchBtn.id = 'search-btn';
+    vSearchBtn.style.display = 'none';
+    document.body.appendChild(vSearchBtn);
+  </script>
+</body>
+</html>
+

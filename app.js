@@ -15,16 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
   const page = path.split("/").pop();
 
-  if (page === '' || page === 'index.html') {
+  if (page === '' || page === 'index.html' || page === 'index.php' || document.getElementById('hero-slider-section') || document.getElementById('picks-grid-container') || document.getElementById('bestsellers-grid')) {
     initHeroSlider();
     renderFeaturedProducts();
-  } else if (page === 'shop.html') {
+  }
+  if (page === 'shop.html' || document.getElementById('product-grid')) {
     initShopPage();
-  } else if (page === 'product.html') {
+  }
+  if (page === 'product.html' || document.getElementById('detail-title')) {
     initProductDetailsPage();
-  } else if (page === 'quiz.html') {
+  }
+  if (page === 'quiz.html' || document.getElementById('quiz-container')) {
     initQuizPage();
-  } else if (page === 'checkout.html') {
+  }
+  if (page === 'checkout.html' || document.getElementById('checkout-form')) {
     initCheckoutPage();
   }
 });
@@ -338,7 +342,7 @@ function updateCartUI() {
       <div class="cart-empty">
         <i class="fas fa-shopping-bag"></i>
         <p>Your bag is currently empty.</p>
-        <a href="shop.html" class="btn btn-primary" id="cart-empty-shop">Shop Our SPFs</a>
+        <a href="shop.html" class="btn btn-primary" id="cart-empty-shop">Shop Elevora Tech</a>
       </div>
     `;
     if (subtotalPriceEl) subtotalPriceEl.textContent = "$0.00";
@@ -473,12 +477,12 @@ function showToast(message) {
 // 8. RENDER HOME PAGE FEATURED / BESTSELLERS
 // ==========================================================================
 function renderFeaturedProducts() {
-  const bestsellersGrid = document.getElementById('bestsellers-grid');
-  if (!bestsellersGrid) return;
+  const container = document.getElementById('bestsellers-grid') || document.getElementById('picks-grid-container');
+  if (!container) return;
 
-  const bestsellers = products.filter(p => p.isBestseller);
+  const bestsellers = products;
   
-  bestsellersGrid.innerHTML = bestsellers.map(p => `
+  container.innerHTML = bestsellers.map(p => `
     <div class="product-card">
       ${p.isNew ? `<div class="product-card-badge new">New</div>` : p.isBestseller ? `<div class="product-card-badge">Bestseller</div>` : ''}
       <button class="product-card-wishlist" aria-label="Add to Wishlist"><i class="far fa-heart"></i></button>
