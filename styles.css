@@ -102,8 +102,8 @@ img {
 
 /* --- Announcement Bar --- */
 .announcement-bar {
-  background-color: #FFF200;
-  color: #0020C2;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.1em;
@@ -112,13 +112,13 @@ img {
   position: relative;
   z-index: 1001;
   text-transform: uppercase;
-  border-top: 3px solid #0020C2;
+  border-top: 3px solid var(--color-accent);
 }
 
 [data-theme="dark"] .announcement-bar {
-  background-color: #5D3FD3;
-  color: #FFF200;
-  border-top: 3px solid #FFF200;
+  background-color: #0F111A;
+  color: var(--color-accent);
+  border-top: 3px solid var(--color-primary);
 }
 
 .announcement-bar-content {
@@ -325,13 +325,13 @@ img {
 }
 
 .theme-toggle .sun-icon {
-  color: #FFA500;
+  color: var(--color-primary);
   opacity: 1;
   transform: rotate(0);
 }
 
 .theme-toggle .moon-icon {
-  color: #F4D068;
+  color: var(--color-accent);
   opacity: 0;
   transform: rotate(90deg) scale(0);
 }
@@ -1025,7 +1025,7 @@ img {
   gap: 5px;
   margin-bottom: 12px;
   font-size: 13px;
-  color: #FFB800;
+  color: #00D2FF;
 }
 
 .product-card-rating span {
@@ -1916,7 +1916,7 @@ img {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #FFB800;
+  color: #00D2FF;
 }
 
 .product-rating-text {
@@ -2683,9 +2683,9 @@ img {
   z-index: 5;
 }
 
-.badge-yellow {
-  background-color: var(--color-primary);
-  color: var(--text-light);
+.badge-blue {
+  background-color: #00D4FF;
+  color: #000000;
 }
 
 /* Allure Red Award Badge */
@@ -2816,7 +2816,7 @@ img {
   color: #FFFFFF;
 }
 
-/* --- Yellow Category Slider Section --- */
+/* --- Category Slider Section --- */
 .category-slider-section {
   background-color: var(--bg-secondary) !important;
   padding: 40px 0;
@@ -3123,7 +3123,7 @@ img {
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   font-size: 75px;
-  color: #FFDE4D;
+  color: #00D2FF;
   z-index: 6;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   animation: handsSlipping 5s infinite ease-in-out;
