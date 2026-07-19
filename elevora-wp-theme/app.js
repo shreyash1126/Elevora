@@ -11,21 +11,41 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initCart();
   
-  // --- Page-Specific Initializations ---
-  const path = window.location.pathname;
-  const page = path.split("/").pop();
+  // --- Page-Specific Initializations (Supports HTML & WordPress Permalinks) ---
+  const path = window.location.pathname.toLowerCase();
 
-  if (page === '' || page === 'index.html') {
+  if (path === '/' || path.endsWith('/') || path.endsWith('/index.html') || path.endsWith('/index.php') || path === '' || path.includes('/home')) {
     initHeroSlider();
     renderFeaturedProducts();
-  } else if (page === 'shop.html') {
+  }
+  if (path.includes('shop')) {
     initShopPage();
-  } else if (page === 'product.html') {
+  }
+  if (path.includes('product')) {
     initProductDetailsPage();
-  } else if (page === 'quiz.html') {
+  }
+  if (path.includes('quiz')) {
     initQuizPage();
-  } else if (page === 'checkout.html') {
+  }
+  if (path.includes('checkout')) {
     initCheckoutPage();
+  }
+
+  // --- Fallback Triggers: Automatically run if container elements exist on DOM ---
+  const picksContainer = document.getElementById('picks-grid-container');
+  if (picksContainer && picksContainer.children.length === 0) {
+    initHeroSlider();
+    renderFeaturedProducts();
+  }
+
+  const shopGrid = document.getElementById('shop-product-grid');
+  if (shopGrid && shopGrid.children.length === 0) {
+    initShopPage();
+  }
+
+  const detailTitle = document.getElementById('detail-title');
+  if (detailTitle && (!detailTitle.textContent || detailTitle.textContent.trim() === '')) {
+    initProductDetailsPage();
   }
 });
 
@@ -362,7 +382,7 @@ function updateCartUI() {
     return `
       <div class="cart-item">
         <div class="cart-item-img">
-          <img src="${product.image}" alt="${product.name}">
+          <img src="${getProductImgSrc(product.image)}" alt="${product.name}">
         </div>
         <div class="cart-item-info">
           <div class="cart-item-name"><a href="product.html?id=${product.id}">${product.name}</a></div>
@@ -469,37 +489,45 @@ function showToast(message) {
   }, 4000);
 }
 
+// Helper function for WordPress / relative image URL resolution
+function getProductImgSrc(img) {
+  if (!img) return '';
+  if (img.startsWith('http://') || img.startsWith('https://')) return img;
+  if (window.ELEVORA_THEME_URI) {
+    return window.ELEVORA_THEME_URI + '/' + img.replace(/^\/+/, '');
+  }
+  return img;
+}
+
 // ==========================================================================
 // 8. RENDER HOME PAGE FEATURED / BESTSELLERS
 // ==========================================================================
 function renderFeaturedProducts() {
-  const bestsellersGrid = document.getElementById('bestsellers-grid');
+  const bestsellersGrid = document.getElementById('picks-grid-container') || document.getElementById('bestsellers-grid');
   if (!bestsellersGrid) return;
 
-  const bestsellers = products.filter(p => p.isBestseller);
+  const bestsellers = products;
   
   bestsellersGrid.innerHTML = bestsellers.map(p => `
-    <div class="product-card">
-      ${p.isNew ? `<div class="product-card-badge new">New</div>` : p.isBestseller ? `<div class="product-card-badge">Bestseller</div>` : ''}
-      <button class="product-card-wishlist" aria-label="Add to Wishlist"><i class="far fa-heart"></i></button>
-      <div class="product-card-img">
-        <a href="product.html?id=${p.id}">
-          <img src="${p.image}" alt="${p.name}">
-        </a>
-        <button class="product-card-quickadd" onclick="event.preventDefault(); addToCart('${p.id}', 1, true)">Quick Add +</button>
-      </div>
-      <div class="product-card-info">
-        <span class="product-card-type">${p.type}</span>
-        <h3 class="product-card-title"><a href="product.html?id=${p.id}">${p.name}</a></h3>
-        <div class="product-card-rating">
-          ${getRatingStars(p.rating)}
-          <span>(${p.reviewsCount})</span>
+    <div class="pick-card">
+      <a href="product.html?id=${p.id}" class="pick-card-link">
+        <div class="pick-card-img-wrapper">
+          <span class="pick-badge badge-blue">${p.isNew ? 'New Release' : p.isBestseller ? 'Bestseller' : 'Featured'}</span>
+          <img src="${getProductImgSrc(p.image)}" alt="${p.name}">
         </div>
-        <div class="product-card-footer">
-          <div class="product-card-price">$${p.price.toFixed(2)}</div>
-          <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
+        <div class="pick-card-info">
+          <span class="pick-card-category">${p.category}</span>
+          <h3 class="pick-card-title">${p.name}</h3>
+          <div class="pick-card-rating">
+            ${getRatingStars(p.rating)}
+            <span>(${p.reviewsCount})</span>
+          </div>
+          <div class="pick-card-footer">
+            <div class="pick-card-price">$${p.price.toFixed(2)}</div>
+            <button class="btn btn-primary pick-add-btn" onclick="event.preventDefault(); addToCart('${p.id}', 1, true)">Add to Bag</button>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   `).join('');
 }
@@ -657,17 +685,22 @@ function initShopPage() {
 // ==========================================================================
 function initProductDetailsPage() {
   const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get('id') || 'unseen'; // default to unseen if none provided
-  const product = products.find(p => p.id === productId);
+  let productId = urlParams.get('id');
+
+  if (!productId) {
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const lastPart = pathParts.pop() || '';
+    const found = products.find(p => p.id === lastPart || p.id.replace('_', '-') === lastPart || p.name.toLowerCase().includes(lastPart.replace(/-/g, ' ')));
+    if (found) {
+      productId = found.id;
+    } else {
+      productId = 'unseen'; // Default fallback product
+    }
+  }
+
+  const product = products.find(p => p.id === productId) || products[0];
 
   if (!product) {
-    document.querySelector('.product-details-layout').innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center; padding: 100px 0;">
-        <h2>Product Not Found</h2>
-        <p>Sorry, we couldn't find the product you're looking for.</p>
-        <a href="shop.html" class="btn btn-primary" style="margin-top: 20px;">Back to Shop</a>
-      </div>
-    `;
     return;
   }
 
@@ -686,7 +719,7 @@ function initProductDetailsPage() {
   const productRatingStars = document.getElementById('detail-stars');
   const productReviewsCount = document.getElementById('detail-reviews-count');
   
-  if (mainImg) mainImg.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
+  if (mainImg) mainImg.innerHTML = `<img src="${getProductImgSrc(product.image)}" alt="${product.name}">`;
   if (productTitle) productTitle.textContent = product.name;
   if (productTagline) productTagline.textContent = product.tagline;
   if (productPrice) productPrice.textContent = `$${product.price.toFixed(2)}`;
