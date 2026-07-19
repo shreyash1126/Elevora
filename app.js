@@ -386,7 +386,7 @@ function updateCartUI() {
     return sum + (product ? product.price * item.quantity : 0);
   }, 0);
 
-  const shipping = subtotal >= 50 ? 0 : 5.99;
+  const shipping = subtotal >= 150 ? 0 : 9.99;
   const total = subtotal + shipping;
 
   if (subtotalPriceEl) subtotalPriceEl.textContent = `$${subtotal.toFixed(2)}`;
