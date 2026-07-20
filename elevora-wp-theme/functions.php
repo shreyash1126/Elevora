@@ -17,6 +17,11 @@ function elevora_theme_setup() {
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
+	add_theme_support( 'woocommerce' );
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
+
 	// Register Navigation Menus
 	register_nav_menus( array(
 		'primary' => __( 'Primary Header Menu', 'elevora' ),
@@ -41,3 +46,38 @@ function elevora_enqueue_scripts() {
 	wp_enqueue_script( 'elevora-app', get_template_directory_uri() . '/app.js', array( 'elevora-products' ), '2.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'elevora_enqueue_scripts' );
+
+function elevora_woocommerce_setup() {
+
+    remove_action(
+        'woocommerce_before_main_content',
+        'woocommerce_output_content_wrapper',
+        10
+    );
+
+    remove_action(
+        'woocommerce_after_main_content',
+        'woocommerce_output_content_wrapper_end',
+        10
+    );
+
+    add_action(
+        'woocommerce_before_main_content',
+        function () {
+            echo '<main class="container">';
+        },
+        10
+    );
+
+    add_action(
+        'woocommerce_after_main_content',
+        function () {
+            echo '</main>';
+        },
+        10
+    );
+
+}
+add_action('after_setup_theme','elevora_woocommerce_setup');
+
+
