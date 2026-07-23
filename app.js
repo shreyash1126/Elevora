@@ -571,6 +571,25 @@ function initShopPage() {
     });
   }
 
+  // Parse URL Parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  const typeParam = urlParams.get('type');
+  const subParam = urlParams.get('sub');
+  const filterParam = urlParams.get('filter');
+  const minPriceParam = urlParams.get('minPrice') ? parseFloat(urlParams.get('minPrice')) : null;
+  const maxPriceParam = urlParams.get('maxPrice') ? parseFloat(urlParams.get('maxPrice')) : null;
+
+  // Pre-check sidebar checkboxes if URL matches standard filters
+  if (categoryParam) {
+    const cb = document.querySelector(`.filters-sidebar input[name="category"][value="${decodeURIComponent(categoryParam)}"]`);
+    if (cb) cb.checked = true;
+  }
+  if (typeParam) {
+    const cb = document.querySelector(`.filters-sidebar input[name="type"][value="${decodeURIComponent(typeParam)}"]`);
+    if (cb) cb.checked = true;
+  }
+
   // Handle filtering
   const filterAndSort = () => {
     let filtered = [...products];
@@ -588,21 +607,56 @@ function initShopPage() {
       }
     });
 
-    // Apply Filter logic
+    // Apply Checkbox Category Filter logic
     if (activeFilters.category.length > 0) {
       filtered = filtered.filter(p => activeFilters.category.includes(p.category));
+    } else if (categoryParam) {
+      const decodedCat = decodeURIComponent(categoryParam).toLowerCase();
+      filtered = filtered.filter(p => p.category && p.category.toLowerCase().includes(decodedCat));
     }
 
     if (activeFilters.spf.length > 0) {
+      filtered = filtered.filter(p => activeFilters.spf.includes(String(p.spf)));
+    }
+
+    // Apply Type Filter
+    if (activeFilters.type.length > 0) {
+      filtered = filtered.filter(p => activeFilters.type.some(val => p.type.toLowerCase().includes(val.toLowerCase())));
+    } else if (typeParam) {
+      const decodedType = decodeURIComponent(typeParam).toLowerCase();
+      filtered = filtered.filter(p => (p.type && p.type.toLowerCase().includes(decodedType)) || (p.tags && p.tags.some(t => t.toLowerCase().includes(decodedType))));
+    }
+
+    // Apply Subcategory / Tag URL filter
+    if (subParam) {
+      const cleanSub = decodeURIComponent(subParam).toLowerCase();
       filtered = filtered.filter(p => {
-        return activeFilters.spf.includes(String(p.spf));
+        const inSub = p.sub && p.sub.toLowerCase().includes(cleanSub);
+        const inTags = p.tags && p.tags.some(t => t.toLowerCase().includes(cleanSub));
+        const inName = p.name && p.name.toLowerCase().includes(cleanSub);
+        const inType = p.type && p.type.toLowerCase().includes(cleanSub);
+        return inSub || inTags || inName || inType;
       });
     }
 
-    if (activeFilters.type.length > 0) {
-      filtered = filtered.filter(p => {
-        return activeFilters.type.some(val => p.type.toLowerCase().includes(val.toLowerCase()));
-      });
+    // Apply Special Presets Filter (new-arrivals, offers, combos, gifting, etc.)
+    if (filterParam) {
+      const cleanFilter = filterParam.toLowerCase();
+      if (cleanFilter === 'new-arrivals') {
+        filtered = filtered.filter(p => p.isNew);
+      } else if (cleanFilter === 'offers' || cleanFilter === 'combos' || cleanFilter === 'on-sale' || cleanFilter === 'bogo' || cleanFilter === 'clearance') {
+        filtered = filtered.filter(p => p.isOffer || p.isBestseller || (p.originalPrice && p.originalPrice > p.price));
+      } else if (cleanFilter.includes('gifting')) {
+        filtered = filtered.filter(p => p.tags && p.tags.includes('gifting'));
+      }
+    }
+
+    // Apply Min & Max Price Bounds
+    if (minPriceParam !== null) {
+      filtered = filtered.filter(p => p.price >= minPriceParam);
+    }
+    if (maxPriceParam !== null) {
+      filtered = filtered.filter(p => p.price <= maxPriceParam);
     }
 
     // Apply Sorting logic
@@ -629,7 +683,8 @@ function initShopPage() {
       shopGrid.innerHTML = `
         <div style="grid-column: 1/-1; text-align: center; padding: 60px 0; color: var(--text-secondary);">
           <i class="fas fa-search" style="font-size: 32px; margin-bottom:12px;"></i>
-          <p>No products match your filter selections. Try clearing filters.</p>
+          <p>No products match your filter selections. Try clearing filters or selecting another category.</p>
+          <a href="shop.html" class="btn btn-secondary" style="margin-top:15px; display:inline-block;">Show All Products</a>
         </div>
       `;
       return;
@@ -637,7 +692,7 @@ function initShopPage() {
 
     shopGrid.innerHTML = items.map(p => `
       <div class="product-card animate-fade-in-up">
-        ${p.isNew ? `<div class="product-card-badge new">New</div>` : p.isBestseller ? `<div class="product-card-badge">Bestseller</div>` : ''}
+        ${p.isNew ? `<div class="product-card-badge new">New</div>` : p.isBestseller ? `<div class="product-card-badge">Bestseller</div>` : p.isOffer ? `<div class="product-card-badge offer">Sale</div>` : ''}
         <button class="product-card-wishlist" aria-label="Add to Wishlist"><i class="far fa-heart"></i></button>
         <div class="product-card-img">
           <a href="product.html?id=${p.id}">
@@ -653,7 +708,10 @@ function initShopPage() {
             <span>(${p.reviewsCount})</span>
           </div>
           <div class="product-card-footer">
-            <div class="product-card-price">$${p.price.toFixed(2)}</div>
+            <div class="product-card-price">
+              $${p.price.toFixed(2)}
+              ${p.originalPrice ? `<span style="text-decoration: line-through; color: var(--text-secondary); font-size: 13px; margin-left: 6px; font-weight: normal;">$${p.originalPrice.toFixed(2)}</span>` : ''}
+            </div>
             <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
           </div>
         </div>
@@ -667,17 +725,6 @@ function initShopPage() {
 
   // Initial load
   filterAndSort();
-
-  // If redirected with filter URL params
-  const urlParams = new URLSearchParams(window.location.search);
-  const categoryParam = urlParams.get('category');
-  if (categoryParam) {
-    const cb = document.querySelector(`.filters-sidebar input[value="${categoryParam}"]`);
-    if (cb) {
-      cb.checked = true;
-      filterAndSort();
-    }
-  }
 }
 
 // ==========================================================================

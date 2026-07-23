@@ -66,11 +66,15 @@
     <nav class="header-nav">
       <div class="container">
         <ul class="nav-list">
-          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html' ) ); ?>" class="nav-link">Shop All</a></li>
-          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?category=Mobiles%20%26%20Audio' ) ); ?>" class="nav-link">Mobiles & Audio</a></li>
-          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?category=Laptops%20%26%20Wearables' ) ); ?>" class="nav-link">Laptops & Wearables</a></li>
-          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/quiz.html' ) ); ?>" class="nav-link">Tech Quiz</a></li>
-          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/about.html' ) ); ?>" class="nav-link">Discover</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?filter=new-arrivals' ) ); ?>" class="nav-link">New Arrivals</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?type=Accessories' ) ); ?>" class="nav-link">Mobile Accessories</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html' ) ); ?>" class="nav-link">Tech Gadgets</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?sub=utility' ) ); ?>" class="nav-link">Tools & Utility</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?sub=travel' ) ); ?>" class="nav-link">Car & Travel</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?filter=offers' ) ); ?>" class="nav-link">Offers & Combos</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html' ) ); ?>" class="nav-link">Shop By Price</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?filter=gifting' ) ); ?>" class="nav-link">Gifting</a></li>
+          <li class="nav-item"><a href="<?php echo esc_url( home_url( '/about.html#contact' ) ); ?>" class="nav-link">Support</a></li>
         </ul>
       </div>
     </nav>
@@ -79,9 +83,15 @@
   <!-- Mobile Drawer -->
   <div class="mobile-menu-drawer" id="mobile-drawer">
     <ul class="mobile-nav-list">
-      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html' ) ); ?>" class="mobile-nav-link">Shop All</a></li>
-      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/quiz.html' ) ); ?>" class="mobile-nav-link">Tech Quiz</a></li>
-      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/about.html' ) ); ?>" class="mobile-nav-link">Discover</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?filter=new-arrivals' ) ); ?>" class="mobile-nav-link">New Arrivals</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?type=Accessories' ) ); ?>" class="mobile-nav-link">Mobile Accessories</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html' ) ); ?>" class="mobile-nav-link">Tech Gadgets</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?sub=utility' ) ); ?>" class="mobile-nav-link">Tools & Utility</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?sub=travel' ) ); ?>" class="mobile-nav-link">Car & Travel</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?filter=offers' ) ); ?>" class="mobile-nav-link">Offers & Combos</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html' ) ); ?>" class="mobile-nav-link">Shop By Price</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/shop.html?filter=gifting' ) ); ?>" class="mobile-nav-link">Gifting</a></li>
+      <li class="mobile-nav-item"><a href="<?php echo esc_url( home_url( '/about.html#contact' ) ); ?>" class="mobile-nav-link">Support</a></li>
     </ul>
     <div class="mobile-search">
       <i class="fas fa-search"></i>
