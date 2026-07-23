@@ -43,13 +43,14 @@ if os.path.exists(hero_bg):
         with open(screenshot_path, "wb") as wf:
             wf.write(rf.read())
 
-# Create ZIP archives containing style.css directly at the root of the zip!
+# Create ZIP archives containing elevora-wp-theme/ top-level directory
 for zip_path in [desktop_zip, project_zip]:
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root, dirs, files in os.walk(theme_dir):
             for file in files:
                 file_path = os.path.join(root, file)
-                arcname = os.path.relpath(file_path, theme_dir)
+                rel_path = os.path.relpath(file_path, theme_dir).replace('\\', '/')
+                arcname = f"elevora-wp-theme/{rel_path}"
                 zipf.write(file_path, arcname)
 
 print("SUCCESS: elevora-wp-theme.zip created with style.css directly at root!")

@@ -31,7 +31,7 @@ $fullStyleContent = $wpHeader + "`n" + $mainCss + "`n" + $themeCss
 Set-Content -Path "$themeDir\style.css" -Value $fullStyleContent -Encoding UTF8
 
 # 2. Copy remaining files
-$filesToCopy = @('styles.css', 'theme.css', 'app.js', 'products.js', 'index.html', 'shop.html', 'product.html', 'quiz.html', 'checkout.html', 'about.html')
+$filesToCopy = @('index.php', 'functions.php', 'styles.css', 'theme.css', 'app.js', 'products.js', 'index.html', 'shop.html', 'product.html', 'quiz.html', 'checkout.html', 'about.html')
 foreach ($f in $filesToCopy) {
     if (Test-Path $f) {
         Copy-Item $f -Destination "$themeDir\$f" -Force
