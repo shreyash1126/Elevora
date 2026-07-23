@@ -363,13 +363,18 @@ img {
 
 /* --- Navigation Bar --- */
 .header-nav {
-  background-color: #FFFFFF !important;
+  background-color: var(--bg-card) !important;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  position: relative;
+  position: relative !important;
+  z-index: 100;
 }
 
-@media (max-width: 991px) {
+.header-nav .container {
+  position: static !important;
+}
+
+@media (max-width: 1080px) {
   .header-nav {
     display: none; /* Mobile navigation uses burger menu */
   }
@@ -378,39 +383,59 @@ img {
 .nav-list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
   list-style: none;
+  position: static !important;
 }
 
 .nav-item {
-  /* positioned relative to .header-nav instead */
+  position: static !important; /* Forces mega menu to align to .header-nav center */
 }
 
 .nav-link {
-  display: block;
-  padding: 12px 20px;
-  font-weight: 800;
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 12px 4px;
+  font-weight: 700;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #000000 !important;
+  letter-spacing: 0.01em;
+  color: var(--text-primary) !important;
   position: relative;
+  white-space: nowrap;
+  transition: color var(--transition-speed) ease;
+}
+
+.nav-arrow {
+  font-size: 9px;
+  transition: transform 0.25s ease;
+  opacity: 0.75;
+}
+
+.nav-item:hover .nav-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 20px;
-  right: 20px;
+  left: 4px;
+  right: 4px;
   height: 3px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   transform: scaleX(0);
   transition: transform var(--transition-speed) ease;
 }
 
 .nav-item:hover .nav-link {
-  color: var(--color-secondary);
+  color: var(--color-primary) !important;
 }
 
 .nav-item:hover .nav-link::after {
@@ -419,25 +444,63 @@ img {
 
 /* --- Mega Navigation Drawer --- */
 .mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  max-width: 1320px;
-  background-color: #FFFFFF !important;
-  box-shadow: var(--shadow-lg);
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: min(1200px, 94vw) !important;
+  max-width: 1200px !important;
+  margin: 0 !important;
+  background-color: var(--bg-card) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
   border: 1px solid var(--border-color);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  padding: 40px;
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+  padding: 24px 20px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: all var(--transition-speed) ease;
-  z-index: 999;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 9999;
+}
+
+/* Specific scaling for 5-column Shop By Price grid to prevent 5th card cut-off */
+.mega-menu[style*="repeat(5"] {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  padding: 20px 14px !important;
+}
+
+/* Specific scaling for 2-column mega-menus (Support, Gifting, Offers, Mobile Accessories) */
+.mega-menu[style*="1.5fr"], .mega-menu[style*="2fr"] {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+  gap: 20px !important;
+}
+
+.mega-menu > div {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.mega-menu > a.search-result-item {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .header-nav {
+  background-color: #12141A !important;
+}
+
+[data-theme="dark"] .mega-menu {
+  background-color: #161922 !important;
+  border-color: #2A2F3D !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
 }
 
 .nav-item:hover .mega-menu {
@@ -447,18 +510,20 @@ img {
 }
 
 .mega-col-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
-  margin-bottom: 18px;
-  color: #000000 !important;
+  margin-bottom: 16px;
+  color: var(--text-primary) !important;
   border-bottom: 2px solid var(--color-primary);
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   display: inline-block;
 }
 
 .mega-links {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .mega-links li {
@@ -466,74 +531,137 @@ img {
 }
 
 .mega-links a {
-  font-size: 14px;
-  color: #555555 !important;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary) !important;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s ease;
 }
 
 .mega-links a:hover {
-  color: var(--color-secondary) !important;
-  padding-left: 5px;
+  color: var(--color-primary) !important;
+  transform: translateX(3px);
 }
 
-/* Force dark-mode texts inside mega-menu to always remain readable */
+/* Force high-contrast dark-mode & light-mode text readability inside mega-menu */
+.mega-menu .search-result-item {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.2s ease;
+}
+
+.mega-menu .search-result-item:hover {
+  border-color: var(--color-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.mega-menu .search-result-item strong {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
 .mega-menu .search-result-item span {
-  color: #000000 !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500;
 }
 
-.mega-menu .search-result-item p {
-  color: #666666 !important;
+[data-theme="dark"] .mega-col-title {
+  color: #FFFFFF !important;
 }
 
+[data-theme="dark"] .mega-links a {
+  color: #CBD5E0 !important;
+}
+
+[data-theme="dark"] .mega-links a:hover {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .mega-menu .search-result-item {
+  background-color: #1F2430 !important;
+  border-color: #2E3545 !important;
+}
+
+[data-theme="dark"] .mega-menu .search-result-item:hover {
+  background-color: #272D3D !important;
+  border-color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .mega-menu .search-result-item strong {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .mega-menu .search-result-item span {
+  color: #A0AEC0 !important;
+}
+
+/* Featured Card inside Mega Menu */
 .mega-card {
   position: relative;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  background-color: var(--bg-secondary);
+  background-color: #0d1117;
   aspect-ratio: 16/10;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.mega-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.15) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .mega-card img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-speed) ease;
+  z-index: 0;
+  transition: transform 0.4s ease;
 }
 
 .mega-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .mega-card-content {
   position: relative;
   z-index: 2;
-  color: var(--text-light);
+  color: #ffffff !important;
 }
 
 .mega-card-content h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin: 0 0 6px 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .mega-card-content p {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: var(--color-secondary);
-  padding: 4px 8px;
+  letter-spacing: 0.05em;
+  color: #ffffff !important;
+  background: var(--color-primary);
+  padding: 4px 10px;
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 6px;
+  margin: 0;
+  text-shadow: none;
 }
 
 /* --- Mobile Menu & Hamburger --- */
@@ -2329,21 +2457,20 @@ img {
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* --- Shop All Mega Menu (Supergoop style) --- */
+/* --- Shop All Mega Menu --- */
 .shop-all-mega {
   display: flex !important;
   flex-direction: column;
-  max-width: 1200px !important;
-  width: 100vw;
-  padding: 40px 60px !important;
-  background-color: #FFFFFF !important; /* Always white background */
+  max-width: 1240px !important;
+  width: 100%;
+  padding: 30px 40px !important;
+  background-color: var(--bg-card) !important;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: all var(--transition-speed) ease;
 }
 
-/* Ensure mega menu shows up on hover */
 .nav-item:hover .shop-all-mega {
   opacity: 1;
   visibility: visible;
@@ -2352,10 +2479,10 @@ img {
 
 .mega-menu-header h3 {
   font-family: 'Outfit', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
-  color: #000000 !important; /* Always black title */
-  margin-bottom: 24px;
+  color: var(--text-primary) !important;
+  margin-bottom: 20px;
   text-align: left;
 }
 
@@ -2381,7 +2508,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent !important; /* Frameless - transparent background */
+  background-color: transparent !important;
   padding: 10px 0;
   height: 70px;
   width: 100%;
@@ -2390,15 +2517,15 @@ img {
 
 .category-card:hover {
   background-color: transparent !important;
-  transform: translateX(4px); /* Premium horizontal slide shift */
+  transform: translateX(4px);
 }
 
 .category-card-img {
   width: 56px;
   height: 56px;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
-  background-color: #F4F0EA !important; /* Soft beige background for cutout */
+  background-color: var(--bg-secondary) !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2415,7 +2542,7 @@ img {
   font-family: 'Outfit', sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #000000 !important; /* Always black text */
+  color: var(--text-primary) !important;
   flex-grow: 1;
   margin-left: 20px;
   text-align: left;
@@ -2425,7 +2552,7 @@ img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #F4F0EA; /* Soft beige circle button always */
+  background-color: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2436,21 +2563,21 @@ img {
 }
 
 .category-card:hover .category-card-btn {
-  background-color: var(--color-secondary);
-  color: var(--text-light);
+  background-color: var(--color-primary);
+  color: #ffffff;
   transform: translateX(2px);
 }
 
 .mega-menu-footer {
-  margin-top: 30px;
+  margin-top: 24px;
   text-align: left;
 }
 
 .mega-menu-footer-link {
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  color: #000000 !important; /* Always black link */
+  color: var(--color-primary) !important;
   text-decoration: underline;
   transition: color var(--transition-speed) ease;
 }
@@ -2463,18 +2590,17 @@ img {
 .shop-by-type-mega {
   display: grid !important;
   grid-template-columns: 280px 1fr;
-  gap: 50px;
-  max-width: 1200px !important;
-  width: 100vw;
-  padding: 40px 60px !important;
-  background-color: #FFFFFF !important;
+  gap: 40px;
+  max-width: 1240px !important;
+  width: 100%;
+  padding: 30px 40px !important;
+  background-color: var(--bg-card) !important;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: all var(--transition-speed) ease;
 }
 
-/* Ensure mega menu shows up on hover */
 .nav-item:hover .shop-by-type-mega {
   opacity: 1;
   visibility: visible;

@@ -72,195 +72,405 @@
   <nav class="header-nav">
       <div class="container">
         <ul class="nav-list">
-                    <li class="nav-item">
-            <a href="shop.html" class="nav-link">Shop All</a>
-            <!-- Mega Menu Dropdown -->
-            <div class="mega-menu shop-all-mega">
-              <div class="mega-menu-header">
-                <h3>Shop All Categories</h3>
-              </div>
-              
-              <div class="category-grid">
-                <!-- Column 1 -->
-                <div class="category-col">
-                  <a href="shop.html?category=Mobiles%20%26%20Audio" class="category-card-link">
-                    <div class="category-card">
-                      <div class="category-card-img">
-                        <img src="assets/images/smartphone.jpg" alt="Mobiles & Audio">
-                      </div>
-                      <span class="category-card-title">Mobiles & Audio</span>
-                      <div class="category-card-btn">
-                        <i class="fas fa-chevron-right"></i>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="shop.html?type=Phones" class="category-card-link">
-                    <div class="category-card">
-                      <div class="category-card-img">
-                        <img src="assets/images/smartphone.jpg" alt="Smartphones">
-                      </div>
-                      <span class="category-card-title">Smartphones</span>
-                      <div class="category-card-btn">
-                        <i class="fas fa-chevron-right"></i>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+          <!-- 1. New Arrivals -->
+          <li class="nav-item">
+            <a href="shop.html?filter=new-arrivals" class="nav-link">
+              New Arrivals
+            </a>
+          </li>
 
-                <!-- Column 2 -->
-                <div class="category-col">
-                  <a href="shop.html?category=Laptops%20%26%20Wearables" class="category-card-link">
-                    <div class="category-card">
-                      <div class="category-card-img">
-                        <img src="assets/images/laptop.jpg" alt="Laptops & Wearables">
-                      </div>
-                      <span class="category-card-title">Laptops & Wearables</span>
-                      <div class="category-card-btn">
-                        <i class="fas fa-chevron-right"></i>
-                      </div>
+          <!-- 2. Mobile Accessories -->
+          <li class="nav-item">
+            <a href="shop.html?type=Accessories" class="nav-link">
+              Mobile Accessories <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 2fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Mobile Accessories</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                  <a href="shop.html?sub=chargers" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-bolt" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Chargers & Docks</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">100W GaN & Fast Chargers</span>
                     </div>
                   </a>
-                  <a href="shop.html?type=Computers" class="category-card-link">
-                    <div class="category-card">
-                      <div class="category-card-img">
-                        <img src="assets/images/laptop.jpg" alt="Laptops">
-                      </div>
-                      <span class="category-card-title">Laptops</span>
-                      <div class="category-card-btn">
-                        <i class="fas fa-chevron-right"></i>
-                      </div>
+                  <a href="shop.html?sub=cases" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-shield-alt" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Cases & Protectors</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">Armor Cases & 9H Glass</span>
                     </div>
                   </a>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="category-col">
-                  <a href="shop.html?type=Audio" class="category-card-link">
-                    <div class="category-card">
-                      <div class="category-card-img">
-                        <img src="assets/images/headphones.jpg" alt="Audio">
-                      </div>
-                      <span class="category-card-title">Audio</span>
-                      <div class="category-card-btn">
-                        <i class="fas fa-chevron-right"></i>
-                      </div>
+                  <a href="shop.html?sub=cables" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-plug" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Cables & Adapters</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">USB-C 240W & Lightning</span>
                     </div>
                   </a>
-                  <a href="shop.html?type=Accessories" class="category-card-link">
-                    <div class="category-card">
-                      <div class="category-card-img">
-                        <img src="assets/images/keyboard.jpg" alt="Accessories">
-                      </div>
-                      <span class="category-card-title">Accessories</span>
-                      <div class="category-card-btn">
-                        <i class="fas fa-chevron-right"></i>
-                      </div>
+                  <a href="shop.html?sub=mounts" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-mobile-alt" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Phone Holders & Stands</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">MagSafe & Desk Mounts</span>
                     </div>
                   </a>
                 </div>
               </div>
-
-              <div class="mega-menu-footer">
-                <a href="shop.html" class="mega-menu-footer-link">Shop All Products</a>
-              </div>
-            </div>
-          </li><li class="nav-item"><a href="shop.html" class="nav-link">Bestsellers</a></li>
-                              <li class="nav-item">
-            <a href="shop.html" class="nav-link">Shop By Type</a>
-            <!-- Mega Menu Dropdown -->
-            <div class="mega-menu shop-by-type-mega">
-              <!-- Left Spotlight Side -->
-              <div class="mega-spotlight">
-                <div class="spotlight-image-container">
-                  <img src="assets/images/headphones.jpg" alt="SoundFlow Headphones Spotlight">
-                </div>
-                <div class="spotlight-content">
-                  <a href="product.html?id=glow" class="spotlight-title-link">
-                    <span>Immerse yourself with SoundFlow ANC Headphones</span>
-                    <i class="fas fa-chevron-right"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Grid Side -->
-              <div class="mega-grid-side">
-                <div class="mega-menu-header">
-                  <h3>Shop By Type</h3>
-                </div>
-                
-                <div class="type-grid">
-                  <!-- Column 1 -->
-                  <div class="category-col">
-                    <a href="shop.html?type=Phones" class="category-card-link">
-                      <div class="category-card">
-                        <div class="category-card-img">
-                          <img src="assets/images/smartphone.jpg" alt="Phones">
-                        </div>
-                        <span class="category-card-title">Smartphones</span>
-                        <div class="category-card-btn">
-                          <i class="fas fa-chevron-right"></i>
-                        </div>
-                      </div>
-                    </a>
-                    <a href="shop.html?type=Computers" class="category-card-link">
-                      <div class="category-card">
-                        <div class="category-card-img">
-                          <img src="assets/images/laptop.jpg" alt="Computers">
-                        </div>
-                        <span class="category-card-title">Computers & Screens</span>
-                        <div class="category-card-btn">
-                          <i class="fas fa-chevron-right"></i>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <!-- Column 2 -->
-                  <div class="category-col">
-                    <a href="shop.html?type=Audio" class="category-card-link">
-                      <div class="category-card">
-                        <div class="category-card-img">
-                          <img src="assets/images/headphones.jpg" alt="Audio">
-                        </div>
-                        <span class="category-card-title">Audio & Sound</span>
-                        <div class="category-card-btn">
-                          <i class="fas fa-chevron-right"></i>
-                        </div>
-                      </div>
-                    </a>
-                    <a href="shop.html?type=Accessories" class="category-card-link">
-                      <div class="category-card">
-                        <div class="category-card-img">
-                          <img src="assets/images/keyboard.jpg" alt="Accessories">
-                        </div>
-                        <span class="category-card-title">Accessories</span>
-                        <div class="category-card-btn">
-                          <i class="fas fa-chevron-right"></i>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="mega-menu-footer">
-                  <a href="shop.html" class="mega-menu-footer-link">Shop All Types</a>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/charger.jpg" alt="Featured Accessory">
+                <div class="mega-card-content">
+                  <h4>PowerDock 100W GaN</h4>
+                  <p>3-Device Fast Charger</p>
                 </div>
               </div>
             </div>
           </li>
-<li class="nav-item"><a href="about.html" class="nav-link">Discover</a></li>
+
+          <!-- 3. Tech Gadgets -->
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">
+              Tech Gadgets <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 2fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Flagship Tech & Gadgets</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                  <a href="shop.html?type=Phones" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-mobile-alt" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">5G Smartphones</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">Apex Series & Foldables</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Wearables" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-stopwatch" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Smartwatches</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">ChronoFit & Trackers</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Audio" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-headphones-alt" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Audio & Headphones</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">ANC Wireless & Speakers</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Cameras" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-camera" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Cameras & Action Gear</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">DSLR & 4K Recorders</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/smartphone.jpg" alt="Apex 5G">
+                <div class="mega-card-content">
+                  <h4>Apex Smartphone 5G</h4>
+                  <p>Flagship Power & LTPO Screen</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 4. Tools & Utility -->
+          <li class="nav-item">
+            <a href="shop.html?sub=utility" class="nav-link">
+              Tools & Utility <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 2fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Workstation Tools & Utility</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                  <a href="shop.html?sub=keyboards" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-keyboard" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Mechanical Keyboards</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">Tactile RGB Switches</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?sub=monitors" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-desktop" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">4K Curved Displays</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">CineVue 4K Color Monitors</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?type=Computers" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-laptop" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Laptops & Workstations</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">AirBook Slim Ultrabooks</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?sub=docks" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-network-wired" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">USB Docks & Hubs</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">Thunderbolt Multi-port Hubs</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/keyboard.jpg" alt="ClickMaster">
+                <div class="mega-card-content">
+                  <h4>ClickMaster Keyboard</h4>
+                  <p>Custom Mechanical RGB</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5. Car & Travel -->
+          <li class="nav-item">
+            <a href="shop.html?sub=travel" class="nav-link">
+              Car & Travel <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 2fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Car & Travel Tech</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                  <a href="shop.html?sub=car-holders" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-car" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Car Phone Mounts</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">MagSafe 15W Qi Charging</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?sub=speakers" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-water" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Waterproof Speakers</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">WaveBlast Outdoor Audio</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?sub=travel" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-suitcase" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Travel Tech Organizers</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">Voyager Cable Bags</span>
+                    </div>
+                  </a>
+                  <a href="shop.html?sub=chargers" class="search-result-item" style="padding: 10px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    <i class="fas fa-battery-full" style="font-size: 18px; color: var(--color-primary); margin-right: 10px;"></i>
+                    <div>
+                      <strong style="display:block; font-size:13px; color:var(--text-primary);">Portable Power Docks</strong>
+                      <span style="font-size:11px; color:var(--text-secondary);">High Capacity Chargers</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/speaker.jpg" alt="WaveBlast Speaker">
+                <div class="mega-card-content">
+                  <h4>WaveBlast Speaker</h4>
+                  <p>IPX7 Waterproof Audio</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6. Offers & Combos -->
+          <li class="nav-item">
+            <a href="shop.html?filter=offers" class="nav-link">
+              Offers & Combos <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 1.5fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Hot Deals & Combos</h4>
+                <ul class="mega-links" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+                  <li><a href="shop.html?filter=combos"><i class="fas fa-tags" style="color:var(--color-primary);"></i> Bestseller Combos</a></li>
+                  <li><a href="shop.html?filter=on-sale"><i class="fas fa-fire" style="color:#e63946;"></i> Up to 30% Off Sale</a></li>
+                  <li><a href="shop.html?maxPrice=100"><i class="fas fa-dollar-sign" style="color:var(--color-primary);"></i> Under $100 Deals</a></li>
+                  <li><a href="shop.html?filter=bogo"><i class="fas fa-gift" style="color:var(--color-primary);"></i> Buy 1 Get 1 Deals</a></li>
+                  <li><a href="shop.html?filter=clearance"><i class="fas fa-percent" style="color:var(--color-primary);"></i> Clearance Flash Sale</a></li>
+                  <li><a href="shop.html?filter=offers"><i class="fas fa-store" style="color:var(--color-primary);"></i> All Active Offers</a></li>
+                </ul>
+              </div>
+              <div style="background: linear-gradient(135deg, rgba(197,168,128,0.15), rgba(0,0,0,0.03)); border:1px solid var(--border-color); border-radius:12px; padding:20px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <span style="background:var(--color-primary); color:#fff; font-size:11px; font-weight:800; padding:4px 10px; border-radius:12px; text-transform:uppercase; margin-bottom:8px;">Special Coupon</span>
+                <h4 style="margin:4px 0; font-size:18px;">Get 10% OFF</h4>
+                <p style="font-size:12px; color:var(--text-secondary); margin-bottom:12px;">Use code <strong>TECH10</strong> at checkout on orders $100+</p>
+                <a href="shop.html?filter=offers" class="btn btn-primary" style="font-size:12px; padding:8px 16px;">Shop Deals Now</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 7. Shop By Price -->
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">
+              Shop By Price <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: repeat(5, 1fr); gap: 15px; padding: 25px;">
+              <a href="shop.html?maxPrice=50" class="search-result-item" style="padding: 15px 10px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:18px; font-weight:800; color:var(--color-primary);">$50</span>
+                <span style="font-size:12px; color:var(--text-primary); font-weight:700;">Under $50</span>
+                <span style="font-size:10px; color:var(--text-secondary);">Chargers & Docks</span>
+              </a>
+              <a href="shop.html?minPrice=50&maxPrice=150" class="search-result-item" style="padding: 15px 10px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:18px; font-weight:800; color:var(--color-primary);">$50 - $150</span>
+                <span style="font-size:12px; color:var(--text-primary); font-weight:700;">$50 to $150</span>
+                <span style="font-size:10px; color:var(--text-secondary);">Speakers & Keys</span>
+              </a>
+              <a href="shop.html?minPrice=150&maxPrice=300" class="search-result-item" style="padding: 15px 10px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:18px; font-weight:800; color:var(--color-primary);">$150 - $300</span>
+                <span style="font-size:12px; color:var(--text-primary); font-weight:700;">$150 to $300</span>
+                <span style="font-size:10px; color:var(--text-secondary);">Smartwatches & ANC</span>
+              </a>
+              <a href="shop.html?minPrice=300&maxPrice=500" class="search-result-item" style="padding: 15px 10px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:18px; font-weight:800; color:var(--color-primary);">$300 - $500</span>
+                <span style="font-size:12px; color:var(--text-primary); font-weight:700;">$300 to $500</span>
+                <span style="font-size:10px; color:var(--text-secondary);">4K Displays</span>
+              </a>
+              <a href="shop.html?minPrice=500" class="search-result-item" style="padding: 15px 10px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:18px; font-weight:800; color:var(--color-primary);">$500+</span>
+                <span style="font-size:12px; color:var(--text-primary); font-weight:700;">Flagships</span>
+                <span style="font-size:10px; color:var(--text-secondary);">Laptops & 5G</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- 8. Gifting -->
+          <li class="nav-item">
+            <a href="shop.html?filter=gifting" class="nav-link">
+              Gifting <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 1.5fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Elevora Gifting Guide</h4>
+                <ul class="mega-links" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+                  <li><a href="shop.html?filter=gifting"><i class="fas fa-gift" style="color:var(--color-primary);"></i> Gifts for Tech Lovers</a></li>
+                  <li><a href="shop.html?filter=gifting"><i class="fas fa-birthday-cake" style="color:var(--color-primary);"></i> Birthday Specials</a></li>
+                  <li><a href="shop.html?filter=gifting"><i class="fas fa-leaf" style="color:var(--color-primary);"></i> Eco-Friendly Smart Gifts</a></li>
+                  <li><a href="shop.html?filter=gifting"><i class="fas fa-user-tie" style="color:var(--color-primary);"></i> Executive & Desk Gifts</a></li>
+                  <li><a href="quiz.html"><i class="fas fa-magic" style="color:var(--color-primary);"></i> Tech Matchmaker Quiz</a></li>
+                  <li><a href="checkout.html"><i class="fas fa-credit-card" style="color:var(--color-primary);"></i> E-Gift Cards</a></li>
+                </ul>
+              </div>
+              <div class="mega-card" style="aspect-ratio: auto; height: 100%;">
+                <img src="assets/images/subscribe_banner.jpg" alt="Elevora Gift Guide">
+                <div class="mega-card-content">
+                  <h4>Find the Perfect Gift</h4>
+                  <p>Take our 30-second Tech Recommendation Quiz</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 9. Support -->
+          <li class="nav-item">
+            <a href="about.html#contact" class="nav-link">
+              Support <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-menu" style="grid-template-columns: 1.5fr 1fr; gap: 30px;">
+              <div>
+                <h4 class="mega-col-title">Customer Care & Support</h4>
+                <ul class="mega-links" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+                  <li><a href="about.html#contact"><i class="fas fa-headset" style="color:var(--color-primary);"></i> Contact Tech Support</a></li>
+                  <li><a href="checkout.html"><i class="fas fa-truck" style="color:var(--color-primary);"></i> Track Your Order</a></li>
+                  <li><a href="about.html#warranty"><i class="fas fa-shield-alt" style="color:var(--color-primary);"></i> 1-Year Warranty & Returns</a></li>
+                  <li><a href="quiz.html"><i class="fas fa-question-circle" style="color:var(--color-primary);"></i> Tech Device Recommendation</a></li>
+                  <li><a href="about.html#faq"><i class="fas fa-info-circle" style="color:var(--color-primary);"></i> FAQs & User Manuals</a></li>
+                  <li><a href="about.html"><i class="fas fa-building" style="color:var(--color-primary);"></i> About Elevora Brand</a></li>
+                </ul>
+              </div>
+              <div style="background:var(--bg-secondary); border-radius:12px; padding:20px; display:flex; flex-direction:column; justify-content:center;">
+                <h4 style="margin-bottom:8px; font-size:16px;">Need Assistance?</h4>
+                <p style="font-size:12px; color:var(--text-secondary); margin-bottom:12px;">Our expert tech support team is available 24/7 to help with orders, setup, or warranty questions.</p>
+                <a href="about.html#contact" class="btn btn-secondary" style="font-size:12px; text-align:center;">Contact Support Desk</a>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <!-- Mobile Drawer -->
+  <!-- Mobile Hamburger Navigation Drawer -->
   <div class="mobile-menu-drawer" id="mobile-drawer">
     <ul class="mobile-nav-list">
-      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop All</a></li>
-      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Bestsellers</a></li>
-      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">Discover</a></li>
+      <li class="mobile-nav-item">
+        <a href="shop.html?filter=new-arrivals" class="mobile-nav-link">New Arrivals</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Mobile Accessories <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?type=Accessories">All Accessories</a></li>
+          <li><a href="shop.html?sub=chargers">Chargers & Docks</a></li>
+          <li><a href="shop.html?sub=cases">Cases & Protectors</a></li>
+          <li><a href="shop.html?sub=cables">Cables & Adapters</a></li>
+          <li><a href="shop.html?sub=mounts">Phone Holders & Mounts</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Tech Gadgets <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?type=Phones">5G Smartphones</a></li>
+          <li><a href="shop.html?type=Wearables">Smartwatches & Fitness</a></li>
+          <li><a href="shop.html?type=Audio">Audio & ANC Headphones</a></li>
+          <li><a href="shop.html?type=Cameras">Cameras & Action Recorders</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Tools & Utility <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?sub=keyboards">Mechanical Keyboards</a></li>
+          <li><a href="shop.html?sub=monitors">4K Curved Displays</a></li>
+          <li><a href="shop.html?type=Computers">Laptops & Workstations</a></li>
+          <li><a href="shop.html?sub=docks">USB Hubs & Docks</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Car & Travel <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?sub=car-holders">Car Phone Mounts</a></li>
+          <li><a href="shop.html?sub=speakers">Waterproof Speakers</a></li>
+          <li><a href="shop.html?sub=travel">Travel Tech Organizers</a></li>
+          <li><a href="shop.html?sub=chargers">Portable Power Docks</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Offers & Combos <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?filter=combos">Bestseller Combos</a></li>
+          <li><a href="shop.html?filter=on-sale">Up to 30% Off Sale</a></li>
+          <li><a href="shop.html?maxPrice=100">Under $100 Deals</a></li>
+          <li><a href="shop.html?filter=bogo">Buy 1 Get 1 Deals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Shop By Price <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?maxPrice=50">Under $50</a></li>
+          <li><a href="shop.html?minPrice=50&maxPrice=150">$50 to $150</a></li>
+          <li><a href="shop.html?minPrice=150&maxPrice=300">$150 to $300</a></li>
+          <li><a href="shop.html?minPrice=300&maxPrice=500">$300 to $500</a></li>
+          <li><a href="shop.html?minPrice=500">Above $500</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Gifting <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="shop.html?filter=gifting">Gifts for Tech Lovers</a></li>
+          <li><a href="quiz.html">Tech Recommendation Quiz</a></li>
+          <li><a href="checkout.html">E-Gift Cards</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">Support <i class="fas fa-chevron-right" style="font-size:12px;"></i></a>
+        <ul class="mobile-submenu">
+          <li><a href="about.html#contact">Contact Support</a></li>
+          <li><a href="checkout.html">Track Order</a></li>
+          <li><a href="about.html#warranty">Warranty Info</a></li>
+        </ul>
+      </li>
     </ul>
+  </div>
     <div class="mobile-search">
       <i class="fas fa-search"></i>
       <input type="text" placeholder="Search Elevora Tech..." id="mobile-search-trigger" readonly>

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSearch();
   initCart();
+  initAdminProductManager();
   
   // --- Page-Specific Initializations (Supports HTML & WordPress Permalinks) ---
   const path = window.location.pathname.toLowerCase();
@@ -32,19 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Fallback Triggers: Automatically run if container elements exist on DOM ---
-  const picksContainer = document.getElementById('picks-grid-container');
-  if (picksContainer && picksContainer.children.length === 0) {
+  const picksContainer = document.getElementById('picks-grid-container') || document.querySelector('.picks-row');
+  if (picksContainer) {
     initHeroSlider();
     renderFeaturedProducts();
   }
 
-  const shopGrid = document.getElementById('shop-product-grid');
+  const shopGrid = document.getElementById('shop-products-grid') || document.getElementById('shop-product-grid');
   if (shopGrid && shopGrid.children.length === 0) {
     initShopPage();
   }
 
   const detailTitle = document.getElementById('detail-title');
-  if (detailTitle && (!detailTitle.textContent || detailTitle.textContent.trim() === '')) {
+  if (detailTitle && (!detailTitle.textContent || detailTitle.textContent.trim() === '' || detailTitle.textContent.includes('Loading'))) {
     initProductDetailsPage();
   }
 });
@@ -178,11 +179,12 @@ function initSearch() {
       return;
     }
 
-    const filtered = products.filter(p => 
+    const allProducts = typeof getProducts === 'function' ? getProducts() : products;
+    const filtered = allProducts.filter(p => 
       p.name.toLowerCase().includes(query) || 
-      p.description.toLowerCase().includes(query) ||
-      p.type.toLowerCase().includes(query) ||
-      p.category.toLowerCase().includes(query)
+      (p.description && p.description.toLowerCase().includes(query)) ||
+      (p.type && p.type.toLowerCase().includes(query)) ||
+      (p.category && p.category.toLowerCase().includes(query))
     );
 
     if (filtered.length === 0) {
@@ -376,8 +378,9 @@ function updateCartUI() {
   if (checkoutBtn) checkoutBtn.style.pointerEvents = 'auto';
 
   // Render list
+  const allProductsList = typeof getProducts === 'function' ? getProducts() : products;
   drawerItems.innerHTML = cart.map(item => {
-    const product = products.find(p => p.id === item.id);
+    const product = allProductsList.find(p => p.id === item.id);
     if (!product) return '';
     return `
       <div class="cart-item">
@@ -402,7 +405,7 @@ function updateCartUI() {
 
   // Calculate totals
   const subtotal = cart.reduce((sum, item) => {
-    const product = products.find(p => p.id === item.id);
+    const product = allProductsList.find(p => p.id === item.id);
     return sum + (product ? product.price * item.quantity : 0);
   }, 0);
 
@@ -429,7 +432,8 @@ window.addToCart = function(productId, qty = 1, showDrawer = true) {
   localStorage.setItem('Elevora_cart', JSON.stringify(cart));
   updateCartUI();
   
-  const product = products.find(p => p.id === productId);
+  const allProductsList = typeof getProducts === 'function' ? getProducts() : products;
+  const product = allProductsList.find(p => p.id === productId);
   showToast(`Added ${product ? product.name : 'item'} to your bag!`);
 
   if (showDrawer) {
@@ -503,28 +507,28 @@ function getProductImgSrc(img) {
 // 8. RENDER HOME PAGE FEATURED / BESTSELLERS
 // ==========================================================================
 function renderFeaturedProducts() {
-  const bestsellersGrid = document.getElementById('picks-grid-container') || document.getElementById('bestsellers-grid');
+  const bestsellersGrid = document.getElementById('picks-grid-container') || document.getElementById('bestsellers-grid') || document.querySelector('.picks-row');
   if (!bestsellersGrid) return;
 
-  const bestsellers = products;
+  const allProducts = typeof getProducts === 'function' ? getProducts() : products;
+  const bestsellers = allProducts;
   
   bestsellersGrid.innerHTML = bestsellers.map(p => `
     <div class="pick-card">
       <a href="product.html?id=${p.id}" class="pick-card-link">
         <div class="pick-card-img-wrapper">
-          <span class="pick-badge badge-blue">${p.isNew ? 'New Release' : p.isBestseller ? 'Bestseller' : 'Featured'}</span>
+          <span class="pick-badge badge-blue">${p.isNew ? 'New Release' : p.isBestseller ? 'Bestseller' : p.isOffer ? 'Sale' : 'Featured'}</span>
           <img src="${getProductImgSrc(p.image)}" alt="${p.name}">
         </div>
         <div class="pick-card-info">
-          <span class="pick-card-category">${p.category}</span>
-          <h3 class="pick-card-title">${p.name}</h3>
-          <div class="pick-card-rating">
-            ${getRatingStars(p.rating)}
-            <span>(${p.reviewsCount})</span>
+          <div class="pick-rating">
+            ${getRatingStars(p.rating || 4.8)}
           </div>
-          <div class="pick-card-footer">
-            <div class="pick-card-price">$${p.price.toFixed(2)}</div>
-            <button class="btn btn-primary pick-add-btn" onclick="event.preventDefault(); addToCart('${p.id}', 1, true)">Add to Bag</button>
+          <h4 class="pick-title">${p.name}</h4>
+          <p class="pick-desc">${p.tagline || (p.type + ' • Warranty: ' + (p.spf || 1) + ' Year')}</p>
+          <div class="pick-card-footer" style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <p class="pick-price" style="margin:0;">$${parseFloat(p.price).toFixed(2)}</p>
+            <button class="btn btn-primary pick-add-btn" style="padding:6px 12px; font-size:12px;" onclick="event.preventDefault(); addToCart('${p.id}', 1, true)">Add to Bag</button>
           </div>
         </div>
       </a>
@@ -548,7 +552,7 @@ function getRatingStars(rating) {
 // 9. SHOP PAGE FILTERING & SORTING
 // ==========================================================================
 function initShopPage() {
-  const shopGrid = document.getElementById('shop-products-grid');
+  const shopGrid = document.getElementById('shop-products-grid') || document.getElementById('shop-product-grid');
   const resultsCount = document.getElementById('results-count');
   const sortSelect = document.getElementById('sort-by');
   const filterCheckboxes = document.querySelectorAll('.filters-sidebar input[type="checkbox"]');
@@ -592,7 +596,8 @@ function initShopPage() {
 
   // Handle filtering
   const filterAndSort = () => {
-    let filtered = [...products];
+    const allProducts = typeof getProducts === 'function' ? getProducts() : products;
+    let filtered = [...allProducts];
 
     // Gather checked options
     const activeFilters = {
@@ -696,23 +701,23 @@ function initShopPage() {
         <button class="product-card-wishlist" aria-label="Add to Wishlist"><i class="far fa-heart"></i></button>
         <div class="product-card-img">
           <a href="product.html?id=${p.id}">
-            <img src="${p.image}" alt="${p.name}">
+            <img src="${getProductImgSrc(p.image)}" alt="${p.name}">
           </a>
           <button class="product-card-quickadd" onclick="event.preventDefault(); addToCart('${p.id}', 1, true)">Quick Add +</button>
         </div>
         <div class="product-card-info">
-          <span class="product-card-type">${p.type}</span>
+          <span class="product-card-type">${p.type || 'Tech'}</span>
           <h3 class="product-card-title"><a href="product.html?id=${p.id}">${p.name}</a></h3>
           <div class="product-card-rating">
-            ${getRatingStars(p.rating)}
-            <span>(${p.reviewsCount})</span>
+            ${getRatingStars(p.rating || 4.8)}
+            <span>(${p.reviewsCount || 100})</span>
           </div>
           <div class="product-card-footer">
             <div class="product-card-price">
-              $${p.price.toFixed(2)}
-              ${p.originalPrice ? `<span style="text-decoration: line-through; color: var(--text-secondary); font-size: 13px; margin-left: 6px; font-weight: normal;">$${p.originalPrice.toFixed(2)}</span>` : ''}
+              $${parseFloat(p.price).toFixed(2)}
+              ${p.originalPrice ? `<span style="text-decoration: line-through; color: var(--text-secondary); font-size: 13px; margin-left: 6px; font-weight: normal;">$${parseFloat(p.originalPrice).toFixed(2)}</span>` : ''}
             </div>
-            <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
+            <span class="product-card-spf">Warranty: ${p.spf || 1} Year${(p.spf || 1) > 1 ? 's' : ''}</span>
           </div>
         </div>
       </div>
@@ -734,18 +739,20 @@ function initProductDetailsPage() {
   const urlParams = new URLSearchParams(window.location.search);
   let productId = urlParams.get('id');
 
+  const allProducts = typeof getProducts === 'function' ? getProducts() : products;
+
   if (!productId) {
     const pathParts = window.location.pathname.split('/').filter(Boolean);
     const lastPart = pathParts.pop() || '';
-    const found = products.find(p => p.id === lastPart || p.id.replace('_', '-') === lastPart || p.name.toLowerCase().includes(lastPart.replace(/-/g, ' ')));
+    const found = allProducts.find(p => p.id === lastPart || p.id.replace('_', '-') === lastPart || p.name.toLowerCase().includes(lastPart.replace(/-/g, ' ')));
     if (found) {
       productId = found.id;
     } else {
-      productId = 'unseen'; // Default fallback product
+      productId = allProducts[0] ? allProducts[0].id : 'unseen';
     }
   }
 
-  const product = products.find(p => p.id === productId) || products[0];
+  const product = allProducts.find(p => p.id === productId) || allProducts[0];
 
   if (!product) {
     return;
@@ -755,7 +762,7 @@ function initProductDetailsPage() {
   document.title = `${product.name} | Elevora Electronics`;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
-    metaDesc.setAttribute('content', `${product.tagline} Buy now at Elevora Electronics website.`);
+    metaDesc.setAttribute('content', `${product.tagline || product.name} Buy now at Elevora Electronics website.`);
   }
 
   // Render Product Page Info
@@ -768,10 +775,10 @@ function initProductDetailsPage() {
   
   if (mainImg) mainImg.innerHTML = `<img src="${getProductImgSrc(product.image)}" alt="${product.name}">`;
   if (productTitle) productTitle.textContent = product.name;
-  if (productTagline) productTagline.textContent = product.tagline;
-  if (productPrice) productPrice.textContent = `$${product.price.toFixed(2)}`;
-  if (productRatingStars) productRatingStars.innerHTML = getRatingStars(product.rating);
-  if (productReviewsCount) productReviewsCount.textContent = `(${product.reviewsCount} reviews)`;
+  if (productTagline) productTagline.textContent = product.tagline || '';
+  if (productPrice) productPrice.textContent = `$${parseFloat(product.price).toFixed(2)}`;
+  if (productRatingStars) productRatingStars.innerHTML = getRatingStars(product.rating || 4.8);
+  if (productReviewsCount) productReviewsCount.textContent = `(${product.reviewsCount || 100} reviews)`;
 
   // Tabs Content
   const tabDesc = document.getElementById('tab-description');
@@ -779,13 +786,14 @@ function initProductDetailsPage() {
   const tabUsage = document.getElementById('tab-usage');
   const tabBenefits = document.getElementById('tab-benefits');
 
-  if (tabDesc) tabDesc.innerHTML = `<p>${product.description}</p>`;
-  if (tabIng) tabIng.innerHTML = `<p>${product.ingredients.replace(/\n/g, '<br>')}</p>`;
-  if (tabUsage) tabUsage.innerHTML = `<p>${product.howToUse}</p>`;
+  if (tabDesc) tabDesc.innerHTML = `<p>${product.description || 'No description available.'}</p>`;
+  if (tabIng) tabIng.innerHTML = `<p>${(product.ingredients || 'Warranty: ' + (product.spf || 1) + ' Year').replace(/\n/g, '<br>')}</p>`;
+  if (tabUsage) tabUsage.innerHTML = `<p>${product.howToUse || 'Unbox, connect, and enjoy your Elevora device.'}</p>`;
   if (tabBenefits) {
+    const benefitsList = Array.isArray(product.benefits) ? product.benefits : ['High-performance electronic components', 'Full Elevora warranty included'];
     tabBenefits.innerHTML = `
       <ul>
-        ${product.benefits.map(b => `<li><i class="fas fa-check" style="color:var(--color-accent); margin-right:8px;"></i> ${b}</li>`).join('')}
+        ${benefitsList.map(b => `<li><i class="fas fa-check" style="color:var(--color-accent); margin-right:8px;"></i> ${b}</li>`).join('')}
       </ul>
     `;
   }
@@ -822,11 +830,8 @@ function initProductDetailsPage() {
   const tabButtons = document.querySelectorAll('.tab-btn');
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active classes
       tabButtons.forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-      
-      // Add active to current
       btn.classList.add('active');
       const targetId = btn.getAttribute('data-tab');
       const targetContent = document.getElementById(`tab-${targetId}`);
@@ -834,30 +839,30 @@ function initProductDetailsPage() {
     });
   });
 
-  // Render related products (Simple suggestion of other products)
+  // Render related products
   const relatedGrid = document.getElementById('related-products-grid');
   if (relatedGrid) {
-    const related = products.filter(p => p.id !== product.id).slice(0, 3);
+    const related = allProducts.filter(p => p.id !== product.id).slice(0, 3);
     relatedGrid.innerHTML = related.map(p => `
       <div class="product-card">
         ${p.isNew ? `<div class="product-card-badge new">New</div>` : p.isBestseller ? `<div class="product-card-badge">Bestseller</div>` : ''}
         <button class="product-card-wishlist" aria-label="Add to Wishlist"><i class="far fa-heart"></i></button>
         <div class="product-card-img">
           <a href="product.html?id=${p.id}">
-            <img src="${p.image}" alt="${p.name}">
+            <img src="${getProductImgSrc(p.image)}" alt="${p.name}">
           </a>
           <button class="product-card-quickadd" onclick="event.preventDefault(); addToCart('${p.id}', 1, true)">Quick Add +</button>
         </div>
         <div class="product-card-info">
-          <span class="product-card-type">${p.type}</span>
+          <span class="product-card-type">${p.type || ''}</span>
           <h3 class="product-card-title"><a href="product.html?id=${p.id}">${p.name}</a></h3>
           <div class="product-card-rating">
-            ${getRatingStars(p.rating)}
-            <span>(${p.reviewsCount})</span>
+            ${getRatingStars(p.rating || 4.8)}
+            <span>(${p.reviewsCount || 50})</span>
           </div>
           <div class="product-card-footer">
-            <div class="product-card-price">$${p.price.toFixed(2)}</div>
-            <span class="product-card-spf">Warranty: ${p.spf} Year${p.spf > 1 ? 's' : ''}</span>
+            <div class="product-card-price">$${parseFloat(p.price).toFixed(2)}</div>
+            <span class="product-card-spf">Warranty: ${p.spf || 1} Year${(p.spf || 1) > 1 ? 's' : ''}</span>
           </div>
         </div>
       </div>
@@ -1013,8 +1018,9 @@ function initCheckoutPage() {
   }
 
   // Render items
+  const allProductsList = typeof getProducts === 'function' ? getProducts() : products;
   checkoutItems.innerHTML = cart.map(item => {
-    const product = products.find(p => p.id === item.id);
+    const product = allProductsList.find(p => p.id === item.id);
     if (!product) return '';
     return `
       <div class="order-item-row">
@@ -1029,7 +1035,7 @@ function initCheckoutPage() {
 
   // Totals
   const subtotal = cart.reduce((sum, item) => {
-    const product = products.find(p => p.id === item.id);
+    const product = allProductsList.find(p => p.id === item.id);
     return sum + (product ? product.price * item.quantity : 0);
   }, 0);
 
@@ -1062,5 +1068,322 @@ function initCheckoutPage() {
         </div>
       `;
     });
+  }
+}
+
+// ==========================================================================
+// 13. ADMIN DYNAMIC PRODUCT MANAGER MODULE
+// ==========================================================================
+function initAdminProductManager() {
+  // Floating trigger button
+  if (!document.getElementById('elevora-admin-trigger')) {
+    const trigger = document.createElement('button');
+    trigger.id = 'elevora-admin-trigger';
+    trigger.innerHTML = `<i class="fas fa-edit"></i> Dynamic Product Manager`;
+    trigger.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    `;
+    trigger.addEventListener('mouseover', () => {
+      trigger.style.transform = 'translateY(-3px)';
+      trigger.style.boxShadow = '0 12px 28px rgba(37, 99, 235, 0.5)';
+    });
+    trigger.addEventListener('mouseout', () => {
+      trigger.style.transform = 'translateY(0)';
+      trigger.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.4)';
+    });
+    trigger.addEventListener('click', () => openAdminModal());
+    document.body.appendChild(trigger);
+  }
+
+  // Modal Container
+  function openAdminModal() {
+    let modal = document.getElementById('elevora-admin-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'elevora-admin-modal';
+      modal.style.cssText = `
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(6px);
+        z-index: 10000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+      `;
+      document.body.appendChild(modal);
+    }
+    renderAdminModalContent(modal);
+  }
+
+  function renderAdminModalContent(modal, editingProductId = null) {
+    const currentProducts = typeof getProducts === 'function' ? getProducts() : products;
+    const editingProduct = editingProductId ? currentProducts.find(p => p.id === editingProductId) : null;
+
+    modal.innerHTML = `
+      <div style="background: var(--bg-card, #ffffff); color: var(--text-primary, #000); width: 100%; max-width: 900px; max-height: 90vh; overflow-y: auto; border-radius: 16px; border: 1px solid var(--border-color, #e2e8f0); box-shadow: 0 20px 40px rgba(0,0,0,0.3); padding: 30px; position: relative; font-family: 'Poppins', sans-serif;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color, #e2e8f0); padding-bottom:16px; margin-bottom:24px;">
+          <div>
+            <h2 style="margin:0; font-size:22px; font-weight:800; color:var(--color-primary, #2563eb); display:flex; align-items:center; gap:10px;">
+              <i class="fas fa-boxes"></i> Elevora Dynamic Product Manager
+            </h2>
+            <p style="margin:4px 0 0; font-size:12px; color:var(--text-secondary, #64748b);">Add, update, or remove live products across your Elevora store.</p>
+          </div>
+          <button id="admin-close-btn" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--text-secondary, #64748b);">&times;</button>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
+          <button id="admin-btn-show-form" class="btn btn-primary" style="font-size:13px; padding:8px 16px;">
+            <i class="fas fa-plus"></i> Add New Product
+          </button>
+          <button id="admin-btn-reset-defaults" class="btn btn-secondary" style="font-size:13px; padding:8px 16px;">
+            <i class="fas fa-undo"></i> Reset to Default Products
+          </button>
+        </div>
+
+        <!-- Add/Edit Form Section -->
+        <div id="admin-form-container" style="display:${editingProduct ? 'block' : 'none'}; background:var(--bg-secondary, #f8fafc); border:1px solid var(--border-color, #e2e8f0); border-radius:12px; padding:20px; margin-bottom:24px;">
+          <h3 style="margin-top:0; font-size:16px; font-weight:700;">${editingProduct ? 'Edit Product: ' + editingProduct.name : 'Add New Product'}</h3>
+          <form id="admin-product-form" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:15px;">
+            <input type="hidden" id="p-edit-id" value="${editingProduct ? editingProduct.id : ''}">
+            
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Product ID *</label>
+              <input type="text" id="p-id" required placeholder="e.g. apex-phone-5g" value="${editingProduct ? editingProduct.id : ''}" ${editingProduct ? 'readonly style="background:#e2e8f0;"' : ''} style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Product Name *</label>
+              <input type="text" id="p-name" required placeholder="e.g. Elevora Ultra Headset" value="${editingProduct ? editingProduct.name : ''}" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Tagline</label>
+              <input type="text" id="p-tagline" placeholder="e.g. Crystal clear acoustic sound" value="${editingProduct ? (editingProduct.tagline || '') : ''}" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Price ($) *</label>
+              <input type="number" step="0.01" id="p-price" required placeholder="199.99" value="${editingProduct ? editingProduct.price : ''}" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Original Price ($)</label>
+              <input type="number" step="0.01" id="p-originalPrice" placeholder="249.99" value="${editingProduct ? (editingProduct.originalPrice || '') : ''}" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Device Type</label>
+              <select id="p-type" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+                <option value="Phones" ${editingProduct && editingProduct.type === 'Phones' ? 'selected' : ''}>Phones</option>
+                <option value="Audio" ${editingProduct && editingProduct.type === 'Audio' ? 'selected' : ''}>Audio</option>
+                <option value="Wearables" ${editingProduct && editingProduct.type === 'Wearables' ? 'selected' : ''}>Wearables</option>
+                <option value="Accessories" ${editingProduct && editingProduct.type === 'Accessories' ? 'selected' : ''}>Accessories</option>
+                <option value="Computers" ${editingProduct && editingProduct.type === 'Computers' ? 'selected' : ''}>Computers</option>
+                <option value="Cameras" ${editingProduct && editingProduct.type === 'Cameras' ? 'selected' : ''}>Cameras</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Category</label>
+              <select id="p-category" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+                <option value="Mobiles & Audio" ${editingProduct && editingProduct.category === 'Mobiles & Audio' ? 'selected' : ''}>Mobiles & Audio</option>
+                <option value="Laptops & Wearables" ${editingProduct && editingProduct.category === 'Laptops & Wearables' ? 'selected' : ''}>Laptops & Wearables</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Image URL / Path</label>
+              <input type="text" id="p-image" placeholder="assets/images/headphones.jpg" value="${editingProduct ? editingProduct.image : 'assets/images/smartphone.jpg'}" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div>
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Warranty (Years)</label>
+              <input type="number" id="p-spf" min="1" max="5" value="${editingProduct ? (editingProduct.spf || 1) : 1}" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;">
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label style="font-size:12px; font-weight:600; display:block; margin-bottom:4px;">Description</label>
+              <textarea id="p-description" rows="2" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:13px;" placeholder="Full product description...">${editingProduct ? (editingProduct.description || '') : ''}</textarea>
+            </div>
+
+            <div style="grid-column: 1 / -1; display:flex; gap:16px; align-items:center;">
+              <label style="font-size:12px; cursor:pointer;"><input type="checkbox" id="p-bestseller" ${editingProduct && editingProduct.isBestseller ? 'checked' : ''}> Bestseller Badge</label>
+              <label style="font-size:12px; cursor:pointer;"><input type="checkbox" id="p-new" ${editingProduct && editingProduct.isNew ? 'checked' : ''}> New Release Badge</label>
+              <label style="font-size:12px; cursor:pointer;"><input type="checkbox" id="p-offer" ${editingProduct && editingProduct.isOffer ? 'checked' : ''}> On Sale Badge</label>
+            </div>
+
+            <div style="grid-column: 1 / -1; display:flex; gap:12px; margin-top:10px;">
+              <button type="submit" class="btn btn-primary" style="padding:8px 20px; font-size:13px;">
+                <i class="fas fa-check"></i> ${editingProduct ? 'Update Product' : 'Save New Product'}
+              </button>
+              <button type="button" id="admin-form-cancel" class="btn btn-secondary" style="padding:8px 16px; font-size:13px;">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Products Table -->
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; text-align:left; font-size:13px;">
+            <thead>
+              <tr style="border-bottom:2px solid var(--border-color, #e2e8f0); background:var(--bg-secondary, #f8fafc);">
+                <th style="padding:10px;">Image</th>
+                <th style="padding:10px;">Name</th>
+                <th style="padding:10px;">Type</th>
+                <th style="padding:10px;">Price</th>
+                <th style="padding:10px;">Warranty</th>
+                <th style="padding:10px; text-align:right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${currentProducts.map(p => `
+                <tr style="border-bottom:1px solid var(--border-color, #e2e8f0);">
+                  <td style="padding:8px;"><img src="${getProductImgSrc(p.image)}" alt="${p.name}" style="width:40px; height:40px; object-fit:cover; border-radius:6px;"></td>
+                  <td style="padding:8px;"><strong>${p.name}</strong><br><span style="font-size:11px; color:#64748b;">ID: ${p.id}</span></td>
+                  <td style="padding:8px;">${p.type || 'Tech'}</td>
+                  <td style="padding:8px; font-weight:700; color:var(--color-primary, #2563eb);">$${parseFloat(p.price).toFixed(2)}</td>
+                  <td style="padding:8px;">${p.spf || 1} Yr</td>
+                  <td style="padding:8px; text-align:right;">
+                    <button class="admin-edit-btn" data-id="${p.id}" style="background:#2563eb; color:#fff; border:none; padding:4px 10px; border-radius:4px; font-size:11px; cursor:pointer; margin-right:4px;">Edit</button>
+                    <button class="admin-del-btn" data-id="${p.id}" style="background:#ef4444; color:#fff; border:none; padding:4px 10px; border-radius:4px; font-size:11px; cursor:pointer;">Delete</button>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+
+    // Bind Modal Events
+    document.getElementById('admin-close-btn').addEventListener('click', () => {
+      modal.remove();
+    });
+
+    const formContainer = document.getElementById('admin-form-container');
+    document.getElementById('admin-btn-show-form').addEventListener('click', () => {
+      formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.getElementById('admin-btn-reset-defaults').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset products to original defaults?')) {
+        if (typeof resetProducts === 'function') resetProducts();
+        showToast('Products reset to defaults!');
+        refreshPageProducts();
+        renderAdminModalContent(modal);
+      }
+    });
+
+    const cancelBtn = document.getElementById('admin-form-cancel');
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', () => {
+        formContainer.style.display = 'none';
+      });
+    }
+
+    // Edit buttons
+    modal.querySelectorAll('.admin-edit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pId = btn.getAttribute('data-id');
+        renderAdminModalContent(modal, pId);
+      });
+    });
+
+    // Delete buttons
+    modal.querySelectorAll('.admin-del-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pId = btn.getAttribute('data-id');
+        if (confirm(`Delete product ${pId}?`)) {
+          if (typeof deleteProduct === 'function') deleteProduct(pId);
+          showToast(`Deleted product ${pId}`);
+          refreshPageProducts();
+          renderAdminModalContent(modal);
+        }
+      });
+    });
+
+    // Form Submit
+    const productForm = document.getElementById('admin-product-form');
+    if (productForm) {
+      productForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const editId = document.getElementById('p-edit-id').value;
+        const pId = document.getElementById('p-id').value.trim();
+        const pName = document.getElementById('p-name').value.trim();
+        const pPrice = parseFloat(document.getElementById('p-price').value) || 0;
+        const pOrigPrice = parseFloat(document.getElementById('p-originalPrice').value) || null;
+        const pTagline = document.getElementById('p-tagline').value.trim();
+        const pType = document.getElementById('p-type').value;
+        const pCategory = document.getElementById('p-category').value;
+        const pImage = document.getElementById('p-image').value.trim() || 'assets/images/smartphone.jpg';
+        const pSpf = parseInt(document.getElementById('p-spf').value) || 1;
+        const pDesc = document.getElementById('p-description').value.trim();
+        const isBestseller = document.getElementById('p-bestseller').checked;
+        const isNew = document.getElementById('p-new').checked;
+        const isOffer = document.getElementById('p-offer').checked;
+
+        const productData = {
+          id: pId,
+          name: pName,
+          tagline: pTagline,
+          price: pPrice,
+          originalPrice: pOrigPrice,
+          rating: 4.8,
+          reviewsCount: 100,
+          type: pType,
+          category: pCategory,
+          sub: pType.toLowerCase(),
+          tags: [pType.toLowerCase(), pCategory.toLowerCase()],
+          spf: pSpf,
+          isBestseller: isBestseller,
+          isNew: isNew,
+          isOffer: isOffer,
+          image: pImage,
+          description: pDesc || pTagline || pName,
+          ingredients: `Specification: ${pType} | ${pCategory} | Warranty: ${pSpf} Year`,
+          benefits: ["High performance electronic engineering", `Official ${pSpf}-Year Elevora Warranty`],
+          howToUse: "Unbox, setup, and enjoy."
+        };
+
+        if (editId) {
+          if (typeof updateProduct === 'function') updateProduct(editId, productData);
+          showToast(`Updated product "${pName}"!`);
+        } else {
+          if (typeof addProduct === 'function') addProduct(productData);
+          showToast(`Added product "${pName}"!`);
+        }
+
+        refreshPageProducts();
+        renderAdminModalContent(modal);
+      });
+    }
+  }
+
+  function refreshPageProducts() {
+    renderFeaturedProducts();
+    if (document.getElementById('shop-products-grid') || document.getElementById('shop-product-grid')) {
+      initShopPage();
+    }
+    if (document.getElementById('detail-title')) {
+      initProductDetailsPage();
+    }
   }
 }

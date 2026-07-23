@@ -325,6 +325,61 @@ const products = [
   }
 ];
 
+// --- Dynamic Products Manager (LocalStorage Sync) ---
+function getProducts() {
+  const stored = localStorage.getItem('elevora_products');
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    } catch (e) {
+      console.error('Error parsing stored elevora_products:', e);
+    }
+  }
+  return products;
+}
+
+function saveProducts(productList) {
+  localStorage.setItem('elevora_products', JSON.stringify(productList));
+}
+
+function addProduct(newProduct) {
+  const current = getProducts();
+  current.unshift(newProduct);
+  saveProducts(current);
+  return current;
+}
+
+function updateProduct(id, updatedData) {
+  const current = getProducts();
+  const index = current.findIndex(p => p.id === id);
+  if (index !== -1) {
+    current[index] = { ...current[index], ...updatedData };
+    saveProducts(current);
+  }
+  return current;
+}
+
+function deleteProduct(id) {
+  let current = getProducts();
+  current = current.filter(p => p.id !== id);
+  saveProducts(current);
+  return current;
+}
+
+function resetProducts() {
+  localStorage.removeItem('elevora_products');
+  return products;
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = products;
+  module.exports = {
+    products,
+    getProducts,
+    saveProducts,
+    addProduct,
+    updateProduct,
+    deleteProduct,
+    resetProducts
+  };
 }
